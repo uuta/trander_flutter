@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'view/template/slides.dart';
 
 void main() => runApp(const App());
 
@@ -34,91 +34,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  List<PageViewModel> getPages() {
-    return [
-      PageViewModel(
-          image: Image.asset("images/onBoarding/slides/select.png"),
-          title: "Select",
-          body: "Choose the city or keyword mode",
-          footer: InkWell(
-            child: const Text(
-              "Web illustrations by Storyset",
-              style: TextStyle(color: Colors.blueAccent),
-            ),
-            onTap: () async {
-              if (await canLaunch("https://storyset.com/web")) {
-                await launch("https://storyset.com/web");
-              }
-            },
-          ),
-          decoration: PageDecoration(
-              titleTextStyle:
-                  const TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
-              bodyTextStyle:
-                  TextStyle(fontSize: 22.0, color: Colors.grey[700]))),
-      PageViewModel(
-          image: Image.asset("images/onBoarding/slides/detect.png"),
-          title: "Detect",
-          body: "Find a new location for you",
-          footer: InkWell(
-            child: const Text(
-              "Money illustrations by Storyset",
-              style: TextStyle(color: Colors.blueAccent),
-            ),
-            onTap: () async {
-              if (await canLaunch("https://storyset.com/money")) {
-                await launch("https://storyset.com/money");
-              }
-            },
-          ),
-          decoration: PageDecoration(
-              titleTextStyle:
-                  const TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
-              bodyTextStyle:
-                  TextStyle(fontSize: 22.0, color: Colors.grey[700]))),
-      PageViewModel(
-          image: Image.asset("images/onBoarding/slides/explore.png"),
-          title: "Explore",
-          body: "See more and go there",
-          footer: InkWell(
-            child: const Text(
-              "City illustrations by Storyset",
-              style: TextStyle(color: Colors.blueAccent),
-            ),
-            onTap: () async {
-              if (await canLaunch("https://storyset.com/city")) {
-                await launch("https://storyset.com/city");
-              }
-            },
-          ),
-          decoration: PageDecoration(
-              titleTextStyle:
-                  const TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
-              bodyTextStyle:
-                  TextStyle(fontSize: 22.0, color: Colors.grey[700]))),
-      PageViewModel(
-          image: Image.asset("images/onBoarding/slides/play.png"),
-          title: "Let's play!",
-          body: "Enjoy! Start the journey below",
-          footer: InkWell(
-            child: const Text(
-              "People illustrations by Storyset",
-              style: TextStyle(color: Colors.blueAccent),
-            ),
-            onTap: () async {
-              if (await canLaunch("https://storyset.com/people")) {
-                await launch("https://storyset.com/people");
-              }
-            },
-          ),
-          decoration: PageDecoration(
-              titleTextStyle:
-                  const TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
-              bodyTextStyle:
-                  TextStyle(fontSize: 22.0, color: Colors.grey[700]))),
-    ];
-  }
-
+  Slides slides = Slides();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,7 +43,7 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: Colors.white),
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white,
-        pages: getPages(),
+        pages: slides.generateSlides(),
         showNextButton: true,
         showSkipButton: false,
         doneColor: Theme.of(context).primaryColorLight,
