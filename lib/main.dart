@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'view/template/slides.dart';
+import 'widgets/slides.dart';
 
 void main() => runApp(const App());
 
