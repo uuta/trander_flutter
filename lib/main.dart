@@ -2,10 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import '/import.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'widgets/slides.dart';
+import 'pages/signup.dart';
 
 void main() => runApp(const App());
 
@@ -21,6 +21,7 @@ class App extends StatelessWidget {
           primaryColorLight: const Color(0xff1CACBF),
           primaryTextTheme:
               const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
+          disabledColor: const Color(0xff9b9b9b),
           fontFamily: 'Arial',
         ),
         home: const MainPage());
@@ -39,7 +40,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Image.asset("images/icons/logo.png", width: 200),
+          title: Image.asset("assets/images/icons/logo.png", width: 200),
           backgroundColor: Colors.white),
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white,
@@ -86,7 +87,10 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
         ),
-        onDone: () {},
+        onDone: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => const Signup()));
+        },
       ),
     );
   }

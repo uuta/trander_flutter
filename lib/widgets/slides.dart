@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import '/import.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -7,25 +6,25 @@ class Slides {
   List<PageViewModel> generateSlides() {
     return [
       _generateSlide(
-          imgPath: "images/onBoarding/slides/select.png",
+          imgPath: "assets/images/onBoarding/slides/select.png",
           title: "Select",
           body: "Choose the city or keyword mode",
           linkText: "Web illustrations by Storyset",
           link: "https://storyset.com/web"),
       _generateSlide(
-          imgPath: "images/onBoarding/slides/detect.png",
+          imgPath: "assets/images/onBoarding/slides/detect.png",
           title: "Detect",
           body: "Find a new location for you",
           linkText: "Money illustrations by Storyset",
           link: "https://storyset.com/money"),
       _generateSlide(
-          imgPath: "images/onBoarding/slides/explore.png",
+          imgPath: "assets/images/onBoarding/slides/explore.png",
           title: "Explore",
           body: "See more and go there",
           linkText: "City illustrations by Storyset",
           link: "https://storyset.com/city"),
       _generateSlide(
-          imgPath: "images/onBoarding/slides/play.png",
+          imgPath: "assets/images/onBoarding/slides/play.png",
           title: "Let's play!",
           body: "Enjoy! Start the journey below",
           linkText: "People illustrations by Storyset",
