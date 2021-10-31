@@ -1,5 +1,6 @@
 import '/import.dart';
 import '/widgets/signups/signup_form.dart';
+import '/widgets/signups/login_form.dart';
 
 class Signup extends StatelessWidget {
   const Signup({Key? key}) : super(key: key);
@@ -28,10 +29,10 @@ class Signup extends StatelessWidget {
                 backgroundColor: Colors.white),
             body: const TabBarView(
               children: [
-                // TODO:
+                // Signup
                 SignupForm(),
-                // TODO:
-                Icon(Icons.directions_transit),
+                // Login
+                LoginForm(),
               ],
             )));
   }

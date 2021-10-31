@@ -8,4 +8,11 @@ class HeaderStyles {
         fontSize: 28,
         fontWeight: FontWeight.bold);
   }
+
+  static TextStyle header2({Color? color}) {
+    return TextStyle(
+        color: color ?? const Color(0xff5c6360),
+        fontSize: 24,
+        fontWeight: FontWeight.bold);
+  }
 }
