@@ -1,6 +1,7 @@
 import 'package:flutter/rendering.dart';
 import '/import.dart';
 import '/widgets/forms/icon_form.dart';
+import '/widgets/buttons/icon_circle.dart';
 
 class SignupForm extends StatelessWidget {
   const SignupForm({Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class SignupForm extends StatelessWidget {
                     height: 55,
                     width: double.infinity,
                     child: Padding(
-                        padding: const EdgeInsets.all(0),
+                        padding: const EdgeInsets.only(left: 30, right: 30),
                         child: TextButton(
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
@@ -60,12 +61,23 @@ class SignupForm extends StatelessWidget {
                               "Get Started",
                               style: TextStyle(color: Colors.white),
                             )))),
+                const SizedBox(
+                  height: 40,
+                ),
+                const Text("Or Signup with",
+                    style:
+                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
+                const SizedBox(
+                  height: 20,
+                ),
                 Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text("aaaaaaaa") //your elements here
+                      IconCircle(
+                          icon: FontAwesomeIcons.google,
+                          iconColor: Theme.of(context).primaryColor)
                     ]),
               ],
             ),

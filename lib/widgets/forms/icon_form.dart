@@ -22,8 +22,8 @@ class IconForm extends StatelessWidget {
         color: Colors.white,
         boxShadow: const [
           BoxShadow(
-            offset: Offset(5, 5),
-            blurRadius: 20,
+            offset: Offset(2, 2),
+            blurRadius: 3,
             color: Colors.black12,
           ),
         ],
