@@ -2,6 +2,7 @@ import 'package:flutter/rendering.dart';
 import '/import.dart';
 import '/widgets/forms/icon_form.dart';
 import '/widgets/buttons/icon_circle.dart';
+import '/widgets/buttons/submit_button.dart';
 
 class SignupForm extends StatelessWidget {
   const SignupForm({Key? key}) : super(key: key);
@@ -43,24 +44,12 @@ class SignupForm extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 55,
                     width: double.infinity,
                     child: Padding(
-                        padding: const EdgeInsets.only(left: 30, right: 30),
-                        child: TextButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                              primary: Theme.of(context).primaryColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(30),
-                              ),
-                              elevation: 16,
-                            ),
-                            child: const Text(
-                              "Get Started",
-                              style: TextStyle(color: Colors.white),
-                            )))),
+                        padding: EdgeInsets.only(left: 30, right: 30),
+                        child: SubmitButton(text: "Get Started"))),
                 const SizedBox(
                   height: 40,
                 ),
