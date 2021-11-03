@@ -1,6 +1,7 @@
 import '/import.dart';
 import '/widgets/forms/icon_form.dart';
 import '/widgets/buttons/submit_button.dart';
+import '/pages/password_resets/request.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -46,6 +47,19 @@ class LoginForm extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const PasswordResetsRequest()),
+                      );
+                    },
+                    child: const Text("Forgot your password?",
+                        style: TextStyle(
+                          fontSize: 20,
+                        ))),
               ],
             ),
             // ),
