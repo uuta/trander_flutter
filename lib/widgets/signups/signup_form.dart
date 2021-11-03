@@ -15,6 +15,11 @@ class SignupForm extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                Padding(
+                  child: Image.asset('assets/images/stories/walking.png'),
+                  padding: const EdgeInsets.only(
+                      top: 20, bottom: 30, left: 20, right: 20),
+                ),
                 const SizedBox(height: 20),
                 IconForm(
                   label: "Name",
