@@ -1,6 +1,5 @@
 import '/import.dart';
 import '/widgets/forms/icon_form.dart';
-import '/widgets/buttons/icon_circle.dart';
 import '/widgets/buttons/submit_button.dart';
 
 class LoginForm extends StatelessWidget {
@@ -47,21 +46,6 @@ class LoginForm extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const Text("Or Login with",
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w500)),
-                const SizedBox(
-                  height: 20,
-                ),
-                Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconCircle(
-                          icon: FontAwesomeIcons.google,
-                          iconColor: Theme.of(context).primaryColor)
-                    ]),
               ],
             ),
             // ),
