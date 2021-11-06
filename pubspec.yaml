@@ -40,6 +40,9 @@ dependencies:
   flutter_form_builder: ^6.1.0+1
   decorated_icon: ^1.2.1
   font_awesome_flutter: ^9.2.0
+  http: ^0.13.4
+  flutter_appauth: ^1.1.0+2
+  flutter_secure_storage: ^4.2.1
 
 dev_dependencies:
   flutter_test:
