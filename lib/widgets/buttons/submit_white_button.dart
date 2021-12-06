@@ -1,10 +1,12 @@
 import '/import.dart';
 
-class SubmitButton extends StatelessWidget {
+class SubmitWhiteButton extends StatelessWidget {
   final String text;
   final Function()? onPressed;
+  final double? fontSize;
 
-  const SubmitButton({Key? key, required this.text, this.onPressed})
+  const SubmitWhiteButton(
+      {Key? key, required this.text, this.onPressed, this.fontSize})
       : super(key: key);
 
   @override
@@ -12,7 +14,7 @@ class SubmitButton extends StatelessWidget {
     return TextButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context).primaryColor,
+          primary: Theme.of(context).primaryColorLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
@@ -20,7 +22,7 @@ class SubmitButton extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white, fontSize: 18),
         ));
   }
 }

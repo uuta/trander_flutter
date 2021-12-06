@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.trander_flutter">
+    package="com.uuta.trander">
    <application
         android:label="trander_flutter"
         android:icon="@mipmap/ic_launcher">

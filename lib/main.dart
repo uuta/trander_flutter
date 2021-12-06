@@ -1,18 +1,24 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import '/import.dart';
-import 'package:introduction_screen/introduction_screen.dart';
-import 'widgets/slides.dart';
-import 'pages/signup.dart';
+import 'pages/on_boarding_page.dart';
+import 'widgets/profile_widget.dart';
+import '/models/controllers/auth0/auth0_controller.dart';
 
-void main() => runApp(const App());
+void main() {
+  runApp(ProviderScope(
+    child: App(),
+  ));
+}
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class App extends HookConsumerWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final auth0State = ref.watch(auth0NotifierProvider);
+    useEffect(() {
+      Future.microtask(() async {
+        ref.watch(auth0NotifierProvider.notifier).initAction();
+      });
+      return;
+    }, const []);
     return MaterialApp(
         title: 'Trander',
         theme: ThemeData(
@@ -24,74 +30,18 @@ class App extends StatelessWidget {
           disabledColor: const Color(0xff9b9b9b),
           fontFamily: 'Arial',
         ),
-        home: const MainPage());
-  }
-}
-
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
-  @override
-  _MainPageState createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  Slides slides = Slides();
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: Image.asset("assets/images/icons/logo.png", width: 200),
-          backgroundColor: Colors.white),
-      body: IntroductionScreen(
-        globalBackgroundColor: Colors.white,
-        pages: slides.generateSlides(),
-        showNextButton: true,
-        showSkipButton: false,
-        doneColor: Theme.of(context).primaryColorLight,
-        nextColor: Theme.of(context).primaryColorLight,
-        dotsDecorator:
-            DotsDecorator(activeColor: Theme.of(context).primaryColorLight),
-        skip: const Text("Skip"),
-        next: Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(
-                  color: Theme.of(context).primaryColorLight, width: 2)),
-          child: Center(
-            child: Icon(
-              Icons.navigate_next,
-              size: 30,
-              color: Theme.of(context).primaryColorLight,
-            ),
+        // home: const MainPage());
+        home: Scaffold(
+          appBar: AppBar(
+              title: Image.asset("assets/images/icons/logo.png", width: 200),
+              backgroundColor: Colors.white),
+          body: Center(
+            child: auth0State.isBusy
+                ? const CircularProgressIndicator()
+                : auth0State.isLoggedIn
+                    ? const ProfileWidget()
+                    : const OnBoardingPage(),
           ),
-        ),
-        done: Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(40),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.shade300,
-                    blurRadius: 40,
-                    offset: const Offset(4, 4))
-              ]),
-          child: const Center(
-            child: Icon(
-              Icons.done,
-              size: 30,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        onDone: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Signup()));
-        },
-      ),
-    );
+        ));
   }
 }
