@@ -1,14 +1,14 @@
 import '/import.dart';
-import '/widgets/buttons/submit_white_button.dart';
+import '/views/buttons/submit_white_button.dart';
 import '/models/controllers/auth0/auth0_controller.dart';
 
-class LoginWidget extends HookConsumerWidget {
-  const LoginWidget({Key? key}) : super(key: key);
+class LoginView extends HookConsumerWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Colors.white,
         body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -24,12 +24,12 @@ class LoginWidget extends HookConsumerWidget {
               ),
             ),
             const SizedBox(height: 20),
-            const Text(
+            Text(
               'Get started',
               style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                  color: Theme.of(context).primaryColor),
             ),
             const SizedBox(height: 50),
             SizedBox(

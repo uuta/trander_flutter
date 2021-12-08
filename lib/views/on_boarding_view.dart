@@ -1,10 +1,10 @@
 import '/import.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import '/widgets/slides.dart';
-import 'main_page.dart';
+import '/views/slides.dart';
+import '/models/controllers/auth0/auth0_controller.dart';
 
-class OnBoardingPage extends HookConsumerWidget {
-  const OnBoardingPage({Key? key}) : super(key: key);
+class OnBoardingView extends HookConsumerWidget {
+  const OnBoardingView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Slides slides = Slides();
@@ -55,8 +55,7 @@ class OnBoardingPage extends HookConsumerWidget {
           ),
         ),
         onDone: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const MainPage()));
+          ref.read(auth0NotifierProvider.notifier).login();
         },
       ),
     );

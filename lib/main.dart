@@ -1,6 +1,6 @@
 import '/import.dart';
-import 'pages/on_boarding_page.dart';
-import 'widgets/profile_widget.dart';
+import '/views/on_boarding_view.dart';
+import '/views/profile_view.dart';
 import '/models/controllers/auth0/auth0_controller.dart';
 
 void main() {
@@ -30,7 +30,6 @@ class App extends HookConsumerWidget {
           disabledColor: const Color(0xff9b9b9b),
           fontFamily: 'Arial',
         ),
-        // home: const MainPage());
         home: Scaffold(
           appBar: AppBar(
               title: Image.asset("assets/images/icons/logo.png", width: 200),
@@ -39,8 +38,8 @@ class App extends HookConsumerWidget {
             child: auth0State.isBusy
                 ? const CircularProgressIndicator()
                 : auth0State.isLoggedIn
-                    ? const ProfileWidget()
-                    : const OnBoardingPage(),
+                    ? const ProfileView()
+                    : const OnBoardingView(),
           ),
         ));
   }

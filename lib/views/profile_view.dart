@@ -1,8 +1,8 @@
 import '/import.dart';
 import '/models/controllers/auth0/auth0_controller.dart';
 
-class ProfileWidget extends HookConsumerWidget {
-  const ProfileWidget({Key? key}) : super(key: key);
+class ProfileView extends HookConsumerWidget {
+  const ProfileView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
