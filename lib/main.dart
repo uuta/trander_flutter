@@ -1,7 +1,8 @@
 import '/import.dart';
 import '/views/on_boarding_view.dart';
-import '/views/profile_view.dart';
+import 'views/index_view.dart';
 import '/models/controllers/auth0/auth0_controller.dart';
+import '/views/progresses/scaffold_progress.dart';
 
 void main() {
   runApp(ProviderScope(
@@ -20,27 +21,21 @@ class App extends HookConsumerWidget {
       return;
     }, const []);
     return MaterialApp(
-        title: 'Trander',
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: const Color(0xff3316F2),
-          primaryColorLight: const Color(0xff1CACBF),
-          primaryTextTheme:
-              const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
-          disabledColor: const Color(0xff9b9b9b),
-          fontFamily: 'Arial',
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-              title: Image.asset("assets/images/icons/logo.png", width: 200),
-              backgroundColor: Colors.white),
-          body: Center(
-            child: auth0State.isBusy
-                ? const CircularProgressIndicator()
-                : auth0State.isLoggedIn
-                    ? const ProfileView()
-                    : const OnBoardingView(),
-          ),
-        ));
+      title: 'Trander',
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: const Color(0xff3316F2),
+        primaryColorLight: const Color(0xff1CACBF),
+        primaryTextTheme:
+            const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
+        disabledColor: const Color(0xff9b9b9b),
+        fontFamily: 'Arial',
+      ),
+      home: auth0State.isBusy
+          ? const ScaffoldProgress()
+          : auth0State.isLoggedIn
+              ? const IndexView()
+              : const OnBoardingView(),
+    );
   }
 }

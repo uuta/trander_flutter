@@ -5,10 +5,14 @@ import '/models/controllers/auth0/auth0_controller.dart';
 
 class OnBoardingView extends HookConsumerWidget {
   const OnBoardingView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     Slides slides = Slides();
     return Scaffold(
+      appBar: AppBar(
+          title: Image.asset("assets/images/icons/logo.png", width: 200),
+          backgroundColor: Colors.white),
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white,
         pages: slides.generateSlides(),

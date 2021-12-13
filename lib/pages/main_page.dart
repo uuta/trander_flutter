@@ -1,7 +1,7 @@
 import '/import.dart';
 import '/models/controllers/auth0/auth0_controller.dart';
 import '/views/login_view.dart';
-import '/views/profile_view.dart';
+import '/views/index_view.dart';
 
 class MainPage extends HookConsumerWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class MainPage extends HookConsumerWidget {
         body: auth0State.isBusy
             ? const CircularProgressIndicator()
             : auth0State.isLoggedIn
-                ? const ProfileView()
+                ? const IndexView()
                 : const LoginView());
   }
 }
