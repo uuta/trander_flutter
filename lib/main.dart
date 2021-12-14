@@ -5,21 +5,26 @@ import '/models/controllers/auth0/auth0_controller.dart';
 import '/views/progresses/scaffold_progress.dart';
 
 void main() {
-  runApp(ProviderScope(
+  runApp(const ProviderScope(
     child: App(),
   ));
 }
 
 class App extends HookConsumerWidget {
+  const App({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0State = ref.watch(auth0NotifierProvider);
+    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+
     useEffect(() {
       Future.microtask(() async {
-        ref.watch(auth0NotifierProvider.notifier).initAction();
+        auth0Notifier.initAction();
       });
       return;
     }, const []);
+
     return MaterialApp(
       title: 'Trander',
       theme: ThemeData(

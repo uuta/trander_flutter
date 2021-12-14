@@ -1,8 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uuta.trander">
-   <application
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <application
         android:label="trander_flutter"
         android:icon="@mipmap/ic_launcher">
+        <!-- TODO: Hide API key -->
+        <meta-data
+          android:name="com.google.android.geo.API_KEY"
+          android:value="AIzaSyAcqtDRzXizxuI8ejthIrszBo5DS88mKN4" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

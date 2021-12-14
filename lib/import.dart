@@ -11,3 +11,7 @@ export 'package:flutter_secure_storage/flutter_secure_storage.dart';
 export 'package:riverpod/riverpod.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart';
 export 'package:flutter_hooks/flutter_hooks.dart';
+
+// Location
+export 'package:google_maps_flutter/google_maps_flutter.dart';
+export 'package:geolocator/geolocator.dart';

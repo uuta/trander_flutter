@@ -8,7 +8,9 @@ class OnBoardingView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
     Slides slides = Slides();
+
     return Scaffold(
       appBar: AppBar(
           title: Image.asset("assets/images/icons/logo.png", width: 200),
@@ -59,7 +61,7 @@ class OnBoardingView extends HookConsumerWidget {
           ),
         ),
         onDone: () {
-          ref.read(auth0NotifierProvider.notifier).login();
+          auth0Notifier.login();
         },
       ),
     );

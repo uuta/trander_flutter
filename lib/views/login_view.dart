@@ -7,6 +7,8 @@ class LoginView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final auth0Notifier = ref.read(auth0NotifierProvider.notifier);
+
     return Scaffold(
         backgroundColor: Colors.white,
         body: Center(
@@ -38,7 +40,7 @@ class LoginView extends HookConsumerWidget {
               child: SubmitWhiteButton(
                 text: 'Login',
                 onPressed: () {
-                  ref.read(auth0NotifierProvider.notifier).login();
+                  auth0Notifier.login();
                 },
               ),
             ),

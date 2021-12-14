@@ -107,7 +107,7 @@ class _$_NavigationState
     implements _NavigationState {
   const _$_NavigationState({this.selectedIndex = 0});
 
-  @JsonKey(defaultValue: 0)
+  @JsonKey()
   @override
   final int selectedIndex;
 

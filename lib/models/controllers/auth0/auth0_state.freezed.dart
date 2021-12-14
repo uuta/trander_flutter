@@ -154,10 +154,10 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
       this.data,
       this.errorMessage});
 
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isBusy;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isLoggedIn;
   @override
