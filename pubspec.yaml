@@ -50,6 +50,8 @@ dependencies:
   google_maps_flutter: ^2.1.1
   geolocator: ^8.0.0
   geocoding: ^2.0.1
+  flutter_dotenv: ^5.0.2
+  dio: ^4.0.4
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +83,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - .env
     - assets/images/icons/
     - assets/images/stories/
     - assets/images/onBoarding/slides/
