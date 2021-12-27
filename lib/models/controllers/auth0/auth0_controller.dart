@@ -25,8 +25,11 @@ class Auth0Controller extends StateNotifier<Auth0State> {
       }
 
       // Call init action repository
-      final data = await repository.initAction(storedRefreshToken);
-      state = state.copyWith(isBusy: false, isLoggedIn: true, data: data);
+      final res = await repository.initAction(storedRefreshToken);
+      final data = repository.parseIdToken(res.idToken);
+
+      state = state.copyWith(
+          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       logout();
@@ -36,8 +39,10 @@ class Auth0Controller extends StateNotifier<Auth0State> {
   Future<void> login() async {
     state = state.copyWith(isBusy: true);
     try {
-      final data = await repository.login();
-      state = state.copyWith(isBusy: false, isLoggedIn: true, data: data);
+      final res = await repository.login();
+      final data = repository.parseIdToken(res.idToken);
+      state = state.copyWith(
+          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(

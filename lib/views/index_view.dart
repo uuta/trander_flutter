@@ -15,13 +15,13 @@ class IndexView extends HookConsumerWidget {
 
     const List<Widget> _pageList = [
       LocationView(),
-      LogoutView(),
+      LocationView(),
       LogoutView(),
     ];
 
     return Scaffold(
         appBar: AppBar(
-            title: Image.asset("assets/images/icons/logo.png", width: 200),
+            title: Image.asset("assets/images/icons/logo.png", width: 160),
             backgroundColor: Colors.white),
         body: _pageList[navigationState.selectedIndex],
         bottomNavigationBar: const ThreeBottomBar());

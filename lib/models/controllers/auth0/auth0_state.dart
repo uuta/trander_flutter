@@ -9,6 +9,7 @@ class Auth0State with _$Auth0State {
     @Default(false) bool isBusy,
     @Default(false) bool isLoggedIn,
     Map? data,
+    String? idToken,
     String? errorMessage,
   }) = _Auth0State;
 }

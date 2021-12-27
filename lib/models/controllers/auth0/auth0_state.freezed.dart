@@ -21,11 +21,13 @@ class _$Auth0StateTearOff {
       {bool isBusy = false,
       bool isLoggedIn = false,
       Map<dynamic, dynamic>? data,
+      String? idToken,
       String? errorMessage}) {
     return _Auth0State(
       isBusy: isBusy,
       isLoggedIn: isLoggedIn,
       data: data,
+      idToken: idToken,
       errorMessage: errorMessage,
     );
   }
@@ -39,6 +41,7 @@ mixin _$Auth0State {
   bool get isBusy => throw _privateConstructorUsedError;
   bool get isLoggedIn => throw _privateConstructorUsedError;
   Map<dynamic, dynamic>? get data => throw _privateConstructorUsedError;
+  String? get idToken => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -55,6 +58,7 @@ abstract class $Auth0StateCopyWith<$Res> {
       {bool isBusy,
       bool isLoggedIn,
       Map<dynamic, dynamic>? data,
+      String? idToken,
       String? errorMessage});
 }
 
@@ -71,6 +75,7 @@ class _$Auth0StateCopyWithImpl<$Res> implements $Auth0StateCopyWith<$Res> {
     Object? isBusy = freezed,
     Object? isLoggedIn = freezed,
     Object? data = freezed,
+    Object? idToken = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -86,6 +91,10 @@ class _$Auth0StateCopyWithImpl<$Res> implements $Auth0StateCopyWith<$Res> {
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<dynamic, dynamic>?,
+      idToken: idToken == freezed
+          ? _value.idToken
+          : idToken // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -104,6 +113,7 @@ abstract class _$Auth0StateCopyWith<$Res> implements $Auth0StateCopyWith<$Res> {
       {bool isBusy,
       bool isLoggedIn,
       Map<dynamic, dynamic>? data,
+      String? idToken,
       String? errorMessage});
 }
 
@@ -122,6 +132,7 @@ class __$Auth0StateCopyWithImpl<$Res> extends _$Auth0StateCopyWithImpl<$Res>
     Object? isBusy = freezed,
     Object? isLoggedIn = freezed,
     Object? data = freezed,
+    Object? idToken = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_Auth0State(
@@ -137,6 +148,10 @@ class __$Auth0StateCopyWithImpl<$Res> extends _$Auth0StateCopyWithImpl<$Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Map<dynamic, dynamic>?,
+      idToken: idToken == freezed
+          ? _value.idToken
+          : idToken // ignore: cast_nullable_to_non_nullable
+              as String?,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -152,6 +167,7 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
       {this.isBusy = false,
       this.isLoggedIn = false,
       this.data,
+      this.idToken,
       this.errorMessage});
 
   @JsonKey()
@@ -163,11 +179,13 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
   @override
   final Map<dynamic, dynamic>? data;
   @override
+  final String? idToken;
+  @override
   final String? errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Auth0State(isBusy: $isBusy, isLoggedIn: $isLoggedIn, data: $data, errorMessage: $errorMessage)';
+    return 'Auth0State(isBusy: $isBusy, isLoggedIn: $isLoggedIn, data: $data, idToken: $idToken, errorMessage: $errorMessage)';
   }
 
   @override
@@ -178,6 +196,7 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
       ..add(DiagnosticsProperty('isBusy', isBusy))
       ..add(DiagnosticsProperty('isLoggedIn', isLoggedIn))
       ..add(DiagnosticsProperty('data', data))
+      ..add(DiagnosticsProperty('idToken', idToken))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -190,6 +209,7 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
             const DeepCollectionEquality()
                 .equals(other.isLoggedIn, isLoggedIn) &&
             const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.idToken, idToken) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -200,6 +220,7 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
       const DeepCollectionEquality().hash(isBusy),
       const DeepCollectionEquality().hash(isLoggedIn),
       const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(idToken),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -213,6 +234,7 @@ abstract class _Auth0State implements Auth0State {
       {bool isBusy,
       bool isLoggedIn,
       Map<dynamic, dynamic>? data,
+      String? idToken,
       String? errorMessage}) = _$_Auth0State;
 
   @override
@@ -221,6 +243,8 @@ abstract class _Auth0State implements Auth0State {
   bool get isLoggedIn;
   @override
   Map<dynamic, dynamic>? get data;
+  @override
+  String? get idToken;
   @override
   String? get errorMessage;
   @override

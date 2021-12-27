@@ -4,7 +4,9 @@ import 'views/index_view.dart';
 import '/models/controllers/auth0/auth0_controller.dart';
 import '/views/progresses/scaffold_progress.dart';
 
-void main() {
+Future<void> main() async {
+  await dotenv.load(fileName: "assets/.env");
+
   runApp(const ProviderScope(
     child: App(),
   ));
