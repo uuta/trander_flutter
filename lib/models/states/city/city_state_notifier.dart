@@ -1,15 +1,15 @@
 import '/import.dart';
 import '/models/models.dart';
 import '/models/repositories/city/city_repository.dart';
-import '/models/controllers/city/city_result_state.dart';
+import '/models/states/city/city_result_state.dart';
 
 final cityNotifierProvider =
-    StateNotifierProvider<CityController, CityResultState>(
-  (ref) => CityController(),
+    StateNotifierProvider<CityStateNotifier, CityResultState>(
+  (ref) => CityStateNotifier(),
 );
 
-class CityController extends StateNotifier<CityResultState> {
-  CityController() : super(const CityResultState());
+class CityStateNotifier extends StateNotifier<CityResultState> {
+  CityStateNotifier() : super(const CityResultState());
 
   final repository = CityRepository();
 

@@ -22,3 +22,6 @@ export 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // dio
 export 'package:dio/dio.dart';
+
+// models
+export '/models/models.dart';

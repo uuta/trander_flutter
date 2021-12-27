@@ -4,12 +4,12 @@ import '/models/repositories/location/location_repository.dart';
 import '/models/models.dart';
 
 final locationNotifierProvider =
-    StateNotifierProvider<LocationController, LocationState>(
-  (ref) => LocationController(),
+    StateNotifierProvider<LocationStateNotifier, LocationState>(
+  (ref) => LocationStateNotifier(),
 );
 
-class LocationController extends StateNotifier<LocationState> {
-  LocationController() : super(LocationState(mapController: Completer()));
+class LocationStateNotifier extends StateNotifier<LocationState> {
+  LocationStateNotifier() : super(LocationState(mapController: Completer()));
 
   final repository = LocationRepository();
 
@@ -45,9 +45,6 @@ class LocationController extends StateNotifier<LocationState> {
     _markers.add(Marker(
         markerId: MarkerId(state.newLocation.toString()),
         position: state.newLocation,
-        // TODO: fix it up late
-        infoWindow:
-            const InfoWindow(title: 'Remember Here', snippet: 'good place'),
         icon: BitmapDescriptor.defaultMarker));
     state = state.copyWith(markers: _markers);
 

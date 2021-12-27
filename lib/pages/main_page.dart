@@ -1,5 +1,4 @@
 import '/import.dart';
-import '/models/controllers/auth0/auth0_controller.dart';
 import '/views/login_view.dart';
 import '/views/index_view.dart';
 

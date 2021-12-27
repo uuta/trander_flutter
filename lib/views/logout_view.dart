@@ -1,5 +1,4 @@
 import '/import.dart';
-import '/models/controllers/auth0/auth0_controller.dart';
 
 class LogoutView extends HookConsumerWidget {
   const LogoutView({Key? key}) : super(key: key);

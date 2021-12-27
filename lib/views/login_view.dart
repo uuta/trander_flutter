@@ -1,6 +1,5 @@
 import '/import.dart';
 import '/views/buttons/submit_white_button.dart';
-import '/models/controllers/auth0/auth0_controller.dart';
 
 class LoginView extends HookConsumerWidget {
   const LoginView({Key? key}) : super(key: key);

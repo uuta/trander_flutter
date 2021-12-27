@@ -1,14 +1,14 @@
 import '/import.dart';
-import '/models/controllers/auth0/auth0_state.dart';
+import '/models/states/auth0/auth0_state.dart';
 import '/models/repositories/auth0/auth0_repository.dart';
 
 final auth0NotifierProvider =
-    StateNotifierProvider<Auth0Controller, Auth0State>(
-  (ref) => Auth0Controller(),
+    StateNotifierProvider<Auth0StateNotifier, Auth0State>(
+  (ref) => Auth0StateNotifier(),
 );
 
-class Auth0Controller extends StateNotifier<Auth0State> {
-  Auth0Controller() : super(const Auth0State());
+class Auth0StateNotifier extends StateNotifier<Auth0State> {
+  Auth0StateNotifier() : super(const Auth0State());
 
   final repository = Auth0Repository();
 

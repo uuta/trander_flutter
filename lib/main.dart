@@ -1,7 +1,6 @@
 import '/import.dart';
 import '/views/on_boarding_view.dart';
 import 'views/index_view.dart';
-import '/models/controllers/auth0/auth0_controller.dart';
 import '/views/progresses/scaffold_progress.dart';
 
 Future<void> main() async {

@@ -1,6 +1,4 @@
 import '/import.dart';
-// models
-import '/models/controllers/navigation/navigation_controller.dart';
 // views
 import '/views/bottom_bars/three_bottom_bar.dart';
 import '/views/logout_view.dart';
