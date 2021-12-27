@@ -8,11 +8,11 @@ class LocationView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locationState = ref.read(locationNotifierProvider);
+    final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
     final cityState = ref.watch(cityNotifierProvider);
     final cityNotifier = ref.watch(cityNotifierProvider.notifier);
-    final auth0State = ref.read(auth0NotifierProvider);
+    final auth0State = ref.watch(auth0NotifierProvider);
 
     useEffect(() {
       Future.microtask(() async {
@@ -47,12 +47,19 @@ class LocationView extends HookConsumerWidget {
                     left: 30.0,
                     right: 30.0,
                     bottom: 100.0,
-                    child: Text(cityState.toString()))
+                    child: cityState.isBusy
+                        ? const Center(child: CircularProgressIndicator())
+                        : Text(cityState.toString()))
               ]),
         floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              // locationNotifier.getNewLocation();
-              cityNotifier.getCity(auth0State.idToken);
+            onPressed: () async {
+              await cityNotifier.getCity(
+                  auth0State.idToken, locationState.currentLocation);
+
+              // TODO: error handling
+              cityState.data != null
+                  ? await locationNotifier.getNewLocation(cityState.data)
+                  : const Text('Push it again');
             },
             child: const Icon(Icons.location_searching)));
   }

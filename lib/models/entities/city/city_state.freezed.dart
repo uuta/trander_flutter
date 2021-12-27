@@ -32,8 +32,8 @@ class _$CityStateTearOff {
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
       @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double? lat,
-      @JsonKey(name: 'lng') double? lng,
+      @JsonKey(name: 'lat') double lat = 0,
+      @JsonKey(name: 'lng') double lng = 0,
       @JsonKey(name: 'placeId') String? placeId,
       @JsonKey(name: 'ratingStar') String? ratingStar}) {
     return _CityState(
@@ -85,9 +85,9 @@ mixin _$CityState {
   @JsonKey(name: 'priceLevel')
   int? get priceLevel => throw _privateConstructorUsedError;
   @JsonKey(name: 'lat')
-  double? get lat => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
   @JsonKey(name: 'lng')
-  double? get lng => throw _privateConstructorUsedError;
+  double get lng => throw _privateConstructorUsedError;
   @JsonKey(name: 'placeId')
   String? get placeId => throw _privateConstructorUsedError;
   @JsonKey(name: 'ratingStar')
@@ -114,8 +114,8 @@ abstract class $CityStateCopyWith<$Res> {
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
       @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double? lat,
-      @JsonKey(name: 'lng') double? lng,
+      @JsonKey(name: 'lat') double lat,
+      @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'placeId') String? placeId,
       @JsonKey(name: 'ratingStar') String? ratingStar});
 }
@@ -189,11 +189,11 @@ class _$CityStateCopyWithImpl<$Res> implements $CityStateCopyWith<$Res> {
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       lng: lng == freezed
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       placeId: placeId == freezed
           ? _value.placeId
           : placeId // ignore: cast_nullable_to_non_nullable
@@ -223,8 +223,8 @@ abstract class _$CityStateCopyWith<$Res> implements $CityStateCopyWith<$Res> {
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
       @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double? lat,
-      @JsonKey(name: 'lng') double? lng,
+      @JsonKey(name: 'lat') double lat,
+      @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'placeId') String? placeId,
       @JsonKey(name: 'ratingStar') String? ratingStar});
 }
@@ -299,11 +299,11 @@ class __$CityStateCopyWithImpl<$Res> extends _$CityStateCopyWithImpl<$Res>
       lat: lat == freezed
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       lng: lng == freezed
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       placeId: placeId == freezed
           ? _value.placeId
           : placeId // ignore: cast_nullable_to_non_nullable
@@ -330,8 +330,8 @@ class _$_CityState implements _CityState {
       @JsonKey(name: 'vicinity') this.vicinity,
       @JsonKey(name: 'userRatingsTotal') this.userRatingsTotal,
       @JsonKey(name: 'priceLevel') this.priceLevel,
-      @JsonKey(name: 'lat') this.lat,
-      @JsonKey(name: 'lng') this.lng,
+      @JsonKey(name: 'lat') this.lat = 0,
+      @JsonKey(name: 'lng') this.lng = 0,
       @JsonKey(name: 'placeId') this.placeId,
       @JsonKey(name: 'ratingStar') this.ratingStar});
 
@@ -370,10 +370,10 @@ class _$_CityState implements _CityState {
   final int? priceLevel;
   @override
   @JsonKey(name: 'lat')
-  final double? lat;
+  final double lat;
   @override
   @JsonKey(name: 'lng')
-  final double? lng;
+  final double lng;
   @override
   @JsonKey(name: 'placeId')
   final String? placeId;
@@ -452,8 +452,8 @@ abstract class _CityState implements CityState {
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
       @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double? lat,
-      @JsonKey(name: 'lng') double? lng,
+      @JsonKey(name: 'lat') double lat,
+      @JsonKey(name: 'lng') double lng,
       @JsonKey(name: 'placeId') String? placeId,
       @JsonKey(name: 'ratingStar') String? ratingStar}) = _$_CityState;
 
@@ -492,10 +492,10 @@ abstract class _CityState implements CityState {
   int? get priceLevel;
   @override
   @JsonKey(name: 'lat')
-  double? get lat;
+  double get lat;
   @override
   @JsonKey(name: 'lng')
-  double? get lng;
+  double get lng;
   @override
   @JsonKey(name: 'placeId')
   String? get placeId;

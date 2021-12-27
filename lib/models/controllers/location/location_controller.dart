@@ -1,7 +1,7 @@
 import '/import.dart';
 import 'dart:async';
-import '/models/controllers/location/location_state.dart';
 import '/models/repositories/location/location_repository.dart';
+import '/models/models.dart';
 
 final locationNotifierProvider =
     StateNotifierProvider<LocationController, LocationState>(
@@ -30,13 +30,13 @@ class LocationController extends StateNotifier<LocationState> {
     }
   }
 
-  Future<void> getNewLocation() async {
-    await _setNewLocation();
+  Future<void> getNewLocation(CityState? data) async {
+    await _setNewLocation(data);
     await _setMaker();
   }
 
-  Future<void> _setNewLocation() async {
-    state = state.copyWith(newLocation: const LatLng(35.658034, 139.701636));
+  Future<void> _setNewLocation(CityState? data) async {
+    state = state.copyWith(newLocation: LatLng(data!.lat, data.lng));
   }
 
   Future<void> _setMaker() async {
@@ -45,15 +45,16 @@ class LocationController extends StateNotifier<LocationState> {
     _markers.add(Marker(
         markerId: MarkerId(state.newLocation.toString()),
         position: state.newLocation,
+        // TODO: fix it up late
         infoWindow:
             const InfoWindow(title: 'Remember Here', snippet: 'good place'),
         icon: BitmapDescriptor.defaultMarker));
     state = state.copyWith(markers: _markers);
 
     // Shift camera position
-    CameraPosition _kLake =
+    final CameraPosition _newPosition =
         CameraPosition(target: state.newLocation, zoom: 14.4746);
     final GoogleMapController controller = await state.mapController.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
+    controller.animateCamera(CameraUpdate.newCameraPosition(_newPosition));
   }
 }

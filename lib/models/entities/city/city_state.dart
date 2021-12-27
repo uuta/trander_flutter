@@ -16,8 +16,8 @@ class CityState with _$CityState {
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
       @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double? lat,
-      @JsonKey(name: 'lng') double? lng,
+      @JsonKey(name: 'lat') @Default(0) double lat,
+      @JsonKey(name: 'lng') @Default(0) double lng,
       @JsonKey(name: 'placeId') String? placeId,
       @JsonKey(name: 'ratingStar') String? ratingStar}) = _CityState;
 
