@@ -1,6 +1,6 @@
 import '/import.dart';
-import '/views/on_boarding_view.dart';
-import 'views/index_view.dart';
+import 'pages/on_boarding_page.dart';
+import 'pages/index_page.dart';
 import '/views/progresses/scaffold_progress.dart';
 
 Future<void> main() async {
@@ -40,8 +40,8 @@ class App extends HookConsumerWidget {
       home: auth0State.isBusy
           ? const ScaffoldProgress()
           : auth0State.isLoggedIn
-              ? const IndexView()
-              : const OnBoardingView(),
+              ? const IndexPage()
+              : const OnBoardingPage(),
     );
   }
 }

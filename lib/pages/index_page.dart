@@ -4,8 +4,8 @@ import '/views/bottom_bars/three_bottom_bar.dart';
 import '/views/logout_view.dart';
 import '/views/location_view.dart';
 
-class IndexView extends HookConsumerWidget {
-  const IndexView({Key? key}) : super(key: key);
+class IndexPage extends HookConsumerWidget {
+  const IndexPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

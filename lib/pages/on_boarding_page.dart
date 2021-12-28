@@ -2,8 +2,8 @@ import '/import.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import '/views/slides.dart';
 
-class OnBoardingView extends HookConsumerWidget {
-  const OnBoardingView({Key? key}) : super(key: key);
+class OnBoardingPage extends HookConsumerWidget {
+  const OnBoardingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

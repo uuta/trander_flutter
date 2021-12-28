@@ -50,13 +50,8 @@ class LocationView extends HookConsumerWidget {
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              await cityNotifier.getCity(
-                  auth0State.idToken, locationState.currentLocation);
-
-              // TODO: error handling
-              cityState.data != null
-                  ? await locationNotifier.getNewLocation(cityState.data)
-                  : const Text('Push it again');
+              LocationViewController().getCity(auth0State, locationState,
+                  cityNotifier, locationNotifier, cityState);
             },
             child: const Icon(Icons.location_searching)));
   }

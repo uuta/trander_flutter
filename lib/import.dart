@@ -25,3 +25,6 @@ export 'package:dio/dio.dart';
 
 // models
 export '/models/models.dart';
+
+// controllers
+export '/controllers/controllers.dart';
