@@ -8,6 +8,7 @@ class CityResultState with _$CityResultState {
   const factory CityResultState({
     @Default(false) bool isBusy,
     CityState? data,
+    @Default(false) bool isError,
     String? errorMessage,
   }) = _CityResultState;
 }

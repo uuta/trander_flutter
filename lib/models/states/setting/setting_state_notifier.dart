@@ -13,14 +13,16 @@ class SettingResultStateNotifier extends StateNotifier<SettingResultState> {
   final settingRepository = SettingRepository();
 
   Future<void> getSetting(String? idToken) async {
-    state = state.copyWith(isBusy: true, errorMessage: '');
+    state = state.copyWith(isBusy: true, isError: false, errorMessage: '');
     try {
       final res = await settingRepository.getSetting(idToken);
-      // TODO: if response data is empty?
-      state = state.copyWith(
-          isBusy: false, data: SettingState.fromJson(res.data['data']));
+      ((res.data ?? '') != '')
+          ? state = state.copyWith(
+              isBusy: false, data: SettingState.fromJson(res.data['data']))
+          : state = state.copyWith(isBusy: false);
     } on Exception catch (e) {
-      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+      state = state.copyWith(
+          isBusy: false, isError: true, errorMessage: e.toString());
     }
   }
 }

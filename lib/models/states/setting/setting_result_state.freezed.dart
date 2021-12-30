@@ -18,10 +18,14 @@ class _$SettingResultStateTearOff {
   const _$SettingResultStateTearOff();
 
   _SettingResultState call(
-      {bool isBusy = false, SettingState? data, String? errorMessage}) {
+      {bool isBusy = false,
+      SettingState? data,
+      bool isError = false,
+      String? errorMessage}) {
     return _SettingResultState(
       isBusy: isBusy,
       data: data,
+      isError: isError,
       errorMessage: errorMessage,
     );
   }
@@ -34,6 +38,7 @@ const $SettingResultState = _$SettingResultStateTearOff();
 mixin _$SettingResultState {
   bool get isBusy => throw _privateConstructorUsedError;
   SettingState? get data => throw _privateConstructorUsedError;
+  bool get isError => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -46,7 +51,8 @@ abstract class $SettingResultStateCopyWith<$Res> {
   factory $SettingResultStateCopyWith(
           SettingResultState value, $Res Function(SettingResultState) then) =
       _$SettingResultStateCopyWithImpl<$Res>;
-  $Res call({bool isBusy, SettingState? data, String? errorMessage});
+  $Res call(
+      {bool isBusy, SettingState? data, bool isError, String? errorMessage});
 
   $SettingStateCopyWith<$Res>? get data;
 }
@@ -64,6 +70,7 @@ class _$SettingResultStateCopyWithImpl<$Res>
   $Res call({
     Object? isBusy = freezed,
     Object? data = freezed,
+    Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -75,6 +82,10 @@ class _$SettingResultStateCopyWithImpl<$Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SettingState?,
+      isError: isError == freezed
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -101,7 +112,8 @@ abstract class _$SettingResultStateCopyWith<$Res>
           _SettingResultState value, $Res Function(_SettingResultState) then) =
       __$SettingResultStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isBusy, SettingState? data, String? errorMessage});
+  $Res call(
+      {bool isBusy, SettingState? data, bool isError, String? errorMessage});
 
   @override
   $SettingStateCopyWith<$Res>? get data;
@@ -122,6 +134,7 @@ class __$SettingResultStateCopyWithImpl<$Res>
   $Res call({
     Object? isBusy = freezed,
     Object? data = freezed,
+    Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_SettingResultState(
@@ -133,6 +146,10 @@ class __$SettingResultStateCopyWithImpl<$Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SettingState?,
+      isError: isError == freezed
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -147,19 +164,25 @@ class _$_SettingResultState
     with DiagnosticableTreeMixin
     implements _SettingResultState {
   const _$_SettingResultState(
-      {this.isBusy = false, this.data, this.errorMessage});
+      {this.isBusy = false,
+      this.data,
+      this.isError = false,
+      this.errorMessage});
 
   @JsonKey()
   @override
   final bool isBusy;
   @override
   final SettingState? data;
+  @JsonKey()
+  @override
+  final bool isError;
   @override
   final String? errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingResultState(isBusy: $isBusy, data: $data, errorMessage: $errorMessage)';
+    return 'SettingResultState(isBusy: $isBusy, data: $data, isError: $isError, errorMessage: $errorMessage)';
   }
 
   @override
@@ -169,6 +192,7 @@ class _$_SettingResultState
       ..add(DiagnosticsProperty('type', 'SettingResultState'))
       ..add(DiagnosticsProperty('isBusy', isBusy))
       ..add(DiagnosticsProperty('data', data))
+      ..add(DiagnosticsProperty('isError', isError))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -179,6 +203,7 @@ class _$_SettingResultState
             other is _SettingResultState &&
             const DeepCollectionEquality().equals(other.isBusy, isBusy) &&
             const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.isError, isError) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -188,6 +213,7 @@ class _$_SettingResultState
       runtimeType,
       const DeepCollectionEquality().hash(isBusy),
       const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(isError),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -200,12 +226,15 @@ abstract class _SettingResultState implements SettingResultState {
   const factory _SettingResultState(
       {bool isBusy,
       SettingState? data,
+      bool isError,
       String? errorMessage}) = _$_SettingResultState;
 
   @override
   bool get isBusy;
   @override
   SettingState? get data;
+  @override
+  bool get isError;
   @override
   String? get errorMessage;
   @override

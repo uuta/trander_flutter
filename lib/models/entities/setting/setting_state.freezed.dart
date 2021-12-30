@@ -22,9 +22,9 @@ class _$SettingStateTearOff {
   const _$SettingStateTearOff();
 
   _SettingState call(
-      {@JsonKey(name: 'minDistance') String minDistance = 0,
-      @JsonKey(name: 'maxDistance') String maxDistance = 100,
-      @JsonKey(name: 'directionType') String? directionType}) {
+      {@JsonKey(name: 'minDistance') int minDistance = 0,
+      @JsonKey(name: 'maxDistance') int maxDistance = 100,
+      @JsonKey(name: 'directionType') int directionType = 0}) {
     return _SettingState(
       minDistance: minDistance,
       maxDistance: maxDistance,
@@ -43,11 +43,11 @@ const $SettingState = _$SettingStateTearOff();
 /// @nodoc
 mixin _$SettingState {
   @JsonKey(name: 'minDistance')
-  String get minDistance => throw _privateConstructorUsedError;
+  int get minDistance => throw _privateConstructorUsedError;
   @JsonKey(name: 'maxDistance')
-  String get maxDistance => throw _privateConstructorUsedError;
+  int get maxDistance => throw _privateConstructorUsedError;
   @JsonKey(name: 'directionType')
-  String? get directionType => throw _privateConstructorUsedError;
+  int get directionType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,9 +61,9 @@ abstract class $SettingStateCopyWith<$Res> {
           SettingState value, $Res Function(SettingState) then) =
       _$SettingStateCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'minDistance') String minDistance,
-      @JsonKey(name: 'maxDistance') String maxDistance,
-      @JsonKey(name: 'directionType') String? directionType});
+      {@JsonKey(name: 'minDistance') int minDistance,
+      @JsonKey(name: 'maxDistance') int maxDistance,
+      @JsonKey(name: 'directionType') int directionType});
 }
 
 /// @nodoc
@@ -84,15 +84,15 @@ class _$SettingStateCopyWithImpl<$Res> implements $SettingStateCopyWith<$Res> {
       minDistance: minDistance == freezed
           ? _value.minDistance
           : minDistance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       maxDistance: maxDistance == freezed
           ? _value.maxDistance
           : maxDistance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       directionType: directionType == freezed
           ? _value.directionType
           : directionType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int,
     ));
   }
 }
@@ -105,9 +105,9 @@ abstract class _$SettingStateCopyWith<$Res>
       __$SettingStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'minDistance') String minDistance,
-      @JsonKey(name: 'maxDistance') String maxDistance,
-      @JsonKey(name: 'directionType') String? directionType});
+      {@JsonKey(name: 'minDistance') int minDistance,
+      @JsonKey(name: 'maxDistance') int maxDistance,
+      @JsonKey(name: 'directionType') int directionType});
 }
 
 /// @nodoc
@@ -130,15 +130,15 @@ class __$SettingStateCopyWithImpl<$Res> extends _$SettingStateCopyWithImpl<$Res>
       minDistance: minDistance == freezed
           ? _value.minDistance
           : minDistance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       maxDistance: maxDistance == freezed
           ? _value.maxDistance
           : maxDistance // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       directionType: directionType == freezed
           ? _value.directionType
           : directionType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int,
     ));
   }
 }
@@ -149,20 +149,20 @@ class _$_SettingState implements _SettingState {
   const _$_SettingState(
       {@JsonKey(name: 'minDistance') this.minDistance = 0,
       @JsonKey(name: 'maxDistance') this.maxDistance = 100,
-      @JsonKey(name: 'directionType') this.directionType});
+      @JsonKey(name: 'directionType') this.directionType = 0});
 
   factory _$_SettingState.fromJson(Map<String, dynamic> json) =>
       _$$_SettingStateFromJson(json);
 
   @override
   @JsonKey(name: 'minDistance')
-  final String minDistance;
+  final int minDistance;
   @override
   @JsonKey(name: 'maxDistance')
-  final String maxDistance;
+  final int maxDistance;
   @override
   @JsonKey(name: 'directionType')
-  final String? directionType;
+  final int directionType;
 
   @override
   String toString() {
@@ -202,22 +202,22 @@ class _$_SettingState implements _SettingState {
 
 abstract class _SettingState implements SettingState {
   const factory _SettingState(
-      {@JsonKey(name: 'minDistance') String minDistance,
-      @JsonKey(name: 'maxDistance') String maxDistance,
-      @JsonKey(name: 'directionType') String? directionType}) = _$_SettingState;
+      {@JsonKey(name: 'minDistance') int minDistance,
+      @JsonKey(name: 'maxDistance') int maxDistance,
+      @JsonKey(name: 'directionType') int directionType}) = _$_SettingState;
 
   factory _SettingState.fromJson(Map<String, dynamic> json) =
       _$_SettingState.fromJson;
 
   @override
   @JsonKey(name: 'minDistance')
-  String get minDistance;
+  int get minDistance;
   @override
   @JsonKey(name: 'maxDistance')
-  String get maxDistance;
+  int get maxDistance;
   @override
   @JsonKey(name: 'directionType')
-  String? get directionType;
+  int get directionType;
   @override
   @JsonKey(ignore: true)
   _$SettingStateCopyWith<_SettingState> get copyWith =>

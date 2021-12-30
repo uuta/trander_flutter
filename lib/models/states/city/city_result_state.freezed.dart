@@ -18,10 +18,14 @@ class _$CityResultStateTearOff {
   const _$CityResultStateTearOff();
 
   _CityResultState call(
-      {bool isBusy = false, CityState? data, String? errorMessage}) {
+      {bool isBusy = false,
+      CityState? data,
+      bool isError = false,
+      String? errorMessage}) {
     return _CityResultState(
       isBusy: isBusy,
       data: data,
+      isError: isError,
       errorMessage: errorMessage,
     );
   }
@@ -34,6 +38,7 @@ const $CityResultState = _$CityResultStateTearOff();
 mixin _$CityResultState {
   bool get isBusy => throw _privateConstructorUsedError;
   CityState? get data => throw _privateConstructorUsedError;
+  bool get isError => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -46,7 +51,7 @@ abstract class $CityResultStateCopyWith<$Res> {
   factory $CityResultStateCopyWith(
           CityResultState value, $Res Function(CityResultState) then) =
       _$CityResultStateCopyWithImpl<$Res>;
-  $Res call({bool isBusy, CityState? data, String? errorMessage});
+  $Res call({bool isBusy, CityState? data, bool isError, String? errorMessage});
 
   $CityStateCopyWith<$Res>? get data;
 }
@@ -64,6 +69,7 @@ class _$CityResultStateCopyWithImpl<$Res>
   $Res call({
     Object? isBusy = freezed,
     Object? data = freezed,
+    Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -75,6 +81,10 @@ class _$CityResultStateCopyWithImpl<$Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as CityState?,
+      isError: isError == freezed
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -101,7 +111,7 @@ abstract class _$CityResultStateCopyWith<$Res>
           _CityResultState value, $Res Function(_CityResultState) then) =
       __$CityResultStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isBusy, CityState? data, String? errorMessage});
+  $Res call({bool isBusy, CityState? data, bool isError, String? errorMessage});
 
   @override
   $CityStateCopyWith<$Res>? get data;
@@ -122,6 +132,7 @@ class __$CityResultStateCopyWithImpl<$Res>
   $Res call({
     Object? isBusy = freezed,
     Object? data = freezed,
+    Object? isError = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_CityResultState(
@@ -133,6 +144,10 @@ class __$CityResultStateCopyWithImpl<$Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as CityState?,
+      isError: isError == freezed
+          ? _value.isError
+          : isError // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -144,19 +159,26 @@ class __$CityResultStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CityResultState implements _CityResultState {
-  const _$_CityResultState({this.isBusy = false, this.data, this.errorMessage});
+  const _$_CityResultState(
+      {this.isBusy = false,
+      this.data,
+      this.isError = false,
+      this.errorMessage});
 
   @JsonKey()
   @override
   final bool isBusy;
   @override
   final CityState? data;
+  @JsonKey()
+  @override
+  final bool isError;
   @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'CityResultState(isBusy: $isBusy, data: $data, errorMessage: $errorMessage)';
+    return 'CityResultState(isBusy: $isBusy, data: $data, isError: $isError, errorMessage: $errorMessage)';
   }
 
   @override
@@ -166,6 +188,7 @@ class _$_CityResultState implements _CityResultState {
             other is _CityResultState &&
             const DeepCollectionEquality().equals(other.isBusy, isBusy) &&
             const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.isError, isError) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -175,6 +198,7 @@ class _$_CityResultState implements _CityResultState {
       runtimeType,
       const DeepCollectionEquality().hash(isBusy),
       const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(isError),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -187,12 +211,15 @@ abstract class _CityResultState implements CityResultState {
   const factory _CityResultState(
       {bool isBusy,
       CityState? data,
+      bool isError,
       String? errorMessage}) = _$_CityResultState;
 
   @override
   bool get isBusy;
   @override
   CityState? get data;
+  @override
+  bool get isError;
   @override
   String? get errorMessage;
   @override
