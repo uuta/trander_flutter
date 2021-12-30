@@ -17,11 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SettingResultStateTearOff {
   const _$SettingResultStateTearOff();
 
-  _SettingResultState<T> call<T>(
-      {bool isBusy = false, Result<dynamic>? result}) {
-    return _SettingResultState<T>(
+  _SettingResultState call(
+      {bool isBusy = false, SettingState? data, String? errorMessage}) {
+    return _SettingResultState(
       isBusy: isBusy,
-      result: result,
+      data: data,
+      errorMessage: errorMessage,
     );
   }
 }
@@ -30,164 +31,185 @@ class _$SettingResultStateTearOff {
 const $SettingResultState = _$SettingResultStateTearOff();
 
 /// @nodoc
-mixin _$SettingResultState<T> {
+mixin _$SettingResultState {
   bool get isBusy => throw _privateConstructorUsedError;
-  Result<dynamic>? get result => throw _privateConstructorUsedError;
+  SettingState? get data => throw _privateConstructorUsedError;
+  String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SettingResultStateCopyWith<T, SettingResultState<T>> get copyWith =>
+  $SettingResultStateCopyWith<SettingResultState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SettingResultStateCopyWith<T, $Res> {
-  factory $SettingResultStateCopyWith(SettingResultState<T> value,
-          $Res Function(SettingResultState<T>) then) =
-      _$SettingResultStateCopyWithImpl<T, $Res>;
-  $Res call({bool isBusy, Result<dynamic>? result});
+abstract class $SettingResultStateCopyWith<$Res> {
+  factory $SettingResultStateCopyWith(
+          SettingResultState value, $Res Function(SettingResultState) then) =
+      _$SettingResultStateCopyWithImpl<$Res>;
+  $Res call({bool isBusy, SettingState? data, String? errorMessage});
 
-  $ResultCopyWith<dynamic, $Res>? get result;
+  $SettingStateCopyWith<$Res>? get data;
 }
 
 /// @nodoc
-class _$SettingResultStateCopyWithImpl<T, $Res>
-    implements $SettingResultStateCopyWith<T, $Res> {
+class _$SettingResultStateCopyWithImpl<$Res>
+    implements $SettingResultStateCopyWith<$Res> {
   _$SettingResultStateCopyWithImpl(this._value, this._then);
 
-  final SettingResultState<T> _value;
+  final SettingResultState _value;
   // ignore: unused_field
-  final $Res Function(SettingResultState<T>) _then;
+  final $Res Function(SettingResultState) _then;
 
   @override
   $Res call({
     Object? isBusy = freezed,
-    Object? result = freezed,
+    Object? data = freezed,
+    Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
       isBusy: isBusy == freezed
           ? _value.isBusy
           : isBusy // ignore: cast_nullable_to_non_nullable
               as bool,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as Result<dynamic>?,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SettingState?,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 
   @override
-  $ResultCopyWith<dynamic, $Res>? get result {
-    if (_value.result == null) {
+  $SettingStateCopyWith<$Res>? get data {
+    if (_value.data == null) {
       return null;
     }
 
-    return $ResultCopyWith<dynamic, $Res>(_value.result!, (value) {
-      return _then(_value.copyWith(result: value));
+    return $SettingStateCopyWith<$Res>(_value.data!, (value) {
+      return _then(_value.copyWith(data: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$SettingResultStateCopyWith<T, $Res>
-    implements $SettingResultStateCopyWith<T, $Res> {
-  factory _$SettingResultStateCopyWith(_SettingResultState<T> value,
-          $Res Function(_SettingResultState<T>) then) =
-      __$SettingResultStateCopyWithImpl<T, $Res>;
+abstract class _$SettingResultStateCopyWith<$Res>
+    implements $SettingResultStateCopyWith<$Res> {
+  factory _$SettingResultStateCopyWith(
+          _SettingResultState value, $Res Function(_SettingResultState) then) =
+      __$SettingResultStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isBusy, Result<dynamic>? result});
+  $Res call({bool isBusy, SettingState? data, String? errorMessage});
 
   @override
-  $ResultCopyWith<dynamic, $Res>? get result;
+  $SettingStateCopyWith<$Res>? get data;
 }
 
 /// @nodoc
-class __$SettingResultStateCopyWithImpl<T, $Res>
-    extends _$SettingResultStateCopyWithImpl<T, $Res>
-    implements _$SettingResultStateCopyWith<T, $Res> {
-  __$SettingResultStateCopyWithImpl(_SettingResultState<T> _value,
-      $Res Function(_SettingResultState<T>) _then)
-      : super(_value, (v) => _then(v as _SettingResultState<T>));
+class __$SettingResultStateCopyWithImpl<$Res>
+    extends _$SettingResultStateCopyWithImpl<$Res>
+    implements _$SettingResultStateCopyWith<$Res> {
+  __$SettingResultStateCopyWithImpl(
+      _SettingResultState _value, $Res Function(_SettingResultState) _then)
+      : super(_value, (v) => _then(v as _SettingResultState));
 
   @override
-  _SettingResultState<T> get _value => super._value as _SettingResultState<T>;
+  _SettingResultState get _value => super._value as _SettingResultState;
 
   @override
   $Res call({
     Object? isBusy = freezed,
-    Object? result = freezed,
+    Object? data = freezed,
+    Object? errorMessage = freezed,
   }) {
-    return _then(_SettingResultState<T>(
+    return _then(_SettingResultState(
       isBusy: isBusy == freezed
           ? _value.isBusy
           : isBusy // ignore: cast_nullable_to_non_nullable
               as bool,
-      result: result == freezed
-          ? _value.result
-          : result // ignore: cast_nullable_to_non_nullable
-              as Result<dynamic>?,
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as SettingState?,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SettingResultState<T>
+class _$_SettingResultState
     with DiagnosticableTreeMixin
-    implements _SettingResultState<T> {
-  const _$_SettingResultState({this.isBusy = false, this.result});
+    implements _SettingResultState {
+  const _$_SettingResultState(
+      {this.isBusy = false, this.data, this.errorMessage});
 
   @JsonKey()
   @override
   final bool isBusy;
   @override
-  final Result<dynamic>? result;
+  final SettingState? data;
+  @override
+  final String? errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SettingResultState<$T>(isBusy: $isBusy, result: $result)';
+    return 'SettingResultState(isBusy: $isBusy, data: $data, errorMessage: $errorMessage)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'SettingResultState<$T>'))
+      ..add(DiagnosticsProperty('type', 'SettingResultState'))
       ..add(DiagnosticsProperty('isBusy', isBusy))
-      ..add(DiagnosticsProperty('result', result));
+      ..add(DiagnosticsProperty('data', data))
+      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingResultState<T> &&
+            other is _SettingResultState &&
             const DeepCollectionEquality().equals(other.isBusy, isBusy) &&
-            const DeepCollectionEquality().equals(other.result, result));
+            const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality()
+                .equals(other.errorMessage, errorMessage));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isBusy),
-      const DeepCollectionEquality().hash(result));
+      const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
   @override
-  _$SettingResultStateCopyWith<T, _SettingResultState<T>> get copyWith =>
-      __$SettingResultStateCopyWithImpl<T, _SettingResultState<T>>(
-          this, _$identity);
+  _$SettingResultStateCopyWith<_SettingResultState> get copyWith =>
+      __$SettingResultStateCopyWithImpl<_SettingResultState>(this, _$identity);
 }
 
-abstract class _SettingResultState<T> implements SettingResultState<T> {
-  const factory _SettingResultState({bool isBusy, Result<dynamic>? result}) =
-      _$_SettingResultState<T>;
+abstract class _SettingResultState implements SettingResultState {
+  const factory _SettingResultState(
+      {bool isBusy,
+      SettingState? data,
+      String? errorMessage}) = _$_SettingResultState;
 
   @override
   bool get isBusy;
   @override
-  Result<dynamic>? get result;
+  SettingState? get data;
+  @override
+  String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$SettingResultStateCopyWith<T, _SettingResultState<T>> get copyWith =>
+  _$SettingResultStateCopyWith<_SettingResultState> get copyWith =>
       throw _privateConstructorUsedError;
 }
