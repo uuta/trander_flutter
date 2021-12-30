@@ -3,7 +3,6 @@ import '/consts/api.dart';
 
 class CityRepository {
   Future<Response> getCity(String? idToken, Map<String, dynamic> params) async {
-    // TODO: fix
     return await Dio().get(dotenv.get('API_DOMMIN') + ConstsApi.cities,
         queryParameters: params,
         options: Options(headers: {

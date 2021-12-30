@@ -5,16 +5,18 @@ class LocationView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final locationState = ref.watch(locationNotifierProvider);
-    final locationNotifier = ref.watch(locationNotifierProvider.notifier);
-    final cityState = ref.watch(cityNotifierProvider);
-    final cityNotifier = ref.watch(cityNotifierProvider.notifier);
     final auth0State = ref.watch(auth0NotifierProvider);
+    final cityState = ref.watch(cityNotifierProvider);
+    final locationState = ref.watch(locationNotifierProvider);
+    final cityNotifier = ref.watch(cityNotifierProvider.notifier);
+    final locationNotifier = ref.watch(locationNotifierProvider.notifier);
+    final settingNotifier = ref.watch(settingNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
         await locationNotifier.initAction();
         await locationNotifier.getCurrentLocation();
+        await settingNotifier.getSetting(auth0State.idToken);
       });
       return;
     }, const []);
