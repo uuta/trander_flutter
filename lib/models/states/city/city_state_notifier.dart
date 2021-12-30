@@ -13,23 +13,23 @@ class CityStateNotifier extends StateNotifier<CityResultState> {
 
   final repository = CityRepository();
 
-  Future<void> getCity(String? idToken, LatLng latLng) async {
+  Future<void> getCity(LatLng latLng) async {
     state = state.copyWith(isBusy: true, errorMessage: '');
-    // TODO: fix it up later
-    final Map<String, dynamic> params = {
-      'lat': latLng.latitude,
-      'lng': latLng.longitude,
-      'max': 100,
-      'min': 0,
-      'directionType': 0,
-    };
 
     try {
-      final res = await repository.getCity(idToken, params);
+      final res = await repository.getCity(params);
       state = state.copyWith(
           isBusy: false, data: CityState.fromJson(res.data['data']));
     } on Exception catch (e) {
       state = state.copyWith(isBusy: false, errorMessage: e.toString());
     }
+  }
+
+  Future<void> storeData(data) async {
+    state = state.copyWith(isBusy: false, data: data);
+  }
+
+  Future<void> storeError(String e) async {
+    state = state.copyWith(isBusy: false, errorMessage: e);
   }
 }
