@@ -23,6 +23,8 @@ class _$LocationStateTearOff {
       LatLng currentLocation = const LatLng(35.658034, 139.701636),
       LatLng newLocation = const LatLng(35.658034, 139.701636),
       Set<Marker> markers = const {},
+      required CityState cityData,
+      required SettingState settingData,
       String? errorMessage}) {
     return _LocationState(
       isBusy: isBusy,
@@ -30,6 +32,8 @@ class _$LocationStateTearOff {
       currentLocation: currentLocation,
       newLocation: newLocation,
       markers: markers,
+      cityData: cityData,
+      settingData: settingData,
       errorMessage: errorMessage,
     );
   }
@@ -46,6 +50,8 @@ mixin _$LocationState {
   LatLng get currentLocation => throw _privateConstructorUsedError;
   LatLng get newLocation => throw _privateConstructorUsedError;
   Set<Marker> get markers => throw _privateConstructorUsedError;
+  CityState get cityData => throw _privateConstructorUsedError;
+  SettingState get settingData => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -64,7 +70,12 @@ abstract class $LocationStateCopyWith<$Res> {
       LatLng currentLocation,
       LatLng newLocation,
       Set<Marker> markers,
+      CityState cityData,
+      SettingState settingData,
       String? errorMessage});
+
+  $CityStateCopyWith<$Res> get cityData;
+  $SettingStateCopyWith<$Res> get settingData;
 }
 
 /// @nodoc
@@ -83,6 +94,8 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? currentLocation = freezed,
     Object? newLocation = freezed,
     Object? markers = freezed,
+    Object? cityData = freezed,
+    Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -106,11 +119,33 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.markers
           : markers // ignore: cast_nullable_to_non_nullable
               as Set<Marker>,
+      cityData: cityData == freezed
+          ? _value.cityData
+          : cityData // ignore: cast_nullable_to_non_nullable
+              as CityState,
+      settingData: settingData == freezed
+          ? _value.settingData
+          : settingData // ignore: cast_nullable_to_non_nullable
+              as SettingState,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+
+  @override
+  $CityStateCopyWith<$Res> get cityData {
+    return $CityStateCopyWith<$Res>(_value.cityData, (value) {
+      return _then(_value.copyWith(cityData: value));
+    });
+  }
+
+  @override
+  $SettingStateCopyWith<$Res> get settingData {
+    return $SettingStateCopyWith<$Res>(_value.settingData, (value) {
+      return _then(_value.copyWith(settingData: value));
+    });
   }
 }
 
@@ -127,7 +162,14 @@ abstract class _$LocationStateCopyWith<$Res>
       LatLng currentLocation,
       LatLng newLocation,
       Set<Marker> markers,
+      CityState cityData,
+      SettingState settingData,
       String? errorMessage});
+
+  @override
+  $CityStateCopyWith<$Res> get cityData;
+  @override
+  $SettingStateCopyWith<$Res> get settingData;
 }
 
 /// @nodoc
@@ -148,6 +190,8 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? currentLocation = freezed,
     Object? newLocation = freezed,
     Object? markers = freezed,
+    Object? cityData = freezed,
+    Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_LocationState(
@@ -171,6 +215,14 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.markers
           : markers // ignore: cast_nullable_to_non_nullable
               as Set<Marker>,
+      cityData: cityData == freezed
+          ? _value.cityData
+          : cityData // ignore: cast_nullable_to_non_nullable
+              as CityState,
+      settingData: settingData == freezed
+          ? _value.settingData
+          : settingData // ignore: cast_nullable_to_non_nullable
+              as SettingState,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -188,6 +240,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.currentLocation = const LatLng(35.658034, 139.701636),
       this.newLocation = const LatLng(35.658034, 139.701636),
       this.markers = const {},
+      required this.cityData,
+      required this.settingData,
       this.errorMessage});
 
   @JsonKey()
@@ -205,11 +259,15 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   @override
   final Set<Marker> markers;
   @override
+  final CityState cityData;
+  @override
+  final SettingState settingData;
+  @override
   final String? errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isBusy: $isBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, errorMessage: $errorMessage)';
+    return 'LocationState(isBusy: $isBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, cityData: $cityData, settingData: $settingData, errorMessage: $errorMessage)';
   }
 
   @override
@@ -222,6 +280,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('currentLocation', currentLocation))
       ..add(DiagnosticsProperty('newLocation', newLocation))
       ..add(DiagnosticsProperty('markers', markers))
+      ..add(DiagnosticsProperty('cityData', cityData))
+      ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -238,6 +298,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
             const DeepCollectionEquality()
                 .equals(other.newLocation, newLocation) &&
             const DeepCollectionEquality().equals(other.markers, markers) &&
+            const DeepCollectionEquality().equals(other.cityData, cityData) &&
+            const DeepCollectionEquality()
+                .equals(other.settingData, settingData) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -250,6 +313,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       const DeepCollectionEquality().hash(currentLocation),
       const DeepCollectionEquality().hash(newLocation),
       const DeepCollectionEquality().hash(markers),
+      const DeepCollectionEquality().hash(cityData),
+      const DeepCollectionEquality().hash(settingData),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -265,6 +330,8 @@ abstract class _LocationState implements LocationState {
       LatLng currentLocation,
       LatLng newLocation,
       Set<Marker> markers,
+      required CityState cityData,
+      required SettingState settingData,
       String? errorMessage}) = _$_LocationState;
 
   @override
@@ -277,6 +344,10 @@ abstract class _LocationState implements LocationState {
   LatLng get newLocation;
   @override
   Set<Marker> get markers;
+  @override
+  CityState get cityData;
+  @override
+  SettingState get settingData;
   @override
   String? get errorMessage;
   @override

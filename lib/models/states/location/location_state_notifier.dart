@@ -1,6 +1,6 @@
 import '/import.dart';
 import 'dart:async';
-import '/models/repositories/location/location_repository.dart';
+import '/services/location_service.dart';
 import '/models/models.dart';
 
 final locationNotifierProvider =
@@ -9,49 +9,56 @@ final locationNotifierProvider =
 );
 
 class LocationStateNotifier extends StateNotifier<LocationState> {
-  LocationStateNotifier() : super(LocationState(mapController: Completer()));
+  LocationStateNotifier()
+      : super(LocationState(
+            mapController: Completer(),
+            settingData: const SettingState(),
+            cityData: const CityState()));
 
-  final repository = LocationRepository();
-
-  Future<void> initAction() async {
+  Future<void> initMapAction() async {
     state = state.copyWith(mapController: Completer());
   }
 
+  Future<void> switchBusy(bool isBusy) async {
+    state = state.copyWith(isBusy: isBusy);
+  }
+
   Future<void> getCurrentLocation() async {
-    state = state.copyWith(isBusy: true);
     try {
-      final data = await repository.getCurrentPosition();
-      state = state.copyWith(
-          isBusy: false,
-          currentLocation: LatLng(data.latitude, data.longitude));
+      state = await LocationService().getCurrentLocation(state);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(isBusy: false, errorMessage: e.toString());
     }
   }
 
-  Future<void> getNewLocation(CityState? data) async {
-    await _setNewLocation(data);
-    await _setMaker();
+  Future<void> shiftCameraCurrentPosition() async {
+    try {
+      LocationService().shiftCameraPosition(state, state.currentLocation);
+    } on Exception catch (e, s) {
+      debugPrint('login error: $e - stack: $s');
+      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+    }
   }
 
-  Future<void> _setNewLocation(CityState? data) async {
-    state = state.copyWith(newLocation: LatLng(data!.lat, data.lng));
+  Future<void> getCity(String? idToken) async {
+    try {
+      state = await LocationService().getCity(state, idToken);
+      state = await LocationService().setNewLocation(state);
+      state = await LocationService().setMarker(state);
+      await LocationService().shiftCameraPosition(state, state.newLocation);
+    } on Exception catch (e, s) {
+      debugPrint('login error: $e - stack: $s');
+      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+    }
   }
 
-  Future<void> _setMaker() async {
-    // Set markers
-    final Set<Marker> _markers = {};
-    _markers.add(Marker(
-        markerId: MarkerId(state.newLocation.toString()),
-        position: state.newLocation,
-        icon: BitmapDescriptor.defaultMarker));
-    state = state.copyWith(markers: _markers);
-
-    // Shift camera position
-    final CameraPosition _newPosition =
-        CameraPosition(target: state.newLocation, zoom: 14.4746);
-    final GoogleMapController controller = await state.mapController.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_newPosition));
+  Future<void> getSetting(String? idToken) async {
+    try {
+      state = await LocationService().getSetting(state, idToken);
+    } on Exception catch (e, s) {
+      debugPrint('login error: $e - stack: $s');
+      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+    }
   }
 }

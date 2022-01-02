@@ -6,17 +6,17 @@ class LocationView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0State = ref.watch(auth0NotifierProvider);
-    final cityState = ref.watch(cityNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
-    final cityNotifier = ref.watch(cityNotifierProvider.notifier);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
-    final settingNotifier = ref.watch(settingNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
-        await locationNotifier.initAction();
+        await locationNotifier.switchBusy(true);
+        await locationNotifier.initMapAction();
         await locationNotifier.getCurrentLocation();
-        await settingNotifier.getSetting(auth0State.idToken);
+        await locationNotifier.getSetting(auth0State.idToken);
+        await locationNotifier.shiftCameraCurrentPosition();
+        await locationNotifier.switchBusy(false);
       });
       return;
     }, const []);
@@ -46,14 +46,14 @@ class LocationView extends HookConsumerWidget {
                     left: 30.0,
                     right: 30.0,
                     bottom: 100.0,
-                    child: cityState.isBusy
+                    // TODO:
+                    child: locationState.isBusy
                         ? const Center(child: CircularProgressIndicator())
-                        : Text(cityState.toString()))
+                        : Text(locationState.cityData.toString()))
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              LocationViewController().getCity(auth0State, locationState,
-                  cityNotifier, locationNotifier, cityState);
+              locationNotifier.getCity(auth0State.idToken);
             },
             child: const Icon(Icons.location_searching)));
   }
