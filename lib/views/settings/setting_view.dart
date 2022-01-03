@@ -2,6 +2,7 @@ import '/import.dart';
 import 'package:settings_ui/settings_ui.dart';
 import '/pages/settings/setting_range_page.dart';
 import '/views/settings/setting_dialog_view.dart';
+import '/views/settings/setting_direction_dialog_view.dart';
 
 class SettingView extends HookConsumerWidget {
   const SettingView({Key? key}) : super(key: key);
@@ -27,13 +28,24 @@ class SettingView extends HookConsumerWidget {
               SettingsSection(
                 titlePadding: const EdgeInsets.all(20),
                 title: 'Location',
+                // TODO: fix? 2022/01/04
                 tiles: [
                   SettingsTile(
                     title: 'Direction',
-                    subtitle: 'North east',
+                    subtitle: ConstsSetting.directionType.entries
+                        .toList()
+                        .where((e) =>
+                            e.value == locationState.settingData.directionType)
+                        .toList()[0]
+                        .key,
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.location_on),
-                    onPressed: (BuildContext context) {},
+                    onPressed: (BuildContext context) {
+                      showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              const SettingDirectionDialogView());
+                    },
                   ),
                   SettingsTile(
                     title: 'Range',

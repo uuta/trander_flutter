@@ -8,6 +8,7 @@ final locationNotifierProvider =
   (ref) => LocationStateNotifier(),
 );
 
+// TODO: Think about error handling
 class LocationStateNotifier extends StateNotifier<LocationState> {
   LocationStateNotifier()
       : super(LocationState(
@@ -87,5 +88,12 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(isBusy: false, errorMessage: e.toString());
     }
+  }
+
+  Future<void> setDirectionType(int directionType) async {
+    state = state.copyWith(
+        settingData: SettingState.fromJson({
+      'directionType': directionType,
+    }));
   }
 }
