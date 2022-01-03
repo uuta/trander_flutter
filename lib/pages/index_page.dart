@@ -1,7 +1,7 @@
 import '/import.dart';
 // views
 import '/views/bottom_bars/three_bottom_bar.dart';
-import '/views/logout_view.dart';
+import '../views/settings/setting_view.dart';
 import '/views/location_view.dart';
 
 class IndexPage extends HookConsumerWidget {
@@ -16,7 +16,7 @@ class IndexPage extends HookConsumerWidget {
     const List<Widget> _pageList = [
       LocationView(),
       LocationView(),
-      LogoutView(),
+      SettingView(),
     ];
 
     return Scaffold(
