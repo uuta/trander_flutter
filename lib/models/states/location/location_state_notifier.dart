@@ -61,4 +61,31 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(isBusy: false, errorMessage: e.toString());
     }
   }
+
+  Future<void> setRange(RangeValues newRange) async {
+    state = state.copyWith(
+        settingData: SettingState.fromJson({
+      'minDistance': newRange.start.toInt(),
+      'maxDistance': newRange.end.toInt()
+    }));
+  }
+
+  Future<void> postSetting(
+      String? idToken, NavigationState navigationState) async {
+    // Request only when shifting from page three
+    if (navigationState.currentIndex == 2) {
+      return;
+    }
+
+    if (navigationState.prevIndex != 2) {
+      return;
+    }
+
+    try {
+      state = await LocationService().postSetting(state, idToken);
+    } on Exception catch (e, s) {
+      debugPrint('login error: $e - stack: $s');
+      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+    }
+  }
 }

@@ -56,7 +56,13 @@ class LocationService {
     final res = await settingRepository.getSetting(idToken);
     return (res.data.isNotEmpty)
         ? state = state.copyWith(
-            isBusy: false, settingData: SettingState.fromJson(res.data['data']))
+            isBusy: false, settingData: SettingState.fromJson(res.data))
         : state = state.copyWith(isBusy: false);
+  }
+
+  Future<LocationState> postSetting(
+      LocationState state, String? idToken) async {
+    await settingRepository.postSetting(idToken, state.settingData.toJson());
+    return state.copyWith(isBusy: false);
   }
 }

@@ -17,9 +17,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$NavigationStateTearOff {
   const _$NavigationStateTearOff();
 
-  _NavigationState call({int selectedIndex = 0}) {
+  _NavigationState call({int currentIndex = 0, int prevIndex = 0}) {
     return _NavigationState(
-      selectedIndex: selectedIndex,
+      currentIndex: currentIndex,
+      prevIndex: prevIndex,
     );
   }
 }
@@ -29,7 +30,8 @@ const $NavigationState = _$NavigationStateTearOff();
 
 /// @nodoc
 mixin _$NavigationState {
-  int get selectedIndex => throw _privateConstructorUsedError;
+  int get currentIndex => throw _privateConstructorUsedError;
+  int get prevIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NavigationStateCopyWith<NavigationState> get copyWith =>
@@ -41,7 +43,7 @@ abstract class $NavigationStateCopyWith<$Res> {
   factory $NavigationStateCopyWith(
           NavigationState value, $Res Function(NavigationState) then) =
       _$NavigationStateCopyWithImpl<$Res>;
-  $Res call({int selectedIndex});
+  $Res call({int currentIndex, int prevIndex});
 }
 
 /// @nodoc
@@ -55,12 +57,17 @@ class _$NavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? selectedIndex = freezed,
+    Object? currentIndex = freezed,
+    Object? prevIndex = freezed,
   }) {
     return _then(_value.copyWith(
-      selectedIndex: selectedIndex == freezed
-          ? _value.selectedIndex
-          : selectedIndex // ignore: cast_nullable_to_non_nullable
+      currentIndex: currentIndex == freezed
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      prevIndex: prevIndex == freezed
+          ? _value.prevIndex
+          : prevIndex // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -73,7 +80,7 @@ abstract class _$NavigationStateCopyWith<$Res>
           _NavigationState value, $Res Function(_NavigationState) then) =
       __$NavigationStateCopyWithImpl<$Res>;
   @override
-  $Res call({int selectedIndex});
+  $Res call({int currentIndex, int prevIndex});
 }
 
 /// @nodoc
@@ -89,12 +96,17 @@ class __$NavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? selectedIndex = freezed,
+    Object? currentIndex = freezed,
+    Object? prevIndex = freezed,
   }) {
     return _then(_NavigationState(
-      selectedIndex: selectedIndex == freezed
-          ? _value.selectedIndex
-          : selectedIndex // ignore: cast_nullable_to_non_nullable
+      currentIndex: currentIndex == freezed
+          ? _value.currentIndex
+          : currentIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+      prevIndex: prevIndex == freezed
+          ? _value.prevIndex
+          : prevIndex // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -105,15 +117,18 @@ class __$NavigationStateCopyWithImpl<$Res>
 class _$_NavigationState
     with DiagnosticableTreeMixin
     implements _NavigationState {
-  const _$_NavigationState({this.selectedIndex = 0});
+  const _$_NavigationState({this.currentIndex = 0, this.prevIndex = 0});
 
   @JsonKey()
   @override
-  final int selectedIndex;
+  final int currentIndex;
+  @JsonKey()
+  @override
+  final int prevIndex;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NavigationState(selectedIndex: $selectedIndex)';
+    return 'NavigationState(currentIndex: $currentIndex, prevIndex: $prevIndex)';
   }
 
   @override
@@ -121,7 +136,8 @@ class _$_NavigationState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'NavigationState'))
-      ..add(DiagnosticsProperty('selectedIndex', selectedIndex));
+      ..add(DiagnosticsProperty('currentIndex', currentIndex))
+      ..add(DiagnosticsProperty('prevIndex', prevIndex));
   }
 
   @override
@@ -130,12 +146,15 @@ class _$_NavigationState
         (other.runtimeType == runtimeType &&
             other is _NavigationState &&
             const DeepCollectionEquality()
-                .equals(other.selectedIndex, selectedIndex));
+                .equals(other.currentIndex, currentIndex) &&
+            const DeepCollectionEquality().equals(other.prevIndex, prevIndex));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(selectedIndex));
+      runtimeType,
+      const DeepCollectionEquality().hash(currentIndex),
+      const DeepCollectionEquality().hash(prevIndex));
 
   @JsonKey(ignore: true)
   @override
@@ -144,10 +163,13 @@ class _$_NavigationState
 }
 
 abstract class _NavigationState implements NavigationState {
-  const factory _NavigationState({int selectedIndex}) = _$_NavigationState;
+  const factory _NavigationState({int currentIndex, int prevIndex}) =
+      _$_NavigationState;
 
   @override
-  int get selectedIndex;
+  int get currentIndex;
+  @override
+  int get prevIndex;
   @override
   @JsonKey(ignore: true)
   _$NavigationStateCopyWith<_NavigationState> get copyWith =>

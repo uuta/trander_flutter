@@ -6,6 +6,7 @@ part 'navigation_state.freezed.dart';
 @freezed
 class NavigationState with _$NavigationState {
   const factory NavigationState({
-    @Default(0) int selectedIndex,
+    @Default(0) int currentIndex,
+    @Default(0) int prevIndex,
   }) = _NavigationState;
 }

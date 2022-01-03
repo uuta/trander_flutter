@@ -5,7 +5,10 @@ class ThreeBottomBar extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final auth0State = ref.watch(auth0NotifierProvider);
     final navigationState = ref.watch(navigationNotifierProvider);
+    final navigationNotifier = ref.watch(navigationNotifierProvider.notifier);
+    final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
     return Container(
         decoration: const BoxDecoration(boxShadow: [
@@ -16,9 +19,11 @@ class ThreeBottomBar extends HookConsumerWidget {
           ),
         ]),
         child: BottomNavigationBar(
-          currentIndex: navigationState.selectedIndex,
-          onTap: (index) {
-            ref.read(navigationNotifierProvider.notifier).current(index);
+          currentIndex: navigationState.currentIndex,
+          onTap: (index) async {
+            final NavigationState indexes =
+                await navigationNotifier.changeIndex(index);
+            await locationNotifier.postSetting(auth0State.idToken, indexes);
           },
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

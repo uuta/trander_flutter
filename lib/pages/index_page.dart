@@ -11,6 +11,8 @@ class IndexPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final navigationState = ref.watch(navigationNotifierProvider);
 
+    // Post request when leaving the settings page
+
     const List<Widget> _pageList = [
       LocationView(),
       LocationView(),
@@ -21,7 +23,7 @@ class IndexPage extends HookConsumerWidget {
         appBar: AppBar(
             title: Image.asset("assets/images/icons/logo.png", width: 160),
             backgroundColor: Colors.white),
-        body: _pageList[navigationState.selectedIndex],
+        body: _pageList[navigationState.currentIndex],
         bottomNavigationBar: const ThreeBottomBar());
   }
 }
