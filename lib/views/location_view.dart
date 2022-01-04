@@ -48,8 +48,10 @@ class LocationView extends HookConsumerWidget {
                     bottom: 100.0,
                     // TODO:
                     child: locationState.isBusy
-                        ? const Center(child: CircularProgressIndicator())
-                        : Text(locationState.cityData.toString()))
+                        ? const CircularProgressIndicator()
+                        : locationState.errorMessage == ''
+                            ? Text(locationState.cityData.toString())
+                            : Text(locationState.errorMessage.toString()))
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {

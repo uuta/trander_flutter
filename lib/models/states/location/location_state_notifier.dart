@@ -29,7 +29,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = await LocationService().getCurrentLocation(state);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
-      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+      state = state.copyWith(
+          isBusy: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
 
@@ -38,7 +40,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       LocationService().shiftCameraPosition(state, state.currentLocation);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
-      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+      state = state.copyWith(
+          isBusy: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
 
@@ -50,7 +54,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       await LocationService().shiftCameraPosition(state, state.newLocation);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
-      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+      state = state.copyWith(
+          isBusy: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
 
@@ -59,7 +65,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = await LocationService().getSetting(state, idToken);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
-      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+      state = state.copyWith(
+          isBusy: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
 
@@ -87,7 +95,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = await LocationService().postSetting(state, idToken);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
-      state = state.copyWith(isBusy: false, errorMessage: e.toString());
+      state = state.copyWith(
+          isBusy: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
 
