@@ -28,7 +28,6 @@ class SettingView extends HookConsumerWidget {
               SettingsSection(
                 titlePadding: const EdgeInsets.all(20),
                 title: 'Location',
-                // TODO: fix? 2022/01/04
                 tiles: [
                   SettingsTile(
                     title: 'Direction',

@@ -1,7 +1,8 @@
-// TODO: modify that get from env id
+import '/import.dart';
+
 class ConstsAuth0 {
-  static const String auth0Domain = 'trander-dev.jp.auth0.com';
-  static const String auth0ClientId = 'GIi3Axw2qqCTwJATKq50u5ANCCR5sHxl';
-  static const String auth0Issuer = 'https://$auth0Domain';
-  static const String auth0RedirectUri = 'com.uuta.trander://login-callback';
+  static final String auth0Domain = dotenv.get('AUTH0_DOMAIN');
+  static final String auth0ClientId = dotenv.get('AUTH0_CLIENT_ID');
+  static final String auth0RedirectUri = dotenv.get('AUTH0_REDIRECT_URI');
+  static final String auth0Issuer = 'https://$auth0Domain';
 }
