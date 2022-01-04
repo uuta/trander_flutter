@@ -67,7 +67,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(
         settingData: SettingState.fromJson({
       'minDistance': newRange.start.toInt(),
-      'maxDistance': newRange.end.toInt()
+      'maxDistance': newRange.end.toInt(),
+      'directionType': state.settingData.directionType,
     }));
   }
 
@@ -93,6 +94,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   Future<void> setDirectionType(int directionType) async {
     state = state.copyWith(
         settingData: SettingState.fromJson({
+      'minDistance': state.settingData.minDistance,
+      'maxDistance': state.settingData.maxDistance,
       'directionType': directionType,
     }));
   }
