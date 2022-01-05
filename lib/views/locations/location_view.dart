@@ -1,4 +1,5 @@
 import '/import.dart';
+import 'location_error_dialog_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -51,7 +52,7 @@ class LocationView extends HookConsumerWidget {
                         ? const CircularProgressIndicator()
                         : locationState.errorMessage == ''
                             ? Text(locationState.cityData.toString())
-                            : Text(locationState.errorMessage.toString()))
+                            : const LocationErrorDialogView())
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {

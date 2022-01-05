@@ -25,7 +25,7 @@ class _$LocationStateTearOff {
       Set<Marker> markers = const {},
       required CityState cityData,
       required SettingState settingData,
-      String? errorMessage}) {
+      String errorMessage = ''}) {
     return _LocationState(
       isBusy: isBusy,
       mapController: mapController,
@@ -52,7 +52,7 @@ mixin _$LocationState {
   Set<Marker> get markers => throw _privateConstructorUsedError;
   CityState get cityData => throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
-  String? get errorMessage => throw _privateConstructorUsedError;
+  String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LocationStateCopyWith<LocationState> get copyWith =>
@@ -72,7 +72,7 @@ abstract class $LocationStateCopyWith<$Res> {
       Set<Marker> markers,
       CityState cityData,
       SettingState settingData,
-      String? errorMessage});
+      String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
   $SettingStateCopyWith<$Res> get settingData;
@@ -130,7 +130,7 @@ class _$LocationStateCopyWithImpl<$Res>
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 
@@ -164,7 +164,7 @@ abstract class _$LocationStateCopyWith<$Res>
       Set<Marker> markers,
       CityState cityData,
       SettingState settingData,
-      String? errorMessage});
+      String errorMessage});
 
   @override
   $CityStateCopyWith<$Res> get cityData;
@@ -226,7 +226,7 @@ class __$LocationStateCopyWithImpl<$Res>
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -242,7 +242,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.markers = const {},
       required this.cityData,
       required this.settingData,
-      this.errorMessage});
+      this.errorMessage = ''});
 
   @JsonKey()
   @override
@@ -262,8 +262,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final CityState cityData;
   @override
   final SettingState settingData;
+  @JsonKey()
   @override
-  final String? errorMessage;
+  final String errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -332,7 +333,7 @@ abstract class _LocationState implements LocationState {
       Set<Marker> markers,
       required CityState cityData,
       required SettingState settingData,
-      String? errorMessage}) = _$_LocationState;
+      String errorMessage}) = _$_LocationState;
 
   @override
   bool get isBusy;
@@ -349,7 +350,7 @@ abstract class _LocationState implements LocationState {
   @override
   SettingState get settingData;
   @override
-  String? get errorMessage;
+  String get errorMessage;
   @override
   @JsonKey(ignore: true)
   _$LocationStateCopyWith<_LocationState> get copyWith =>

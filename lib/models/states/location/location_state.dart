@@ -16,6 +16,6 @@ class LocationState with _$LocationState {
     @Default({}) Set<Marker> markers,
     required CityState cityData,
     required SettingState settingData,
-    String? errorMessage,
+    @Default('') String errorMessage,
   }) = _LocationState;
 }

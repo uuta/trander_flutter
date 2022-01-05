@@ -24,6 +24,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(isBusy: isBusy);
   }
 
+  Future<void> offErrorMessage() async {
+    state = state.copyWith(errorMessage: '');
+  }
+
   Future<void> getCurrentLocation() async {
     try {
       state = await LocationService().getCurrentLocation(state);

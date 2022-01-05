@@ -2,7 +2,7 @@ import '/import.dart';
 // views
 import '/views/bottom_bars/three_bottom_bar.dart';
 import '../views/settings/setting_view.dart';
-import '/views/location_view.dart';
+import '../views/locations/location_view.dart';
 
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);

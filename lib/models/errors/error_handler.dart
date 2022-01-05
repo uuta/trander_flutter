@@ -71,7 +71,7 @@ class ErrorHandler with _$ErrorHandler {
       requestCancelled: () => "Request has been cancelled.",
       unauthorisedRequest: () => "Unauthorised request.",
       requestError: (ApiError? error) => error!.message,
-      serviceUnavailable: () => "Please wait for a while and try again.",
+      serviceUnavailable: () => "Please wait for a while and try it again.",
       sendTimeout: () => "Send timeout in connection with API server.",
       noInternetConnection: () => "No internet connection.",
       unexpectedError: () => "Unexpected error occurred.");
