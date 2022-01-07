@@ -15,4 +15,18 @@ class HeaderStyles {
         fontSize: 24,
         fontWeight: FontWeight.bold);
   }
+
+  static TextStyle header3({Color? color, FontWeight? fontWeight}) {
+    return TextStyle(
+        color: color ?? const Color(0xff5c6360),
+        fontSize: 20,
+        fontWeight: fontWeight ?? FontWeight.bold);
+  }
+
+  static TextStyle header4({Color? color, FontWeight? fontWeight}) {
+    return TextStyle(
+        color: color ?? const Color(0xff5c6360),
+        fontSize: 18,
+        fontWeight: fontWeight ?? FontWeight.bold);
+  }
 }
