@@ -2,7 +2,6 @@ export 'dart:io';
 export 'package:flutter/material.dart';
 export 'package:flutter/widgets.dart';
 export 'package:flutter_form_builder/flutter_form_builder.dart';
-export 'views/styles/header_styles.dart';
 export 'package:decorated_icon/decorated_icon.dart';
 export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'dart:convert';
@@ -26,5 +25,11 @@ export 'package:dio/dio.dart';
 // models
 export '/models/models.dart';
 
+// services
+export '/services/services.dart';
+
 // consts
 export '/consts/export.dart';
+
+// Styles
+export '/views/styles/styles.dart';

@@ -1,3 +1,5 @@
+import 'package:trander_flutter/views/indexes/city_title_view.dart';
+
 import '/import.dart';
 // views
 import '/views/bottom_bars/three_bottom_bar.dart';
@@ -10,6 +12,8 @@ class IndexPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final navigationState = ref.watch(navigationNotifierProvider);
+    final locationState = ref.watch(locationNotifierProvider);
+    final String? countryCode = locationState.cityData.countryCode;
 
     // Post request when leaving the settings page
 
@@ -19,9 +23,27 @@ class IndexPage extends HookConsumerWidget {
       SettingView(),
     ];
 
+    // Title: flexible change
+    List<Widget> _titleList = [
+      locationState.isCitySucceeded
+          ? const CityTitleView()
+          : Text(
+              'City Search',
+              style: HeaderStyles.header2(),
+            ),
+      Text(
+        'Keyword Search',
+        style: HeaderStyles.header2(),
+      ),
+      Text(
+        'Settings',
+        style: HeaderStyles.header2(),
+      ),
+    ];
+
     return Scaffold(
         appBar: AppBar(
-            title: Image.asset("assets/images/icons/logo.png", width: 160),
+            title: _titleList[navigationState.currentIndex],
             backgroundColor: Colors.white),
         body: _pageList[navigationState.currentIndex],
         bottomNavigationBar: const ThreeBottomBar());
