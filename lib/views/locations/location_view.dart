@@ -43,7 +43,7 @@ class LocationView extends HookConsumerWidget {
                     }
                   },
                 ),
-                const CityInfoButtonView(),
+                if (locationState.isCitySucceeded) const CityInfoButtonView(),
                 Positioned(
                     top: 100.0,
                     left: 30.0,

@@ -56,6 +56,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = await LocationService().setNewLocation(state);
       state = await LocationService().setMarker(state);
       await LocationService().shiftCameraPosition(state, state.newLocation);
+      state = state.copyWith(isBusy: false, isCitySucceeded: true);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(

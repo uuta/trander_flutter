@@ -14,6 +14,7 @@ class LocationState with _$LocationState {
     @Default(LatLng(35.658034, 139.701636)) LatLng currentLocation,
     @Default(LatLng(35.658034, 139.701636)) LatLng newLocation,
     @Default({}) Set<Marker> markers,
+    @Default(false) bool isCitySucceeded,
     required CityState cityData,
     required SettingState settingData,
     @Default('') String errorMessage,
