@@ -20,7 +20,6 @@ class CityInfoButtonView extends HookConsumerWidget {
           ),
           onPressed: () {
             // TODO: Move to city detail page
-            print('Pressed');
           },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(

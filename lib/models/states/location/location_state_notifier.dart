@@ -20,12 +20,16 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(mapController: Completer());
   }
 
-  Future<void> switchBusy(bool isBusy) async {
-    state = state.copyWith(isBusy: isBusy);
+  Future<void> switchMapBusy(bool isTrue) async {
+    state = state.copyWith(isMapBusy: isTrue);
   }
 
   Future<void> offErrorMessage() async {
     state = state.copyWith(errorMessage: '');
+  }
+
+  Future<void> switchCityDialog(bool isTrue) async {
+    state = state.copyWith(isCityDialog: isTrue);
   }
 
   Future<void> getCurrentLocation() async {
@@ -34,7 +38,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(
-          isBusy: false,
+          isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
@@ -45,22 +49,24 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(
-          isBusy: false,
+          isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
 
   Future<void> getCity(String? idToken) async {
     try {
+      state = state.copyWith(isLoading: true);
       state = await LocationService().getCity(state, idToken);
       state = await LocationService().setNewLocation(state);
       state = await LocationService().setMarker(state);
       await LocationService().shiftCameraPosition(state, state.newLocation);
-      state = state.copyWith(isBusy: false, isCitySucceeded: true);
+      state = state.copyWith(
+          isLoading: false, isCitySucceeded: true, isCityDialog: true);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(
-          isBusy: false,
+          isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
@@ -71,7 +77,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(
-          isBusy: false,
+          isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }
@@ -101,7 +107,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(
-          isBusy: false,
+          isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
     }
   }

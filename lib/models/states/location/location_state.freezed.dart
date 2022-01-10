@@ -18,22 +18,26 @@ class _$LocationStateTearOff {
   const _$LocationStateTearOff();
 
   _LocationState call(
-      {bool isBusy = false,
+      {bool isLoading = false,
+      bool isMapBusy = false,
       required Completer<GoogleMapController> mapController,
       LatLng currentLocation = const LatLng(35.658034, 139.701636),
       LatLng newLocation = const LatLng(35.658034, 139.701636),
       Set<Marker> markers = const {},
       bool isCitySucceeded = false,
+      bool isCityDialog = false,
       required CityState cityData,
       required SettingState settingData,
       String errorMessage = ''}) {
     return _LocationState(
-      isBusy: isBusy,
+      isLoading: isLoading,
+      isMapBusy: isMapBusy,
       mapController: mapController,
       currentLocation: currentLocation,
       newLocation: newLocation,
       markers: markers,
       isCitySucceeded: isCitySucceeded,
+      isCityDialog: isCityDialog,
       cityData: cityData,
       settingData: settingData,
       errorMessage: errorMessage,
@@ -46,13 +50,15 @@ const $LocationState = _$LocationStateTearOff();
 
 /// @nodoc
 mixin _$LocationState {
-  bool get isBusy => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isMapBusy => throw _privateConstructorUsedError;
   Completer<GoogleMapController> get mapController =>
       throw _privateConstructorUsedError;
   LatLng get currentLocation => throw _privateConstructorUsedError;
   LatLng get newLocation => throw _privateConstructorUsedError;
   Set<Marker> get markers => throw _privateConstructorUsedError;
   bool get isCitySucceeded => throw _privateConstructorUsedError;
+  bool get isCityDialog => throw _privateConstructorUsedError;
   CityState get cityData => throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
@@ -68,12 +74,14 @@ abstract class $LocationStateCopyWith<$Res> {
           LocationState value, $Res Function(LocationState) then) =
       _$LocationStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isBusy,
+      {bool isLoading,
+      bool isMapBusy,
       Completer<GoogleMapController> mapController,
       LatLng currentLocation,
       LatLng newLocation,
       Set<Marker> markers,
       bool isCitySucceeded,
+      bool isCityDialog,
       CityState cityData,
       SettingState settingData,
       String errorMessage});
@@ -93,20 +101,26 @@ class _$LocationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isBusy = freezed,
+    Object? isLoading = freezed,
+    Object? isMapBusy = freezed,
     Object? mapController = freezed,
     Object? currentLocation = freezed,
     Object? newLocation = freezed,
     Object? markers = freezed,
     Object? isCitySucceeded = freezed,
+    Object? isCityDialog = freezed,
     Object? cityData = freezed,
     Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
-      isBusy: isBusy == freezed
-          ? _value.isBusy
-          : isBusy // ignore: cast_nullable_to_non_nullable
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMapBusy: isMapBusy == freezed
+          ? _value.isMapBusy
+          : isMapBusy // ignore: cast_nullable_to_non_nullable
               as bool,
       mapController: mapController == freezed
           ? _value.mapController
@@ -127,6 +141,10 @@ class _$LocationStateCopyWithImpl<$Res>
       isCitySucceeded: isCitySucceeded == freezed
           ? _value.isCitySucceeded
           : isCitySucceeded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCityDialog: isCityDialog == freezed
+          ? _value.isCityDialog
+          : isCityDialog // ignore: cast_nullable_to_non_nullable
               as bool,
       cityData: cityData == freezed
           ? _value.cityData
@@ -166,12 +184,14 @@ abstract class _$LocationStateCopyWith<$Res>
       __$LocationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isBusy,
+      {bool isLoading,
+      bool isMapBusy,
       Completer<GoogleMapController> mapController,
       LatLng currentLocation,
       LatLng newLocation,
       Set<Marker> markers,
       bool isCitySucceeded,
+      bool isCityDialog,
       CityState cityData,
       SettingState settingData,
       String errorMessage});
@@ -195,20 +215,26 @@ class __$LocationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isBusy = freezed,
+    Object? isLoading = freezed,
+    Object? isMapBusy = freezed,
     Object? mapController = freezed,
     Object? currentLocation = freezed,
     Object? newLocation = freezed,
     Object? markers = freezed,
     Object? isCitySucceeded = freezed,
+    Object? isCityDialog = freezed,
     Object? cityData = freezed,
     Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_LocationState(
-      isBusy: isBusy == freezed
-          ? _value.isBusy
-          : isBusy // ignore: cast_nullable_to_non_nullable
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMapBusy: isMapBusy == freezed
+          ? _value.isMapBusy
+          : isMapBusy // ignore: cast_nullable_to_non_nullable
               as bool,
       mapController: mapController == freezed
           ? _value.mapController
@@ -230,6 +256,10 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.isCitySucceeded
           : isCitySucceeded // ignore: cast_nullable_to_non_nullable
               as bool,
+      isCityDialog: isCityDialog == freezed
+          ? _value.isCityDialog
+          : isCityDialog // ignore: cast_nullable_to_non_nullable
+              as bool,
       cityData: cityData == freezed
           ? _value.cityData
           : cityData // ignore: cast_nullable_to_non_nullable
@@ -250,19 +280,24 @@ class __$LocationStateCopyWithImpl<$Res>
 
 class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   const _$_LocationState(
-      {this.isBusy = false,
+      {this.isLoading = false,
+      this.isMapBusy = false,
       required this.mapController,
       this.currentLocation = const LatLng(35.658034, 139.701636),
       this.newLocation = const LatLng(35.658034, 139.701636),
       this.markers = const {},
       this.isCitySucceeded = false,
+      this.isCityDialog = false,
       required this.cityData,
       required this.settingData,
       this.errorMessage = ''});
 
   @JsonKey()
   @override
-  final bool isBusy;
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isMapBusy;
   @override
   final Completer<GoogleMapController> mapController;
   @JsonKey()
@@ -277,6 +312,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   @JsonKey()
   @override
   final bool isCitySucceeded;
+  @JsonKey()
+  @override
+  final bool isCityDialog;
   @override
   final CityState cityData;
   @override
@@ -287,7 +325,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isBusy: $isBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, cityData: $cityData, settingData: $settingData, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, settingData: $settingData, errorMessage: $errorMessage)';
   }
 
   @override
@@ -295,12 +333,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'LocationState'))
-      ..add(DiagnosticsProperty('isBusy', isBusy))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isMapBusy', isMapBusy))
       ..add(DiagnosticsProperty('mapController', mapController))
       ..add(DiagnosticsProperty('currentLocation', currentLocation))
       ..add(DiagnosticsProperty('newLocation', newLocation))
       ..add(DiagnosticsProperty('markers', markers))
       ..add(DiagnosticsProperty('isCitySucceeded', isCitySucceeded))
+      ..add(DiagnosticsProperty('isCityDialog', isCityDialog))
       ..add(DiagnosticsProperty('cityData', cityData))
       ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
@@ -311,7 +351,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _LocationState &&
-            const DeepCollectionEquality().equals(other.isBusy, isBusy) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isMapBusy, isMapBusy) &&
             const DeepCollectionEquality()
                 .equals(other.mapController, mapController) &&
             const DeepCollectionEquality()
@@ -321,6 +362,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
             const DeepCollectionEquality().equals(other.markers, markers) &&
             const DeepCollectionEquality()
                 .equals(other.isCitySucceeded, isCitySucceeded) &&
+            const DeepCollectionEquality()
+                .equals(other.isCityDialog, isCityDialog) &&
             const DeepCollectionEquality().equals(other.cityData, cityData) &&
             const DeepCollectionEquality()
                 .equals(other.settingData, settingData) &&
@@ -331,12 +374,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(isBusy),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isMapBusy),
       const DeepCollectionEquality().hash(mapController),
       const DeepCollectionEquality().hash(currentLocation),
       const DeepCollectionEquality().hash(newLocation),
       const DeepCollectionEquality().hash(markers),
       const DeepCollectionEquality().hash(isCitySucceeded),
+      const DeepCollectionEquality().hash(isCityDialog),
       const DeepCollectionEquality().hash(cityData),
       const DeepCollectionEquality().hash(settingData),
       const DeepCollectionEquality().hash(errorMessage));
@@ -349,18 +394,22 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
 abstract class _LocationState implements LocationState {
   const factory _LocationState(
-      {bool isBusy,
+      {bool isLoading,
+      bool isMapBusy,
       required Completer<GoogleMapController> mapController,
       LatLng currentLocation,
       LatLng newLocation,
       Set<Marker> markers,
       bool isCitySucceeded,
+      bool isCityDialog,
       required CityState cityData,
       required SettingState settingData,
       String errorMessage}) = _$_LocationState;
 
   @override
-  bool get isBusy;
+  bool get isLoading;
+  @override
+  bool get isMapBusy;
   @override
   Completer<GoogleMapController> get mapController;
   @override
@@ -371,6 +420,8 @@ abstract class _LocationState implements LocationState {
   Set<Marker> get markers;
   @override
   bool get isCitySucceeded;
+  @override
+  bool get isCityDialog;
   @override
   CityState get cityData;
   @override

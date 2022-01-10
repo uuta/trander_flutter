@@ -13,7 +13,8 @@ class LocationService {
   Future<LocationState> getCurrentLocation(LocationState state) async {
     final data = await locationRepository.getCurrentPosition();
     return state.copyWith(
-        isBusy: false, currentLocation: LatLng(data.latitude, data.longitude));
+        isLoading: false,
+        currentLocation: LatLng(data.latitude, data.longitude));
   }
 
   Future<LocationState> getCity(LocationState state, String? idToken) async {
@@ -27,8 +28,7 @@ class LocationService {
     };
 
     final res = await cityRepository.getCity(params, idToken);
-    return state.copyWith(
-        isBusy: false, cityData: CityState.fromJson(res.data['data']));
+    return state.copyWith(cityData: CityState.fromJson(res.data['data']));
   }
 
   Future<LocationState> setNewLocation(LocationState state) async {
@@ -56,13 +56,13 @@ class LocationService {
     final res = await settingRepository.getSetting(idToken);
     return (res.data.isNotEmpty)
         ? state = state.copyWith(
-            isBusy: false, settingData: SettingState.fromJson(res.data))
-        : state = state.copyWith(isBusy: false);
+            isLoading: false, settingData: SettingState.fromJson(res.data))
+        : state = state.copyWith(isLoading: false);
   }
 
   Future<LocationState> postSetting(
       LocationState state, String? idToken) async {
     await settingRepository.postSetting(idToken, state.settingData.toJson());
-    return state.copyWith(isBusy: false);
+    return state.copyWith(isLoading: false);
   }
 }

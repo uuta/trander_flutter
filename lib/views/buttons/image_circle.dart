@@ -1,20 +1,17 @@
 import '/import.dart';
 
-class IconCircle extends StatelessWidget {
-  final IconData icon;
+class ImageCircle extends StatelessWidget {
+  final Image image;
   final Color iconColor;
 
-  const IconCircle({Key? key, required this.icon, required this.iconColor})
+  const ImageCircle({Key? key, required this.image, required this.iconColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
-      child: Icon(
-        icon,
-        color: iconColor,
-      ),
+      child: image,
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(20),

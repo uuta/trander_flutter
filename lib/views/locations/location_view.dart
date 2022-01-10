@@ -1,6 +1,7 @@
 import '/import.dart';
 import 'location_error_dialog_view.dart';
 import '/views/locations/city_info_button_view.dart';
+import '/views/locations/city_dialog_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -13,18 +14,18 @@ class LocationView extends HookConsumerWidget {
 
     useEffect(() {
       Future.microtask(() async {
-        await locationNotifier.switchBusy(true);
+        await locationNotifier.switchMapBusy(true);
         await locationNotifier.initMapAction();
         await locationNotifier.getCurrentLocation();
         await locationNotifier.getSetting(auth0State.idToken);
         await locationNotifier.shiftCameraCurrentPosition();
-        await locationNotifier.switchBusy(false);
+        await locationNotifier.switchMapBusy(false);
       });
       return;
     }, const []);
 
     return Scaffold(
-        body: locationState.isBusy
+        body: locationState.isMapBusy
             ? const Center(child: CircularProgressIndicator())
             : Stack(children: [
                 GoogleMap(
@@ -43,18 +44,27 @@ class LocationView extends HookConsumerWidget {
                     }
                   },
                 ),
-                if (locationState.isCitySucceeded) const CityInfoButtonView(),
+                // Loading and error dialog
                 Positioned(
                     top: 100.0,
                     left: 30.0,
                     right: 30.0,
                     bottom: 100.0,
                     // TODO: Consider that how to show a progress indicator
-                    child: locationState.isBusy
-                        ? const CircularProgressIndicator()
+                    child: locationState.isLoading
+                        ? const Center(child: CircularProgressIndicator())
                         : locationState.errorMessage == ''
                             ? Text(locationState.cityData.toString())
-                            : const LocationErrorDialogView())
+                            : const LocationErrorDialogView()),
+                // Left bottom button
+                if (locationState.isCitySucceeded) const CityInfoButtonView(),
+                // City dialog
+                if (locationState.isCityDialog)
+                  const CityDialogView(
+                    title: 'Found succcessfully',
+                    description: 'yattane',
+                    buttonText: 'Close',
+                  ),
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {

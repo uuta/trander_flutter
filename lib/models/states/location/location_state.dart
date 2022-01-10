@@ -9,12 +9,14 @@ part 'location_state.freezed.dart';
 @freezed
 class LocationState with _$LocationState {
   const factory LocationState({
-    @Default(false) bool isBusy,
+    @Default(false) bool isLoading,
+    @Default(false) bool isMapBusy,
     required Completer<GoogleMapController> mapController,
     @Default(LatLng(35.658034, 139.701636)) LatLng currentLocation,
     @Default(LatLng(35.658034, 139.701636)) LatLng newLocation,
     @Default({}) Set<Marker> markers,
     @Default(false) bool isCitySucceeded,
+    @Default(false) bool isCityDialog,
     required CityState cityData,
     required SettingState settingData,
     @Default('') String errorMessage,
