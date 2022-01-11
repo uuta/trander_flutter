@@ -3,8 +3,8 @@ import 'package:trander_flutter/views/indexes/city_title_view.dart';
 import '/import.dart';
 // views
 import '/views/bottom_bars/three_bottom_bar.dart';
-import '../views/settings/setting_view.dart';
-import '../views/locations/location_view.dart';
+import '../../views/settings/setting_view.dart';
+import '../../views/locations/location_view.dart';
 
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -13,7 +13,6 @@ class IndexPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final navigationState = ref.watch(navigationNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
-    final String? countryCode = locationState.cityData.countryCode;
 
     // Post request when leaving the settings page
 

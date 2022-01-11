@@ -1,6 +1,5 @@
 import '/import.dart';
 import '/views/login_view.dart';
-import 'index_page.dart';
 
 class MainPage extends HookConsumerWidget {
   const MainPage({Key? key}) : super(key: key);

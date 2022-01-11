@@ -1,6 +1,4 @@
 import '/import.dart';
-import 'pages/on_boarding_page.dart';
-import 'pages/index_page.dart';
 import '/views/progresses/scaffold_progress.dart';
 
 Future<void> main() async {

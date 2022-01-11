@@ -31,5 +31,8 @@ export '/services/services.dart';
 // consts
 export '/consts/export.dart';
 
-// Styles
+// styles
 export '/views/styles/styles.dart';
+
+// pages
+export '/pages/pages.dart';

@@ -19,7 +19,10 @@ class CityInfoButtonView extends HookConsumerWidget {
             style: HeaderStyles.header4(),
           ),
           onPressed: () {
-            // TODO: Move to city detail page
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const CityDetailPage()));
           },
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
