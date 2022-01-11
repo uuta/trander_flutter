@@ -24,6 +24,11 @@ class LocationView extends HookConsumerWidget {
       return;
     }, const []);
 
+    // City dialog
+    if (locationState.isCityDialog) {
+      showCityDialog(context);
+    }
+
     return Scaffold(
         body: locationState.isMapBusy
             ? const Center(child: CircularProgressIndicator())
@@ -58,18 +63,26 @@ class LocationView extends HookConsumerWidget {
                             : const LocationErrorDialogView()),
                 // Left bottom button
                 if (locationState.isCitySucceeded) const CityInfoButtonView(),
-                // City dialog
-                if (locationState.isCityDialog)
-                  const CityDialogView(
-                    title: 'Found succcessfully',
-                    description: 'yattane',
-                    buttonText: 'Close',
-                  ),
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
               locationNotifier.getCity(auth0State.idToken);
             },
             child: const Icon(Icons.location_searching)));
+  }
+
+  // City dialog
+  void showCityDialog(BuildContext context) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext childContext) {
+            return const CityDialogView(
+              title: 'Found succcessfully',
+              buttonText: 'Close',
+            );
+          });
+    });
   }
 }

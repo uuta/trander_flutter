@@ -2,13 +2,12 @@ import '/import.dart';
 import '/views/buttons/image_circle.dart';
 
 class CityDialogView extends HookConsumerWidget {
-  final String title, description, buttonText;
+  final String title, buttonText;
   final Image? image;
 
   const CityDialogView({
     Key? key,
     required this.title,
-    required this.description,
     required this.buttonText,
     this.image,
   }) : super(key: key);
@@ -93,7 +92,7 @@ class CityDialogView extends HookConsumerWidget {
                   const Spacer(),
                   ImageCircle(
                     image: Image.asset("assets/images/utils/twitter.png",
-                        width: 30),
+                        width: 20),
                     iconColor: Colors.white,
                   ),
                   const Spacer(),
@@ -105,6 +104,7 @@ class CityDialogView extends HookConsumerWidget {
                 child: TextButton(
                   onPressed: () {
                     locationNotifier.switchCityDialog(false);
+                    Navigator.pop(context);
                   },
                   child: Text(buttonText),
                 ),
