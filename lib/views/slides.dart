@@ -1,6 +1,5 @@
 import '/import.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Slides {
   List<PageViewModel> generateSlides() {

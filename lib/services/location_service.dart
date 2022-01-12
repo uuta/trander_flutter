@@ -31,6 +31,41 @@ class LocationService {
     return state.copyWith(cityData: CityState.fromJson(res.data['data']));
   }
 
+  Future<LocationState> setExploreCity(LocationState state) async {
+    final String streetview, googlemap, twitter, twitterContent, twitterUrl;
+    streetview =
+        "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" +
+            state.cityData.lat.toString() +
+            "," +
+            state.cityData.lng.toString();
+
+    googlemap = "https://www.google.com/maps/search/?api=1&query=" +
+        state.cityData.lat.toString() +
+        "," +
+        state.cityData.lng.toString() +
+        "&query_place_id=" +
+        state.cityData.placeId.toString();
+
+    twitterUrl =
+        "https://trander.net/kw/share/" + state.cityData.placeId.toString();
+
+    twitterContent = "How about this place?%0a%0a%20%23Trander%0a%0a" +
+        state.cityData.name.toString() +
+        "%0a";
+
+    twitter = "https://twitter.com/intent/tweet?text=" +
+        twitterContent +
+        "&url=" +
+        twitterUrl;
+
+    return state.copyWith(
+        cityExploreState: CityExploreState.fromJson({
+      'googlemap': googlemap,
+      'streetview': streetview,
+      'twitter': twitter
+    }));
+  }
+
   Future<LocationState> setNewLocation(LocationState state) async {
     return state.copyWith(
         newLocation: LatLng(state.cityData.lat, state.cityData.lng));

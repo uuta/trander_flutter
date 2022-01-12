@@ -12,6 +12,9 @@ export 'package:riverpod/riverpod.dart';
 export 'package:hooks_riverpod/hooks_riverpod.dart';
 export 'package:flutter_hooks/flutter_hooks.dart';
 
+// url_launcher
+export 'package:url_launcher/url_launcher.dart';
+
 // Location
 export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:geolocator/geolocator.dart';

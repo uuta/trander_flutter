@@ -38,6 +38,9 @@ class CityDetailPage extends HookConsumerWidget {
                                       width: 20),
                                   text: 'Street View',
                                   radius: 30.0,
+                                  onPressed: () => UrlService.launchUrl(
+                                      locationState
+                                          .cityExploreState.streetview),
                                 )))),
                     Expanded(
                         flex: 5,
@@ -51,6 +54,8 @@ class CityDetailPage extends HookConsumerWidget {
                                       width: 20),
                                   text: 'Google Map',
                                   radius: 30.0,
+                                  onPressed: () => UrlService.launchUrl(
+                                      locationState.cityExploreState.googlemap),
                                 ))))
                   ]),
                   const SizedBox(height: 15),
@@ -63,6 +68,8 @@ class CityDetailPage extends HookConsumerWidget {
                                 width: 20),
                             text: 'Share on Twitter',
                             radius: 30.0,
+                            onPressed: () => UrlService.launchUrl(
+                                locationState.cityExploreState.twitter),
                           ))),
                   const SizedBox(height: 40),
                   Text(

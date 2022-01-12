@@ -1,12 +1,16 @@
 import '/import.dart';
 
-// TODO: Unused but might be fundamental for detail page
 class FullsizeIconTextButton extends HookConsumerWidget {
   final Widget icon;
   final String text;
   final double radius;
+  final VoidCallback? onPressed;
   const FullsizeIconTextButton(
-      {Key? key, required this.text, required this.icon, this.radius = 20.0})
+      {Key? key,
+      required this.text,
+      required this.icon,
+      this.radius = 20.0,
+      this.onPressed})
       : super(key: key);
 
   @override
@@ -18,10 +22,7 @@ class FullsizeIconTextButton extends HookConsumerWidget {
               text,
               style: HeaderStyles.header4(),
             ),
-            onPressed: () {
-              // TODO: Move to city detail page
-              print('Pressed');
-            },
+            onPressed: onPressed,
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radius),

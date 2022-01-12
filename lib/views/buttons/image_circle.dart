@@ -3,14 +3,16 @@ import '/import.dart';
 class ImageCircle extends StatelessWidget {
   final Image image;
   final Color iconColor;
+  final VoidCallback? onPressed;
 
-  const ImageCircle({Key? key, required this.image, required this.iconColor})
+  const ImageCircle(
+      {Key? key, required this.image, required this.iconColor, this.onPressed})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {},
+      onPressed: onPressed,
       child: image,
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),

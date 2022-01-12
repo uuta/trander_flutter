@@ -12,9 +12,11 @@ final locationNotifierProvider =
 class LocationStateNotifier extends StateNotifier<LocationState> {
   LocationStateNotifier()
       : super(LocationState(
-            mapController: Completer(),
-            settingData: const SettingState(),
-            cityData: const CityState()));
+          mapController: Completer(),
+          settingData: const SettingState(),
+          cityData: const CityState(),
+          cityExploreState: const CityExploreState(),
+        ));
 
   Future<void> initMapAction() async {
     state = state.copyWith(mapController: Completer());
@@ -58,6 +60,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = state.copyWith(isLoading: true);
       state = await LocationService().getCity(state, idToken);
+      state = await LocationService().setExploreCity(state);
       state = await LocationService().setNewLocation(state);
       state = await LocationService().setMarker(state);
       await LocationService().shiftCameraPosition(state, state.newLocation);

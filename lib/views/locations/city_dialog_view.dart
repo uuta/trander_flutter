@@ -77,24 +77,28 @@ class CityDialogView extends HookConsumerWidget {
               Row(
                 children: [
                   const Spacer(),
-                  // TODO: add onpressed
                   ImageCircle(
-                    image: Image.asset("assets/images/utils/streetview.png",
-                        width: 20),
-                    iconColor: Colors.white,
-                  ),
+                      image: Image.asset(
+                        "assets/images/utils/streetview.png",
+                        width: 20,
+                      ),
+                      iconColor: Colors.white,
+                      onPressed: () => UrlService.launchUrl(
+                          locationState.cityExploreState.streetview)),
                   const Spacer(),
                   ImageCircle(
-                    image: Image.asset("assets/images/utils/googlemap.png",
-                        width: 20),
-                    iconColor: Colors.white,
-                  ),
+                      image: Image.asset("assets/images/utils/googlemap.png",
+                          width: 20),
+                      iconColor: Colors.white,
+                      onPressed: () => UrlService.launchUrl(
+                          locationState.cityExploreState.googlemap)),
                   const Spacer(),
                   ImageCircle(
-                    image: Image.asset("assets/images/utils/twitter.png",
-                        width: 20),
-                    iconColor: Colors.white,
-                  ),
+                      image: Image.asset("assets/images/utils/twitter.png",
+                          width: 20),
+                      iconColor: Colors.white,
+                      onPressed: () => UrlService.launchUrl(
+                          locationState.cityExploreState.twitter)),
                   const Spacer(),
                 ],
               ),

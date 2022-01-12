@@ -27,6 +27,7 @@ class _$LocationStateTearOff {
       bool isCitySucceeded = false,
       bool isCityDialog = false,
       required CityState cityData,
+      required CityExploreState cityExploreState,
       required SettingState settingData,
       String errorMessage = ''}) {
     return _LocationState(
@@ -39,6 +40,7 @@ class _$LocationStateTearOff {
       isCitySucceeded: isCitySucceeded,
       isCityDialog: isCityDialog,
       cityData: cityData,
+      cityExploreState: cityExploreState,
       settingData: settingData,
       errorMessage: errorMessage,
     );
@@ -60,6 +62,7 @@ mixin _$LocationState {
   bool get isCitySucceeded => throw _privateConstructorUsedError;
   bool get isCityDialog => throw _privateConstructorUsedError;
   CityState get cityData => throw _privateConstructorUsedError;
+  CityExploreState get cityExploreState => throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
@@ -83,10 +86,12 @@ abstract class $LocationStateCopyWith<$Res> {
       bool isCitySucceeded,
       bool isCityDialog,
       CityState cityData,
+      CityExploreState cityExploreState,
       SettingState settingData,
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
+  $CityExploreStateCopyWith<$Res> get cityExploreState;
   $SettingStateCopyWith<$Res> get settingData;
 }
 
@@ -110,6 +115,7 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? isCitySucceeded = freezed,
     Object? isCityDialog = freezed,
     Object? cityData = freezed,
+    Object? cityExploreState = freezed,
     Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -150,6 +156,10 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.cityData
           : cityData // ignore: cast_nullable_to_non_nullable
               as CityState,
+      cityExploreState: cityExploreState == freezed
+          ? _value.cityExploreState
+          : cityExploreState // ignore: cast_nullable_to_non_nullable
+              as CityExploreState,
       settingData: settingData == freezed
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
@@ -165,6 +175,13 @@ class _$LocationStateCopyWithImpl<$Res>
   $CityStateCopyWith<$Res> get cityData {
     return $CityStateCopyWith<$Res>(_value.cityData, (value) {
       return _then(_value.copyWith(cityData: value));
+    });
+  }
+
+  @override
+  $CityExploreStateCopyWith<$Res> get cityExploreState {
+    return $CityExploreStateCopyWith<$Res>(_value.cityExploreState, (value) {
+      return _then(_value.copyWith(cityExploreState: value));
     });
   }
 
@@ -193,11 +210,14 @@ abstract class _$LocationStateCopyWith<$Res>
       bool isCitySucceeded,
       bool isCityDialog,
       CityState cityData,
+      CityExploreState cityExploreState,
       SettingState settingData,
       String errorMessage});
 
   @override
   $CityStateCopyWith<$Res> get cityData;
+  @override
+  $CityExploreStateCopyWith<$Res> get cityExploreState;
   @override
   $SettingStateCopyWith<$Res> get settingData;
 }
@@ -224,6 +244,7 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? isCitySucceeded = freezed,
     Object? isCityDialog = freezed,
     Object? cityData = freezed,
+    Object? cityExploreState = freezed,
     Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -264,6 +285,10 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.cityData
           : cityData // ignore: cast_nullable_to_non_nullable
               as CityState,
+      cityExploreState: cityExploreState == freezed
+          ? _value.cityExploreState
+          : cityExploreState // ignore: cast_nullable_to_non_nullable
+              as CityExploreState,
       settingData: settingData == freezed
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
@@ -289,6 +314,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.isCitySucceeded = false,
       this.isCityDialog = false,
       required this.cityData,
+      required this.cityExploreState,
       required this.settingData,
       this.errorMessage = ''});
 
@@ -318,6 +344,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   @override
   final CityState cityData;
   @override
+  final CityExploreState cityExploreState;
+  @override
   final SettingState settingData;
   @JsonKey()
   @override
@@ -325,7 +353,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, settingData: $settingData, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, settingData: $settingData, errorMessage: $errorMessage)';
   }
 
   @override
@@ -342,6 +370,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('isCitySucceeded', isCitySucceeded))
       ..add(DiagnosticsProperty('isCityDialog', isCityDialog))
       ..add(DiagnosticsProperty('cityData', cityData))
+      ..add(DiagnosticsProperty('cityExploreState', cityExploreState))
       ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
@@ -366,6 +395,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                 .equals(other.isCityDialog, isCityDialog) &&
             const DeepCollectionEquality().equals(other.cityData, cityData) &&
             const DeepCollectionEquality()
+                .equals(other.cityExploreState, cityExploreState) &&
+            const DeepCollectionEquality()
                 .equals(other.settingData, settingData) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
@@ -383,6 +414,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       const DeepCollectionEquality().hash(isCitySucceeded),
       const DeepCollectionEquality().hash(isCityDialog),
       const DeepCollectionEquality().hash(cityData),
+      const DeepCollectionEquality().hash(cityExploreState),
       const DeepCollectionEquality().hash(settingData),
       const DeepCollectionEquality().hash(errorMessage));
 
@@ -403,6 +435,7 @@ abstract class _LocationState implements LocationState {
       bool isCitySucceeded,
       bool isCityDialog,
       required CityState cityData,
+      required CityExploreState cityExploreState,
       required SettingState settingData,
       String errorMessage}) = _$_LocationState;
 
@@ -424,6 +457,8 @@ abstract class _LocationState implements LocationState {
   bool get isCityDialog;
   @override
   CityState get cityData;
+  @override
+  CityExploreState get cityExploreState;
   @override
   SettingState get settingData;
   @override

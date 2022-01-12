@@ -18,6 +18,7 @@ class LocationState with _$LocationState {
     @Default(false) bool isCitySucceeded,
     @Default(false) bool isCityDialog,
     required CityState cityData,
+    required CityExploreState cityExploreState,
     required SettingState settingData,
     @Default('') String errorMessage,
   }) = _LocationState;
