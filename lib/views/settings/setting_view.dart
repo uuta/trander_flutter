@@ -1,5 +1,4 @@
 import '/import.dart';
-import 'package:settings_ui/settings_ui.dart';
 import '/pages/settings/setting_range_page.dart';
 import '/views/settings/setting_dialog_view.dart';
 import '/views/settings/setting_direction_dialog_view.dart';

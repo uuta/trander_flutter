@@ -23,8 +23,8 @@ class _$CityStateTearOff {
 
   _CityState call(
       {@JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'distance') double? distance,
-      @JsonKey(name: 'direction') String? direction,
+      @JsonKey(name: 'distance') double distance = 0,
+      @JsonKey(name: 'direction') String direction = '',
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
@@ -67,9 +67,9 @@ mixin _$CityState {
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'distance')
-  double? get distance => throw _privateConstructorUsedError;
+  double get distance => throw _privateConstructorUsedError;
   @JsonKey(name: 'direction')
-  String? get direction => throw _privateConstructorUsedError;
+  String get direction => throw _privateConstructorUsedError;
   @JsonKey(name: 'countryCode')
   String? get countryCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'icon')
@@ -105,8 +105,8 @@ abstract class $CityStateCopyWith<$Res> {
       _$CityStateCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'distance') double? distance,
-      @JsonKey(name: 'direction') String? direction,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
@@ -153,11 +153,11 @@ class _$CityStateCopyWithImpl<$Res> implements $CityStateCopyWith<$Res> {
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       direction: direction == freezed
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       countryCode: countryCode == freezed
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -214,8 +214,8 @@ abstract class _$CityStateCopyWith<$Res> implements $CityStateCopyWith<$Res> {
   @override
   $Res call(
       {@JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'distance') double? distance,
-      @JsonKey(name: 'direction') String? direction,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
@@ -263,11 +263,11 @@ class __$CityStateCopyWithImpl<$Res> extends _$CityStateCopyWithImpl<$Res>
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
       direction: direction == freezed
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       countryCode: countryCode == freezed
           ? _value.countryCode
           : countryCode // ignore: cast_nullable_to_non_nullable
@@ -321,8 +321,8 @@ class __$CityStateCopyWithImpl<$Res> extends _$CityStateCopyWithImpl<$Res>
 class _$_CityState implements _CityState {
   const _$_CityState(
       {@JsonKey(name: 'name') this.name,
-      @JsonKey(name: 'distance') this.distance,
-      @JsonKey(name: 'direction') this.direction,
+      @JsonKey(name: 'distance') this.distance = 0,
+      @JsonKey(name: 'direction') this.direction = '',
       @JsonKey(name: 'countryCode') this.countryCode,
       @JsonKey(name: 'icon') this.icon,
       @JsonKey(name: 'rating') this.rating,
@@ -343,10 +343,10 @@ class _$_CityState implements _CityState {
   final String? name;
   @override
   @JsonKey(name: 'distance')
-  final double? distance;
+  final double distance;
   @override
   @JsonKey(name: 'direction')
-  final String? direction;
+  final String direction;
   @override
   @JsonKey(name: 'countryCode')
   final String? countryCode;
@@ -443,8 +443,8 @@ class _$_CityState implements _CityState {
 abstract class _CityState implements CityState {
   const factory _CityState(
       {@JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'distance') double? distance,
-      @JsonKey(name: 'direction') String? direction,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
@@ -465,10 +465,10 @@ abstract class _CityState implements CityState {
   String? get name;
   @override
   @JsonKey(name: 'distance')
-  double? get distance;
+  double get distance;
   @override
   @JsonKey(name: 'direction')
-  String? get direction;
+  String get direction;
   @override
   @JsonKey(name: 'countryCode')
   String? get countryCode;

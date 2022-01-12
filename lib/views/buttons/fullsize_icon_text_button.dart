@@ -2,17 +2,16 @@ import '/import.dart';
 
 // TODO: Unused but might be fundamental for detail page
 class FullsizeIconTextButton extends HookConsumerWidget {
-  final double width;
   final Widget icon;
   final String text;
+  final double radius;
   const FullsizeIconTextButton(
-      {Key? key, required this.text, required this.icon, this.width = 100})
+      {Key? key, required this.text, required this.icon, this.radius = 20.0})
       : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
-        width: width,
         child: ElevatedButton.icon(
             icon: icon,
             label: Text(
@@ -25,7 +24,7 @@ class FullsizeIconTextButton extends HookConsumerWidget {
             },
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
+                borderRadius: BorderRadius.circular(radius),
               ),
               primary: Colors.white,
               padding:

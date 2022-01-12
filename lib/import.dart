@@ -16,6 +16,9 @@ export 'package:flutter_hooks/flutter_hooks.dart';
 export 'package:google_maps_flutter/google_maps_flutter.dart';
 export 'package:geolocator/geolocator.dart';
 
+// settings_ui
+export 'package:settings_ui/settings_ui.dart';
+
 // env
 export 'package:flutter_dotenv/flutter_dotenv.dart';
 

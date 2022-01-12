@@ -7,8 +7,8 @@ part 'city_state.g.dart';
 class CityState with _$CityState {
   const factory CityState(
       {@JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'distance') double? distance,
-      @JsonKey(name: 'direction') String? direction,
+      @JsonKey(name: 'distance') @Default(0) double distance,
+      @JsonKey(name: 'direction') @Default('') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
