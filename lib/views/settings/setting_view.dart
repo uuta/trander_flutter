@@ -27,6 +27,7 @@ class SettingView extends HookConsumerWidget {
               SettingsSection(
                 titlePadding: const EdgeInsets.all(20),
                 title: 'Location',
+                titleTextStyle: Theme.of(context).textTheme.headline6,
                 tiles: [
                   SettingsTile(
                     title: 'Direction',
@@ -60,6 +61,7 @@ class SettingView extends HookConsumerWidget {
               SettingsSection(
                 titlePadding: const EdgeInsets.all(20),
                 title: 'Account',
+                titleTextStyle: Theme.of(context).textTheme.headline6,
                 tiles: [
                   SettingsTile(
                     title: 'Name',
@@ -85,6 +87,7 @@ class SettingView extends HookConsumerWidget {
               SettingsSection(
                 titlePadding: const EdgeInsets.all(20),
                 title: 'Logout',
+                titleTextStyle: Theme.of(context).textTheme.headline6,
                 tiles: [
                   SettingsTile(
                     title: 'Logout',

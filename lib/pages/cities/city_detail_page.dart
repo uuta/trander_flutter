@@ -11,9 +11,8 @@ class CityDetailPage extends HookConsumerWidget {
 
     return Scaffold(
         appBar: AppBar(
-            title: const CityTitleView(),
-            backgroundColor: Colors.white,
-            iconTheme: const IconThemeData(color: Colors.grey)),
+          title: const CityTitleView(),
+        ),
         body: Container(
             padding:
                 const EdgeInsets.only(right: 10, left: 10, top: 20, bottom: 20),

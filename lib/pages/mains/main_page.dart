@@ -10,10 +10,12 @@ class MainPage extends HookConsumerWidget {
 
     return Scaffold(
         appBar: AppBar(
-            title: Image.asset("assets/images/icons/logo.png", width: 200),
-            backgroundColor: Colors.white),
+          title: Image.asset("assets/images/icons/logo.png", width: 160),
+        ),
         body: auth0State.isBusy
-            ? const CircularProgressIndicator()
+            ? CircularProgressIndicator(
+                color: Theme.of(context).primaryColorLight,
+              )
             : auth0State.isLoggedIn
                 ? const IndexPage()
                 : const LoginView());

@@ -41,9 +41,7 @@ class IndexPage extends HookConsumerWidget {
     ];
 
     return Scaffold(
-        appBar: AppBar(
-            title: _titleList[navigationState.currentIndex],
-            backgroundColor: Colors.white),
+        appBar: AppBar(title: _titleList[navigationState.currentIndex]),
         body: _pageList[navigationState.currentIndex],
         bottomNavigationBar: const ThreeBottomBar());
   }

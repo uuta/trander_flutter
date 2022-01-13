@@ -121,7 +121,6 @@ class CityDialogView extends HookConsumerWidget {
           right: padding,
           child: CircleAvatar(
             child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
-            // TODO: Define as a constant value
             backgroundColor: Color(0xFF2cb696),
             radius: avatarRadius,
           ),

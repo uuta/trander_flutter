@@ -12,8 +12,8 @@ class OnBoardingPage extends HookConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-          title: Image.asset("assets/images/icons/logo.png", width: 160),
-          backgroundColor: Colors.white),
+        title: Image.asset("assets/images/icons/logo.png", width: 160),
+      ),
       body: IntroductionScreen(
         globalBackgroundColor: Colors.white,
         pages: slides.generateSlides(),

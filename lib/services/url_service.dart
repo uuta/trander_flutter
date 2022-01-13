@@ -8,8 +8,6 @@ class UrlService {
 
     if (await canLaunch(url)) {
       await launch(url);
-    } else {
-      throw 'Could not Launch $url';
     }
   }
 }

@@ -31,7 +31,10 @@ class LocationView extends HookConsumerWidget {
 
     return Scaffold(
         body: locationState.isMapBusy
-            ? const Center(child: CircularProgressIndicator())
+            ? Center(
+                child: CircularProgressIndicator(
+                color: Theme.of(context).primaryColor,
+              ))
             : Stack(children: [
                 GoogleMap(
                   mapType: MapType.normal,
@@ -55,11 +58,13 @@ class LocationView extends HookConsumerWidget {
                     left: 30.0,
                     right: 30.0,
                     bottom: 100.0,
-                    // TODO: Consider that how to show a progress indicator
                     child: locationState.isLoading
-                        ? const Center(child: CircularProgressIndicator())
+                        ? Center(
+                            child: CircularProgressIndicator(
+                            color: Theme.of(context).primaryColorLight,
+                          ))
                         : locationState.errorMessage == ''
-                            ? Text(locationState.cityData.toString())
+                            ? const Text('')
                             : const LocationErrorDialogView()),
                 // Left bottom button
                 if (locationState.isCitySucceeded) const CityInfoButtonView(),
