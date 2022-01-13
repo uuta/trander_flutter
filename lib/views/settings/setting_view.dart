@@ -8,6 +8,7 @@ class SettingView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final auth0State = ref.watch(auth0NotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
 
     final List _currentRange = <int>[
@@ -65,13 +66,13 @@ class SettingView extends HookConsumerWidget {
                 tiles: [
                   SettingsTile(
                     title: 'Name',
-                    subtitle: 'Yuta Aoki',
+                    subtitle: auth0State.data!['name'],
                     leading: const Icon(Icons.person),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
                     title: 'Email',
-                    subtitle: 'youremail@gmail.com',
+                    subtitle: auth0State.data!['email'],
                     leading: const Icon(Icons.email),
                     onPressed: (BuildContext context) {},
                   ),
