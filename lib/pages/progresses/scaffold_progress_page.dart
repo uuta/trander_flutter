@@ -9,6 +9,9 @@ class ScaffoldProgressPage extends StatelessWidget {
         appBar: AppBar(
           title: Image.asset("assets/images/icons/logo.png", width: 160),
         ),
-        body: const Center(child: CircularProgressIndicator()));
+        body: Center(
+            child: CircularProgressIndicator(
+          color: Theme.of(context).primaryColorLight,
+        )));
   }
 }

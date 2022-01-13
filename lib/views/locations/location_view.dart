@@ -33,7 +33,7 @@ class LocationView extends HookConsumerWidget {
         body: locationState.isMapBusy
             ? Center(
                 child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+                color: Theme.of(context).primaryColorLight,
               ))
             : Stack(children: [
                 GoogleMap(
