@@ -23,6 +23,8 @@ class _$KeywordSearchStateTearOff {
 
   _KeywordSearchState call(
       {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'distance') double distance = 0,
+      @JsonKey(name: 'direction') String direction = '',
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
       @JsonKey(name: 'photo') String? photo,
@@ -35,6 +37,8 @@ class _$KeywordSearchStateTearOff {
       @JsonKey(name: 'ratingStar') String? ratingStar}) {
     return _KeywordSearchState(
       name: name,
+      distance: distance,
+      direction: direction,
       icon: icon,
       rating: rating,
       photo: photo,
@@ -60,6 +64,10 @@ const $KeywordSearchState = _$KeywordSearchStateTearOff();
 mixin _$KeywordSearchState {
   @JsonKey(name: 'name')
   String? get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'distance')
+  double get distance => throw _privateConstructorUsedError;
+  @JsonKey(name: 'direction')
+  String get direction => throw _privateConstructorUsedError;
   @JsonKey(name: 'icon')
   String? get icon => throw _privateConstructorUsedError;
   @JsonKey(name: 'rating')
@@ -94,6 +102,8 @@ abstract class $KeywordSearchStateCopyWith<$Res> {
       _$KeywordSearchStateCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
       @JsonKey(name: 'photo') String? photo,
@@ -118,6 +128,8 @@ class _$KeywordSearchStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
+    Object? distance = freezed,
+    Object? direction = freezed,
     Object? icon = freezed,
     Object? rating = freezed,
     Object? photo = freezed,
@@ -134,6 +146,14 @@ class _$KeywordSearchStateCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      distance: distance == freezed
+          ? _value.distance
+          : distance // ignore: cast_nullable_to_non_nullable
+              as double,
+      direction: direction == freezed
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as String,
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -187,6 +207,8 @@ abstract class _$KeywordSearchStateCopyWith<$Res>
   @override
   $Res call(
       {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
       @JsonKey(name: 'photo') String? photo,
@@ -213,6 +235,8 @@ class __$KeywordSearchStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
+    Object? distance = freezed,
+    Object? direction = freezed,
     Object? icon = freezed,
     Object? rating = freezed,
     Object? photo = freezed,
@@ -229,6 +253,14 @@ class __$KeywordSearchStateCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      distance: distance == freezed
+          ? _value.distance
+          : distance // ignore: cast_nullable_to_non_nullable
+              as double,
+      direction: direction == freezed
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as String,
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -278,6 +310,8 @@ class __$KeywordSearchStateCopyWithImpl<$Res>
 class _$_KeywordSearchState implements _KeywordSearchState {
   const _$_KeywordSearchState(
       {@JsonKey(name: 'name') this.name,
+      @JsonKey(name: 'distance') this.distance = 0,
+      @JsonKey(name: 'direction') this.direction = '',
       @JsonKey(name: 'icon') this.icon,
       @JsonKey(name: 'rating') this.rating,
       @JsonKey(name: 'photo') this.photo,
@@ -295,6 +329,12 @@ class _$_KeywordSearchState implements _KeywordSearchState {
   @override
   @JsonKey(name: 'name')
   final String? name;
+  @override
+  @JsonKey(name: 'distance')
+  final double distance;
+  @override
+  @JsonKey(name: 'direction')
+  final String direction;
   @override
   @JsonKey(name: 'icon')
   final String? icon;
@@ -328,7 +368,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
 
   @override
   String toString() {
-    return 'KeywordSearchState(name: $name, icon: $icon, rating: $rating, photo: $photo, vicinity: $vicinity, userRatingsTotal: $userRatingsTotal, priceLevel: $priceLevel, lat: $lat, lng: $lng, placeId: $placeId, ratingStar: $ratingStar)';
+    return 'KeywordSearchState(name: $name, distance: $distance, direction: $direction, icon: $icon, rating: $rating, photo: $photo, vicinity: $vicinity, userRatingsTotal: $userRatingsTotal, priceLevel: $priceLevel, lat: $lat, lng: $lng, placeId: $placeId, ratingStar: $ratingStar)';
   }
 
   @override
@@ -337,6 +377,8 @@ class _$_KeywordSearchState implements _KeywordSearchState {
         (other.runtimeType == runtimeType &&
             other is _KeywordSearchState &&
             const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.distance, distance) &&
+            const DeepCollectionEquality().equals(other.direction, direction) &&
             const DeepCollectionEquality().equals(other.icon, icon) &&
             const DeepCollectionEquality().equals(other.rating, rating) &&
             const DeepCollectionEquality().equals(other.photo, photo) &&
@@ -356,6 +398,8 @@ class _$_KeywordSearchState implements _KeywordSearchState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(distance),
+      const DeepCollectionEquality().hash(direction),
       const DeepCollectionEquality().hash(icon),
       const DeepCollectionEquality().hash(rating),
       const DeepCollectionEquality().hash(photo),
@@ -381,6 +425,8 @@ class _$_KeywordSearchState implements _KeywordSearchState {
 abstract class _KeywordSearchState implements KeywordSearchState {
   const factory _KeywordSearchState(
       {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'distance') double distance,
+      @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
       @JsonKey(name: 'photo') String? photo,
@@ -398,6 +444,12 @@ abstract class _KeywordSearchState implements KeywordSearchState {
   @override
   @JsonKey(name: 'name')
   String? get name;
+  @override
+  @JsonKey(name: 'distance')
+  double get distance;
+  @override
+  @JsonKey(name: 'direction')
+  String get direction;
   @override
   @JsonKey(name: 'icon')
   String? get icon;

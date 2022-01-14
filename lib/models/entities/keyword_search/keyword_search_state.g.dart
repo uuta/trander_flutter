@@ -10,6 +10,8 @@ _$_KeywordSearchState _$$_KeywordSearchStateFromJson(
         Map<String, dynamic> json) =>
     _$_KeywordSearchState(
       name: json['name'] as String?,
+      distance: (json['distance'] as num?)?.toDouble() ?? 0,
+      direction: json['direction'] as String? ?? '',
       icon: json['icon'] as String?,
       rating: json['rating'] as String?,
       photo: json['photo'] as String?,
@@ -26,6 +28,8 @@ Map<String, dynamic> _$$_KeywordSearchStateToJson(
         _$_KeywordSearchState instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'distance': instance.distance,
+      'direction': instance.direction,
       'icon': instance.icon,
       'rating': instance.rating,
       'photo': instance.photo,

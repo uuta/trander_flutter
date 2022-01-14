@@ -33,6 +33,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(isCityDialog: isTrue);
   }
 
+  Future<void> setKeywodSearchData(KeywordSearchState data) async {
+    state = state.copyWith(keywordSearchData: data);
+  }
+
   Future<void> getCurrentLocation() async {
     try {
       state = await LocationService().getCurrentLocation(state);
@@ -76,8 +80,23 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> getKeywordSearch(String? idToken) async {
     try {
+      final double lat = state.currentLocation.latitude;
+      final double lng = state.currentLocation.longitude;
+
       state = state.copyWith(isLoading: true);
-      state = await KeywordSearchService().getKeywordSearch(state, idToken);
+      final kwRes =
+          await KeywordSearchService().getKeywordSearch(state, idToken);
+      final kwData = kwRes.data['data'] as Map;
+      final distanceRes = await DistanceService().getDistance(
+        state,
+        idToken,
+        lat,
+        lng,
+        kwData['lat'],
+        kwData['lng'],
+      );
+      setKeywodSearchData(KeywordSearchState.fromJson(
+          {...kwRes.data['data'], ...distanceRes.data}));
       state = await LocationService().setExploreCity(state);
       state = await LocationService().setNewLocation(
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);

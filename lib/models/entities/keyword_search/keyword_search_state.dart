@@ -7,6 +7,8 @@ part 'keyword_search_state.g.dart';
 class KeywordSearchState with _$KeywordSearchState {
   const factory KeywordSearchState(
       {@JsonKey(name: 'name') String? name,
+      @JsonKey(name: 'distance') @Default(0) double distance,
+      @JsonKey(name: 'direction') @Default('') String direction,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') String? rating,
       @JsonKey(name: 'photo') String? photo,

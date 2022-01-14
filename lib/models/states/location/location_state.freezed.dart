@@ -111,6 +111,7 @@ abstract class $LocationStateCopyWith<$Res> {
   $CityStateCopyWith<$Res> get cityData;
   $CityExploreStateCopyWith<$Res> get cityExploreState;
   $KeywordSearchStateCopyWith<$Res> get keywordSearchData;
+  $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState;
   $SettingStateCopyWith<$Res> get settingData;
 }
 
@@ -232,6 +233,14 @@ class _$LocationStateCopyWithImpl<$Res>
   }
 
   @override
+  $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState {
+    return $KeywordSearchExploreStateCopyWith<$Res>(
+        _value.keywordSearchExploreState, (value) {
+      return _then(_value.copyWith(keywordSearchExploreState: value));
+    });
+  }
+
+  @override
   $SettingStateCopyWith<$Res> get settingData {
     return $SettingStateCopyWith<$Res>(_value.settingData, (value) {
       return _then(_value.copyWith(settingData: value));
@@ -270,6 +279,8 @@ abstract class _$LocationStateCopyWith<$Res>
   $CityExploreStateCopyWith<$Res> get cityExploreState;
   @override
   $KeywordSearchStateCopyWith<$Res> get keywordSearchData;
+  @override
+  $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState;
   @override
   $SettingStateCopyWith<$Res> get settingData;
 }

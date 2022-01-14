@@ -3,8 +3,7 @@ import '/import.dart';
 class KeywordSearchService {
   final keywordSearchRepository = KeywordSearchRepository();
 
-  Future<LocationState> getKeywordSearch(
-      LocationState state, String? idToken) async {
+  Future<dynamic> getKeywordSearch(LocationState state, String? idToken) async {
     // params
     final Map<String, dynamic> params = {
       'lat': state.currentLocation.latitude,
@@ -15,8 +14,6 @@ class KeywordSearchService {
       'directionType': state.settingData.directionType,
     };
 
-    final res = await keywordSearchRepository.getKeywordSearch(params, idToken);
-    return state.copyWith(
-        keywordSearchData: KeywordSearchState.fromJson(res.data['data']));
+    return await keywordSearchRepository.getKeywordSearch(params, idToken);
   }
 }
