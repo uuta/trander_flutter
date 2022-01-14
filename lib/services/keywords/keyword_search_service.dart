@@ -8,7 +8,7 @@ class KeywordSearchService {
     final Map<String, dynamic> params = {
       'lat': state.currentLocation.latitude,
       'lng': state.currentLocation.longitude,
-      'keyword': 'cafe',
+      'keyword': state.keyword,
       'max': state.settingData.minDistance,
       'min': state.settingData.maxDistance,
       'directionType': state.settingData.directionType,

@@ -23,6 +23,7 @@ class LocationState with _$LocationState {
     @Default(false) bool isKeywordSearchDialog,
     required KeywordSearchState keywordSearchData,
     required KeywordSearchExploreState keywordSearchExploreState,
+    @Default('') String keyword,
     required SettingState settingData,
     @Default('') String errorMessage,
   }) = _LocationState;

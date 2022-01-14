@@ -37,6 +37,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(keywordSearchData: data);
   }
 
+  Future<void> setKeyword(String data) async {
+    state = state.copyWith(keyword: data);
+  }
+
   Future<void> getCurrentLocation() async {
     try {
       state = await LocationService().getCurrentLocation(state);

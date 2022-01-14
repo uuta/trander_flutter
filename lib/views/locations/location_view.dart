@@ -2,6 +2,7 @@ import '/import.dart';
 import 'location_error_dialog_view.dart';
 import '/views/locations/city_info_button_view.dart';
 import '/views/locations/city_dialog_view.dart';
+import '/views/locations/keyword_text_field_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -69,6 +70,10 @@ class LocationView extends HookConsumerWidget {
                             : const LocationErrorDialogView()),
                 // Left bottom button
                 if (locationState.isCitySucceeded) const CityInfoButtonView(),
+                // Keyword text field
+                if (navigationState.currentIndex ==
+                    NavigationStateNotifier.pages['keyword'])
+                  const KeywordTextFieldView(),
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {

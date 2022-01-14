@@ -45,8 +45,19 @@ class App extends HookConsumerWidget {
           ),
           iconTheme: IconThemeData(color: Colors.grey),
         ),
+        inputDecorationTheme: InputDecorationTheme(
+            filled: false,
+            fillColor: Colors.white,
+            contentPadding: const EdgeInsets.symmetric(vertical: 15),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
+                borderSide: BorderSide.none)),
         textTheme: ThemeData.light().textTheme.copyWith(
-            // 変更！
+            headline5: const TextStyle(
+                fontFamily: 'Arial',
+                fontSize: 20,
+                color: Colors.grey,
+                fontWeight: FontWeight.bold),
             headline6: const TextStyle(
                 fontFamily: 'Arial',
                 fontSize: 18,
