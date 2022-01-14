@@ -11,6 +11,7 @@ class LocationView extends HookConsumerWidget {
     final auth0State = ref.watch(auth0NotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
+    final navigationState = ref.watch(navigationNotifierProvider);
 
     useEffect(() {
       Future.microtask(() async {
@@ -64,14 +65,17 @@ class LocationView extends HookConsumerWidget {
                             color: Theme.of(context).primaryColorLight,
                           ))
                         : locationState.errorMessage == ''
-                            ? const Text('')
+                            ? Text(locationState.keywordSearchData.toString())
                             : const LocationErrorDialogView()),
                 // Left bottom button
                 if (locationState.isCitySucceeded) const CityInfoButtonView(),
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              locationNotifier.getCity(auth0State.idToken);
+              navigationState.currentIndex ==
+                      NavigationStateNotifier.pages['city']
+                  ? locationNotifier.getCity(auth0State.idToken)
+                  : locationNotifier.getKeywordSearch(auth0State.idToken);
             },
             child: const Icon(Icons.location_searching)));
   }

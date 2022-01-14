@@ -1,6 +1,5 @@
 import '/import.dart';
 import 'dart:async';
-import '/services/location_service.dart';
 import '/models/models.dart';
 
 final locationNotifierProvider =
@@ -8,7 +7,6 @@ final locationNotifierProvider =
   (ref) => LocationStateNotifier(),
 );
 
-// TODO: Think about error handling
 class LocationStateNotifier extends StateNotifier<LocationState> {
   LocationStateNotifier()
       : super(LocationState(
@@ -16,6 +14,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           settingData: const SettingState(),
           cityData: const CityState(),
           cityExploreState: const CityExploreState(),
+          keywordSearchData: const KeywordSearchState(),
+          keywordSearchExploreState: const KeywordSearchExploreState(),
         ));
 
   Future<void> initMapAction() async {
@@ -59,9 +59,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   Future<void> getCity(String? idToken) async {
     try {
       state = state.copyWith(isLoading: true);
-      state = await LocationService().getCity(state, idToken);
+      state = await CityService().getCity(state, idToken);
       state = await LocationService().setExploreCity(state);
-      state = await LocationService().setNewLocation(state);
+      state = await LocationService()
+          .setNewLocation(state, state.cityData.lat, state.cityData.lng);
       state = await LocationService().setMarker(state);
       await LocationService().shiftCameraPosition(state, state.newLocation);
       state = state.copyWith(
@@ -74,9 +75,30 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
+  Future<void> getKeywordSearch(String? idToken) async {
+    try {
+      state = state.copyWith(isLoading: true);
+      state = await KeywordSearchService().getKeywordSearch(state, idToken);
+      state = await LocationService().setExploreCity(state);
+      state = await LocationService().setNewLocation(
+          state, state.keywordSearchData.lat, state.keywordSearchData.lng);
+      state = await LocationService().setMarker(state);
+      await LocationService().shiftCameraPosition(state, state.newLocation);
+      state = state.copyWith(
+          isLoading: false,
+          isKeywordSearchSucceeded: true,
+          isKeywordSearchDialog: true);
+    } on Exception catch (e, s) {
+      debugPrint('login error: $e - stack: $s');
+      state = state.copyWith(
+          isLoading: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+    }
+  }
+
   Future<void> getSetting(String? idToken) async {
     try {
-      state = await LocationService().getSetting(state, idToken);
+      state = await SettingService().getSetting(state, idToken);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(
@@ -106,7 +128,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
 
     try {
-      state = await LocationService().postSetting(state, idToken);
+      state = await SettingService().postSetting(state, idToken);
     } on Exception catch (e, s) {
       debugPrint('login error: $e - stack: $s');
       state = state.copyWith(

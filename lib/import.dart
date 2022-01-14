@@ -42,3 +42,6 @@ export '/views/styles/styles.dart';
 
 // pages
 export '/pages/pages.dart';
+
+// repositories
+export '/models/repositories/repositories.dart';

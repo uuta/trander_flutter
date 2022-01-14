@@ -28,6 +28,10 @@ class _$LocationStateTearOff {
       bool isCityDialog = false,
       required CityState cityData,
       required CityExploreState cityExploreState,
+      bool isKeywordSearchSucceeded = false,
+      bool isKeywordSearchDialog = false,
+      required KeywordSearchState keywordSearchData,
+      required KeywordSearchExploreState keywordSearchExploreState,
       required SettingState settingData,
       String errorMessage = ''}) {
     return _LocationState(
@@ -41,6 +45,10 @@ class _$LocationStateTearOff {
       isCityDialog: isCityDialog,
       cityData: cityData,
       cityExploreState: cityExploreState,
+      isKeywordSearchSucceeded: isKeywordSearchSucceeded,
+      isKeywordSearchDialog: isKeywordSearchDialog,
+      keywordSearchData: keywordSearchData,
+      keywordSearchExploreState: keywordSearchExploreState,
       settingData: settingData,
       errorMessage: errorMessage,
     );
@@ -63,6 +71,12 @@ mixin _$LocationState {
   bool get isCityDialog => throw _privateConstructorUsedError;
   CityState get cityData => throw _privateConstructorUsedError;
   CityExploreState get cityExploreState => throw _privateConstructorUsedError;
+  bool get isKeywordSearchSucceeded => throw _privateConstructorUsedError;
+  bool get isKeywordSearchDialog => throw _privateConstructorUsedError;
+  KeywordSearchState get keywordSearchData =>
+      throw _privateConstructorUsedError;
+  KeywordSearchExploreState get keywordSearchExploreState =>
+      throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
@@ -87,11 +101,16 @@ abstract class $LocationStateCopyWith<$Res> {
       bool isCityDialog,
       CityState cityData,
       CityExploreState cityExploreState,
+      bool isKeywordSearchSucceeded,
+      bool isKeywordSearchDialog,
+      KeywordSearchState keywordSearchData,
+      KeywordSearchExploreState keywordSearchExploreState,
       SettingState settingData,
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
   $CityExploreStateCopyWith<$Res> get cityExploreState;
+  $KeywordSearchStateCopyWith<$Res> get keywordSearchData;
   $SettingStateCopyWith<$Res> get settingData;
 }
 
@@ -116,6 +135,10 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? isCityDialog = freezed,
     Object? cityData = freezed,
     Object? cityExploreState = freezed,
+    Object? isKeywordSearchSucceeded = freezed,
+    Object? isKeywordSearchDialog = freezed,
+    Object? keywordSearchData = freezed,
+    Object? keywordSearchExploreState = freezed,
     Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -160,6 +183,22 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.cityExploreState
           : cityExploreState // ignore: cast_nullable_to_non_nullable
               as CityExploreState,
+      isKeywordSearchSucceeded: isKeywordSearchSucceeded == freezed
+          ? _value.isKeywordSearchSucceeded
+          : isKeywordSearchSucceeded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isKeywordSearchDialog: isKeywordSearchDialog == freezed
+          ? _value.isKeywordSearchDialog
+          : isKeywordSearchDialog // ignore: cast_nullable_to_non_nullable
+              as bool,
+      keywordSearchData: keywordSearchData == freezed
+          ? _value.keywordSearchData
+          : keywordSearchData // ignore: cast_nullable_to_non_nullable
+              as KeywordSearchState,
+      keywordSearchExploreState: keywordSearchExploreState == freezed
+          ? _value.keywordSearchExploreState
+          : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
+              as KeywordSearchExploreState,
       settingData: settingData == freezed
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
@@ -182,6 +221,13 @@ class _$LocationStateCopyWithImpl<$Res>
   $CityExploreStateCopyWith<$Res> get cityExploreState {
     return $CityExploreStateCopyWith<$Res>(_value.cityExploreState, (value) {
       return _then(_value.copyWith(cityExploreState: value));
+    });
+  }
+
+  @override
+  $KeywordSearchStateCopyWith<$Res> get keywordSearchData {
+    return $KeywordSearchStateCopyWith<$Res>(_value.keywordSearchData, (value) {
+      return _then(_value.copyWith(keywordSearchData: value));
     });
   }
 
@@ -211,6 +257,10 @@ abstract class _$LocationStateCopyWith<$Res>
       bool isCityDialog,
       CityState cityData,
       CityExploreState cityExploreState,
+      bool isKeywordSearchSucceeded,
+      bool isKeywordSearchDialog,
+      KeywordSearchState keywordSearchData,
+      KeywordSearchExploreState keywordSearchExploreState,
       SettingState settingData,
       String errorMessage});
 
@@ -218,6 +268,8 @@ abstract class _$LocationStateCopyWith<$Res>
   $CityStateCopyWith<$Res> get cityData;
   @override
   $CityExploreStateCopyWith<$Res> get cityExploreState;
+  @override
+  $KeywordSearchStateCopyWith<$Res> get keywordSearchData;
   @override
   $SettingStateCopyWith<$Res> get settingData;
 }
@@ -245,6 +297,10 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? isCityDialog = freezed,
     Object? cityData = freezed,
     Object? cityExploreState = freezed,
+    Object? isKeywordSearchSucceeded = freezed,
+    Object? isKeywordSearchDialog = freezed,
+    Object? keywordSearchData = freezed,
+    Object? keywordSearchExploreState = freezed,
     Object? settingData = freezed,
     Object? errorMessage = freezed,
   }) {
@@ -289,6 +345,22 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.cityExploreState
           : cityExploreState // ignore: cast_nullable_to_non_nullable
               as CityExploreState,
+      isKeywordSearchSucceeded: isKeywordSearchSucceeded == freezed
+          ? _value.isKeywordSearchSucceeded
+          : isKeywordSearchSucceeded // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isKeywordSearchDialog: isKeywordSearchDialog == freezed
+          ? _value.isKeywordSearchDialog
+          : isKeywordSearchDialog // ignore: cast_nullable_to_non_nullable
+              as bool,
+      keywordSearchData: keywordSearchData == freezed
+          ? _value.keywordSearchData
+          : keywordSearchData // ignore: cast_nullable_to_non_nullable
+              as KeywordSearchState,
+      keywordSearchExploreState: keywordSearchExploreState == freezed
+          ? _value.keywordSearchExploreState
+          : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
+              as KeywordSearchExploreState,
       settingData: settingData == freezed
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
@@ -315,6 +387,10 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.isCityDialog = false,
       required this.cityData,
       required this.cityExploreState,
+      this.isKeywordSearchSucceeded = false,
+      this.isKeywordSearchDialog = false,
+      required this.keywordSearchData,
+      required this.keywordSearchExploreState,
       required this.settingData,
       this.errorMessage = ''});
 
@@ -345,6 +421,16 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final CityState cityData;
   @override
   final CityExploreState cityExploreState;
+  @JsonKey()
+  @override
+  final bool isKeywordSearchSucceeded;
+  @JsonKey()
+  @override
+  final bool isKeywordSearchDialog;
+  @override
+  final KeywordSearchState keywordSearchData;
+  @override
+  final KeywordSearchExploreState keywordSearchExploreState;
   @override
   final SettingState settingData;
   @JsonKey()
@@ -353,7 +439,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, settingData: $settingData, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, settingData: $settingData, errorMessage: $errorMessage)';
   }
 
   @override
@@ -371,6 +457,12 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('isCityDialog', isCityDialog))
       ..add(DiagnosticsProperty('cityData', cityData))
       ..add(DiagnosticsProperty('cityExploreState', cityExploreState))
+      ..add(DiagnosticsProperty(
+          'isKeywordSearchSucceeded', isKeywordSearchSucceeded))
+      ..add(DiagnosticsProperty('isKeywordSearchDialog', isKeywordSearchDialog))
+      ..add(DiagnosticsProperty('keywordSearchData', keywordSearchData))
+      ..add(DiagnosticsProperty(
+          'keywordSearchExploreState', keywordSearchExploreState))
       ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
@@ -396,6 +488,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
             const DeepCollectionEquality().equals(other.cityData, cityData) &&
             const DeepCollectionEquality()
                 .equals(other.cityExploreState, cityExploreState) &&
+            const DeepCollectionEquality().equals(
+                other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) &&
+            const DeepCollectionEquality()
+                .equals(other.isKeywordSearchDialog, isKeywordSearchDialog) &&
+            const DeepCollectionEquality()
+                .equals(other.keywordSearchData, keywordSearchData) &&
+            const DeepCollectionEquality().equals(
+                other.keywordSearchExploreState, keywordSearchExploreState) &&
             const DeepCollectionEquality()
                 .equals(other.settingData, settingData) &&
             const DeepCollectionEquality()
@@ -415,6 +515,10 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       const DeepCollectionEquality().hash(isCityDialog),
       const DeepCollectionEquality().hash(cityData),
       const DeepCollectionEquality().hash(cityExploreState),
+      const DeepCollectionEquality().hash(isKeywordSearchSucceeded),
+      const DeepCollectionEquality().hash(isKeywordSearchDialog),
+      const DeepCollectionEquality().hash(keywordSearchData),
+      const DeepCollectionEquality().hash(keywordSearchExploreState),
       const DeepCollectionEquality().hash(settingData),
       const DeepCollectionEquality().hash(errorMessage));
 
@@ -436,6 +540,10 @@ abstract class _LocationState implements LocationState {
       bool isCityDialog,
       required CityState cityData,
       required CityExploreState cityExploreState,
+      bool isKeywordSearchSucceeded,
+      bool isKeywordSearchDialog,
+      required KeywordSearchState keywordSearchData,
+      required KeywordSearchExploreState keywordSearchExploreState,
       required SettingState settingData,
       String errorMessage}) = _$_LocationState;
 
@@ -459,6 +567,14 @@ abstract class _LocationState implements LocationState {
   CityState get cityData;
   @override
   CityExploreState get cityExploreState;
+  @override
+  bool get isKeywordSearchSucceeded;
+  @override
+  bool get isKeywordSearchDialog;
+  @override
+  KeywordSearchState get keywordSearchData;
+  @override
+  KeywordSearchExploreState get keywordSearchExploreState;
   @override
   SettingState get settingData;
   @override
