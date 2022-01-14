@@ -1,6 +1,5 @@
 import '/import.dart';
 import 'dart:async';
-import '/models/models.dart';
 
 final locationNotifierProvider =
     StateNotifierProvider<LocationStateNotifier, LocationState>(
@@ -38,7 +37,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = await LocationService().getCurrentLocation(state);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
@@ -49,7 +48,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       LocationService().shiftCameraPosition(state, state.currentLocation);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
@@ -68,7 +67,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(
           isLoading: false, isCitySucceeded: true, isCityDialog: true);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
@@ -89,7 +88,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           isKeywordSearchSucceeded: true,
           isKeywordSearchDialog: true);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
@@ -100,7 +99,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = await SettingService().getSetting(state, idToken);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);
@@ -130,7 +129,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = await SettingService().postSetting(state, idToken);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isLoading: false,
           errorMessage: ErrorHandler.getApiError(e).errorMessage);

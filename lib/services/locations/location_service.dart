@@ -1,6 +1,5 @@
 import '/import.dart';
 
-// TODO: might be better to separate functions into different files
 class LocationService {
   // Repositories
   final locationRepository = LocationRepository();

@@ -31,7 +31,7 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       state = state.copyWith(
           isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       logout();
     }
   }
@@ -44,7 +44,7 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       state = state.copyWith(
           isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
     } on Exception catch (e, s) {
-      debugPrint('login error: $e - stack: $s');
+      debugPrint('error: $e - stack: $s');
       state = state.copyWith(
           isBusy: false, isLoggedIn: false, errorMessage: e.toString());
     }
