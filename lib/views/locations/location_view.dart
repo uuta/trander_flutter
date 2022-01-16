@@ -1,8 +1,8 @@
 import '/import.dart';
 import 'location_error_dialog_view.dart';
-import '/views/locations/city_info_button_view.dart';
-import '/views/locations/city_dialog_view.dart';
-import '/views/locations/keyword_text_field_view.dart';
+import '/views/cities/city_info_button_view.dart';
+import '/views/cities/city_dialog_view.dart';
+import '../keywords/keyword_text_field_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
