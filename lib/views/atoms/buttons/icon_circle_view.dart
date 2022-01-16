@@ -1,10 +1,10 @@
 import '/import.dart';
 
-class IconCircle extends StatelessWidget {
+class IconCircleView extends StatelessWidget {
   final IconData icon;
   final Color iconColor;
 
-  const IconCircle({Key? key, required this.icon, required this.iconColor})
+  const IconCircleView({Key? key, required this.icon, required this.iconColor})
       : super(key: key);
 
   @override

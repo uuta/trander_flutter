@@ -1,10 +1,10 @@
 import '/import.dart';
 
-class SubmitButton extends StatelessWidget {
+class SubmitButtonView extends StatelessWidget {
   final String text;
   final Function()? onPressed;
 
-  const SubmitButton({Key? key, required this.text, this.onPressed})
+  const SubmitButtonView({Key? key, required this.text, this.onPressed})
       : super(key: key);
 
   @override

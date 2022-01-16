@@ -1,11 +1,11 @@
 import '/import.dart';
 
-class IconForm extends StatelessWidget {
+class IconFormView extends StatelessWidget {
   final String label;
   final IconData icon;
   final Color iconColor;
   final bool obscureText;
-  const IconForm(
+  const IconFormView(
       {Key? key,
       required this.label,
       required this.icon,

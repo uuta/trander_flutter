@@ -1,16 +1,18 @@
 import '/import.dart';
-import '/views/buttons/image_circle.dart';
+import '/views/atoms//buttons/image_circle_view.dart';
 
 class CityDialogView extends HookConsumerWidget {
   final String title, buttonText;
   final Image? image;
+  final LocationState test;
 
-  const CityDialogView({
-    Key? key,
-    required this.title,
-    required this.buttonText,
-    this.image,
-  }) : super(key: key);
+  const CityDialogView(
+      {Key? key,
+      required this.title,
+      required this.buttonText,
+      this.image,
+      required this.test})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -77,7 +79,7 @@ class CityDialogView extends HookConsumerWidget {
               Row(
                 children: [
                   const Spacer(),
-                  ImageCircle(
+                  ImageCircleView(
                       image: Image.asset(
                         "assets/images/utils/streetview.png",
                         width: 20,
@@ -86,19 +88,19 @@ class CityDialogView extends HookConsumerWidget {
                       onPressed: () => UrlService.launchUrl(
                           locationState.cityExploreState.streetview)),
                   const Spacer(),
-                  ImageCircle(
+                  ImageCircleView(
                       image: Image.asset("assets/images/utils/googlemap.png",
                           width: 20),
                       iconColor: Colors.white,
                       onPressed: () => UrlService.launchUrl(
                           locationState.cityExploreState.googlemap)),
                   const Spacer(),
-                  ImageCircle(
+                  ImageCircleView(
                       image: Image.asset("assets/images/utils/twitter.png",
                           width: 20),
                       iconColor: Colors.white,
-                      onPressed: () => UrlService.launchUrl(
-                          locationState.cityExploreState.twitter)),
+                      onPressed: () =>
+                          UrlService.launchUrl(test.cityExploreState.twitter)),
                   const Spacer(),
                 ],
               ),

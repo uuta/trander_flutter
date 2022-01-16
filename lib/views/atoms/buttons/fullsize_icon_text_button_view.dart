@@ -1,11 +1,11 @@
 import '/import.dart';
 
-class FullsizeIconTextButton extends HookConsumerWidget {
+class FullsizeIconTextButtonView extends HookConsumerWidget {
   final Widget icon;
   final String text;
   final double radius;
   final VoidCallback? onPressed;
-  const FullsizeIconTextButton(
+  const FullsizeIconTextButtonView(
       {Key? key,
       required this.text,
       required this.icon,

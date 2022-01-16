@@ -1,11 +1,11 @@
 import '/import.dart';
 
-class SubmitWhiteButton extends StatelessWidget {
+class SubmitWhiteButtonView extends StatelessWidget {
   final String text;
   final Function()? onPressed;
   final double? fontSize;
 
-  const SubmitWhiteButton(
+  const SubmitWhiteButtonView(
       {Key? key, required this.text, this.onPressed, this.fontSize})
       : super(key: key);
 

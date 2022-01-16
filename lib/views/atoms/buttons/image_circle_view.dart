@@ -1,11 +1,11 @@
 import '/import.dart';
 
-class ImageCircle extends StatelessWidget {
+class ImageCircleView extends StatelessWidget {
   final Image image;
   final Color iconColor;
   final VoidCallback? onPressed;
 
-  const ImageCircle(
+  const ImageCircleView(
       {Key? key, required this.image, required this.iconColor, this.onPressed})
       : super(key: key);
 

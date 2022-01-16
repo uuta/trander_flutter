@@ -1,10 +1,10 @@
-import 'package:trander_flutter/views/indexes/city_title_view.dart';
+import '/views/organisms/indexes/city_title_view.dart';
 
 import '/import.dart';
 // views
-import '/views/bottom_bars/three_bottom_bar.dart';
-import '../../views/settings/setting_view.dart';
-import '../../views/locations/location_view.dart';
+import '../../views/organisms/bottom_bars/three_bottom_bar_view.dart';
+import '/views/organisms/settings/setting_view.dart';
+import '/views/organisms/locations/location_view.dart';
 
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -43,6 +43,6 @@ class IndexPage extends HookConsumerWidget {
     return Scaffold(
         appBar: AppBar(title: _titleList[navigationState.currentIndex]),
         body: _pageList[navigationState.currentIndex],
-        bottomNavigationBar: const ThreeBottomBar());
+        bottomNavigationBar: const ThreeBottomBarView());
   }
 }

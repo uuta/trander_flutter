@@ -1,6 +1,6 @@
 import '/import.dart';
-import 'package:trander_flutter/views/indexes/city_title_view.dart';
-import '/views/buttons/fullsize_icon_text_button.dart';
+import '/views/organisms/indexes/city_title_view.dart';
+import '/views/atoms/buttons/fullsize_icon_text_button_view.dart';
 
 class CityDetailPage extends HookConsumerWidget {
   const CityDetailPage({Key? key}) : super(key: key);
@@ -31,7 +31,7 @@ class CityDetailPage extends HookConsumerWidget {
                             height: 45,
                             child: FractionallySizedBox(
                                 widthFactor: 0.95,
-                                child: FullsizeIconTextButton(
+                                child: FullsizeIconTextButtonView(
                                   icon: Image.asset(
                                       "assets/images/utils/streetview.png",
                                       width: 20),
@@ -47,7 +47,7 @@ class CityDetailPage extends HookConsumerWidget {
                             height: 45,
                             child: FractionallySizedBox(
                                 widthFactor: 0.95,
-                                child: FullsizeIconTextButton(
+                                child: FullsizeIconTextButtonView(
                                   icon: Image.asset(
                                       "assets/images/utils/googlemap.png",
                                       width: 20),
@@ -62,7 +62,7 @@ class CityDetailPage extends HookConsumerWidget {
                       height: 45,
                       child: FractionallySizedBox(
                           widthFactor: 0.95,
-                          child: FullsizeIconTextButton(
+                          child: FullsizeIconTextButtonView(
                             icon: Image.asset("assets/images/utils/twitter.png",
                                 width: 20),
                             text: 'Share on Twitter',

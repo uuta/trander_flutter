@@ -1,7 +1,7 @@
 import '/import.dart';
 import '/pages/settings/setting_range_page.dart';
-import '/views/settings/setting_dialog_view.dart';
-import '/views/settings/setting_direction_dialog_view.dart';
+import '/views/organisms/settings/setting_dialog_view.dart';
+import '/views/organisms/settings/setting_direction_dialog_view.dart';
 
 class SettingView extends HookConsumerWidget {
   const SettingView({Key? key}) : super(key: key);

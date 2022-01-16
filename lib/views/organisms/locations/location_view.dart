@@ -1,8 +1,8 @@
 import '/import.dart';
 import 'location_error_dialog_view.dart';
-import '/views/cities/city_info_button_view.dart';
-import '/views/cities/city_dialog_view.dart';
-import '../keywords/keyword_text_field_view.dart';
+import '/views/organisms/cities/city_info_button_view.dart';
+import '/views/organisms/cities/city_dialog_view.dart';
+import '/views/organisms/keywords/keyword_text_field_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class LocationView extends HookConsumerWidget {
 
     // City dialog
     if (locationState.isCityDialog) {
-      showCityDialog(context);
+      showCityDialog(context, locationState);
     }
 
     return Scaffold(
@@ -86,15 +86,17 @@ class LocationView extends HookConsumerWidget {
   }
 
   // City dialog
-  void showCityDialog(BuildContext context) {
+  void showCityDialog(BuildContext context, LocationState locationState) {
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       showDialog(
           context: context,
           barrierDismissible: false,
           builder: (BuildContext childContext) {
-            return const CityDialogView(
+            // TODO: need feadback
+            return CityDialogView(
               title: 'Found succcessfully',
               buttonText: 'Close',
+              test: locationState,
             );
           });
     });

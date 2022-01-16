@@ -1,5 +1,5 @@
 import '/import.dart';
-import '/views/buttons/submit_white_button.dart';
+import '/views/atoms/buttons/submit_white_button_view.dart';
 
 class LoginView extends HookConsumerWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class LoginView extends HookConsumerWidget {
             SizedBox(
               height: 50,
               width: 250,
-              child: SubmitWhiteButton(
+              child: SubmitWhiteButtonView(
                 text: 'Login',
                 onPressed: () {
                   auth0Notifier.login();
