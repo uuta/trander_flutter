@@ -3,8 +3,6 @@ import '/import.dart';
 class KeywordTextFieldView extends HookConsumerWidget {
   const KeywordTextFieldView({Key? key}) : super(key: key);
 
-  // TODO: Consider validation
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
