@@ -1,8 +1,8 @@
 import '/import.dart';
 import 'location_error_dialog_view.dart';
 import '/views/organisms/cities/city_info_button_view.dart';
-import '/views/organisms/cities/city_dialog_view.dart';
 import '/views/organisms/keywords/keyword_text_field_view.dart';
+import '/views/molecules/dialogs/succeed_dialog_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -28,7 +28,12 @@ class LocationView extends HookConsumerWidget {
 
     // City dialog
     if (locationState.isCityDialog) {
-      showCityDialog(context, locationState);
+      showCityDialog(context, locationState, locationNotifier);
+    }
+
+    // City dialog
+    if (locationState.isKeywordSearchDialog) {
+      showKeywordSearchDialog(context, locationState, locationNotifier);
     }
 
     return Scaffold(
@@ -86,17 +91,73 @@ class LocationView extends HookConsumerWidget {
   }
 
   // City dialog
-  void showCityDialog(BuildContext context, LocationState locationState) {
+  void showCityDialog(BuildContext context, LocationState locationState,
+      LocationStateNotifier locationNotifier) {
     WidgetsBinding.instance?.addPostFrameCallback((_) {
       showDialog(
           context: context,
           barrierDismissible: false,
           builder: (BuildContext childContext) {
-            // TODO: need feadback
-            return CityDialogView(
+            return SucceedDialogView(
+              // TODO: need feadback
               title: 'Found succcessfully',
               buttonText: 'Close',
-              test: locationState,
+              name: locationState.cityData.name,
+              countryCode: locationState.cityData.countryCode,
+              leftIcon: Image.asset(
+                "assets/images/utils/streetview.png",
+                width: 20,
+              ),
+              centerIcon:
+                  Image.asset("assets/images/utils/googlemap.png", width: 20),
+              rightIcon:
+                  Image.asset("assets/images/utils/twitter.png", width: 20),
+              leftOnPressed: () => UrlService.launchUrl(
+                  locationState.cityExploreState.streetview),
+              centerOnPressed: () => UrlService.launchUrl(
+                  locationState.cityExploreState.googlemap),
+              rightOnPressed: () =>
+                  UrlService.launchUrl(locationState.cityExploreState.twitter),
+              closeOnPressed: () {
+                locationNotifier.switchCityDialog(false);
+                Navigator.pop(context);
+              },
+            );
+          });
+    });
+  }
+
+  // Keyword search dialog
+  void showKeywordSearchDialog(BuildContext context,
+      LocationState locationState, LocationStateNotifier locationNotifier) {
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext childContext) {
+            return SucceedDialogView(
+              // TODO: need feadback
+              title: 'Found succcessfully',
+              buttonText: 'Close',
+              name: locationState.keywordSearchData.name,
+              leftIcon: Image.asset(
+                "assets/images/utils/streetview.png",
+                width: 20,
+              ),
+              centerIcon:
+                  Image.asset("assets/images/utils/googlemap.png", width: 20),
+              rightIcon:
+                  Image.asset("assets/images/utils/twitter.png", width: 20),
+              leftOnPressed: () => UrlService.launchUrl(
+                  locationState.keywordSearchExploreState.streetview),
+              centerOnPressed: () => UrlService.launchUrl(
+                  locationState.keywordSearchExploreState.googlemap),
+              rightOnPressed: () => UrlService.launchUrl(
+                  locationState.keywordSearchExploreState.twitter),
+              closeOnPressed: () {
+                locationNotifier.switchKeywordSearchDialog(false);
+                Navigator.pop(context);
+              },
             );
           });
     });

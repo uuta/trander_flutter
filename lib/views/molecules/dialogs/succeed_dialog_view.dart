@@ -1,25 +1,32 @@
 import '/import.dart';
-import '/views/atoms//buttons/image_circle_view.dart';
+import '/views/atoms/buttons/image_circle_view.dart';
 
-// TODO: Maybe should remove this file
-class CityDialogView extends HookConsumerWidget {
+class SucceedDialogView extends StatelessWidget {
   final String title, buttonText;
-  final Image? image;
-  final LocationState test;
+  final String? name, countryCode;
+  final Image leftIcon, centerIcon, rightIcon;
+  final Function()? leftOnPressed,
+      centerOnPressed,
+      rightOnPressed,
+      closeOnPressed;
 
-  const CityDialogView(
+  const SucceedDialogView(
       {Key? key,
       required this.title,
       required this.buttonText,
-      this.image,
-      required this.test})
+      this.name,
+      this.countryCode,
+      required this.leftIcon,
+      required this.centerIcon,
+      required this.rightIcon,
+      required this.leftOnPressed,
+      required this.centerOnPressed,
+      required this.rightOnPressed,
+      required this.closeOnPressed})
       : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final locationState = ref.watch(locationNotifierProvider);
-    final locationNotifier = ref.watch(locationNotifierProvider.notifier);
-    final String? countryCode = locationState.cityData.countryCode;
+  Widget build(BuildContext context) {
     const double padding = 16.0;
     const double avatarRadius = 45.0;
 
@@ -65,13 +72,13 @@ class CityDialogView extends HookConsumerWidget {
                             padding: const EdgeInsets.only(right: 10),
                             child: Material(
                               elevation: 3,
-                              child: Image.network(
-                                  'https://flagcdn.com/32x24/$countryCode.png'),
+                              child: (countryCode != null)
+                                  ? Image.network(
+                                      'https://flagcdn.com/32x24/$countryCode.png')
+                                  : const Text(''),
                             ))),
                     TextSpan(
-                      // text: locationState.cityData.name,
-                      text: UtilService.shortenStr(locationState.cityData.name,
-                          max: 40),
+                      text: UtilService.shortenStr(name, max: 40),
                     )
                   ],
                 ),
@@ -81,27 +88,19 @@ class CityDialogView extends HookConsumerWidget {
                 children: [
                   const Spacer(),
                   ImageCircleView(
-                      image: Image.asset(
-                        "assets/images/utils/streetview.png",
-                        width: 20,
-                      ),
+                      image: leftIcon,
                       iconColor: Colors.white,
-                      onPressed: () => UrlService.launchUrl(
-                          locationState.cityExploreState.streetview)),
+                      onPressed: leftOnPressed),
                   const Spacer(),
                   ImageCircleView(
-                      image: Image.asset("assets/images/utils/googlemap.png",
-                          width: 20),
+                      image: centerIcon,
                       iconColor: Colors.white,
-                      onPressed: () => UrlService.launchUrl(
-                          locationState.cityExploreState.googlemap)),
+                      onPressed: centerOnPressed),
                   const Spacer(),
                   ImageCircleView(
-                      image: Image.asset("assets/images/utils/twitter.png",
-                          width: 20),
+                      image: rightIcon,
                       iconColor: Colors.white,
-                      onPressed: () =>
-                          UrlService.launchUrl(test.cityExploreState.twitter)),
+                      onPressed: rightOnPressed),
                   const Spacer(),
                 ],
               ),
@@ -109,10 +108,7 @@ class CityDialogView extends HookConsumerWidget {
               Align(
                 alignment: Alignment.bottomRight,
                 child: TextButton(
-                  onPressed: () {
-                    locationNotifier.switchCityDialog(false);
-                    Navigator.pop(context);
-                  },
+                  onPressed: closeOnPressed,
                   child: Text(buttonText),
                 ),
               ),

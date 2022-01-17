@@ -33,6 +33,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(isCityDialog: isTrue);
   }
 
+  Future<void> switchKeywordSearchDialog(bool isTrue) async {
+    state = state.copyWith(isKeywordSearchDialog: isTrue);
+  }
+
   Future<void> setKeywodSearchData(KeywordSearchState data) async {
     state = state.copyWith(keywordSearchData: data);
   }
