@@ -1,10 +1,11 @@
 import '/import.dart';
 
-class CityInfoButtonView extends HookConsumerWidget {
-  const CityInfoButtonView({Key? key}) : super(key: key);
+class IconButtonView extends StatelessWidget {
+  final Function()? onPressed;
+  const IconButtonView({Key? key, this.onPressed}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Positioned(
       left: 15,
       bottom: 20,
@@ -18,12 +19,7 @@ class CityInfoButtonView extends HookConsumerWidget {
             'More Info',
             style: HeaderStyles.header4(),
           ),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const CityDetailPage()));
-          },
+          onPressed: onPressed,
           style: ElevatedButton.styleFrom(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),

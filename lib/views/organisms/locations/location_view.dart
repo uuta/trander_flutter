@@ -1,8 +1,8 @@
 import '/import.dart';
 import 'location_error_dialog_view.dart';
-import '/views/organisms/cities/city_info_button_view.dart';
 import '/views/organisms/keywords/keyword_text_field_view.dart';
 import '/views/molecules/dialogs/succeed_dialog_view.dart';
+import '/views/atoms/buttons/icon_button_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -73,12 +73,27 @@ class LocationView extends HookConsumerWidget {
                         : locationState.errorMessage == ''
                             ? Text(locationState.keywordSearchData.toString())
                             : const LocationErrorDialogView()),
-                // Left bottom button
-                if (locationState.isCitySucceeded) const CityInfoButtonView(),
+
+                // City info button
+                if (navigationState.currentIndex ==
+                        NavigationStateNotifier.pages['city'] &&
+                    locationState.isCitySucceeded)
+                  IconButtonView(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const CityDetailPage()))),
+
                 // Keyword text field
                 if (navigationState.currentIndex ==
                     NavigationStateNotifier.pages['keyword'])
                   const KeywordTextFieldView(),
+
+                // Keyword info button
+                if (navigationState.currentIndex ==
+                        NavigationStateNotifier.pages['keyword'] &&
+                    locationState.isKeywordSearchSucceeded)
+                  IconButtonView(onPressed: () => {}),
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
