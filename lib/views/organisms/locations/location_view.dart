@@ -31,7 +31,7 @@ class LocationView extends HookConsumerWidget {
       showCityDialog(context, locationState, locationNotifier);
     }
 
-    // City dialog
+    // Keyword search dialog
     if (locationState.isKeywordSearchDialog) {
       showKeywordSearchDialog(context, locationState, locationNotifier);
     }

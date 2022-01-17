@@ -71,7 +71,16 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = state.copyWith(isLoading: true);
       state = await CityService().getCity(state, idToken);
-      state = await LocationService().setExploreCity(state);
+      final exploreData = await LocationService().setExploreData(
+        state,
+        state.cityData.lat.toString(),
+        state.cityData.lng.toString(),
+        state.cityData.placeId.toString(),
+        state.cityData.name.toString(),
+      );
+      state = state.copyWith(
+          cityExploreState: CityExploreState.fromJson(exploreData));
+
       state = await LocationService()
           .setNewLocation(state, state.cityData.lat, state.cityData.lng);
       state = await LocationService().setMarker(state);
@@ -105,7 +114,17 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       );
       setKeywodSearchData(KeywordSearchState.fromJson(
           {...kwRes.data['data'], ...distanceRes.data}));
-      state = await LocationService().setExploreCity(state);
+      final exploreData = await LocationService().setExploreData(
+        state,
+        state.keywordSearchData.lat.toString(),
+        state.keywordSearchData.lng.toString(),
+        state.keywordSearchData.placeId.toString(),
+        state.keywordSearchData.name.toString(),
+      );
+      state = state.copyWith(
+          keywordSearchExploreState:
+              KeywordSearchExploreState.fromJson(exploreData));
+
       state = await LocationService().setNewLocation(
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
       state = await LocationService().setMarker(state);

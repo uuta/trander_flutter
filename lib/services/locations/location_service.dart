@@ -11,39 +11,37 @@ class LocationService {
         currentLocation: LatLng(data.latitude, data.longitude));
   }
 
-  Future<LocationState> setExploreCity(LocationState state) async {
+  Future<Map<String, String>> setExploreData(LocationState state, String lat,
+      String lng, String placeId, String name) async {
     final String streetview, googlemap, twitter, twitterContent, twitterUrl;
     streetview =
         "https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=" +
-            state.cityData.lat.toString() +
+            lat +
             "," +
-            state.cityData.lng.toString();
+            lng;
 
     googlemap = "https://www.google.com/maps/search/?api=1&query=" +
-        state.cityData.lat.toString() +
+        lat +
         "," +
-        state.cityData.lng.toString() +
+        lng +
         "&query_place_id=" +
-        state.cityData.placeId.toString();
+        placeId;
 
-    twitterUrl =
-        "https://trander.net/kw/share/" + state.cityData.placeId.toString();
+    twitterUrl = "https://trander.net/kw/share/" + placeId;
 
-    twitterContent = "How about this place?%0a%0a%20%23Trander%0a%0a" +
-        state.cityData.name.toString() +
-        "%0a";
+    twitterContent =
+        "How about this place?%0a%0a%20%23Trander%0a%0a" + name + "%0a";
 
     twitter = "https://twitter.com/intent/tweet?text=" +
         twitterContent +
         "&url=" +
         twitterUrl;
 
-    return state.copyWith(
-        cityExploreState: CityExploreState.fromJson({
+    return ({
       'googlemap': googlemap,
       'streetview': streetview,
       'twitter': twitter
-    }));
+    });
   }
 
   Future<LocationState> setNewLocation(
