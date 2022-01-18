@@ -100,6 +100,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       final double lat = state.currentLocation.latitude;
       final double lng = state.currentLocation.longitude;
 
+      FocusManager.instance.primaryFocus?.unfocus();
+
       state = state.copyWith(isLoading: true);
       final kwRes =
           await KeywordSearchService().getKeywordSearch(state, idToken);
