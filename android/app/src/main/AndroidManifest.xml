@@ -1,5 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uuta.trander">
+    <!-- Added the below to open google map and street view -->
+    <!-- https://huynguyennovem.github.io/articles/2020-11/android11-package-visibility -->
+    <!-- https://stackoverflow.com/questions/70224911/i-urllauncher17669-component-name-for-url-is-null -->
+    <queries>
+      <package android:name="com.google.android.apps.maps" />
+      <intent>
+        <action android:name="android.intent.action.VIEW" />
+        <data android:mimeType="text/plain" />
+      </intent>
+    </queries>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
