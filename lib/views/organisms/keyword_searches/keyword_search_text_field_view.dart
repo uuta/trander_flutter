@@ -1,7 +1,7 @@
 import '/import.dart';
 
-class KeywordTextFieldView extends HookConsumerWidget {
-  const KeywordTextFieldView({Key? key}) : super(key: key);
+class KeywordSearchTextFieldView extends HookConsumerWidget {
+  const KeywordSearchTextFieldView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

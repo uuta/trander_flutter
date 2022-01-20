@@ -1,6 +1,6 @@
 import '/import.dart';
 import 'location_error_dialog_view.dart';
-import '/views/organisms/keywords/keyword_text_field_view.dart';
+import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/molecules/dialogs/succeed_dialog_view.dart';
 import '/views/atoms/buttons/icon_button_view.dart';
 
@@ -87,7 +87,7 @@ class LocationView extends HookConsumerWidget {
                 // Keyword text field
                 if (navigationState.currentIndex ==
                     NavigationStateNotifier.pages['keyword'])
-                  const KeywordTextFieldView(),
+                  const KeywordSearchTextFieldView(),
 
                 // Keyword info button
                 if (navigationState.currentIndex ==
