@@ -22,7 +22,6 @@ class CityTitleView extends HookConsumerWidget {
                               'https://flagcdn.com/32x24/$countryCode.png'),
                         ))),
                 TextSpan(
-                  // text: locationState.cityData.name,
                   text: UtilService.shortenStr(locationState.cityData.name,
                       max: 28),
                 )
@@ -31,7 +30,7 @@ class CityTitleView extends HookConsumerWidget {
           )
         : Text.rich(
             TextSpan(
-              style: HeaderStyles.header2(),
+              style: HeaderStyles.header4(),
               children: [
                 TextSpan(
                   text: locationState.cityData.name,

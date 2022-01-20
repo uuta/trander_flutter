@@ -5,6 +5,7 @@ import '/import.dart';
 import '../../views/organisms/bottom_bars/three_bottom_bar_view.dart';
 import '/views/organisms/settings/setting_view.dart';
 import '/views/organisms/locations/location_view.dart';
+import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
 
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -30,10 +31,12 @@ class IndexPage extends HookConsumerWidget {
               'City Search',
               style: HeaderStyles.header2(),
             ),
-      Text(
-        'Keyword Search',
-        style: HeaderStyles.header2(),
-      ),
+      locationState.isKeywordSearchSucceeded
+          ? const KeywordSearchTitleView()
+          : Text(
+              'Keyword Search',
+              style: HeaderStyles.header2(),
+            ),
       Text(
         'Settings',
         style: HeaderStyles.header2(),

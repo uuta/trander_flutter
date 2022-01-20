@@ -3,6 +3,7 @@ import 'location_error_dialog_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/molecules/dialogs/succeed_dialog_view.dart';
 import '/views/atoms/buttons/icon_button_view.dart';
+import '/pages/keyword_searches/keyword_search_detail_page.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -93,7 +94,12 @@ class LocationView extends HookConsumerWidget {
                 if (navigationState.currentIndex ==
                         NavigationStateNotifier.pages['keyword'] &&
                     locationState.isKeywordSearchSucceeded)
-                  IconButtonView(onPressed: () => {}),
+                  IconButtonView(
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const KeywordSearchDetailPage()))),
               ]),
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
