@@ -1,6 +1,6 @@
 import '/import.dart';
 import '/views/organisms/indexes/city_title_view.dart';
-import '/views/atoms/buttons/fullsize_icon_text_button_view.dart';
+import '/views/molecules/buttons/mixed_three_button_view.dart';
 
 class CityDetailPage extends HookConsumerWidget {
   const CityDetailPage({Key? key}) : super(key: key);
@@ -24,52 +24,23 @@ class CityDetailPage extends HookConsumerWidget {
                     style: HeaderStyles.header2(),
                   ),
                   const SizedBox(height: 20),
-                  Row(children: <Widget>[
-                    Expanded(
-                        flex: 5,
-                        child: SizedBox(
-                            height: 45,
-                            child: FractionallySizedBox(
-                                widthFactor: 0.95,
-                                child: FullsizeIconTextButtonView(
-                                  icon: Image.asset(
-                                      "assets/images/utils/streetview.png",
-                                      width: 20),
-                                  text: 'Street View',
-                                  radius: 30.0,
-                                  onPressed: () => UrlService.launchUrl(
-                                      locationState
-                                          .cityExploreState.streetview),
-                                )))),
-                    Expanded(
-                        flex: 5,
-                        child: SizedBox(
-                            height: 45,
-                            child: FractionallySizedBox(
-                                widthFactor: 0.95,
-                                child: FullsizeIconTextButtonView(
-                                  icon: Image.asset(
-                                      "assets/images/utils/googlemap.png",
-                                      width: 20),
-                                  text: 'Google Map',
-                                  radius: 30.0,
-                                  onPressed: () => UrlService.launchUrl(
-                                      locationState.cityExploreState.googlemap),
-                                ))))
-                  ]),
-                  const SizedBox(height: 15),
-                  SizedBox(
-                      height: 45,
-                      child: FractionallySizedBox(
-                          widthFactor: 0.95,
-                          child: FullsizeIconTextButtonView(
-                            icon: Image.asset("assets/images/utils/twitter.png",
-                                width: 20),
-                            text: 'Share on Twitter',
-                            radius: 30.0,
-                            onPressed: () => UrlService.launchUrl(
-                                locationState.cityExploreState.twitter),
-                          ))),
+                  MixedThreeButton(
+                    leftIcon: Image.asset("assets/images/utils/streetview.png",
+                        width: 20),
+                    leftText: 'Street View',
+                    leftOnPressed: () => UrlService.launchUrl(
+                        locationState.cityExploreState.streetview),
+                    rightIcon: Image.asset("assets/images/utils/googlemap.png",
+                        width: 20),
+                    rightText: 'Google Map',
+                    rightOnPressed: () => UrlService.launchUrl(
+                        locationState.cityExploreState.streetview),
+                    bottomIcon: Image.asset("assets/images/utils/twitter.png",
+                        width: 20),
+                    bottomText: 'Share on Twitter',
+                    bottomOnPressed: () => UrlService.launchUrl(
+                        locationState.cityExploreState.twitter),
+                  ),
                   const SizedBox(height: 40),
                   Text(
                     'Details',
