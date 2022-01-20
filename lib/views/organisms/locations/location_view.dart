@@ -72,7 +72,7 @@ class LocationView extends HookConsumerWidget {
                             color: Theme.of(context).primaryColorLight,
                           ))
                         : locationState.errorMessage == ''
-                            ? Text(locationState.keywordSearchData.toString())
+                            ? const Text('')
                             : const LocationErrorDialogView()),
 
                 // City info button

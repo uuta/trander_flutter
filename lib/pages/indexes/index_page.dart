@@ -15,8 +15,6 @@ class IndexPage extends HookConsumerWidget {
     final navigationState = ref.watch(navigationNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
 
-    // Post request when leaving the settings page
-
     const List<Widget> _pageList = [
       LocationView(),
       LocationView(),
