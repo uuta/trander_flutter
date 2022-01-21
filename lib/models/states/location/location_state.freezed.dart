@@ -34,6 +34,7 @@ class _$LocationStateTearOff {
       required KeywordSearchExploreState keywordSearchExploreState,
       String keyword = '',
       required SettingState settingData,
+      int settingMode = 0,
       String errorMessage = ''}) {
     return _LocationState(
       isLoading: isLoading,
@@ -52,6 +53,7 @@ class _$LocationStateTearOff {
       keywordSearchExploreState: keywordSearchExploreState,
       keyword: keyword,
       settingData: settingData,
+      settingMode: settingMode,
       errorMessage: errorMessage,
     );
   }
@@ -81,6 +83,7 @@ mixin _$LocationState {
       throw _privateConstructorUsedError;
   String get keyword => throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
+  int get settingMode => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -110,6 +113,7 @@ abstract class $LocationStateCopyWith<$Res> {
       KeywordSearchExploreState keywordSearchExploreState,
       String keyword,
       SettingState settingData,
+      int settingMode,
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
@@ -146,6 +150,7 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? keywordSearchExploreState = freezed,
     Object? keyword = freezed,
     Object? settingData = freezed,
+    Object? settingMode = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -213,6 +218,10 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
               as SettingState,
+      settingMode: settingMode == freezed
+          ? _value.settingMode
+          : settingMode // ignore: cast_nullable_to_non_nullable
+              as int,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -281,6 +290,7 @@ abstract class _$LocationStateCopyWith<$Res>
       KeywordSearchExploreState keywordSearchExploreState,
       String keyword,
       SettingState settingData,
+      int settingMode,
       String errorMessage});
 
   @override
@@ -324,6 +334,7 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? keywordSearchExploreState = freezed,
     Object? keyword = freezed,
     Object? settingData = freezed,
+    Object? settingMode = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_LocationState(
@@ -391,6 +402,10 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
               as SettingState,
+      settingMode: settingMode == freezed
+          ? _value.settingMode
+          : settingMode // ignore: cast_nullable_to_non_nullable
+              as int,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -419,6 +434,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       required this.keywordSearchExploreState,
       this.keyword = '',
       required this.settingData,
+      this.settingMode = 0,
       this.errorMessage = ''});
 
   @JsonKey()
@@ -465,11 +481,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final SettingState settingData;
   @JsonKey()
   @override
+  final int settingMode;
+  @JsonKey()
+  @override
   final String errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, errorMessage: $errorMessage)';
   }
 
   @override
@@ -495,6 +514,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
           'keywordSearchExploreState', keywordSearchExploreState))
       ..add(DiagnosticsProperty('keyword', keyword))
       ..add(DiagnosticsProperty('settingData', settingData))
+      ..add(DiagnosticsProperty('settingMode', settingMode))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -531,6 +551,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
             const DeepCollectionEquality()
                 .equals(other.settingData, settingData) &&
             const DeepCollectionEquality()
+                .equals(other.settingMode, settingMode) &&
+            const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
 
@@ -553,6 +575,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       const DeepCollectionEquality().hash(keywordSearchExploreState),
       const DeepCollectionEquality().hash(keyword),
       const DeepCollectionEquality().hash(settingData),
+      const DeepCollectionEquality().hash(settingMode),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -579,6 +602,7 @@ abstract class _LocationState implements LocationState {
       required KeywordSearchExploreState keywordSearchExploreState,
       String keyword,
       required SettingState settingData,
+      int settingMode,
       String errorMessage}) = _$_LocationState;
 
   @override
@@ -613,6 +637,8 @@ abstract class _LocationState implements LocationState {
   String get keyword;
   @override
   SettingState get settingData;
+  @override
+  int get settingMode;
   @override
   String get errorMessage;
   @override

@@ -1,7 +1,7 @@
 import '/import.dart';
 
-class SettingDirectionDialogView extends HookConsumerWidget {
-  const SettingDirectionDialogView({Key? key}) : super(key: key);
+class SettingModeDialogView extends HookConsumerWidget {
+  const SettingModeDialogView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -10,16 +10,16 @@ class SettingDirectionDialogView extends HookConsumerWidget {
 
     return SimpleDialog(
       title: Text(
-        "Direction Type",
+        "Mode",
         style: HeaderStyles.header2(),
       ),
-      children: ConstsSetting.directionType.entries.toList().map((e) {
+      children: ConstsSetting.mode.entries.toList().map((e) {
         return SimpleDialogOption(
           onPressed: () {
-            locationNotifer.setDirectionType(e.value);
+            locationNotifer.setMode(e.value);
             Navigator.pop(context);
           },
-          child: locationState.settingData.directionType == e.value
+          child: locationState.settingMode == e.value
               ? Container(
                   color: Theme.of(context).primaryColorLight,
                   child: Text(

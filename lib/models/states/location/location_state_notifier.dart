@@ -21,6 +21,13 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(mapController: Completer());
   }
 
+  Future<void> initSettingAction() async {
+    final settingMode =
+        await const FlutterSecureStorage().read(key: 'settingMode');
+    final int intSettingMode = settingMode != null ? int.parse(settingMode) : 0;
+    state = state.copyWith(settingMode: intSettingMode);
+  }
+
   Future<void> switchMapBusy(bool isTrue) async {
     state = state.copyWith(isMapBusy: isTrue);
   }
@@ -43,6 +50,12 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> setKeyword(String data) async {
     state = state.copyWith(keyword: data);
+  }
+
+  Future<void> setMode(int data) async {
+    const FlutterSecureStorage()
+        .write(key: 'settingMode', value: data.toString());
+    state = state.copyWith(settingMode: data);
   }
 
   Future<void> getCurrentLocation() async {

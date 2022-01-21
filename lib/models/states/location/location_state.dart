@@ -25,6 +25,7 @@ class LocationState with _$LocationState {
     required KeywordSearchExploreState keywordSearchExploreState,
     @Default('') String keyword,
     required SettingState settingData,
+    @Default(0) int settingMode,
     @Default('') String errorMessage,
   }) = _LocationState;
 }

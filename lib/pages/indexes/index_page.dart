@@ -2,7 +2,7 @@ import '/views/organisms/indexes/city_title_view.dart';
 
 import '/import.dart';
 // views
-import '../../views/organisms/bottom_bars/three_bottom_bar_view.dart';
+import '/views/organisms/bottom_bars/three_bottom_bar_view.dart';
 import '/views/organisms/settings/setting_view.dart';
 import '/views/organisms/locations/location_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
@@ -15,10 +15,14 @@ class IndexPage extends HookConsumerWidget {
     final navigationState = ref.watch(navigationNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
 
-    const List<Widget> _pageList = [
-      LocationView(),
-      LocationView(),
-      SettingView(),
+    final List<Widget> _pageList = [
+      locationState.settingMode == 0
+          ? const Text('city')
+          : const LocationView(),
+      locationState.settingMode == 0
+          ? const Text('Keyword')
+          : const LocationView(),
+      const SettingView(),
     ];
 
     // Title: flexible change

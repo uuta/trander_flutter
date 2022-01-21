@@ -6,4 +6,9 @@ class ConstsSetting {
     'South': 3,
     'West': 4,
   };
+
+  static const Map<String, int> mode = {
+    'Simple': 0,
+    'Google Map': 1,
+  };
 }

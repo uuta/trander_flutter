@@ -2,6 +2,7 @@ import '/import.dart';
 import '/pages/settings/setting_range_page.dart';
 import '/views/organisms/settings/setting_dialog_view.dart';
 import '/views/organisms/settings/setting_direction_dialog_view.dart';
+import '/views/organisms/settings/setting_mode_dialog_view.dart';
 
 class SettingView extends HookConsumerWidget {
   const SettingView({Key? key}) : super(key: key);
@@ -55,6 +56,22 @@ class SettingView extends HookConsumerWidget {
                     onPressed: (BuildContext context) {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const SettingRangePage()));
+                    },
+                  ),
+                  SettingsTile(
+                    title: 'Mode',
+                    subtitle: ConstsSetting.mode.entries
+                        .toList()
+                        .where((e) => e.value == locationState.settingMode)
+                        .toList()[0]
+                        .key,
+                    trailing: const Icon(Icons.navigate_next),
+                    leading: const Icon(Icons.source),
+                    onPressed: (BuildContext context) {
+                      showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) =>
+                              const SettingModeDialogView());
                     },
                   ),
                 ],

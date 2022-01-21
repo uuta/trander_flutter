@@ -4,6 +4,7 @@ import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/molecules/dialogs/succeed_dialog_view.dart';
 import '/views/atoms/buttons/icon_button_view.dart';
 import '/pages/keyword_searches/keyword_search_detail_page.dart';
+import '/views/organisms/locations/location_googlemap_view.dart';
 
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
@@ -44,22 +45,7 @@ class LocationView extends HookConsumerWidget {
                 color: Theme.of(context).primaryColorLight,
               ))
             : Stack(children: [
-                GoogleMap(
-                  mapType: MapType.normal,
-                  myLocationButtonEnabled: true,
-                  myLocationEnabled: true,
-                  zoomControlsEnabled: false,
-                  initialCameraPosition: CameraPosition(
-                    target: locationState.currentLocation,
-                    zoom: 14.4746,
-                  ),
-                  markers: locationState.markers,
-                  onMapCreated: (GoogleMapController controller) {
-                    if (!locationState.mapController.isCompleted) {
-                      locationState.mapController.complete(controller);
-                    }
-                  },
-                ),
+                const LocationGooglemapView(),
                 // Loading and error dialog
                 Positioned(
                     top: 100.0,
