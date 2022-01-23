@@ -55,24 +55,29 @@ class App extends HookConsumerWidget {
         textTheme: ThemeData.light().textTheme.copyWith(
               headline1: const TextStyle(
                   fontFamily: 'Arial',
-                  fontSize: 32,
+                  fontSize: 28,
                   color: Color(0xff5c6360),
-                  fontWeight: FontWeight.w300),
+                  fontWeight: FontWeight.w500),
               headline2: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 24,
                   color: Color(0xff5c6360),
-                  fontWeight: FontWeight.w300),
+                  fontWeight: FontWeight.w500),
+              headline4: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 22,
+                  color: Color(0xff5c6360),
+                  fontWeight: FontWeight.w500),
               headline5: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 20,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w300),
+                  color: Color(0xff5c6360),
+                  fontWeight: FontWeight.w500),
               headline6: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 18,
                   color: Color(0xff5c6360),
-                  fontWeight: FontWeight.w300),
+                  fontWeight: FontWeight.w500),
               // ),
               bodyText2: TextStyle(
                 color: Colors.grey[500],

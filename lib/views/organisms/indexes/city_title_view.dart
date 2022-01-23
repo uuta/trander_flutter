@@ -11,7 +11,7 @@ class CityTitleView extends HookConsumerWidget {
     return (countryCode != '')
         ? Text.rich(
             TextSpan(
-              style: HeaderStyles.header4(),
+              style: Theme.of(context).textTheme.headline4,
               children: [
                 WidgetSpan(
                     child: Container(
@@ -30,7 +30,7 @@ class CityTitleView extends HookConsumerWidget {
           )
         : Text.rich(
             TextSpan(
-              style: HeaderStyles.header4(),
+              style: Theme.of(context).textTheme.headline4,
               children: [
                 TextSpan(
                   text: locationState.cityData.name,

@@ -14,7 +14,10 @@ class SettingRangePage extends HookConsumerWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Distance Range', style: HeaderStyles.header2()),
+          title: Text(
+            'Distance Range',
+            style: Theme.of(context).textTheme.headline2,
+          ),
         ),
         body: Column(children: <Widget>[
           const SizedBox(height: 40),

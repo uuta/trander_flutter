@@ -12,7 +12,7 @@ class CountryFlagTextView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text.rich(
       TextSpan(
-        style: HeaderStyles.header4(),
+        style: Theme.of(context).textTheme.headline4,
         children: [
           WidgetSpan(
               child: Container(

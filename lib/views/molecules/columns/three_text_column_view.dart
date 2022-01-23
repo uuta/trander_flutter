@@ -20,12 +20,12 @@ class ThreeTextColumnView extends StatelessWidget {
                   "Let's go here today",
                   style: Theme.of(context).textTheme.headline1,
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 CountryFlagTextView(
                   name: name,
                   countryCode: countryCode,
                 ),
-                SizedBox(height: 25),
+                const SizedBox(height: 25),
                 Text(
                   'Change your way of life',
                   style: Theme.of(context).textTheme.bodyText2,
@@ -33,7 +33,7 @@ class ThreeTextColumnView extends StatelessWidget {
               ])
         : Text.rich(
             TextSpan(
-              style: HeaderStyles.header4(),
+              style: Theme.of(context).textTheme.headline4,
               children: [
                 TextSpan(
                   text: name,

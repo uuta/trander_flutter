@@ -32,17 +32,17 @@ class IndexPage extends HookConsumerWidget {
           ? const CityTitleView()
           : Text(
               'City Search',
-              style: HeaderStyles.header2(),
+              style: Theme.of(context).textTheme.headline2,
             ),
       locationState.isKeywordSearchSucceeded
           ? const KeywordSearchTitleView()
           : Text(
               'Keyword Search',
-              style: HeaderStyles.header2(),
+              style: Theme.of(context).textTheme.headline2,
             ),
       Text(
         'Settings',
-        style: HeaderStyles.header2(),
+        style: Theme.of(context).textTheme.headline2,
       ),
     ];
 

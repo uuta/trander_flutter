@@ -60,11 +60,14 @@ class SucceedDialogView extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text(title, style: HeaderStyles.header2()),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.headline2,
+              ),
               const SizedBox(height: 16.0),
               Text.rich(
                 TextSpan(
-                  style: HeaderStyles.header4(),
+                  style: Theme.of(context).textTheme.headline4,
                   children: [
                     WidgetSpan(
                         alignment: PlaceholderAlignment.middle,

@@ -17,7 +17,7 @@ class IconButtonView extends StatelessWidget {
           ),
           label: Text(
             'More Info',
-            style: HeaderStyles.header4(),
+            style: Theme.of(context).textTheme.headline5,
           ),
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(

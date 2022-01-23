@@ -9,7 +9,7 @@ class KeywordSearchTitleView extends HookConsumerWidget {
 
     return Text.rich(
       TextSpan(
-        style: HeaderStyles.header4(),
+        style: Theme.of(context).textTheme.headline4,
         children: [
           TextSpan(
             text: locationState.keywordSearchData.name,
