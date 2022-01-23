@@ -7,6 +7,7 @@ import '/views/organisms/settings/setting_mode_dialog_view.dart';
 class SettingView extends HookConsumerWidget {
   const SettingView({Key? key}) : super(key: key);
 
+  // TODO: state of setting doesn't seem to be updated well
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0State = ref.watch(auth0NotifierProvider);

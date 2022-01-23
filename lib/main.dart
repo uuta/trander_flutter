@@ -56,31 +56,30 @@ class App extends HookConsumerWidget {
               headline1: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 28,
-                  color: Color(0xff5c6360),
+                  color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
               headline2: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 24,
-                  color: Color(0xff5c6360),
+                  color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
               headline4: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 22,
-                  color: Color(0xff5c6360),
+                  color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
               headline5: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 20,
-                  color: Color(0xff5c6360),
+                  color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
               headline6: const TextStyle(
                   fontFamily: 'Arial',
                   fontSize: 18,
-                  color: Color(0xff5c6360),
+                  color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
-              // ),
               bodyText2: TextStyle(
-                color: Colors.grey[500],
+                color: Colors.grey[600],
                 fontSize: 16,
               ),
             ),

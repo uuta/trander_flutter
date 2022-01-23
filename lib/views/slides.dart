@@ -53,8 +53,10 @@ class Slides {
           },
         ),
         decoration: PageDecoration(
-            titleTextStyle:
-                const TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
+            titleTextStyle: const TextStyle(
+                fontSize: 36.0,
+                fontWeight: FontWeight.bold,
+                color: Color(0xff22332E)),
             bodyTextStyle: TextStyle(fontSize: 22.0, color: Colors.grey[700])));
   }
 }
