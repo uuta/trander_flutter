@@ -1,11 +1,13 @@
 import '/import.dart';
-import 'location_error_dialog_view.dart';
+import '../location_error_dialog_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/atoms/buttons/icon_button_view.dart';
 import '/pages/keyword_searches/keyword_search_detail_page.dart';
-import '/views/organisms/locations/location_googlemap_view.dart';
+import 'location_googlemap_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 
+// It would be better to separate this file into 2 files for understainding easily.
+// But, if it was implemented, unnecessary builds would run.
 class LocationView extends HookConsumerWidget {
   const LocationView({Key? key}) : super(key: key);
 
