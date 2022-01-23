@@ -20,12 +20,11 @@ class LocationView extends HookConsumerWidget {
 
     useEffect(() {
       Future.microtask(() async {
-        await locationNotifier.switchMapBusy(true);
+        await locationNotifier.switchPageLoading(true);
         await locationNotifier.initMapAction();
         await locationNotifier.getCurrentLocation();
-        await locationNotifier.getSetting(auth0State.idToken);
         await locationNotifier.shiftCameraCurrentPosition();
-        await locationNotifier.switchMapBusy(false);
+        await locationNotifier.switchPageLoading(false);
       });
       return;
     }, const []);
@@ -43,7 +42,7 @@ class LocationView extends HookConsumerWidget {
     }
 
     return Scaffold(
-        body: locationState.isMapBusy
+        body: locationState.isPageLoading
             ? Center(
                 child: CircularProgressIndicator(
                 color: Theme.of(context).primaryColorLight,

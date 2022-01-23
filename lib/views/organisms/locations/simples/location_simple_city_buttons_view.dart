@@ -9,7 +9,6 @@ class LocationSimpleCityButtonsView extends HookConsumerWidget {
     final locationState = ref.watch(locationNotifierProvider);
 
     return Positioned(
-      left: 15,
       bottom: 18,
       child: FourButtonView(
           firstIcon:

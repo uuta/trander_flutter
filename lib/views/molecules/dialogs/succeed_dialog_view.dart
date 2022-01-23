@@ -67,7 +67,7 @@ class SucceedDialogView extends StatelessWidget {
               const SizedBox(height: 16.0),
               Text.rich(
                 TextSpan(
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headline6,
                   children: [
                     WidgetSpan(
                         alignment: PlaceholderAlignment.middle,

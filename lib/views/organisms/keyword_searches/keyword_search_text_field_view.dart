@@ -9,8 +9,8 @@ class KeywordSearchTextFieldView extends HookConsumerWidget {
 
     return Positioned(
         top: 20.0,
-        left: 20.0,
-        right: 20.0,
+        left: 5.0,
+        right: 5.0,
         child: Material(
             borderRadius: const BorderRadius.all(Radius.circular(30)),
             elevation: 5.0,

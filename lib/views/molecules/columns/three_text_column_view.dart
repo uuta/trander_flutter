@@ -2,10 +2,11 @@ import '/import.dart';
 import '/views/atoms/texts/country_flag_text_view.dart';
 
 class ThreeTextColumnView extends StatelessWidget {
-  final String? name, countryCode;
+  final String name;
+  final String? countryCode;
   const ThreeTextColumnView({
     Key? key,
-    this.name,
+    this.name = '',
     this.countryCode,
   }) : super(key: key);
 
@@ -18,7 +19,7 @@ class ThreeTextColumnView extends StatelessWidget {
             children: [
                 Text(
                   "Let's go here today",
-                  style: Theme.of(context).textTheme.headline1,
+                  style: Theme.of(context).textTheme.headline2,
                 ),
                 const SizedBox(height: 25),
                 CountryFlagTextView(

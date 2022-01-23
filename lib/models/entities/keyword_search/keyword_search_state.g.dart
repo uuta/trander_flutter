@@ -9,7 +9,7 @@ part of 'keyword_search_state.dart';
 _$_KeywordSearchState _$$_KeywordSearchStateFromJson(
         Map<String, dynamic> json) =>
     _$_KeywordSearchState(
-      name: json['name'] as String?,
+      name: json['name'] as String? ?? '',
       distance: (json['distance'] as num?)?.toDouble() ?? 0,
       direction: json['direction'] as String? ?? '',
       icon: json['icon'] as String?,

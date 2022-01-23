@@ -22,7 +22,7 @@ class _$CityStateTearOff {
   const _$CityStateTearOff();
 
   _CityState call(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name = '',
       @JsonKey(name: 'distance') double distance = 0,
       @JsonKey(name: 'direction') String direction = '',
       @JsonKey(name: 'countryCode') String? countryCode,
@@ -65,7 +65,7 @@ const $CityState = _$CityStateTearOff();
 /// @nodoc
 mixin _$CityState {
   @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'distance')
   double get distance => throw _privateConstructorUsedError;
   @JsonKey(name: 'direction')
@@ -104,7 +104,7 @@ abstract class $CityStateCopyWith<$Res> {
   factory $CityStateCopyWith(CityState value, $Res Function(CityState) then) =
       _$CityStateCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
@@ -149,7 +149,7 @@ class _$CityStateCopyWithImpl<$Res> implements $CityStateCopyWith<$Res> {
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
@@ -213,7 +213,7 @@ abstract class _$CityStateCopyWith<$Res> implements $CityStateCopyWith<$Res> {
       __$CityStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
@@ -259,7 +259,7 @@ class __$CityStateCopyWithImpl<$Res> extends _$CityStateCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
@@ -320,7 +320,7 @@ class __$CityStateCopyWithImpl<$Res> extends _$CityStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CityState implements _CityState {
   const _$_CityState(
-      {@JsonKey(name: 'name') this.name,
+      {@JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'distance') this.distance = 0,
       @JsonKey(name: 'direction') this.direction = '',
       @JsonKey(name: 'countryCode') this.countryCode,
@@ -340,7 +340,7 @@ class _$_CityState implements _CityState {
 
   @override
   @JsonKey(name: 'name')
-  final String? name;
+  final String name;
   @override
   @JsonKey(name: 'distance')
   final double distance;
@@ -442,7 +442,7 @@ class _$_CityState implements _CityState {
 
 abstract class _CityState implements CityState {
   const factory _CityState(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
@@ -462,7 +462,7 @@ abstract class _CityState implements CityState {
 
   @override
   @JsonKey(name: 'name')
-  String? get name;
+  String get name;
   @override
   @JsonKey(name: 'distance')
   double get distance;

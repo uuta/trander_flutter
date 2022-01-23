@@ -19,7 +19,7 @@ class _$LocationStateTearOff {
 
   _LocationState call(
       {bool isLoading = false,
-      bool isMapBusy = false,
+      bool isPageLoading = false,
       required Completer<GoogleMapController> mapController,
       LatLng currentLocation = const LatLng(35.658034, 139.701636),
       LatLng newLocation = const LatLng(35.658034, 139.701636),
@@ -38,7 +38,7 @@ class _$LocationStateTearOff {
       String errorMessage = ''}) {
     return _LocationState(
       isLoading: isLoading,
-      isMapBusy: isMapBusy,
+      isPageLoading: isPageLoading,
       mapController: mapController,
       currentLocation: currentLocation,
       newLocation: newLocation,
@@ -65,7 +65,7 @@ const $LocationState = _$LocationStateTearOff();
 /// @nodoc
 mixin _$LocationState {
   bool get isLoading => throw _privateConstructorUsedError;
-  bool get isMapBusy => throw _privateConstructorUsedError;
+  bool get isPageLoading => throw _privateConstructorUsedError;
   Completer<GoogleMapController> get mapController =>
       throw _privateConstructorUsedError;
   LatLng get currentLocation => throw _privateConstructorUsedError;
@@ -98,7 +98,7 @@ abstract class $LocationStateCopyWith<$Res> {
       _$LocationStateCopyWithImpl<$Res>;
   $Res call(
       {bool isLoading,
-      bool isMapBusy,
+      bool isPageLoading,
       Completer<GoogleMapController> mapController,
       LatLng currentLocation,
       LatLng newLocation,
@@ -135,7 +135,7 @@ class _$LocationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? isMapBusy = freezed,
+    Object? isPageLoading = freezed,
     Object? mapController = freezed,
     Object? currentLocation = freezed,
     Object? newLocation = freezed,
@@ -158,9 +158,9 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isMapBusy: isMapBusy == freezed
-          ? _value.isMapBusy
-          : isMapBusy // ignore: cast_nullable_to_non_nullable
+      isPageLoading: isPageLoading == freezed
+          ? _value.isPageLoading
+          : isPageLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       mapController: mapController == freezed
           ? _value.mapController
@@ -275,7 +275,7 @@ abstract class _$LocationStateCopyWith<$Res>
   @override
   $Res call(
       {bool isLoading,
-      bool isMapBusy,
+      bool isPageLoading,
       Completer<GoogleMapController> mapController,
       LatLng currentLocation,
       LatLng newLocation,
@@ -319,7 +319,7 @@ class __$LocationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isLoading = freezed,
-    Object? isMapBusy = freezed,
+    Object? isPageLoading = freezed,
     Object? mapController = freezed,
     Object? currentLocation = freezed,
     Object? newLocation = freezed,
@@ -342,9 +342,9 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isMapBusy: isMapBusy == freezed
-          ? _value.isMapBusy
-          : isMapBusy // ignore: cast_nullable_to_non_nullable
+      isPageLoading: isPageLoading == freezed
+          ? _value.isPageLoading
+          : isPageLoading // ignore: cast_nullable_to_non_nullable
               as bool,
       mapController: mapController == freezed
           ? _value.mapController
@@ -419,7 +419,7 @@ class __$LocationStateCopyWithImpl<$Res>
 class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   const _$_LocationState(
       {this.isLoading = false,
-      this.isMapBusy = false,
+      this.isPageLoading = false,
       required this.mapController,
       this.currentLocation = const LatLng(35.658034, 139.701636),
       this.newLocation = const LatLng(35.658034, 139.701636),
@@ -442,7 +442,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final bool isLoading;
   @JsonKey()
   @override
-  final bool isMapBusy;
+  final bool isPageLoading;
   @override
   final Completer<GoogleMapController> mapController;
   @JsonKey()
@@ -488,7 +488,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isMapBusy: $isMapBusy, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, errorMessage: $errorMessage)';
   }
 
   @override
@@ -497,7 +497,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
     properties
       ..add(DiagnosticsProperty('type', 'LocationState'))
       ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isMapBusy', isMapBusy))
+      ..add(DiagnosticsProperty('isPageLoading', isPageLoading))
       ..add(DiagnosticsProperty('mapController', mapController))
       ..add(DiagnosticsProperty('currentLocation', currentLocation))
       ..add(DiagnosticsProperty('newLocation', newLocation))
@@ -524,7 +524,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         (other.runtimeType == runtimeType &&
             other is _LocationState &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isMapBusy, isMapBusy) &&
+            const DeepCollectionEquality()
+                .equals(other.isPageLoading, isPageLoading) &&
             const DeepCollectionEquality()
                 .equals(other.mapController, mapController) &&
             const DeepCollectionEquality()
@@ -560,7 +561,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isMapBusy),
+      const DeepCollectionEquality().hash(isPageLoading),
       const DeepCollectionEquality().hash(mapController),
       const DeepCollectionEquality().hash(currentLocation),
       const DeepCollectionEquality().hash(newLocation),
@@ -587,7 +588,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 abstract class _LocationState implements LocationState {
   const factory _LocationState(
       {bool isLoading,
-      bool isMapBusy,
+      bool isPageLoading,
       required Completer<GoogleMapController> mapController,
       LatLng currentLocation,
       LatLng newLocation,
@@ -608,7 +609,7 @@ abstract class _LocationState implements LocationState {
   @override
   bool get isLoading;
   @override
-  bool get isMapBusy;
+  bool get isPageLoading;
   @override
   Completer<GoogleMapController> get mapController;
   @override

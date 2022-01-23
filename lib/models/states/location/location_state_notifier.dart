@@ -28,8 +28,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(settingMode: intSettingMode);
   }
 
-  Future<void> switchMapBusy(bool isTrue) async {
-    state = state.copyWith(isMapBusy: isTrue);
+  Future<void> switchPageLoading(bool isTrue) async {
+    state = state.copyWith(isPageLoading: isTrue);
   }
 
   Future<void> offErrorMessage() async {

@@ -6,7 +6,7 @@ part 'city_state.g.dart';
 @freezed
 class CityState with _$CityState {
   const factory CityState(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') @Default('') String name,
       @JsonKey(name: 'distance') @Default(0) double distance,
       @JsonKey(name: 'direction') @Default('') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,

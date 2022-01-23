@@ -15,7 +15,17 @@ class IndexPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final navigationState = ref.watch(navigationNotifierProvider);
+    final locationNotifier = ref.watch(locationNotifierProvider.notifier);
     final locationState = ref.watch(locationNotifierProvider);
+    final auth0State = ref.watch(auth0NotifierProvider);
+
+    useEffect(() {
+      Future.microtask(() async {
+        await locationNotifier.initSettingAction();
+        await locationNotifier.getSetting(auth0State.idToken);
+      });
+      return;
+    }, const []);
 
     final List<Widget> _pageList = [
       locationState.settingMode == 0

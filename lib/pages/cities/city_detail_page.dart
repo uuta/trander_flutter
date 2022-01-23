@@ -21,7 +21,7 @@ class CityDetailPage extends HookConsumerWidget {
                 children: <Widget>[
                   Text(
                     'Explore it more',
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                   const SizedBox(height: 20),
                   MixedThreeButton(
@@ -44,8 +44,9 @@ class CityDetailPage extends HookConsumerWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Details',
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
+                  const SizedBox(height: 20),
                   SettingsList(
                       backgroundColor: Colors.white,
                       shrinkWrap: true,

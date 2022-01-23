@@ -22,7 +22,7 @@ class _$KeywordSearchStateTearOff {
   const _$KeywordSearchStateTearOff();
 
   _KeywordSearchState call(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name = '',
       @JsonKey(name: 'distance') double distance = 0,
       @JsonKey(name: 'direction') String direction = '',
       @JsonKey(name: 'icon') String? icon,
@@ -63,7 +63,7 @@ const $KeywordSearchState = _$KeywordSearchStateTearOff();
 /// @nodoc
 mixin _$KeywordSearchState {
   @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'distance')
   double get distance => throw _privateConstructorUsedError;
   @JsonKey(name: 'direction')
@@ -101,7 +101,7 @@ abstract class $KeywordSearchStateCopyWith<$Res> {
           KeywordSearchState value, $Res Function(KeywordSearchState) then) =
       _$KeywordSearchStateCopyWithImpl<$Res>;
   $Res call(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
@@ -145,7 +145,7 @@ class _$KeywordSearchStateCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
@@ -206,7 +206,7 @@ abstract class _$KeywordSearchStateCopyWith<$Res>
       __$KeywordSearchStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
@@ -252,7 +252,7 @@ class __$KeywordSearchStateCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       distance: distance == freezed
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
@@ -309,7 +309,7 @@ class __$KeywordSearchStateCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_KeywordSearchState implements _KeywordSearchState {
   const _$_KeywordSearchState(
-      {@JsonKey(name: 'name') this.name,
+      {@JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'distance') this.distance = 0,
       @JsonKey(name: 'direction') this.direction = '',
       @JsonKey(name: 'icon') this.icon,
@@ -328,7 +328,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
 
   @override
   @JsonKey(name: 'name')
-  final String? name;
+  final String name;
   @override
   @JsonKey(name: 'distance')
   final double distance;
@@ -424,7 +424,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
 
 abstract class _KeywordSearchState implements KeywordSearchState {
   const factory _KeywordSearchState(
-      {@JsonKey(name: 'name') String? name,
+      {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
@@ -443,7 +443,7 @@ abstract class _KeywordSearchState implements KeywordSearchState {
 
   @override
   @JsonKey(name: 'name')
-  String? get name;
+  String get name;
   @override
   @JsonKey(name: 'distance')
   double get distance;

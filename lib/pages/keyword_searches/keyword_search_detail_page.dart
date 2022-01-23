@@ -21,7 +21,7 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                 children: <Widget>[
                   Text(
                     'Explore it more',
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
                   const SizedBox(height: 20),
                   MixedThreeButton(
@@ -44,8 +44,9 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Details',
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.headline5,
                   ),
+                  const SizedBox(height: 20),
                   SettingsList(
                       backgroundColor: Colors.white,
                       shrinkWrap: true,
@@ -59,7 +60,14 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                                       .keywordSearchData.rating
                                       .toString() +
                                   ' (${locationState.keywordSearchData.userRatingsTotal})'),
-                              leading: const Icon(Icons.star),
+                              leading: const Icon(Icons.star_rate),
+                            ),
+                            SettingsTile(
+                              title: 'Address',
+                              trailing: Text(
+                                  locationState.keywordSearchData.vicinity ??
+                                      ''),
+                              leading: const Icon(Icons.push_pin),
                             ),
                             SettingsTile(
                               title: 'Direction',

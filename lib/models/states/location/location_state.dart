@@ -10,7 +10,7 @@ part 'location_state.freezed.dart';
 class LocationState with _$LocationState {
   const factory LocationState({
     @Default(false) bool isLoading,
-    @Default(false) bool isMapBusy,
+    @Default(false) bool isPageLoading,
     required Completer<GoogleMapController> mapController,
     @Default(LatLng(35.658034, 139.701636)) LatLng currentLocation,
     @Default(LatLng(35.658034, 139.701636)) LatLng newLocation,

@@ -21,45 +21,46 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
     }
 
     return Scaffold(
-        body: Stack(
-          children: [
-            // Keyword text field
-            const KeywordSearchTextFieldView(),
+        body: Padding(
+            padding: const EdgeInsets.only(left: 15, right: 15),
+            child: Stack(
+              children: [
+                // Keyword text field
+                const KeywordSearchTextFieldView(),
 
-            // Main content
-            Center(
-                child: locationState.isLoading
-                    ? Center(
-                        child: CircularProgressIndicator(
-                        color: Theme.of(context).primaryColorLight,
-                      ))
-                    : locationState.isKeywordSearchSucceeded
-                        ? ThreeTextColumnView(
-                            name: locationState.keywordSearchData.name,
-                            // TODO: Consider that
-                            countryCode: 'us',
-                          )
-                        : Text(
-                            'Find a Location randomly',
-                            style: Theme.of(context).textTheme.headline2,
-                          )),
+                // Main content
+                Center(
+                    child: locationState.isLoading
+                        ? Center(
+                            child: CircularProgressIndicator(
+                            color: Theme.of(context).primaryColorLight,
+                          ))
+                        : locationState.isKeywordSearchSucceeded
+                            ? ThreeTextColumnView(
+                                name: locationState.keywordSearchData.name,
+                                // TODO: Consider that
+                                countryCode: 'us')
+                            : Text(
+                                'Find a Location randomly',
+                                style: Theme.of(context).textTheme.headline2,
+                              )),
 
-            // Error dialog
-            Positioned(
-                top: 100.0,
-                left: 30.0,
-                right: 30.0,
-                bottom: 100.0,
-                child: locationState.errorMessage == ''
-                    ? const Text('')
-                    : const LocationErrorDialogView()),
+                // Error dialog
+                Positioned(
+                    top: 100.0,
+                    left: 30.0,
+                    right: 30.0,
+                    bottom: 100.0,
+                    child: locationState.errorMessage == ''
+                        ? const Text('')
+                        : const LocationErrorDialogView()),
 
-            // Info buttons
-            if (locationState.isKeywordSearchSucceeded &&
-                !(locationState.isLoading))
-              const LocationSimpleKeywordButtonsView()
-          ],
-        ), // Button
+                // Info buttons
+                if (locationState.isKeywordSearchSucceeded &&
+                    !(locationState.isLoading))
+                  const LocationSimpleKeywordButtonsView()
+              ],
+            )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
               locationNotifier.getSimpleKeywordSearch(auth0State.idToken);
