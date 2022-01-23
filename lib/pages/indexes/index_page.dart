@@ -7,6 +7,7 @@ import '/views/organisms/settings/setting_view.dart';
 import '../../views/organisms/locations/googlemaps/location_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
 import '/views/organisms/locations/simples/location_simple_city_view.dart';
+import '/views/organisms/locations/simples/location_simple_keyword_search_view.dart';
 
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class IndexPage extends HookConsumerWidget {
           ? const LocationSimpleCityView()
           : const LocationView(),
       locationState.settingMode == 0
-          ? const Text('Keyword')
+          ? const LocationSimpleKeywordSearchView()
           : const LocationView(),
       const SettingView(),
     ];

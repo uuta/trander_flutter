@@ -1,8 +1,8 @@
 import '/import.dart';
 import '/views/molecules/buttons/four_button_view.dart';
 
-class LocationSimpleButtonsView extends HookConsumerWidget {
-  const LocationSimpleButtonsView({Key? key}) : super(key: key);
+class LocationSimpleKeywordButtonsView extends HookConsumerWidget {
+  const LocationSimpleKeywordButtonsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -21,14 +21,16 @@ class LocationSimpleButtonsView extends HookConsumerWidget {
             Icons.info_outline,
             size: 22.0,
           ),
-          firstOnPressed: () =>
-              UrlService.launchUrl(locationState.cityExploreState.streetview),
-          secondOnPressed: () =>
-              UrlService.launchUrl(locationState.cityExploreState.googlemap),
-          thirdOnPressed: () =>
-              UrlService.launchUrl(locationState.cityExploreState.twitter),
-          fourthOnPressed: () => Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const CityDetailPage()))),
+          firstOnPressed: () => UrlService.launchUrl(
+              locationState.keywordSearchExploreState.streetview),
+          secondOnPressed: () => UrlService.launchUrl(
+              locationState.keywordSearchExploreState.googlemap),
+          thirdOnPressed: () => UrlService.launchUrl(
+              locationState.keywordSearchExploreState.twitter),
+          fourthOnPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const KeywordSearchDetailPage()))),
     );
   }
 }

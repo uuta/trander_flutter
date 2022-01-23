@@ -13,7 +13,7 @@ class KeywordSearchTextFieldView extends HookConsumerWidget {
         right: 20.0,
         child: Material(
             borderRadius: const BorderRadius.all(Radius.circular(30)),
-            elevation: 20.0,
+            elevation: 5.0,
             child: TextField(
               style: Theme.of(context).textTheme.headline6,
               cursorColor: Theme.of(context).primaryColorLight,
