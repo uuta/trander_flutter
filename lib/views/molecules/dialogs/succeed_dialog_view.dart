@@ -1,5 +1,5 @@
 import '/import.dart';
-import '/views/atoms/buttons/image_circle_view.dart';
+import '/views/atoms/buttons/image_circle_button_view.dart';
 
 class SucceedDialogView extends StatelessWidget {
   final String title, buttonText;
@@ -90,17 +90,17 @@ class SucceedDialogView extends StatelessWidget {
               Row(
                 children: [
                   const Spacer(),
-                  ImageCircleView(
+                  ImageCircleButtonView(
                       image: leftIcon,
                       iconColor: Colors.white,
                       onPressed: leftOnPressed),
                   const Spacer(),
-                  ImageCircleView(
+                  ImageCircleButtonView(
                       image: centerIcon,
                       iconColor: Colors.white,
                       onPressed: centerOnPressed),
                   const Spacer(),
-                  ImageCircleView(
+                  ImageCircleButtonView(
                       image: rightIcon,
                       iconColor: Colors.white,
                       onPressed: rightOnPressed),

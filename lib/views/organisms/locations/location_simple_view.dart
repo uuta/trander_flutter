@@ -2,6 +2,7 @@ import '/import.dart';
 import 'location_error_dialog_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
+import '/views/organisms/locations/location_simple_buttons_view.dart';
 
 class LocationSimpleView extends HookConsumerWidget {
   const LocationSimpleView({Key? key}) : super(key: key);
@@ -51,6 +52,8 @@ class LocationSimpleView extends HookConsumerWidget {
                 child: locationState.errorMessage == ''
                     ? const Text('')
                     : const LocationErrorDialogView()),
+            if (locationState.isCitySucceeded && !(locationState.isLoading))
+              const LocationSimpleButtonsView()
           ],
         ), // Button
         floatingActionButton: FloatingActionButton(
