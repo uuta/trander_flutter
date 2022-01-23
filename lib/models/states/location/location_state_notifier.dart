@@ -108,6 +108,32 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
+  Future<void> getSimpleCity(String? idToken) async {
+    try {
+      state = state.copyWith(isLoading: true);
+      state = await CityService().getCity(state, idToken);
+      final exploreData = await LocationService().setExploreData(
+        state,
+        state.cityData.lat.toString(),
+        state.cityData.lng.toString(),
+        state.cityData.placeId.toString(),
+        state.cityData.name.toString(),
+      );
+      state = state.copyWith(
+          cityExploreState: CityExploreState.fromJson(exploreData));
+
+      state = await LocationService()
+          .setNewLocation(state, state.cityData.lat, state.cityData.lng);
+      state = state.copyWith(
+          isLoading: false, isCitySucceeded: true, isCityDialog: true);
+    } on Exception catch (e, s) {
+      debugPrint('error: $e - stack: $s');
+      state = state.copyWith(
+          isLoading: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+    }
+  }
+
   Future<void> getKeywordSearch(String? idToken) async {
     try {
       final double lat = state.currentLocation.latitude;
@@ -144,6 +170,52 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
       state = await LocationService().setMarker(state);
       await LocationService().shiftCameraPosition(state, state.newLocation);
+      state = state.copyWith(
+          isLoading: false,
+          isKeywordSearchSucceeded: true,
+          isKeywordSearchDialog: true);
+    } on Exception catch (e, s) {
+      debugPrint('error: $e - stack: $s');
+      state = state.copyWith(
+          isLoading: false,
+          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+    }
+  }
+
+  Future<void> getSimpleKeywordSearch(String? idToken) async {
+    try {
+      final double lat = state.currentLocation.latitude;
+      final double lng = state.currentLocation.longitude;
+
+      FocusManager.instance.primaryFocus?.unfocus();
+
+      state = state.copyWith(isLoading: true);
+      final kwRes =
+          await KeywordSearchService().getKeywordSearch(state, idToken);
+      final kwData = kwRes.data['data'] as Map;
+      final distanceRes = await DistanceService().getDistance(
+        state,
+        idToken,
+        lat,
+        lng,
+        kwData['lat'],
+        kwData['lng'],
+      );
+      setKeywodSearchData(KeywordSearchState.fromJson(
+          {...kwRes.data['data'], ...distanceRes.data}));
+      final exploreData = await LocationService().setExploreData(
+        state,
+        state.keywordSearchData.lat.toString(),
+        state.keywordSearchData.lng.toString(),
+        state.keywordSearchData.placeId.toString(),
+        state.keywordSearchData.name.toString(),
+      );
+      state = state.copyWith(
+          keywordSearchExploreState:
+              KeywordSearchExploreState.fromJson(exploreData));
+
+      state = await LocationService().setNewLocation(
+          state, state.keywordSearchData.lat, state.keywordSearchData.lng);
       state = state.copyWith(
           isLoading: false,
           isKeywordSearchSucceeded: true,

@@ -6,6 +6,7 @@ import '/views/organisms/bottom_bars/three_bottom_bar_view.dart';
 import '/views/organisms/settings/setting_view.dart';
 import '/views/organisms/locations/location_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
+import '/views/organisms/locations/location_simple_view.dart';
 
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class IndexPage extends HookConsumerWidget {
 
     final List<Widget> _pageList = [
       locationState.settingMode == 0
-          ? const Text('city')
+          ? const LocationSimpleView()
           : const LocationView(),
       locationState.settingMode == 0
           ? const Text('Keyword')

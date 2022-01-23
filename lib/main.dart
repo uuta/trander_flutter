@@ -53,16 +53,32 @@ class App extends HookConsumerWidget {
                 borderRadius: BorderRadius.circular(30.0),
                 borderSide: BorderSide.none)),
         textTheme: ThemeData.light().textTheme.copyWith(
-            headline5: const TextStyle(
-                fontFamily: 'Arial',
-                fontSize: 20,
-                color: Colors.grey,
-                fontWeight: FontWeight.bold),
-            headline6: const TextStyle(
-                fontFamily: 'Arial',
-                fontSize: 18,
-                color: Color(0xff5c6360),
-                fontWeight: FontWeight.bold)),
+              headline1: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 32,
+                  color: Color(0xff5c6360),
+                  fontWeight: FontWeight.w300),
+              headline2: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 24,
+                  color: Color(0xff5c6360),
+                  fontWeight: FontWeight.w300),
+              headline5: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 20,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w300),
+              headline6: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 18,
+                  color: Color(0xff5c6360),
+                  fontWeight: FontWeight.w300),
+              // ),
+              bodyText2: TextStyle(
+                color: Colors.grey[500],
+                fontSize: 16,
+              ),
+            ),
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
