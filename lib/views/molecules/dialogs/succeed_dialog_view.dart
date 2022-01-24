@@ -1,9 +1,10 @@
 import '/import.dart';
 import '/views/atoms/buttons/image_circle_button_view.dart';
+import '/views/atoms/texts/shadow_icon_text_view.dart';
 
 class SucceedDialogView extends StatelessWidget {
-  final String title, buttonText;
-  final String? name, countryCode;
+  final String name, title, buttonText;
+  final String? countryCode;
   final Image leftIcon, centerIcon, rightIcon;
   final Function()? leftOnPressed,
       centerOnPressed,
@@ -14,7 +15,7 @@ class SucceedDialogView extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.buttonText,
-      this.name,
+      required this.name,
       this.countryCode,
       required this.leftIcon,
       required this.centerIcon,
@@ -72,17 +73,18 @@ class SucceedDialogView extends StatelessWidget {
                     WidgetSpan(
                         alignment: PlaceholderAlignment.middle,
                         child: Container(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: Material(
-                              elevation: 3,
-                              child: (countryCode != null)
-                                  ? Image.network(
-                                      'https://flagcdn.com/32x24/$countryCode.png')
-                                  : const Text(''),
-                            ))),
-                    TextSpan(
-                      text: UtilService.shortenStr(name, max: 40),
-                    )
+                          padding: const EdgeInsets.only(right: 10),
+                          child: (countryCode != null)
+                              ? ShadowIconTextView(
+                                  name: name,
+                                  icon: Image.network(
+                                      'https://flagcdn.com/h20/$countryCode.png'),
+                                )
+                              : Text(
+                                  name,
+                                  style: Theme.of(context).textTheme.headline5,
+                                ),
+                        )),
                   ],
                 ),
               ),

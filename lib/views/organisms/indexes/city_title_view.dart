@@ -1,4 +1,5 @@
 import '/import.dart';
+import '/views/atoms/texts/shadow_icon_text_view.dart';
 
 class CityTitleView extends HookConsumerWidget {
   const CityTitleView({Key? key}) : super(key: key);
@@ -9,34 +10,14 @@ class CityTitleView extends HookConsumerWidget {
     final String? countryCode = locationState.cityData.countryCode;
 
     return (countryCode != '')
-        ? Text.rich(
-            TextSpan(
-              style: Theme.of(context).textTheme.headline4,
-              children: [
-                WidgetSpan(
-                    child: Container(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Material(
-                          elevation: 3,
-                          child: Image.network(
-                              'https://flagcdn.com/32x24/$countryCode.png'),
-                        ))),
-                TextSpan(
-                  text: UtilService.shortenStr(locationState.cityData.name,
-                      max: 28),
-                )
-              ],
-            ),
+        ? ShadowIconTextView(
+            name: locationState.cityData.name,
+            icon: Image.network('https://flagcdn.com/h20/$countryCode.png'),
+            textStyle: Theme.of(context).textTheme.headline4,
+            shortenStr: 28,
+            mainAxisAlignment: MainAxisAlignment.start,
           )
-        : Text.rich(
-            TextSpan(
-              style: Theme.of(context).textTheme.headline4,
-              children: [
-                TextSpan(
-                  text: locationState.cityData.name,
-                )
-              ],
-            ),
-          );
+        : Text(locationState.cityData.name,
+            style: Theme.of(context).textTheme.headline5);
   }
 }

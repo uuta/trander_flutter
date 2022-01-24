@@ -1,5 +1,5 @@
 import '/import.dart';
-import '/views/atoms/texts/country_flag_text_view.dart';
+import '../../atoms/texts/shadow_icon_text_view.dart';
 
 class ThreeTextColumnView extends StatelessWidget {
   final String name;
@@ -22,9 +22,10 @@ class ThreeTextColumnView extends StatelessWidget {
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 const SizedBox(height: 25),
-                CountryFlagTextView(
+                ShadowIconTextView(
                   name: name,
-                  countryCode: countryCode,
+                  icon:
+                      Image.network('https://flagcdn.com/h20/$countryCode.png'),
                 ),
                 const SizedBox(height: 25),
                 Text(
