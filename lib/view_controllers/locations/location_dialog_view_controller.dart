@@ -6,6 +6,7 @@ class LocationDialogViewController {
   static void showCityDialog(BuildContext context, LocationState locationState,
       LocationStateNotifier locationNotifier) {
     WidgetsBinding.instance?.addPostFrameCallback((_) {
+      final countryCode = locationState.cityData.countryCode;
       showDialog(
           context: context,
           barrierDismissible: false,
@@ -15,7 +16,7 @@ class LocationDialogViewController {
               title: 'Found succcessfully',
               buttonText: 'Close',
               name: locationState.cityData.name,
-              countryCode: locationState.cityData.countryCode,
+              image: Image.network('https://flagcdn.com/h20/$countryCode.png'),
               leftIcon: Image.asset(
                 "assets/images/utils/streetview.png",
                 width: 20,

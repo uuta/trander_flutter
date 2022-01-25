@@ -5,6 +5,7 @@ import '/views/atoms/texts/shadow_icon_text_view.dart';
 class SucceedDialogView extends StatelessWidget {
   final String name, title, buttonText;
   final String? countryCode;
+  final Widget? image;
   final Image leftIcon, centerIcon, rightIcon;
   final Function()? leftOnPressed,
       centerOnPressed,
@@ -16,6 +17,7 @@ class SucceedDialogView extends StatelessWidget {
       required this.title,
       required this.buttonText,
       required this.name,
+      this.image,
       this.countryCode,
       required this.leftIcon,
       required this.centerIcon,
@@ -74,11 +76,10 @@ class SucceedDialogView extends StatelessWidget {
                         alignment: PlaceholderAlignment.middle,
                         child: Container(
                           padding: const EdgeInsets.only(right: 10),
-                          child: (countryCode != null)
+                          child: (image != null)
                               ? ShadowIconTextView(
                                   name: name,
-                                  icon: Image.network(
-                                      'https://flagcdn.com/h20/$countryCode.png'),
+                                  icon: image,
                                 )
                               : Text(
                                   name,

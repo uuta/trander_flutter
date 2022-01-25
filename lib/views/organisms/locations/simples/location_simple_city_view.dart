@@ -3,6 +3,7 @@ import '/views/organisms/locations/location_error_dialog_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
 import 'location_simple_city_buttons_view.dart';
+import '/views/molecules/columns/title_caption_view.dart';
 
 class LocationSimpleCityView extends HookConsumerWidget {
   const LocationSimpleCityView({Key? key}) : super(key: key);
@@ -35,9 +36,9 @@ class LocationSimpleCityView extends HookConsumerWidget {
                                 name: locationState.cityData.name,
                                 countryCode: locationState.cityData.countryCode,
                               )
-                            : Text(
-                                'Find a City randomly',
-                                style: Theme.of(context).textTheme.headline2,
+                            : const TitleCaptionView(
+                                title: 'Find a City randomly',
+                                caption: 'Give it a try!',
                               )),
                 Positioned(
                     top: 100.0,

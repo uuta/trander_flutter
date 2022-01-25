@@ -4,6 +4,7 @@ import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_buttons_view.dart';
+import '/views/molecules/columns/title_caption_view.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
   const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
@@ -38,11 +39,10 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                         : locationState.isKeywordSearchSucceeded
                             ? ThreeTextColumnView(
                                 name: locationState.keywordSearchData.name,
-                                // TODO: Consider that
-                                countryCode: 'us')
-                            : Text(
-                                'Find a Location randomly',
-                                style: Theme.of(context).textTheme.headline2,
+                              )
+                            : const TitleCaptionView(
+                                title: 'Find a Location randomly',
+                                caption: 'Give it a try!',
                               )),
 
                 // Error dialog
