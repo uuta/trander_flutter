@@ -25,6 +25,10 @@ class _$ErrorHandlerTearOff {
     return const _UnauthorisedRequest();
   }
 
+  _ExceededRequestLimit exceededRequestLimit() {
+    return const _ExceededRequestLimit();
+  }
+
   _RequestError requestError({ApiError? apiError}) {
     return _RequestError(
       apiError: apiError,
@@ -57,6 +61,7 @@ mixin _$ErrorHandler {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -68,6 +73,7 @@ mixin _$ErrorHandler {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -79,6 +85,7 @@ mixin _$ErrorHandler {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -91,6 +98,7 @@ mixin _$ErrorHandler {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -102,6 +110,7 @@ mixin _$ErrorHandler {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -113,6 +122,7 @@ mixin _$ErrorHandler {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -182,6 +192,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -196,6 +207,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -210,6 +222,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -228,6 +241,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -242,6 +256,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -256,6 +271,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -318,6 +334,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -332,6 +349,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -346,6 +364,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -364,6 +383,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -378,6 +398,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -392,6 +413,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -409,6 +431,148 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
 abstract class _UnauthorisedRequest extends ErrorHandler {
   const factory _UnauthorisedRequest() = _$_UnauthorisedRequest;
   const _UnauthorisedRequest._() : super._();
+}
+
+/// @nodoc
+abstract class _$ExceededRequestLimitCopyWith<$Res> {
+  factory _$ExceededRequestLimitCopyWith(_ExceededRequestLimit value,
+          $Res Function(_ExceededRequestLimit) then) =
+      __$ExceededRequestLimitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ExceededRequestLimitCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res>
+    implements _$ExceededRequestLimitCopyWith<$Res> {
+  __$ExceededRequestLimitCopyWithImpl(
+      _ExceededRequestLimit _value, $Res Function(_ExceededRequestLimit) _then)
+      : super(_value, (v) => _then(v as _ExceededRequestLimit));
+
+  @override
+  _ExceededRequestLimit get _value => super._value as _ExceededRequestLimit;
+}
+
+/// @nodoc
+
+class _$_ExceededRequestLimit extends _ExceededRequestLimit {
+  const _$_ExceededRequestLimit() : super._();
+
+  @override
+  String toString() {
+    return 'ErrorHandler.exceededRequestLimit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ExceededRequestLimit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() requestCancelled,
+    required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
+    required TResult Function(ApiError? apiError) requestError,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() sendTimeout,
+    required TResult Function() noInternetConnection,
+    required TResult Function() unexpectedError,
+  }) {
+    return exceededRequestLimit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? requestCancelled,
+    TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
+    TResult Function(ApiError? apiError)? requestError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? sendTimeout,
+    TResult Function()? noInternetConnection,
+    TResult Function()? unexpectedError,
+  }) {
+    return exceededRequestLimit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? requestCancelled,
+    TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
+    TResult Function(ApiError? apiError)? requestError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? sendTimeout,
+    TResult Function()? noInternetConnection,
+    TResult Function()? unexpectedError,
+    required TResult orElse(),
+  }) {
+    if (exceededRequestLimit != null) {
+      return exceededRequestLimit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RequestCancelled value) requestCancelled,
+    required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
+    required TResult Function(_RequestError value) requestError,
+    required TResult Function(_ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(_SendTimeout value) sendTimeout,
+    required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_UnexpectedError value) unexpectedError,
+  }) {
+    return exceededRequestLimit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_RequestCancelled value)? requestCancelled,
+    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult Function(_RequestError value)? requestError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_SendTimeout value)? sendTimeout,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+  }) {
+    return exceededRequestLimit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RequestCancelled value)? requestCancelled,
+    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult Function(_RequestError value)? requestError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_SendTimeout value)? sendTimeout,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+    required TResult orElse(),
+  }) {
+    if (exceededRequestLimit != null) {
+      return exceededRequestLimit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExceededRequestLimit extends ErrorHandler {
+  const factory _ExceededRequestLimit() = _$_ExceededRequestLimit;
+  const _ExceededRequestLimit._() : super._();
 }
 
 /// @nodoc
@@ -490,6 +654,7 @@ class _$_RequestError extends _RequestError {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -504,6 +669,7 @@ class _$_RequestError extends _RequestError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -518,6 +684,7 @@ class _$_RequestError extends _RequestError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -536,6 +703,7 @@ class _$_RequestError extends _RequestError {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -550,6 +718,7 @@ class _$_RequestError extends _RequestError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -564,6 +733,7 @@ class _$_RequestError extends _RequestError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -631,6 +801,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -645,6 +816,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -659,6 +831,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -677,6 +850,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -691,6 +865,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -705,6 +880,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -766,6 +942,7 @@ class _$_SendTimeout extends _SendTimeout {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -780,6 +957,7 @@ class _$_SendTimeout extends _SendTimeout {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -794,6 +972,7 @@ class _$_SendTimeout extends _SendTimeout {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -812,6 +991,7 @@ class _$_SendTimeout extends _SendTimeout {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -826,6 +1006,7 @@ class _$_SendTimeout extends _SendTimeout {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -840,6 +1021,7 @@ class _$_SendTimeout extends _SendTimeout {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -902,6 +1084,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -916,6 +1099,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -930,6 +1114,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -948,6 +1133,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -962,6 +1148,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -976,6 +1163,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -1038,6 +1226,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   TResult when<TResult extends Object?>({
     required TResult Function() requestCancelled,
     required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
     required TResult Function(ApiError? apiError) requestError,
     required TResult Function() serviceUnavailable,
     required TResult Function() sendTimeout,
@@ -1052,6 +1241,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -1066,6 +1256,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? requestCancelled,
     TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
     TResult Function(ApiError? apiError)? requestError,
     TResult Function()? serviceUnavailable,
     TResult Function()? sendTimeout,
@@ -1084,6 +1275,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   TResult map<TResult extends Object?>({
     required TResult Function(_RequestCancelled value) requestCancelled,
     required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
     required TResult Function(_RequestError value) requestError,
     required TResult Function(_ServiceUnavailable value) serviceUnavailable,
     required TResult Function(_SendTimeout value) sendTimeout,
@@ -1098,6 +1290,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,
@@ -1112,6 +1305,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_RequestCancelled value)? requestCancelled,
     TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
     TResult Function(_RequestError value)? requestError,
     TResult Function(_ServiceUnavailable value)? serviceUnavailable,
     TResult Function(_SendTimeout value)? sendTimeout,

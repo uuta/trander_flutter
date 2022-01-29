@@ -10,6 +10,8 @@ class ErrorHandler with _$ErrorHandler {
 
   const factory ErrorHandler.unauthorisedRequest() = _UnauthorisedRequest;
 
+  const factory ErrorHandler.exceededRequestLimit() = _ExceededRequestLimit;
+
   const factory ErrorHandler.requestError({ApiError? apiError}) = _RequestError;
 
   const factory ErrorHandler.serviceUnavailable() = _ServiceUnavailable;
@@ -43,12 +45,22 @@ class ErrorHandler with _$ErrorHandler {
                 break;
               }
 
+              if (statusCode == 429) {
+                _error = const ErrorHandler.exceededRequestLimit();
+                break;
+              }
+
               if (400 <= statusCode && statusCode < 500) {
                 _error = ErrorHandler.requestError(
                     apiError: ApiError.fromJson(error.response!.data));
-              } else if (500 <= statusCode) {
-                _error = const ErrorHandler.serviceUnavailable();
+                break;
               }
+
+              if (500 <= statusCode) {
+                _error = const ErrorHandler.serviceUnavailable();
+                break;
+              }
+
               break;
             default:
               _error = const ErrorHandler.unexpectedError();
@@ -70,6 +82,7 @@ class ErrorHandler with _$ErrorHandler {
   String get errorMessage => when(
       requestCancelled: () => "Request has been cancelled.",
       unauthorisedRequest: () => "Unauthorised request.",
+      exceededRequestLimit: () => "Exceeded request limit.",
       requestError: (ApiError? error) => error!.message,
       serviceUnavailable: () => "Please wait for a while and try it again.",
       sendTimeout: () => "Send timeout in connection with API server.",

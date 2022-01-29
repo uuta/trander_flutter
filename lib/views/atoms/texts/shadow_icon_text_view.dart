@@ -2,7 +2,6 @@ import '/import.dart';
 
 class ShadowIconTextView extends StatelessWidget {
   final String name;
-  final String? countryCode;
   final TextStyle? textStyle;
   final Widget? icon;
   final int shortenStr;
@@ -10,7 +9,6 @@ class ShadowIconTextView extends StatelessWidget {
   const ShadowIconTextView(
       {Key? key,
       this.name = '',
-      this.countryCode,
       this.textStyle,
       this.icon,
       this.shortenStr = 0,
