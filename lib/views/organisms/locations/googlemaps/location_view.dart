@@ -5,6 +5,7 @@ import '/views/atoms/buttons/icon_button_view.dart';
 import '/pages/keyword_searches/keyword_search_detail_page.dart';
 import 'location_googlemap_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
+import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
 
 // It would be better to separate this file into 2 files for understainding easily.
 // But, if it was implemented, unnecessary builds would run.
@@ -78,6 +79,7 @@ class LocationView extends HookConsumerWidget {
                 if (navigationState.currentIndex ==
                     NavigationStateNotifier.pages['keyword'])
                   const KeywordSearchTextFieldView(),
+                const KeywordSearchKeywordsView(),
 
                 // Keyword info button
                 if (navigationState.currentIndex ==

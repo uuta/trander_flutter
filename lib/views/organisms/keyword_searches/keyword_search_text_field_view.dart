@@ -5,6 +5,7 @@ class KeywordSearchTextFieldView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
     return Positioned(
@@ -15,6 +16,7 @@ class KeywordSearchTextFieldView extends HookConsumerWidget {
             borderRadius: const BorderRadius.all(Radius.circular(30)),
             elevation: 5.0,
             child: TextField(
+              controller: TextEditingController(text: locationState.keyword),
               style: Theme.of(context).textTheme.headline6,
               cursorColor: Theme.of(context).primaryColorLight,
               decoration: InputDecoration(

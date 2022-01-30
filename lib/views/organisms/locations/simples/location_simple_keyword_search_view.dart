@@ -5,6 +5,7 @@ import '/views/molecules/columns/three_text_column_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_buttons_view.dart';
 import '/views/molecules/columns/title_caption_view.dart';
+import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
   const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
@@ -28,6 +29,9 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
               children: [
                 // Keyword text field
                 const KeywordSearchTextFieldView(),
+
+                // Keywords
+                const KeywordSearchKeywordsView(),
 
                 // Main content
                 Center(

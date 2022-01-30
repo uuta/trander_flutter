@@ -34,7 +34,7 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                         width: 20),
                     rightText: 'Google Map',
                     rightOnPressed: () => UrlService.launchUrl(
-                        locationState.keywordSearchExploreState.streetview),
+                        locationState.keywordSearchExploreState.googlemap),
                     bottomIcon: Image.asset("assets/images/utils/twitter.png",
                         width: 20),
                     bottomText: 'Share on Twitter',

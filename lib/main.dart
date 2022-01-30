@@ -52,6 +52,12 @@ class App extends HookConsumerWidget {
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(30.0),
                 borderSide: BorderSide.none)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.grey[200],
+            onPrimary: const Color(0xff22332E),
+          ),
+        ),
         textTheme: ThemeData.light().textTheme.copyWith(
               headline1: const TextStyle(
                   fontFamily: 'Arial',
@@ -78,6 +84,9 @@ class App extends HookConsumerWidget {
                   fontSize: 18,
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
+              bodyText1: const TextStyle(
+                color: Color(0xff22332E),
+              ),
               bodyText2: TextStyle(
                 color: Colors.grey[600],
                 fontSize: 16,

@@ -192,6 +192,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(isLoading: true);
       final kwRes =
           await KeywordSearchService().getKeywordSearch(state, idToken);
+      // TODO: emtpy data
       final kwData = kwRes.data['data'] as Map;
       final distanceRes = await DistanceService().getDistance(
         state,
