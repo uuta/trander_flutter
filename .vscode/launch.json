@@ -5,12 +5,12 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "trander_flutter",
+            "name": "trander",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "trander_flutter (profile mode)",
+            "name": "trander (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"

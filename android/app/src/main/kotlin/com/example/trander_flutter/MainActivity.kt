@@ -1,4 +1,4 @@
-package com.uuta.trander
+package net.uuta.trander
 
 import io.flutter.embedding.android.FlutterActivity
 

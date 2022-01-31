@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.uuta.trander">
+    package="net.uuta.trander">
     <!-- Added the below to open google map and street view -->
     <!-- https://huynguyennovem.github.io/articles/2020-11/android11-package-visibility -->
     <!-- https://stackoverflow.com/questions/70224911/i-urllauncher17669-component-name-for-url-is-null -->
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application
-        android:label="trander_flutter"
+        android:label="trander"
         android:icon="@mipmap/ic_launcher">
         <!-- TODO: Hide API key -->
         <meta-data

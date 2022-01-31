@@ -1,6 +1,6 @@
 {
-    "name": "trander_flutter",
-    "short_name": "trander_flutter",
+    "name": "trander",
+    "short_name": "trander",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
