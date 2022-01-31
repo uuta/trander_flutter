@@ -66,7 +66,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   }
 
   Future<void> _failedRequest(Exception e, StackTrace s) async {
-    _failedRequest(e, s);
+    debugPrint('error: $e - stack: $s');
+    state = state.copyWith(
+        isLoading: false,
+        errorMessage: ErrorHandler.getApiError(e).errorMessage);
   }
 
   Future<void> getCurrentLocation() async {
@@ -140,35 +143,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> getKeywordSearch(String? idToken) async {
     try {
-      final double lat = state.currentLocation.latitude;
-      final double lng = state.currentLocation.longitude;
-
-      FocusManager.instance.primaryFocus?.unfocus();
-
       state = state.copyWith(isLoading: true);
-      final kwRes =
-          await KeywordSearchService().getKeywordSearch(state, idToken);
-      // TODO: empty data
-      final kwData = kwRes.data['data'] as Map;
-      final distanceRes = await DistanceService().getDistance(
-        state,
-        idToken,
-        lat,
-        lng,
-        kwData['lat'],
-        kwData['lng'],
-      );
-      setKeywordSearchData(KeywordSearchState.fromJson(
-          {...kwRes.data['data'], ...distanceRes.data}));
 
-      // Store location explore data
-      state = await LocationExploreDataService(
-        state: state,
-        lat: state.keywordSearchData.lat.toString(),
-        lng: state.keywordSearchData.lng.toString(),
-        placeId: state.keywordSearchData.placeId.toString(),
-        name: state.keywordSearchData.name.toString(),
-      ).storeKeywordSearchExploreData();
+      await _processKeywordSearch(idToken);
 
       // Shift camera position
       await shiftCameraPosition(
@@ -182,35 +159,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> getSimpleKeywordSearch(String? idToken) async {
     try {
-      final double lat = state.currentLocation.latitude;
-      final double lng = state.currentLocation.longitude;
-
-      FocusManager.instance.primaryFocus?.unfocus();
-
       state = state.copyWith(isLoading: true);
-      final kwRes =
-          await KeywordSearchService().getKeywordSearch(state, idToken);
-      // TODO: empty data
-      final kwData = kwRes.data['data'] as Map;
-      final distanceRes = await DistanceService().getDistance(
-        state,
-        idToken,
-        lat,
-        lng,
-        kwData['lat'],
-        kwData['lng'],
-      );
-      setKeywordSearchData(KeywordSearchState.fromJson(
-          {...kwRes.data['data'], ...distanceRes.data}));
 
-      // Store location explore data
-      state = await LocationExploreDataService(
-        state: state,
-        lat: state.keywordSearchData.lat.toString(),
-        lng: state.keywordSearchData.lng.toString(),
-        placeId: state.keywordSearchData.placeId.toString(),
-        name: state.keywordSearchData.name.toString(),
-      ).storeKeywordSearchExploreData();
+      await _processKeywordSearch(idToken);
 
       state = await LocationService().setNewLocation(
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
@@ -219,6 +170,40 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }
+  }
+
+  Future<void> _processKeywordSearch(String? idToken) async {
+    final double lat = state.currentLocation.latitude;
+    final double lng = state.currentLocation.longitude;
+
+    FocusManager.instance.primaryFocus?.unfocus();
+
+    final kwRes = await KeywordSearchService().getKeywordSearch(state, idToken);
+
+    if (kwRes.data['data'].isEmpty) {
+      throw const EmptyResponseException('Keyword search data is empty');
+    }
+
+    final kwData = kwRes.data['data'] as Map;
+    final distanceRes = await DistanceService().getDistance(
+      state,
+      idToken,
+      lat,
+      lng,
+      kwData['lat'],
+      kwData['lng'],
+    );
+    setKeywordSearchData(KeywordSearchState.fromJson(
+        {...kwRes.data['data'], ...distanceRes.data}));
+
+    // Store location explore data
+    state = await LocationExploreDataService(
+      state: state,
+      lat: state.keywordSearchData.lat.toString(),
+      lng: state.keywordSearchData.lng.toString(),
+      placeId: state.keywordSearchData.placeId.toString(),
+      name: state.keywordSearchData.name.toString(),
+    ).storeKeywordSearchExploreData();
   }
 
   Future<void> getSetting(String? idToken) async {

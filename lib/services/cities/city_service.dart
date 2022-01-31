@@ -14,6 +14,11 @@ class CityService {
     };
 
     final res = await cityRepository.getCity(params, idToken);
+
+    if (res.data['data'].isEmpty) {
+      throw const EmptyResponseException('Keyword search data is empty');
+    }
+
     return state.copyWith(cityData: CityState.fromJson(res.data['data']));
   }
 }

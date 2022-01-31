@@ -20,6 +20,8 @@ class ErrorHandler with _$ErrorHandler {
 
   const factory ErrorHandler.noInternetConnection() = _NoInternetConnection;
 
+  const factory ErrorHandler.emptyResponse() = _EmptyResponse;
+
   const factory ErrorHandler.unexpectedError() = _UnexpectedError;
 
   const ErrorHandler._();
@@ -67,6 +69,8 @@ class ErrorHandler with _$ErrorHandler {
           }
         } else if (error is SocketException) {
           _error = const ErrorHandler.noInternetConnection();
+        } else if (error is EmptyResponseException) {
+          _error = const ErrorHandler.emptyResponse();
         } else {
           _error = const ErrorHandler.unexpectedError();
         }
@@ -86,6 +90,7 @@ class ErrorHandler with _$ErrorHandler {
       requestError: (ApiError? error) => error!.message,
       serviceUnavailable: () => "Please wait for a while and try it again.",
       sendTimeout: () => "Send timeout in connection with API server.",
+      emptyResponse: () => "No data found. Please try again.",
       noInternetConnection: () => "No internet connection.",
       unexpectedError: () => "Unexpected error occurred.");
 }

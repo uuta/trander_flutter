@@ -45,3 +45,6 @@ export '/pages/pages.dart';
 
 // repositories
 export '/models/repositories/repositories.dart';
+
+// exceptions
+export '/models/exceptions/exceptions.dart';
