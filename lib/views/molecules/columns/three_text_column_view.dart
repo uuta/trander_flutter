@@ -29,7 +29,7 @@ class ThreeTextColumnView extends StatelessWidget {
           ),
           const SizedBox(height: 25),
           Text(
-            'Change your way of life',
+            'Discover the unexpected',
             style: Theme.of(context).textTheme.bodyText2,
           ),
         ]);
