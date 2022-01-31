@@ -80,6 +80,12 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
+  Future<void> shiftCameraPosition(double lat, double lng) async {
+    state = await LocationService().setNewLocation(state, lat, lng);
+    state = await LocationService().setMarker(state);
+    await LocationService().shiftCameraPosition(state, state.newLocation);
+  }
+
   Future<void> getCity(String? idToken) async {
     try {
       state = state.copyWith(isLoading: true);
@@ -94,10 +100,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(
           cityExploreState: CityExploreState.fromJson(exploreData));
 
-      state = await LocationService()
-          .setNewLocation(state, state.cityData.lat, state.cityData.lng);
-      state = await LocationService().setMarker(state);
-      await LocationService().shiftCameraPosition(state, state.newLocation);
+      // Shift camera position
+      await shiftCameraPosition(state.cityData.lat, state.cityData.lng);
+
       state = state.copyWith(
           isLoading: false, isCitySucceeded: true, isCityDialog: true);
     } on Exception catch (e, s) {
@@ -144,6 +149,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(isLoading: true);
       final kwRes =
           await KeywordSearchService().getKeywordSearch(state, idToken);
+      // TODO: empty data
       final kwData = kwRes.data['data'] as Map;
       final distanceRes = await DistanceService().getDistance(
         state,
@@ -166,10 +172,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           keywordSearchExploreState:
               KeywordSearchExploreState.fromJson(exploreData));
 
-      state = await LocationService().setNewLocation(
-          state, state.keywordSearchData.lat, state.keywordSearchData.lng);
-      state = await LocationService().setMarker(state);
-      await LocationService().shiftCameraPosition(state, state.newLocation);
+      // Shift camera position
+      await shiftCameraPosition(
+          state.keywordSearchData.lat, state.keywordSearchData.lng);
+
       state = state.copyWith(
           isLoading: false,
           isKeywordSearchSucceeded: true,
@@ -192,7 +198,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(isLoading: true);
       final kwRes =
           await KeywordSearchService().getKeywordSearch(state, idToken);
-      // TODO: emtpy data
+      // TODO: empty data
       final kwData = kwRes.data['data'] as Map;
       final distanceRes = await DistanceService().getDistance(
         state,
