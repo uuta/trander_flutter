@@ -44,8 +44,15 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(isKeywordSearchDialog: isTrue);
   }
 
-  Future<void> setKeywodSearchData(KeywordSearchState data) async {
+  Future<void> setKeywordSearchData(KeywordSearchState data) async {
     state = state.copyWith(keywordSearchData: data);
+  }
+
+  Future<void> _succeedKeywordSearch() async {
+    state = state.copyWith(
+        isLoading: false,
+        isKeywordSearchSucceeded: true,
+        isKeywordSearchDialog: true);
   }
 
   Future<void> setKeyword(String data) async {
@@ -58,14 +65,15 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(settingMode: data);
   }
 
+  Future<void> _failedRequest(Exception e, StackTrace s) async {
+    _failedRequest(e, s);
+  }
+
   Future<void> getCurrentLocation() async {
     try {
       state = await LocationService().getCurrentLocation(state);
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -73,10 +81,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       LocationService().shiftCameraPosition(state, state.currentLocation);
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -106,10 +111,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(
           isLoading: false, isCitySucceeded: true, isCityDialog: true);
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -132,10 +134,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       state = state.copyWith(
           isLoading: false, isCitySucceeded: true, isCityDialog: true);
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -159,7 +158,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
         kwData['lat'],
         kwData['lng'],
       );
-      setKeywodSearchData(KeywordSearchState.fromJson(
+      setKeywordSearchData(KeywordSearchState.fromJson(
           {...kwRes.data['data'], ...distanceRes.data}));
       final exploreData = await LocationService().setExploreData(
         state,
@@ -176,15 +175,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       await shiftCameraPosition(
           state.keywordSearchData.lat, state.keywordSearchData.lng);
 
-      state = state.copyWith(
-          isLoading: false,
-          isKeywordSearchSucceeded: true,
-          isKeywordSearchDialog: true);
+      _succeedKeywordSearch();
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -208,7 +201,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
         kwData['lat'],
         kwData['lng'],
       );
-      setKeywodSearchData(KeywordSearchState.fromJson(
+      setKeywordSearchData(KeywordSearchState.fromJson(
           {...kwRes.data['data'], ...distanceRes.data}));
       final exploreData = await LocationService().setExploreData(
         state,
@@ -223,15 +216,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
       state = await LocationService().setNewLocation(
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
-      state = state.copyWith(
-          isLoading: false,
-          isKeywordSearchSucceeded: true,
-          isKeywordSearchDialog: true);
+
+      _succeedKeywordSearch();
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -239,10 +227,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = await SettingService().getSetting(state, idToken);
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
@@ -269,10 +254,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = await SettingService().postSetting(state, idToken);
     } on Exception catch (e, s) {
-      debugPrint('error: $e - stack: $s');
-      state = state.copyWith(
-          isLoading: false,
-          errorMessage: ErrorHandler.getApiError(e).errorMessage);
+      _failedRequest(e, s);
     }
   }
 
