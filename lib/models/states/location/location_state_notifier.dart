@@ -95,15 +95,15 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = state.copyWith(isLoading: true);
       state = await CityService().getCity(state, idToken);
-      final exploreData = await LocationService().setExploreData(
-        state,
-        state.cityData.lat.toString(),
-        state.cityData.lng.toString(),
-        state.cityData.placeId.toString(),
-        state.cityData.name.toString(),
-      );
-      state = state.copyWith(
-          cityExploreState: CityExploreState.fromJson(exploreData));
+
+      // Store location explore data
+      state = await LocationExploreDataService(
+        state: state,
+        lat: state.cityData.lat.toString(),
+        lng: state.cityData.lng.toString(),
+        placeId: state.cityData.placeId.toString(),
+        name: state.cityData.name.toString(),
+      ).storeCityExploreData();
 
       // Shift camera position
       await shiftCameraPosition(state.cityData.lat, state.cityData.lng);
@@ -119,15 +119,15 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     try {
       state = state.copyWith(isLoading: true);
       state = await CityService().getCity(state, idToken);
-      final exploreData = await LocationService().setExploreData(
-        state,
-        state.cityData.lat.toString(),
-        state.cityData.lng.toString(),
-        state.cityData.placeId.toString(),
-        state.cityData.name.toString(),
-      );
-      state = state.copyWith(
-          cityExploreState: CityExploreState.fromJson(exploreData));
+
+      // Store location explore data
+      state = await LocationExploreDataService(
+        state: state,
+        lat: state.cityData.lat.toString(),
+        lng: state.cityData.lng.toString(),
+        placeId: state.cityData.placeId.toString(),
+        name: state.cityData.name.toString(),
+      ).storeCityExploreData();
 
       state = await LocationService()
           .setNewLocation(state, state.cityData.lat, state.cityData.lng);
@@ -160,16 +160,15 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       );
       setKeywordSearchData(KeywordSearchState.fromJson(
           {...kwRes.data['data'], ...distanceRes.data}));
-      final exploreData = await LocationService().setExploreData(
-        state,
-        state.keywordSearchData.lat.toString(),
-        state.keywordSearchData.lng.toString(),
-        state.keywordSearchData.placeId.toString(),
-        state.keywordSearchData.name.toString(),
-      );
-      state = state.copyWith(
-          keywordSearchExploreState:
-              KeywordSearchExploreState.fromJson(exploreData));
+
+      // Store location explore data
+      state = await LocationExploreDataService(
+        state: state,
+        lat: state.keywordSearchData.lat.toString(),
+        lng: state.keywordSearchData.lng.toString(),
+        placeId: state.keywordSearchData.placeId.toString(),
+        name: state.keywordSearchData.name.toString(),
+      ).storeKeywordSearchExploreData();
 
       // Shift camera position
       await shiftCameraPosition(
@@ -203,16 +202,15 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       );
       setKeywordSearchData(KeywordSearchState.fromJson(
           {...kwRes.data['data'], ...distanceRes.data}));
-      final exploreData = await LocationService().setExploreData(
-        state,
-        state.keywordSearchData.lat.toString(),
-        state.keywordSearchData.lng.toString(),
-        state.keywordSearchData.placeId.toString(),
-        state.keywordSearchData.name.toString(),
-      );
-      state = state.copyWith(
-          keywordSearchExploreState:
-              KeywordSearchExploreState.fromJson(exploreData));
+
+      // Store location explore data
+      state = await LocationExploreDataService(
+        state: state,
+        lat: state.keywordSearchData.lat.toString(),
+        lng: state.keywordSearchData.lng.toString(),
+        placeId: state.keywordSearchData.placeId.toString(),
+        name: state.keywordSearchData.name.toString(),
+      ).storeKeywordSearchExploreData();
 
       state = await LocationService().setNewLocation(
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
