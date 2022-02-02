@@ -48,14 +48,15 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                   ),
                   const SizedBox(height: 20),
                   SettingsList(
-                      backgroundColor: Colors.white,
+                      lightTheme: const SettingsThemeData(
+                          settingsListBackground: Colors.white),
                       shrinkWrap: true,
                       sections: [
                         SettingsSection(
-                          titlePadding: const EdgeInsets.all(20),
+                          margin: const EdgeInsetsDirectional.all(20),
                           tiles: [
                             SettingsTile(
-                              title: 'Rating',
+                              title: const Text('Rating'),
                               trailing: Text(locationState
                                       .keywordSearchData.rating
                                       .toString() +
@@ -63,20 +64,20 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                               leading: const Icon(Icons.star_rate),
                             ),
                             SettingsTile(
-                              title: 'Address',
+                              title: const Text('Address'),
                               trailing: Text(
                                   locationState.keywordSearchData.vicinity ??
                                       ''),
                               leading: const Icon(Icons.push_pin),
                             ),
                             SettingsTile(
-                              title: 'Direction',
+                              title: const Text('Direction'),
                               trailing: Text(
                                   locationState.keywordSearchData.direction),
                               leading: const Icon(Icons.explore),
                             ),
                             SettingsTile(
-                              title: 'Distance',
+                              title: const Text('Distance'),
                               trailing: Text(locationState
                                       .keywordSearchData.distance
                                       .toString() +

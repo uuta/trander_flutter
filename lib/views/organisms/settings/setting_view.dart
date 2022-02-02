@@ -22,22 +22,22 @@ class SettingView extends HookConsumerWidget {
       children: <Widget>[
         Expanded(
             child: SettingsList(
-                backgroundColor: Colors.white,
+                lightTheme: const SettingsThemeData(
+                    settingsListBackground: Colors.white),
                 shrinkWrap: true,
                 sections: [
               SettingsSection(
-                titlePadding: const EdgeInsets.all(20),
-                title: 'Location',
-                titleTextStyle: Theme.of(context).textTheme.headline6,
+                title: Text('Location',
+                    style: Theme.of(context).textTheme.headline6),
                 tiles: [
                   SettingsTile(
-                    title: 'Direction',
-                    subtitle: ConstsSetting.directionType.entries
+                    title: const Text('Direction'),
+                    description: Text(ConstsSetting.directionType.entries
                         .toList()
                         .where((e) =>
                             e.value == locationState.settingData.directionType)
                         .toList()[0]
-                        .key,
+                        .key),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.location_on),
                     onPressed: (BuildContext context) {
@@ -48,8 +48,9 @@ class SettingView extends HookConsumerWidget {
                     },
                   ),
                   SettingsTile(
-                    title: 'Range',
-                    subtitle: '${_currentRange[0]}km - ${_currentRange[1]}km',
+                    title: const Text('Range'),
+                    description:
+                        Text('${_currentRange[0]}km - ${_currentRange[1]}km'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.ramen_dining),
                     onPressed: (BuildContext context) {
@@ -58,12 +59,12 @@ class SettingView extends HookConsumerWidget {
                     },
                   ),
                   SettingsTile(
-                    title: 'Mode',
-                    subtitle: ConstsSetting.mode.entries
+                    title: const Text('Mode'),
+                    description: Text(ConstsSetting.mode.entries
                         .toList()
                         .where((e) => e.value == locationState.settingMode)
                         .toList()[0]
-                        .key,
+                        .key),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.source),
                     onPressed: (BuildContext context) {
@@ -76,25 +77,24 @@ class SettingView extends HookConsumerWidget {
                 ],
               ),
               SettingsSection(
-                titlePadding: const EdgeInsets.all(20),
-                title: 'Account',
-                titleTextStyle: Theme.of(context).textTheme.headline6,
+                title: Text('Account',
+                    style: Theme.of(context).textTheme.headline6),
                 tiles: [
                   SettingsTile(
-                    title: 'Name',
-                    subtitle: auth0State.data!['name'],
+                    title: const Text('Name'),
+                    description: Text(auth0State.data!['name']),
                     leading: const Icon(Icons.person),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
-                    title: 'Email',
-                    subtitle: auth0State.data!['email'],
+                    title: const Text('Email'),
+                    description: Text(auth0State.data!['email']),
                     leading: const Icon(Icons.email),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
-                    title: 'Plan',
-                    subtitle: 'Free',
+                    title: const Text('Plan'),
+                    description: const Text('Free'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.price_change),
                     onPressed: (BuildContext context) {},
@@ -102,12 +102,11 @@ class SettingView extends HookConsumerWidget {
                 ],
               ),
               SettingsSection(
-                titlePadding: const EdgeInsets.all(20),
-                title: 'Logout',
-                titleTextStyle: Theme.of(context).textTheme.headline6,
+                title: Text('Logout',
+                    style: Theme.of(context).textTheme.headline6),
                 tiles: [
                   SettingsTile(
-                    title: 'Logout',
+                    title: const Text('Logout'),
                     leading: const Icon(Icons.logout),
                     onPressed: (BuildContext context) {
                       showDialog<String>(

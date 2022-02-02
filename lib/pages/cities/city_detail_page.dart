@@ -48,19 +48,19 @@ class CityDetailPage extends HookConsumerWidget {
                   ),
                   const SizedBox(height: 20),
                   SettingsList(
-                      backgroundColor: Colors.white,
+                      lightTheme: const SettingsThemeData(
+                          settingsListBackground: Colors.white),
                       shrinkWrap: true,
                       sections: [
                         SettingsSection(
-                          titlePadding: const EdgeInsets.all(20),
                           tiles: [
                             SettingsTile(
-                              title: 'Direction',
+                              title: const Text('Direction'),
                               trailing: Text(locationState.cityData.direction),
                               leading: const Icon(Icons.explore),
                             ),
                             SettingsTile(
-                              title: 'Distance',
+                              title: const Text('Distance'),
                               trailing: Text(
                                   locationState.cityData.distance.toString() +
                                       ' km'),
