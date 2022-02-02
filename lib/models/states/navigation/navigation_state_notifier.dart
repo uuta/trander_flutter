@@ -1,5 +1,4 @@
 import '/import.dart';
-import '/models/models.dart';
 
 final navigationNotifierProvider =
     StateNotifierProvider<NavigationStateNotifier, NavigationState>(

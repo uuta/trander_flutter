@@ -1,5 +1,4 @@
 import '/import.dart';
-import '/consts/api.dart';
 
 class SettingRepository {
   Future<Response> getSetting(String? idToken) async {

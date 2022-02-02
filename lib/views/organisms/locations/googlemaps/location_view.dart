@@ -2,7 +2,6 @@ import '/import.dart';
 import '../location_error_dialog_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/atoms/buttons/icon_button_view.dart';
-import '/pages/keyword_searches/keyword_search_detail_page.dart';
 import 'location_googlemap_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';

@@ -1,5 +1,4 @@
 import '/import.dart';
-import '/models/states/auth0/auth0_state.dart';
 import '/models/repositories/auth0/auth0_repository.dart';
 
 final auth0NotifierProvider =
