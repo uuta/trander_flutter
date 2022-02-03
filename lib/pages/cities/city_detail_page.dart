@@ -34,7 +34,7 @@ class CityDetailPage extends HookConsumerWidget {
                         width: 20),
                     rightText: 'Google Map',
                     rightOnPressed: () => UrlService.launchUrl(
-                        locationState.cityExploreState.streetview),
+                        locationState.cityExploreState.googlemap),
                     bottomIcon: Image.asset("assets/images/utils/twitter.png",
                         width: 20),
                     bottomText: 'Share on Twitter',
