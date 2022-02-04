@@ -52,9 +52,9 @@ dependencies:
   flutter_dotenv: ^5.0.2
   dio: ^4.0.4
   settings_ui: ^2.0.1
-  in_app_purchase: ^2.0.1
   flutter_launcher_icons: ^0.9.2
   flutter_native_splash: ^2.0.1+1
+  purchases_flutter: ^3.9.3
 
 dev_dependencies:
   flutter_test:
