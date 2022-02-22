@@ -21,6 +21,12 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+// Read variables from env file
+def envProps = new Properties()
+new File('../.env').withReader('UTF-8') {
+    envProps.load(it)
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
@@ -50,7 +56,8 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         manifestPlaceholders = [
-            'appAuthRedirectScheme': 'net.uuta.trander'
+            'appAuthRedirectScheme': 'net.uuta.trander',
+            'MAP_API_KEY': envProps.MAP_API_KEY
         ]
     }
 
