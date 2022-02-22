@@ -1,8 +1,10 @@
 import '/import.dart';
+import '/environment.dart';
 import 'pages/progresses/scaffold_progress_page.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: "assets/.env");
+  // Environement configuration
+  await Environment.setup();
 
   runApp(const ProviderScope(
     child: App(),

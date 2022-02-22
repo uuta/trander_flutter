@@ -85,7 +85,9 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - .env
+    - .env.dev
+    - .env.stg
+    - .env.prod
     - assets/images/icons/
     - assets/images/stories/
     - assets/images/onBoarding/slides/

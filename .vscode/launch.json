@@ -5,15 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "trander",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "trander (profile mode)",
+            "name": "Run dev",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "args": [
+                "--dart-define=FLAVOR=dev"
+            ]
+        },
+        {
+            "name": "Run stg",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=FLAVOR=stg"
+            ]
+        },
+        {
+            "name": "Run prod",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "--dart-define=FLAVOR=prod"
+            ]
         }
     ]
 }
