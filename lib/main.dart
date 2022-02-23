@@ -1,97 +1,113 @@
-// Copyright 2018 The Flutter team. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import '/import.dart';
-import 'package:introduction_screen/introduction_screen.dart';
-import 'widgets/slides.dart';
-import 'pages/signup.dart';
+import '/environment.dart';
+import 'pages/progresses/scaffold_progress_page.dart';
 
-void main() => runApp(const App());
+Future<void> main() async {
+  // Environement configuration
+  await Environment.setup();
 
-class App extends StatelessWidget {
+  runApp(const ProviderScope(
+    child: App(),
+  ));
+}
+
+class App extends HookConsumerWidget {
   const App({Key? key}) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final auth0State = ref.watch(auth0NotifierProvider);
+    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+
+    useEffect(() {
+      Future.microtask(() async {
+        auth0Notifier.initAction();
+      });
+      return;
+    }, const []);
+
     return MaterialApp(
-        title: 'Trander',
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: const Color(0xff3316F2),
-          primaryColorLight: const Color(0xff1CACBF),
-          primaryTextTheme:
-              const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
-          disabledColor: const Color(0xff9b9b9b),
-          fontFamily: 'Arial',
+      title: 'Trander',
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: const Color(0xff3316F2),
+        primaryColorLight: const Color(0xff1CACBF),
+        primaryTextTheme:
+            const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
+        disabledColor: const Color(0xff9b9b9b),
+        fontFamily: 'Arial',
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xff3316F2),
+          foregroundColor: Colors.white,
         ),
-        home: const MainPage());
-  }
-}
-
-class MainPage extends StatefulWidget {
-  const MainPage({Key? key}) : super(key: key);
-  @override
-  _MainPageState createState() => _MainPageState();
-}
-
-class _MainPageState extends State<MainPage> {
-  Slides slides = Slides();
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          title: Image.asset("assets/images/icons/logo.png", width: 200),
-          backgroundColor: Colors.white),
-      body: IntroductionScreen(
-        globalBackgroundColor: Colors.white,
-        pages: slides.generateSlides(),
-        showNextButton: true,
-        showSkipButton: false,
-        doneColor: Theme.of(context).primaryColorLight,
-        nextColor: Theme.of(context).primaryColorLight,
-        dotsDecorator:
-            DotsDecorator(activeColor: Theme.of(context).primaryColorLight),
-        skip: const Text("Skip"),
-        next: Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(
-                  color: Theme.of(context).primaryColorLight, width: 2)),
-          child: Center(
-            child: Icon(
-              Icons.navigate_next,
-              size: 30,
-              color: Theme.of(context).primaryColorLight,
-            ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Color(0xff3316F2),
+          ),
+          iconTheme: IconThemeData(color: Colors.grey),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+            filled: false,
+            fillColor: Colors.white,
+            contentPadding: const EdgeInsets.symmetric(vertical: 15),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
+                borderSide: BorderSide.none)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.grey[200],
+            onPrimary: const Color(0xff22332E),
           ),
         ),
-        done: Container(
-          height: 60,
-          width: 60,
-          decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              borderRadius: BorderRadius.circular(40),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.shade300,
-                    blurRadius: 40,
-                    offset: const Offset(4, 4))
-              ]),
-          child: const Center(
-            child: Icon(
-              Icons.done,
-              size: 30,
-              color: Colors.white,
+        textTheme: ThemeData.light().textTheme.copyWith(
+              headline1: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 28,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              headline2: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 24,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              headline4: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 22,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              headline5: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 20,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              headline6: const TextStyle(
+                  fontFamily: 'Arial',
+                  fontSize: 18,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              bodyText1: const TextStyle(
+                color: Color(0xff22332E),
+              ),
+              bodyText2: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 16,
+              ),
             ),
-          ),
-        ),
-        onDone: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Signup()));
-        },
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xff3316F2),
+          foregroundColor: Colors.white,
+        ),
+      ),
+      themeMode: ThemeMode.light,
+      home: auth0State.isBusy
+          ? const ScaffoldProgressPage()
+          : auth0State.isLoggedIn
+              ? const IndexPage()
+              : const OnBoardingPage(),
     );
   }
 }

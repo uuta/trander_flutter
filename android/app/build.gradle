@@ -21,12 +21,19 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
+// Read variables from env file
+def envProps = new Properties()
+new File('../.env').withReader('UTF-8') {
+    envProps.load(it)
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,11 +50,15 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.trander_flutter"
-        minSdkVersion 16
+        applicationId "net.uuta.trander"
+        minSdkVersion 20
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        manifestPlaceholders = [
+            'appAuthRedirectScheme': 'net.uuta.trander',
+            'MAP_API_KEY': envProps.MAP_API_KEY
+        ]
     }
 
     buildTypes {
@@ -65,4 +76,7 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation platform('com.google.firebase:firebase-bom:29.0.4')
+    // implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics'
 }
