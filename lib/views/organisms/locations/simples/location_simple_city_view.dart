@@ -14,6 +14,15 @@ class LocationSimpleCityView extends HookConsumerWidget {
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
+    useEffect(() {
+      Future.microtask(() async {
+        await locationNotifier.switchPageLoading(true);
+        await locationNotifier.getCurrentLocation();
+        await locationNotifier.switchPageLoading(false);
+      });
+      return;
+    }, const []);
+
     // City dialog
     if (locationState.isCityDialog) {
       LocationDialogViewController.showCityDialog(
