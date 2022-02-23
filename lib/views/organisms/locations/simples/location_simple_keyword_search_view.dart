@@ -50,14 +50,13 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                               )),
 
                 // Error dialog
-                Positioned(
-                    top: 100.0,
-                    left: 30.0,
-                    right: 30.0,
-                    bottom: 100.0,
-                    child: locationState.errorMessage == ''
-                        ? const Text('')
-                        : const LocationErrorDialogView()),
+                if (locationState.errorMessage != '')
+                  const Positioned(
+                      top: 100.0,
+                      left: 30.0,
+                      right: 30.0,
+                      bottom: 100.0,
+                      child: LocationErrorDialogView()),
 
                 // Info buttons
                 if (locationState.isKeywordSearchSucceeded &&

@@ -76,9 +76,10 @@ class LocationView extends HookConsumerWidget {
 
                 // Keyword text field
                 if (navigationState.currentIndex ==
-                    NavigationStateNotifier.pages['keyword'])
+                    NavigationStateNotifier.pages['keyword']) ...[
                   const KeywordSearchTextFieldView(),
-                const KeywordSearchKeywordsView(),
+                  const KeywordSearchKeywordsView(),
+                ],
 
                 // Keyword info button
                 if (navigationState.currentIndex ==
