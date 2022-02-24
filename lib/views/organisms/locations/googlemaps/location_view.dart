@@ -22,7 +22,6 @@ class LocationView extends HookConsumerWidget {
       Future.microtask(() async {
         await locationNotifier.switchPageLoading(true);
         await locationNotifier.initMapAction();
-        await locationNotifier.getCurrentLocation();
         await locationNotifier.shiftCameraCurrentPosition();
         await locationNotifier.switchPageLoading(false);
       });

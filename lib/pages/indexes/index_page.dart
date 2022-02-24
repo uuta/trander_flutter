@@ -21,8 +21,11 @@ class IndexPage extends HookConsumerWidget {
 
     useEffect(() {
       Future.microtask(() async {
+        await locationNotifier.switchPageLoading(true);
+        await locationNotifier.getCurrentLocation();
         await locationNotifier.initSettingAction();
         await locationNotifier.getSetting(auth0State.idToken);
+        await locationNotifier.switchPageLoading(false);
       });
       return;
     }, const []);
