@@ -20,8 +20,8 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Text(
-                    'Explore it more',
-                    style: Theme.of(context).textTheme.headline5,
+                    'More Exploration',
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   const SizedBox(height: 20),
                   MixedThreeButton(
@@ -44,12 +44,14 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Details',
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   const SizedBox(height: 20),
                   SettingsList(
                       lightTheme: const SettingsThemeData(
                           settingsListBackground: Colors.white),
+                      darkTheme: SettingsThemeData(
+                          settingsListBackground: Colors.grey[900]),
                       shrinkWrap: true,
                       sections: [
                         SettingsSection(
@@ -57,15 +59,16 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                           tiles: [
                             SettingsTile(
                               title: const Text('Rating'),
-                              trailing: Text(locationState
-                                      .keywordSearchData.rating
-                                      .toString() +
-                                  ' (${locationState.keywordSearchData.userRatingsTotal})'),
+                              trailing: Text(
+                                locationState.keywordSearchData.rating
+                                        .toString() +
+                                    ' (${locationState.keywordSearchData.userRatingsTotal})',
+                              ),
                               leading: const Icon(Icons.star_rate),
                             ),
                             SettingsTile(
                               title: const Text('Address'),
-                              trailing: Text(
+                              description: Text(
                                   locationState.keywordSearchData.vicinity ??
                                       ''),
                               leading: const Icon(Icons.push_pin),

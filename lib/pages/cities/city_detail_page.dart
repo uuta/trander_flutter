@@ -20,8 +20,8 @@ class CityDetailPage extends HookConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
                   Text(
-                    'Explore it more',
-                    style: Theme.of(context).textTheme.headline5,
+                    'More Exploration',
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   const SizedBox(height: 20),
                   MixedThreeButton(
@@ -44,12 +44,14 @@ class CityDetailPage extends HookConsumerWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Details',
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   const SizedBox(height: 20),
                   SettingsList(
                       lightTheme: const SettingsThemeData(
                           settingsListBackground: Colors.white),
+                      darkTheme: SettingsThemeData(
+                          settingsListBackground: Colors.grey[800]),
                       shrinkWrap: true,
                       sections: [
                         SettingsSection(

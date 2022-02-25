@@ -29,7 +29,10 @@ class SettingModeDialogView extends HookConsumerWidget {
                   padding: const EdgeInsets.all(10),
                 )
               : Container(
-                  child: Text(e.key),
+                  child: Text(
+                    e.key,
+                    style: const TextStyle(color: Colors.white),
+                  ),
                   padding: const EdgeInsets.all(10),
                 ),
         );
