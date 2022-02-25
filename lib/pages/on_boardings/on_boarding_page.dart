@@ -15,15 +15,16 @@ class OnBoardingPage extends HookConsumerWidget {
         title: Image.asset("assets/images/icons/logo.png", width: 160),
       ),
       body: IntroductionScreen(
-        globalBackgroundColor: Colors.white,
+        globalBackgroundColor: Colors.grey[900],
         pages: slides.generateSlides(),
         showNextButton: true,
-        showSkipButton: false,
+        showSkipButton: true,
         doneColor: Theme.of(context).primaryColorLight,
         nextColor: Theme.of(context).primaryColorLight,
         dotsDecorator:
             DotsDecorator(activeColor: Theme.of(context).primaryColorLight),
-        skip: const Text("Skip"),
+        skip: Text("Skip",
+            style: TextStyle(color: Theme.of(context).primaryColor)),
         next: Container(
           height: 60,
           width: 60,
@@ -47,15 +48,15 @@ class OnBoardingPage extends HookConsumerWidget {
               borderRadius: BorderRadius.circular(40),
               boxShadow: [
                 BoxShadow(
-                    color: Colors.grey.shade300,
+                    color: Colors.grey.shade800,
                     blurRadius: 40,
                     offset: const Offset(4, 4))
               ]),
-          child: const Center(
+          child: Center(
             child: Icon(
               Icons.done,
               size: 30,
-              color: Colors.white,
+              color: Colors.grey[900],
             ),
           ),
         ),
