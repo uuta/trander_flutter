@@ -51,7 +51,7 @@ class CityDetailPage extends HookConsumerWidget {
                       lightTheme: const SettingsThemeData(
                           settingsListBackground: Colors.white),
                       darkTheme: SettingsThemeData(
-                          settingsListBackground: Colors.grey[800]),
+                          settingsListBackground: Colors.grey[900]),
                       shrinkWrap: true,
                       sections: [
                         SettingsSection(

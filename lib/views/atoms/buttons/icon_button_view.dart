@@ -10,10 +10,10 @@ class IconButtonView extends StatelessWidget {
       left: 15,
       bottom: 20,
       child: ElevatedButton.icon(
-          icon: const Icon(
+          icon: Icon(
             Icons.info_outline,
             size: 32.0,
-            color: Colors.orangeAccent,
+            color: Theme.of(context).primaryColor,
           ),
           label: Text(
             'More Info',
