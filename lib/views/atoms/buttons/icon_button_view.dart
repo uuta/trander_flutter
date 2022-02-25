@@ -24,7 +24,7 @@ class IconButtonView extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
-            primary: Colors.white,
+            // primary: Colors.white,
             padding:
                 const EdgeInsets.only(top: 5, bottom: 5, left: 10, right: 20),
           )),

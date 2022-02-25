@@ -10,6 +10,7 @@ class LocationErrorDialogView extends HookConsumerWidget {
 
     return AlertDialog(
       title: const Text('Oops!'),
+      titleTextStyle: Theme.of(context).textTheme.headline3,
       content: Text(locationState.errorMessage.toString()),
       actions: <Widget>[
         TextButton(

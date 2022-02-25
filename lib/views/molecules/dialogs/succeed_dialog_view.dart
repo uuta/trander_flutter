@@ -49,7 +49,7 @@ class SucceedDialogView extends StatelessWidget {
           ),
           margin: const EdgeInsets.only(top: avatarRadius),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.grey[900],
             shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(padding),
             boxShadow: const [
@@ -94,19 +94,13 @@ class SucceedDialogView extends StatelessWidget {
                 children: [
                   const Spacer(),
                   ImageCircleButtonView(
-                      image: leftIcon,
-                      iconColor: Colors.white,
-                      onPressed: leftOnPressed),
+                      image: leftIcon, onPressed: leftOnPressed),
                   const Spacer(),
                   ImageCircleButtonView(
-                      image: centerIcon,
-                      iconColor: Colors.white,
-                      onPressed: centerOnPressed),
+                      image: centerIcon, onPressed: centerOnPressed),
                   const Spacer(),
                   ImageCircleButtonView(
-                      image: rightIcon,
-                      iconColor: Colors.white,
-                      onPressed: rightOnPressed),
+                      image: rightIcon, onPressed: rightOnPressed),
                   const Spacer(),
                 ],
               ),
@@ -126,7 +120,7 @@ class SucceedDialogView extends StatelessWidget {
           right: padding,
           child: CircleAvatar(
             child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
-            backgroundColor: Color(0xFF2cb696),
+            backgroundColor: Color(0xff7ecc00),
             radius: avatarRadius,
           ),
         ),

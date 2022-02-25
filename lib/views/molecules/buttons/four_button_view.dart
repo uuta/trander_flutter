@@ -3,7 +3,7 @@ import '/views/atoms/buttons/image_circle_button_view.dart';
 
 class FourButtonView extends StatelessWidget {
   final Widget firstIcon, secondIcon, thirdIcon, fourthIcon;
-  final Color firstIconColor, secondIconColor, thirdIconColor, fourthIconColor;
+  final Color? firstIconColor, secondIconColor, thirdIconColor, fourthIconColor;
   final Function()? firstOnPressed,
       secondOnPressed,
       thirdOnPressed,
@@ -14,10 +14,10 @@ class FourButtonView extends StatelessWidget {
       required this.secondIcon,
       required this.thirdIcon,
       required this.fourthIcon,
-      this.firstIconColor = Colors.white,
-      this.secondIconColor = Colors.white,
-      this.thirdIconColor = Colors.white,
-      this.fourthIconColor = Colors.white,
+      this.firstIconColor,
+      this.secondIconColor,
+      this.thirdIconColor,
+      this.fourthIconColor,
       required this.firstOnPressed,
       required this.secondOnPressed,
       required this.thirdOnPressed,

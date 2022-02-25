@@ -2,11 +2,11 @@ import '/import.dart';
 
 class ImageCircleButtonView extends StatelessWidget {
   final Widget image;
-  final Color iconColor;
+  final Color? iconColor;
   final VoidCallback? onPressed;
 
   const ImageCircleButtonView(
-      {Key? key, required this.image, required this.iconColor, this.onPressed})
+      {Key? key, required this.image, this.iconColor, this.onPressed})
       : super(key: key);
 
   @override
@@ -17,8 +17,8 @@ class ImageCircleButtonView extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(18),
-        primary: Colors.white,
-        onPrimary: Colors.black38,
+        onPrimary: Theme.of(context).primaryColor,
+        primary: iconColor ?? iconColor,
         elevation: 3,
       ),
     );
