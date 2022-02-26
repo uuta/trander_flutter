@@ -10,7 +10,7 @@ class TitleCaptionView extends StatelessWidget {
     return Column(mainAxisSize: MainAxisSize.min, children: [
       Text(
         title,
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.headline3,
       ),
       const SizedBox(height: 15.0),
       Text(caption, style: Theme.of(context).textTheme.bodyText2),

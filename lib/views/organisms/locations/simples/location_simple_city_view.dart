@@ -37,8 +37,8 @@ class LocationSimpleCityView extends HookConsumerWidget {
                                 countryCode: locationState.cityData.countryCode,
                               )
                             : const TitleCaptionView(
-                                title: 'Find a City randomly',
-                                caption: 'Give it a try!',
+                                title: 'Push it',
+                                caption: 'Find a City randomly',
                               )),
                 Positioned(
                     top: 100.0,

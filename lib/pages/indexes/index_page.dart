@@ -44,16 +44,10 @@ class IndexPage extends HookConsumerWidget {
     List<Widget> _titleList = [
       locationState.isCitySucceeded
           ? const CityTitleView()
-          : Text(
-              'City Search',
-              style: Theme.of(context).textTheme.headline2,
-            ),
+          : Image.asset("assets/images/icons/city-search.png", width: 200),
       locationState.isKeywordSearchSucceeded
           ? const KeywordSearchTitleView()
-          : Text(
-              'Keyword Search',
-              style: Theme.of(context).textTheme.headline2,
-            ),
+          : Image.asset("assets/images/icons/keyword-search.png", width: 250),
       Text(
         'Settings',
         style: Theme.of(context).textTheme.headline2,

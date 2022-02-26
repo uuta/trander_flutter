@@ -45,8 +45,8 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                                 name: locationState.keywordSearchData.name,
                               )
                             : const TitleCaptionView(
-                                title: 'Find a Location randomly',
-                                caption: 'Give it a try!',
+                                title: 'Input keyword',
+                                caption: 'Find a Location randomly',
                               )),
 
                 // Error dialog
