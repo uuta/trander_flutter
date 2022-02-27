@@ -27,7 +27,6 @@ class FullsizeIconTextButtonView extends HookConsumerWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(radius),
               ),
-              primary: Colors.white,
               padding:
                   const EdgeInsets.only(top: 7, bottom: 7, left: 10, right: 20),
             )));

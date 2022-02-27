@@ -16,15 +16,6 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
-    useEffect(() {
-      Future.microtask(() async {
-        await locationNotifier.switchPageLoading(true);
-        await locationNotifier.getCurrentLocation();
-        await locationNotifier.switchPageLoading(false);
-      });
-      return;
-    }, const []);
-
     // Keyword search dialog
     if (locationState.isKeywordSearchDialog) {
       LocationDialogViewController.showKeywordSearchDialog(
@@ -54,8 +45,8 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                                 name: locationState.keywordSearchData.name,
                               )
                             : const TitleCaptionView(
-                                title: 'Find a Location randomly',
-                                caption: 'Give it a try!',
+                                title: 'Input keyword',
+                                caption: 'Find a Location randomly',
                               )),
 
                 // Error dialog

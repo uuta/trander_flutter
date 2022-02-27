@@ -27,6 +27,16 @@
             "args": [
                 "--dart-define=FLAVOR=prod"
             ]
+        },
+        {
+            "name": "Run prod (Release)",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "appbundle",
+                "--release",
+                "--dart-define=FLAVOR=prod"
+            ]
         }
     ]
 }

@@ -44,7 +44,10 @@ class Slides {
         footer: InkWell(
           child: Text(
             linkText,
-            style: const TextStyle(color: Colors.blueAccent),
+            style: TextStyle(
+              color: Colors.grey[400],
+              decoration: TextDecoration.underline,
+            ),
           ),
           onTap: () async {
             if (await canLaunch(link)) {
@@ -52,11 +55,11 @@ class Slides {
             }
           },
         ),
-        decoration: PageDecoration(
-            titleTextStyle: const TextStyle(
+        decoration: const PageDecoration(
+            titleTextStyle: TextStyle(
                 fontSize: 36.0,
                 fontWeight: FontWeight.bold,
-                color: Color(0xff22332E)),
-            bodyTextStyle: TextStyle(fontSize: 22.0, color: Colors.grey[700])));
+                color: Color(0xfffd026f)),
+            bodyTextStyle: TextStyle(fontSize: 22.0, color: Colors.white)));
   }
 }

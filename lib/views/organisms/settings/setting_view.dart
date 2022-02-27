@@ -28,7 +28,7 @@ class SettingView extends HookConsumerWidget {
                 sections: [
               SettingsSection(
                 title: Text('Location',
-                    style: Theme.of(context).textTheme.headline6),
+                    style: Theme.of(context).textTheme.headline3),
                 tiles: [
                   SettingsTile(
                     title: const Text('Direction'),
@@ -78,7 +78,7 @@ class SettingView extends HookConsumerWidget {
               ),
               SettingsSection(
                 title: Text('Account',
-                    style: Theme.of(context).textTheme.headline6),
+                    style: Theme.of(context).textTheme.headline3),
                 tiles: [
                   SettingsTile(
                     title: const Text('Name'),
@@ -103,7 +103,7 @@ class SettingView extends HookConsumerWidget {
               ),
               SettingsSection(
                 title: Text('Logout',
-                    style: Theme.of(context).textTheme.headline6),
+                    style: Theme.of(context).textTheme.headline3),
                 tiles: [
                   SettingsTile(
                     title: const Text('Logout'),

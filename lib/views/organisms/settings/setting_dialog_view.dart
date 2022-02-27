@@ -8,6 +8,7 @@ class SettingDialogView extends HookConsumerWidget {
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
     return AlertDialog(
       title: const Text('Logout'),
+      titleTextStyle: Theme.of(context).textTheme.headline3,
       content: const Text('Are you sure you want to logout?'),
       actions: <Widget>[
         TextButton(

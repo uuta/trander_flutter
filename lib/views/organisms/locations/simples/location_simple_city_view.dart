@@ -14,15 +14,6 @@ class LocationSimpleCityView extends HookConsumerWidget {
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
-    useEffect(() {
-      Future.microtask(() async {
-        await locationNotifier.switchPageLoading(true);
-        await locationNotifier.getCurrentLocation();
-        await locationNotifier.switchPageLoading(false);
-      });
-      return;
-    }, const []);
-
     // City dialog
     if (locationState.isCityDialog) {
       LocationDialogViewController.showCityDialog(
@@ -46,8 +37,8 @@ class LocationSimpleCityView extends HookConsumerWidget {
                                 countryCode: locationState.cityData.countryCode,
                               )
                             : const TitleCaptionView(
-                                title: 'Find a City randomly',
-                                caption: 'Give it a try!',
+                                title: 'Push it',
+                                caption: 'Find a City randomly',
                               )),
                 Positioned(
                     top: 100.0,
