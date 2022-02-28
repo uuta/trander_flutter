@@ -63,6 +63,7 @@ tasks.whenTaskAdded { task ->
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.github.triplet.play'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
@@ -114,6 +115,11 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.release
         }
+    }
+
+    play {
+        serviceAccountCredentials = rootProject.file (keystoreProperties['serviceAccountFile'])
+        // Being able to add options
     }
 }
 
