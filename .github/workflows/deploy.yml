@@ -67,7 +67,7 @@ jobs:
 
       # App Bundle を生成
       - name: Building Android AppBundle
-        run: flutter build appbundle --build-number ${GITHUB_RUN_NUMBER} --dart-define=FLAVOR=prod # build-number には run_number を渡している
+        run: flutter build appbundle --release --dart-define=FLAVOR=prod --build-number ${GITHUB_RUN_NUMBER} # build-number には run_number を渡している
 
         # ToDo: version-number や build-number は外部ファイルを参照するようにしたい
       # gradle-play-publisher で アップロード
