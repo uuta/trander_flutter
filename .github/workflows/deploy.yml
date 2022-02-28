@@ -36,6 +36,7 @@ jobs:
       - name: Create googleplay.jks
         run: echo -n ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }} | base64 -d > android/service-account-key.json
 
+      # Dot env files
       - name: Create dot env file
         run: echo -n ${{ secrets.ENV_FILE }} | base64 -d > .env
 
@@ -47,6 +48,10 @@ jobs:
 
       - name: Create dot env file under assets (prod)
         run: echo -n ${{ secrets.ASSET_ENV_FILE }} | base64 -d > assets/.env.prod
+
+      # google-services.json
+      - name: Create google-services.json
+        run: echo -n ${{ secrets.GOOGLE_SERVICES_JSON }} | base64 -d > android/app/src/prod/google-services.json
 
       # Secrets から key.properties を生成
       # key.properties には各種シークレットな文字列なり file name なりを渡している
