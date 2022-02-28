@@ -30,7 +30,7 @@ jobs:
 
       # Secrets からgoogleplay.jks を生成
       - name: Create googleplay.jks
-        run: echo -n ${{ secrets.ANDROID_KEY_JKS }} | base64 -d > android/googleplay.jks # -n で改行を消している
+        run: echo -n ${{ secrets.ANDROID_KEY_JKS }} | base64 -d > android/app/googleplay.jks # -n で改行を消している
 
       # Secrets から service-account-key.json を生成
       - name: Create googleplay.jks
