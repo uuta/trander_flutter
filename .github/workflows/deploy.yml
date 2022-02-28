@@ -9,8 +9,8 @@ jobs:
   # ----------------------------------------------------------------- #
   # Build for Android
   # ----------------------------------------------------------------- #
-  build_Android: # job の名前  [job = step のまとまり]
-    runs-on: ubuntu-latest # ubuntu 環境でやっていく
+  build_Android:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checks-out my repository
