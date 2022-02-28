@@ -39,7 +39,13 @@ jobs:
       - name: Create dot env file
         run: echo -n ${{ secrets.ENV_FILE }} | base64 -d > .env
 
-      - name: Create dot env file under assets
+      - name: Create dot env file under assets (dev)
+        run: touch assets/.env.dev
+
+      - name: Create dot env file under assets (stg)
+        run: touch assets/.env.stg
+
+      - name: Create dot env file under assets (prod)
         run: echo -n ${{ secrets.ASSET_ENV_FILE }} | base64 -d > assets/.env.prod
 
       # Secrets から key.properties を生成
