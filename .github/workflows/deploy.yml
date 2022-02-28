@@ -32,9 +32,15 @@ jobs:
       - name: Create googleplay.jks
         run: echo -n ${{ secrets.ANDROID_KEY_JKS }} | base64 -d > android/googleplay.jks # -n で改行を消している
 
-      # Secrets から service-account-ke.json を生成
+      # Secrets から service-account-key.json を生成
       - name: Create googleplay.jks
-        run: echo -n ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }} | base64 -d > android/service-account-ke.json
+        run: echo -n ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }} | base64 -d > android/service-account-key.json
+
+      - name: Create dot env file
+        run: echo -n ${{ secrets.ENV_FILE }} | base64 -d > .env
+
+      - name: Create dot env file under assets
+        run: echo -n ${{ secrets.ASSET_ENV_FILE }} | base64 -d > assets/.env.prod
 
       # Secrets から key.properties を生成
       # key.properties には各種シークレットな文字列なり file name なりを渡している
@@ -43,14 +49,14 @@ jobs:
         # >> android/key.properties で　追加
         run: |
           echo 'storeFile=googleplay.jks' > android/key.properties
-          echo 'serviceAccountFile=service-account-ke.json' >> android/key.properties
+          echo 'serviceAccountFile=service-account-key.json' >> android/key.properties
           echo 'storePassword=${{ secrets.ANDROID_STORE_PASSWORD }}' >> android/key.properties
           echo 'keyPassword=${{ secrets.ANDROID_KEY_PASSWORD }}' >> android/key.properties
           echo 'keyAlias=${{ secrets.ANDROID_KEY_ALIAS }}' >> android/key.properties
 
       # App Bundle を生成
       - name: Building Android AppBundle
-        run: flutter build appbundle --build-number ${GITHUB_RUN_NUMBER} # build-number には run_number を渡している
+        run: flutter build appbundle --build-number ${GITHUB_RUN_NUMBER} --dart-define=FLAVOR=prod # build-number には run_number を渡している
 
         # ToDo: version-number や build-number は外部ファイルを参照するようにしたい
       # gradle-play-publisher で アップロード
