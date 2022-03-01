@@ -69,9 +69,9 @@ jobs:
       - name: Building Android AppBundle
         run: flutter build appbundle --release --dart-define=FLAVOR=prod --build-number ${GITHUB_RUN_NUMBER} # build-number には run_number を渡している
 
-        # ToDo: version-number や build-number は外部ファイルを参照するようにしたい
-      # gradle-play-publisher で アップロード
-      # https://github.com/Triple-T/gradle-play-publisher この外部パッケージを活用している
-      - name: Upload to GooglePlayStore
-        run: ./gradlew publishReleaseBundle
-        working-directory: ./android
+      # Make appbundle downloadable
+      - name: Upload artefato
+        uses: actions/upload-artifact@v2
+        with:
+          name: appbundle
+          path: build/app/outputs/bundle/release
