@@ -33,7 +33,7 @@ jobs:
         run: echo -n ${{ secrets.ANDROID_KEY_JKS }} | base64 -d > android/app/googleplay.jks # -n で改行を消している
 
       # Secrets から service-account-key.json を生成
-      - name: Create googleplay.jks
+      - name: Create service-account-key.json
         run: echo -n ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }} | base64 -d > android/service-account-key.json
 
       # Dot env files
@@ -74,4 +74,30 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: appbundle
-          path: build/app/outputs/bundle/release
+          path: build/app/outputs/bundle/release/app-release.aab
+
+      - name: Get APPBUNDLE from Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: APPBUNDLE
+
+      # Upload to google play
+      - name: Release APPBUNDLE to internal track
+        uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }}
+          packageName: net.uuta.trander
+          releaseFile: app-release.aab
+          track: internal
+          whatsNewDirectory: distribution/whatsnew
+
+      # Slack notification
+      - name: Notify deployment
+        uses: 8398a7/action-slack@v3.8.0
+        with:
+          status: ${{ job.status }}
+          fields: all
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always()
