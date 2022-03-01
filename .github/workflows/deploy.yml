@@ -85,7 +85,7 @@ jobs:
       - name: Release appbundle to internal track
         uses: r0adkll/upload-google-play@v1
         with:
-          serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }}
+          serviceAccountJson: ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }}
           packageName: net.uuta.trander
           releaseFile: app-release.aab
           track: internal
