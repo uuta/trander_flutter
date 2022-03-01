@@ -89,7 +89,6 @@ jobs:
           packageName: net.uuta.trander
           releaseFile: app-release.aab
           track: internal
-          whatsNewDirectory: distribution/whatsnew
 
       # Slack notification
       - name: Notify deployment
