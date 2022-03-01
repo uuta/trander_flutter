@@ -76,13 +76,13 @@ jobs:
           name: appbundle
           path: build/app/outputs/bundle/release/app-release.aab
 
-      - name: Get APPBUNDLE from Artifacts
+      - name: Get appbundle from Artifacts
         uses: actions/download-artifact@v2
         with:
-          name: APPBUNDLE
+          name: appbundle
 
       # Upload to google play
-      - name: Release APPBUNDLE to internal track
+      - name: Release appbundle to internal track
         uses: r0adkll/upload-google-play@v1
         with:
           serviceAccountJsonPlainText: ${{ secrets.SERVICE_ACCOUNT_KEY_JSON }}
