@@ -69,18 +69,6 @@ jobs:
       - name: Building Android AppBundle
         run: flutter build appbundle --release --dart-define=FLAVOR=prod --build-number ${GITHUB_RUN_NUMBER} # build-number には run_number を渡している
 
-      # Make appbundle downloadable
-      - name: Upload artefato
-        uses: actions/upload-artifact@v2
-        with:
-          name: appbundle
-          path: build/app/outputs/bundle/release/app-release.aab
-
-      - name: Get appbundle from Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: appbundle
-
       # Upload to google play
       - name: Release appbundle to internal track
         uses: r0adkll/upload-google-play@v1
