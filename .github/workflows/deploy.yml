@@ -75,7 +75,7 @@ jobs:
         with:
           serviceAccountJson: android/service-account-key.json
           packageName: net.uuta.trander
-          releaseFiles: app-release.aab
+          releaseFiles: build/app/outputs/bundle/release/app-release.aab
           status: completed
           track: internal
 
