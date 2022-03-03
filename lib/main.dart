@@ -1,10 +1,13 @@
 import '/import.dart';
 import '/environment.dart';
 import 'pages/progresses/scaffold_progress_page.dart';
+import '/services/revenue_cats/revenue_cat_set_up.dart';
 
-Future<void> main() async {
-  // Environement configuration
-  await Environment.setup();
+void main() {
+  // Environment configuration
+  Environment.setup();
+  // RevenueCat
+  RevenueCatSetUp.initialize();
 
   runApp(const ProviderScope(
     child: App(),
