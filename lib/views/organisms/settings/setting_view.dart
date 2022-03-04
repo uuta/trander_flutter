@@ -82,13 +82,13 @@ class SettingView extends HookConsumerWidget {
                 tiles: [
                   SettingsTile(
                     title: const Text('Name'),
-                    description: Text(auth0State.data!['name']),
+                    description: Text(auth0State.data.name ?? '-'),
                     leading: const Icon(Icons.person),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
                     title: const Text('Email'),
-                    description: Text(auth0State.data!['email']),
+                    description: Text(auth0State.data.email ?? '-'),
                     leading: const Icon(Icons.email),
                     onPressed: (BuildContext context) {},
                   ),

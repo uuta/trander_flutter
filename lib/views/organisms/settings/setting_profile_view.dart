@@ -18,12 +18,12 @@ class SettingProfileView extends HookConsumerWidget {
           shape: BoxShape.circle,
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage(auth0State.data!['picture'] ?? ''),
+            image: NetworkImage(auth0State.data.picture ?? ''),
           ),
         ),
       ),
       const SizedBox(height: 24),
-      Text('Name: ' + auth0State.data!['name']),
+      Text('Name: ' + (auth0State.data.name ?? '')),
       const SizedBox(height: 48),
       ElevatedButton(
         onPressed: () async {
