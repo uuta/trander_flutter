@@ -36,8 +36,7 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       logout();
-      // TODO: Investigate later
-      // PurchaseService.logout();
+      PurchaseService.logout();
     }
   }
 

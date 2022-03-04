@@ -4,9 +4,7 @@ import 'pages/progresses/scaffold_progress_page.dart';
 
 Future<void> main() async {
   // Environment configuration
-  Environment.setup();
-  // RevenueCat
-  PurchaseService.initAction();
+  await Environment.setup();
 
   runApp(const ProviderScope(
     child: App(),
@@ -24,7 +22,6 @@ class App extends HookConsumerWidget {
     useEffect(() {
       Future.microtask(() async {
         auth0Notifier.initAction();
-        PurchaseService.login(auth0State.data.sub);
       });
       return;
     }, const []);
