@@ -29,7 +29,7 @@ class _$Auth0DataStateTearOff {
       @JsonKey(name: 'updated_at') String? updated_at,
       @JsonKey(name: 'email_verified') bool? email_vefified,
       @JsonKey(name: 'iss') String? iss,
-      @JsonKey(name: 'sub') String? sub,
+      @JsonKey(name: 'sub') String sub = '',
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
@@ -77,7 +77,7 @@ mixin _$Auth0DataState {
   @JsonKey(name: 'iss')
   String? get iss => throw _privateConstructorUsedError;
   @JsonKey(name: 'sub')
-  String? get sub => throw _privateConstructorUsedError;
+  String get sub => throw _privateConstructorUsedError;
   @JsonKey(name: 'aud')
   String? get aud => throw _privateConstructorUsedError;
   @JsonKey(name: 'iat')
@@ -108,7 +108,7 @@ abstract class $Auth0DataStateCopyWith<$Res> {
       @JsonKey(name: 'updated_at') String? updated_at,
       @JsonKey(name: 'email_verified') bool? email_vefified,
       @JsonKey(name: 'iss') String? iss,
-      @JsonKey(name: 'sub') String? sub,
+      @JsonKey(name: 'sub') String sub,
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
@@ -173,7 +173,7 @@ class _$Auth0DataStateCopyWithImpl<$Res>
       sub: sub == freezed
           ? _value.sub
           : sub // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       aud: aud == freezed
           ? _value.aud
           : aud // ignore: cast_nullable_to_non_nullable
@@ -213,7 +213,7 @@ abstract class _$Auth0DataStateCopyWith<$Res>
       @JsonKey(name: 'updated_at') String? updated_at,
       @JsonKey(name: 'email_verified') bool? email_vefified,
       @JsonKey(name: 'iss') String? iss,
-      @JsonKey(name: 'sub') String? sub,
+      @JsonKey(name: 'sub') String sub,
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
@@ -280,7 +280,7 @@ class __$Auth0DataStateCopyWithImpl<$Res>
       sub: sub == freezed
           ? _value.sub
           : sub // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       aud: aud == freezed
           ? _value.aud
           : aud // ignore: cast_nullable_to_non_nullable
@@ -316,7 +316,7 @@ class _$_Auth0DataState implements _Auth0DataState {
       @JsonKey(name: 'updated_at') this.updated_at,
       @JsonKey(name: 'email_verified') this.email_vefified,
       @JsonKey(name: 'iss') this.iss,
-      @JsonKey(name: 'sub') this.sub,
+      @JsonKey(name: 'sub') this.sub = '',
       @JsonKey(name: 'aud') this.aud,
       @JsonKey(name: 'iat') this.iat,
       @JsonKey(name: 'exp') this.exp,
@@ -349,7 +349,7 @@ class _$_Auth0DataState implements _Auth0DataState {
   final String? iss;
   @override
   @JsonKey(name: 'sub')
-  final String? sub;
+  final String sub;
   @override
   @JsonKey(name: 'aud')
   final String? aud;
@@ -430,7 +430,7 @@ abstract class _Auth0DataState implements Auth0DataState {
       @JsonKey(name: 'updated_at') String? updated_at,
       @JsonKey(name: 'email_verified') bool? email_vefified,
       @JsonKey(name: 'iss') String? iss,
-      @JsonKey(name: 'sub') String? sub,
+      @JsonKey(name: 'sub') String sub,
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
@@ -463,7 +463,7 @@ abstract class _Auth0DataState implements Auth0DataState {
   String? get iss;
   @override
   @JsonKey(name: 'sub')
-  String? get sub;
+  String get sub;
   @override
   @JsonKey(name: 'aud')
   String? get aud;

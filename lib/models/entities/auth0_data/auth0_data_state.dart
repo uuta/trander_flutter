@@ -13,7 +13,7 @@ class Auth0DataState with _$Auth0DataState {
     @JsonKey(name: 'updated_at') String? updated_at,
     @JsonKey(name: 'email_verified') bool? email_vefified,
     @JsonKey(name: 'iss') String? iss,
-    @JsonKey(name: 'sub') String? sub,
+    @JsonKey(name: 'sub') @Default('') String sub,
     @JsonKey(name: 'aud') String? aud,
     @JsonKey(name: 'iat') int? iat,
     @JsonKey(name: 'exp') int? exp,

@@ -1,13 +1,12 @@
 import '/import.dart';
 import '/environment.dart';
 import 'pages/progresses/scaffold_progress_page.dart';
-import '/services/revenue_cats/revenue_cat_set_up.dart';
 
-void main() {
+Future<void> main() async {
   // Environment configuration
   Environment.setup();
   // RevenueCat
-  RevenueCatSetUp.initialize();
+  PurchaseService.initAction();
 
   runApp(const ProviderScope(
     child: App(),
@@ -25,6 +24,7 @@ class App extends HookConsumerWidget {
     useEffect(() {
       Future.microtask(() async {
         auth0Notifier.initAction();
+        PurchaseService.login(auth0State.data.sub);
       });
       return;
     }, const []);

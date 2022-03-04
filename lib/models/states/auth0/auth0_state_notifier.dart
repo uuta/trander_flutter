@@ -26,7 +26,6 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       // Call init action repository
       final res = await repository.initAction(storedRefreshToken);
       final data = repository.parseIdToken(res.idToken);
-      print(data);
 
       state = state.copyWith(
         isBusy: false,
@@ -37,6 +36,8 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       logout();
+      // TODO: Investigate later
+      // PurchaseService.logout();
     }
   }
 
@@ -46,7 +47,11 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       final res = await repository.login();
       final data = repository.parseIdToken(res.idToken);
       state = state.copyWith(
-          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
+        isBusy: false,
+        isLoggedIn: true,
+        data: data,
+        idToken: res.idToken,
+      );
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       state = state.copyWith(

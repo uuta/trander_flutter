@@ -11,7 +11,6 @@ class Auth0State with _$Auth0State {
     @Default(false) bool isLoggedIn,
     required Auth0DataState data,
     String? idToken,
-    String? sub,
     String? errorMessage,
   }) = _Auth0State;
 }

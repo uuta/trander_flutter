@@ -15,7 +15,7 @@ _$_Auth0DataState _$$_Auth0DataStateFromJson(Map<String, dynamic> json) =>
       updated_at: json['updated_at'] as String?,
       email_vefified: json['email_verified'] as bool?,
       iss: json['iss'] as String?,
-      sub: json['sub'] as String?,
+      sub: json['sub'] as String? ?? '',
       aud: json['aud'] as String?,
       iat: json['iat'] as int?,
       exp: json['exp'] as int?,
