@@ -8,30 +8,44 @@ class PurchaseOfferPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Subscription',
-            style: Theme.of(context).textTheme.headline2,
-          ),
-        ),
-        body: Center(
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-              const SizedBox(height: 40),
-              const TitleCaptionView(
-                title: 'Unlock Unlimited Access',
-                caption: 'Unlimited access to the API',
+    final purchaseState = ref.watch(purchaseNotifierProvider);
+    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
+
+    useEffect(() {
+      Future.microtask(() async {
+        purchaseNotifier.initAction();
+      });
+      return;
+    }, const []);
+
+    return purchaseState.isLoading
+        ? const ScaffoldProgressPage()
+        : Scaffold(
+            appBar: AppBar(
+              title: Text(
+                'Subscription',
+                style: Theme.of(context).textTheme.headline2,
               ),
-              const SizedBox(height: 20),
-              Image.asset(
-                'assets/images/stories/disco.png',
-                width: 300,
-              ),
-              const PurchasePriceCards(),
-              const SizedBox(height: 30),
-              SubmitButtonView(text: 'Unlock', onPressed: () {})
-            ])));
+            ),
+            body: SingleChildScrollView(
+                child: Center(
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                  const SizedBox(height: 40),
+                  const TitleCaptionView(
+                    title: 'Unlock Unlimited Access',
+                    caption: 'Unlimited access to the API',
+                  ),
+                  const SizedBox(height: 20),
+                  Image.asset(
+                    'assets/images/stories/disco.png',
+                    width: 250,
+                  ),
+                  const PurchasePriceCards(),
+                  const SizedBox(height: 30),
+                  SubmitButtonView(text: 'Unlock', onPressed: () {}),
+                  const SizedBox(height: 50),
+                ]))));
   }
 }

@@ -5,19 +5,18 @@ class PurchasePriceCards extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final purchaseState = ref.watch(purchaseNotifierProvider);
+    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
     final List<Map<String, dynamic>> listItems = [
       {
         'text': 'Monthly',
+        'price': purchaseState.monthlyPrice.toString().toString()
       },
-      {
-        'text': 'Yearly',
-      },
+      {'text': 'Yearly', 'price': purchaseState.yearOfMonthlyPrice.toString()},
     ];
-    final purchaseState = ref.watch(purchaseNotifierProvider);
-    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
     return Container(
-        height: 150,
+        height: 180,
         margin: const EdgeInsets.only(top: 10.0),
         child: ListView.builder(
           shrinkWrap: true,
@@ -56,7 +55,7 @@ class PurchasePriceCards extends HookConsumerWidget {
                                 )),
                             const SizedBox(height: 10),
                             Text(
-                              '\$18.00',
+                              listItems[index]['price'],
                               style: Theme.of(context).textTheme.headline3,
                             ),
                             if (listItems[index] == listItems[1])

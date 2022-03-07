@@ -7,3 +7,4 @@ export '/services/purchases/purchase_service.dart';
 export '/services/settings/setting_service.dart';
 export '/services/utils/url_service.dart';
 export '/services/utils/util_service.dart';
+export '/services/utils/util_price_service.dart';
