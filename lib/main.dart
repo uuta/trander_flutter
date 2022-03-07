@@ -1,6 +1,5 @@
 import '/import.dart';
 import '/environment.dart';
-import 'pages/progresses/scaffold_progress_page.dart';
 
 Future<void> main() async {
   // Environment configuration

@@ -12,7 +12,9 @@ class SubmitButtonView extends StatelessWidget {
     return TextButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context).primaryColor,
+          minimumSize: const Size(300, 50),
+          maximumSize: const Size(300, 50),
+          primary: Theme.of(context).primaryColorLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
