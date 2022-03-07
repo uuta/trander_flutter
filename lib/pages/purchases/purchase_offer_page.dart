@@ -11,7 +11,7 @@ class PurchaseOfferPage extends HookConsumerWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            'Trander Unlimited',
+            'Subscription',
             style: Theme.of(context).textTheme.headline2,
           ),
         ),
@@ -21,7 +21,7 @@ class PurchaseOfferPage extends HookConsumerWidget {
                 children: [
               const SizedBox(height: 40),
               const TitleCaptionView(
-                title: 'Unlock everything',
+                title: 'Unlock Unlimited Access',
                 caption: 'Unlimited access to the API',
               ),
               const SizedBox(height: 20),
