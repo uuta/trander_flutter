@@ -3,10 +3,10 @@ class UtilPriceService {
     if (dividend == null || dividend <= 0) {
       return 0;
     }
-    return dividend / 12;
+    return double.parse((dividend / 12).toStringAsFixed(2));
   }
 
-  static double getOffPercent(double? dividend, double? divisor) {
+  static int getOffPercent(double? dividend, double? divisor) {
     if (dividend == null || dividend <= 0) {
       return 0;
     }
@@ -16,7 +16,7 @@ class UtilPriceService {
     }
 
     final double offPrice = divisor - dividend;
-    return (offPrice / divisor) * 100;
+    return int.parse(((offPrice / divisor) * 100).toStringAsFixed(0));
   }
 
   static String getCurrencySign(String? price) {
