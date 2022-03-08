@@ -47,12 +47,16 @@ class PurchasePriceCards extends HookConsumerWidget {
                                 )),
                             const SizedBox(height: 10),
                             Text(
-                              _list[index]['price'],
-                              style: Theme.of(context).textTheme.headline3,
+                              _list[index]['price'] + '/mo',
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
                             if (_list[index] == _list[1])
                               Column(children: [
-                                const SizedBox(height: 8),
+                                const SizedBox(height: 10),
                                 Container(
                                   padding: const EdgeInsets.all(5.0),
                                   width: 100,
