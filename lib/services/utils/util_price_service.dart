@@ -18,4 +18,17 @@ class UtilPriceService {
     final double offPrice = divisor - dividend;
     return (offPrice / divisor) * 100;
   }
+
+  static String getCurrencySign(String? price) {
+    if (price == null) {
+      return '';
+    }
+
+    final RegExpMatch? result = RegExp(r'^\D').firstMatch(price);
+    if (result == null) {
+      return '';
+    }
+
+    return result.group(0) ?? '';
+  }
 }

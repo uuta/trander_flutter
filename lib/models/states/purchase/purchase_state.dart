@@ -11,6 +11,7 @@ class PurchaseState with _$PurchaseState {
     @Default(1) int purchaseType,
     Offerings? offerings,
     @Default([]) List offeringList,
+    @Default('') String currencySign,
   }) = _PurchaseState;
 
   factory PurchaseState.fromJson(Map<String, dynamic> json) =>

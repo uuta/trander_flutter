@@ -14,6 +14,7 @@ _$_PurchaseState _$$_PurchaseStateFromJson(Map<String, dynamic> json) =>
           ? null
           : Offerings.fromJson(json['offerings'] as Map<String, dynamic>),
       offeringList: json['offeringList'] as List<dynamic>? ?? const [],
+      currencySign: json['currencySign'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$_PurchaseStateToJson(_$_PurchaseState instance) =>
@@ -22,4 +23,5 @@ Map<String, dynamic> _$$_PurchaseStateToJson(_$_PurchaseState instance) =>
       'purchaseType': instance.purchaseType,
       'offerings': instance.offerings,
       'offeringList': instance.offeringList,
+      'currencySign': instance.currencySign,
     };

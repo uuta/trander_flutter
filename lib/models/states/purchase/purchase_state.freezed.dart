@@ -25,12 +25,14 @@ class _$PurchaseStateTearOff {
       {bool isLoading = false,
       int purchaseType = 1,
       Offerings? offerings,
-      List<dynamic> offeringList = const []}) {
+      List<dynamic> offeringList = const [],
+      String currencySign = ''}) {
     return _PurchaseState(
       isLoading: isLoading,
       purchaseType: purchaseType,
       offerings: offerings,
       offeringList: offeringList,
+      currencySign: currencySign,
     );
   }
 
@@ -48,6 +50,7 @@ mixin _$PurchaseState {
   int get purchaseType => throw _privateConstructorUsedError;
   Offerings? get offerings => throw _privateConstructorUsedError;
   List<dynamic> get offeringList => throw _privateConstructorUsedError;
+  String get currencySign => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,7 +67,8 @@ abstract class $PurchaseStateCopyWith<$Res> {
       {bool isLoading,
       int purchaseType,
       Offerings? offerings,
-      List<dynamic> offeringList});
+      List<dynamic> offeringList,
+      String currencySign});
 
   $OfferingsCopyWith<$Res>? get offerings;
 }
@@ -84,6 +88,7 @@ class _$PurchaseStateCopyWithImpl<$Res>
     Object? purchaseType = freezed,
     Object? offerings = freezed,
     Object? offeringList = freezed,
+    Object? currencySign = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -102,6 +107,10 @@ class _$PurchaseStateCopyWithImpl<$Res>
           ? _value.offeringList
           : offeringList // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
+      currencySign: currencySign == freezed
+          ? _value.currencySign
+          : currencySign // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 
@@ -128,7 +137,8 @@ abstract class _$PurchaseStateCopyWith<$Res>
       {bool isLoading,
       int purchaseType,
       Offerings? offerings,
-      List<dynamic> offeringList});
+      List<dynamic> offeringList,
+      String currencySign});
 
   @override
   $OfferingsCopyWith<$Res>? get offerings;
@@ -151,6 +161,7 @@ class __$PurchaseStateCopyWithImpl<$Res>
     Object? purchaseType = freezed,
     Object? offerings = freezed,
     Object? offeringList = freezed,
+    Object? currencySign = freezed,
   }) {
     return _then(_PurchaseState(
       isLoading: isLoading == freezed
@@ -169,6 +180,10 @@ class __$PurchaseStateCopyWithImpl<$Res>
           ? _value.offeringList
           : offeringList // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
+      currencySign: currencySign == freezed
+          ? _value.currencySign
+          : currencySign // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -180,7 +195,8 @@ class _$_PurchaseState implements _PurchaseState {
       {this.isLoading = false,
       this.purchaseType = 1,
       this.offerings,
-      this.offeringList = const []});
+      this.offeringList = const [],
+      this.currencySign = ''});
 
   factory _$_PurchaseState.fromJson(Map<String, dynamic> json) =>
       _$$_PurchaseStateFromJson(json);
@@ -196,10 +212,13 @@ class _$_PurchaseState implements _PurchaseState {
   @JsonKey()
   @override
   final List<dynamic> offeringList;
+  @JsonKey()
+  @override
+  final String currencySign;
 
   @override
   String toString() {
-    return 'PurchaseState(isLoading: $isLoading, purchaseType: $purchaseType, offerings: $offerings, offeringList: $offeringList)';
+    return 'PurchaseState(isLoading: $isLoading, purchaseType: $purchaseType, offerings: $offerings, offeringList: $offeringList, currencySign: $currencySign)';
   }
 
   @override
@@ -212,7 +231,9 @@ class _$_PurchaseState implements _PurchaseState {
                 .equals(other.purchaseType, purchaseType) &&
             const DeepCollectionEquality().equals(other.offerings, offerings) &&
             const DeepCollectionEquality()
-                .equals(other.offeringList, offeringList));
+                .equals(other.offeringList, offeringList) &&
+            const DeepCollectionEquality()
+                .equals(other.currencySign, currencySign));
   }
 
   @override
@@ -221,7 +242,8 @@ class _$_PurchaseState implements _PurchaseState {
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(purchaseType),
       const DeepCollectionEquality().hash(offerings),
-      const DeepCollectionEquality().hash(offeringList));
+      const DeepCollectionEquality().hash(offeringList),
+      const DeepCollectionEquality().hash(currencySign));
 
   @JsonKey(ignore: true)
   @override
@@ -239,7 +261,8 @@ abstract class _PurchaseState implements PurchaseState {
       {bool isLoading,
       int purchaseType,
       Offerings? offerings,
-      List<dynamic> offeringList}) = _$_PurchaseState;
+      List<dynamic> offeringList,
+      String currencySign}) = _$_PurchaseState;
 
   factory _PurchaseState.fromJson(Map<String, dynamic> json) =
       _$_PurchaseState.fromJson;
@@ -252,6 +275,8 @@ abstract class _PurchaseState implements PurchaseState {
   Offerings? get offerings;
   @override
   List<dynamic> get offeringList;
+  @override
+  String get currencySign;
   @override
   @JsonKey(ignore: true)
   _$PurchaseStateCopyWith<_PurchaseState> get copyWith =>
