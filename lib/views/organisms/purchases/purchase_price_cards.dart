@@ -61,8 +61,11 @@ class PurchasePriceCards extends HookConsumerWidget {
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   // TODO: Make a method to calculate the discount
-                                  child: const Center(
-                                      child: Text('44% off',
+                                  child: Center(
+                                      child: Text(
+                                          _list[index]['offPercent']
+                                                  .toString() +
+                                              '% off',
                                           style:
                                               TextStyle(color: Colors.black))),
                                 ),

@@ -45,8 +45,10 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
                 state.offerings!.current!.annual!.product.price)
             .toString();
     final _offPercent = UtilPriceService.getOffPercent(
-        state.offerings!.current!.monthly!.product.price,
-        state.offerings!.current!.annual!.product.price);
+      UtilPriceService.getMonthlyPrice(
+          state.offerings!.current!.annual!.product.price),
+      state.offerings!.current!.monthly!.product.price,
+    );
 
     state = state.copyWith(
       offeringList: [
