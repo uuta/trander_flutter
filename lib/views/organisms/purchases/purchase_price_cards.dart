@@ -7,13 +7,7 @@ class PurchasePriceCards extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final purchaseState = ref.watch(purchaseNotifierProvider);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
-    final List<Map<String, dynamic>> listItems = [
-      {
-        'text': 'Monthly',
-        'price': purchaseState.monthlyPrice.toString().toString()
-      },
-      {'text': 'Yearly', 'price': purchaseState.yearOfMonthlyPrice.toString()},
-    ];
+    final _list = purchaseState.offeringList;
 
     return Container(
         height: 180,
@@ -21,22 +15,20 @@ class PurchasePriceCards extends HookConsumerWidget {
         child: ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: listItems.length,
+          itemCount: _list.length,
           itemBuilder: (context, index) {
             return Center(
                 child: Row(children: [
               Card(
-                shape:
-                    (listItems[index] == listItems[purchaseState.purchaseType])
-                        ? RoundedRectangleBorder(
-                            side: BorderSide(
-                                color: Theme.of(context).primaryColor,
-                                width: 5),
-                            borderRadius: BorderRadius.circular(10),
-                          )
-                        : RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                shape: (_list[index] == _list[purchaseState.purchaseType])
+                    ? RoundedRectangleBorder(
+                        side: BorderSide(
+                            color: Theme.of(context).primaryColor, width: 5),
+                        borderRadius: BorderRadius.circular(10),
+                      )
+                    : RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
                 child: InkWell(
                     onTap: () {
                       purchaseNotifier.switchPurchaseType(index);
@@ -47,7 +39,7 @@ class PurchasePriceCards extends HookConsumerWidget {
                         children: [
                           Column(children: [
                             const SizedBox(height: 20),
-                            Text(listItems[index]['text'],
+                            Text(_list[index]['name'],
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
@@ -55,10 +47,10 @@ class PurchasePriceCards extends HookConsumerWidget {
                                 )),
                             const SizedBox(height: 10),
                             Text(
-                              listItems[index]['price'],
+                              _list[index]['price'],
                               style: Theme.of(context).textTheme.headline3,
                             ),
-                            if (listItems[index] == listItems[1])
+                            if (_list[index] == _list[1])
                               Column(children: [
                                 const SizedBox(height: 8),
                                 Container(

@@ -10,9 +10,7 @@ class PurchaseState with _$PurchaseState {
     @Default(false) bool isLoading,
     @Default(1) int purchaseType,
     Offerings? offerings,
-    @Default(0) double monthlyPrice,
-    @Default(0) double yearOfMonthlyPrice,
-    @Default(0) double offPercent,
+    @Default([]) List offeringList,
   }) = _PurchaseState;
 
   factory PurchaseState.fromJson(Map<String, dynamic> json) =>

@@ -18,13 +18,11 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
     state = state.copyWith(isLoading: isLoading);
   }
 
-  void initAction() {
+  Future<void> initAction() async {
     switchIsLoading(true);
-    _fetchOfferings();
-    _getmonthlyPrice();
-    _getYearOfMonthlyPrice();
-    _getOffPercent();
-    switchIsLoading(false);
+    await _fetchOfferings();
+    _setOfferingList();
+    await switchIsLoading(false);
   }
 
   Future<void> _fetchOfferings() async {
@@ -32,20 +30,23 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
     state = state.copyWith(offerings: offerings);
   }
 
-  Future<void> _getmonthlyPrice() async {
+  Future<void> _setOfferingList() async {
     state = state.copyWith(
-        monthlyPrice: state.offerings!.current!.monthly!.product.price);
-  }
-
-  Future<void> _getYearOfMonthlyPrice() async {
-    final data = UtilPriceService.getMonthlyPrice(
-        state.offerings!.current!.annual!.product.price);
-    state = state.copyWith(yearOfMonthlyPrice: data);
-  }
-
-  Future<void> _getOffPercent() async {
-    final data = UtilPriceService.getOffPercent(state.yearOfMonthlyPrice,
-        state.offerings!.current!.annual!.product.price);
-    state = state.copyWith(offPercent: data);
+      offeringList: [
+        {
+          'name': 'Monthly',
+          'price': state.offerings!.current!.monthly!.product.price.toString(),
+        },
+        {
+          'name': 'Yearly',
+          'price': UtilPriceService.getMonthlyPrice(
+                  state.offerings!.current!.annual!.product.price)
+              .toString(),
+          'offPercent': UtilPriceService.getOffPercent(
+              state.offerings!.current!.monthly!.product.price,
+              state.offerings!.current!.annual!.product.price)
+        }
+      ],
+    );
   }
 }

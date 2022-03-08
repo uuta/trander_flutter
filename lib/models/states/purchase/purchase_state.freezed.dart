@@ -25,16 +25,12 @@ class _$PurchaseStateTearOff {
       {bool isLoading = false,
       int purchaseType = 1,
       Offerings? offerings,
-      double monthlyPrice = 0,
-      double yearOfMonthlyPrice = 0,
-      double offPercent = 0}) {
+      List<dynamic> offeringList = const []}) {
     return _PurchaseState(
       isLoading: isLoading,
       purchaseType: purchaseType,
       offerings: offerings,
-      monthlyPrice: monthlyPrice,
-      yearOfMonthlyPrice: yearOfMonthlyPrice,
-      offPercent: offPercent,
+      offeringList: offeringList,
     );
   }
 
@@ -51,9 +47,7 @@ mixin _$PurchaseState {
   bool get isLoading => throw _privateConstructorUsedError;
   int get purchaseType => throw _privateConstructorUsedError;
   Offerings? get offerings => throw _privateConstructorUsedError;
-  double get monthlyPrice => throw _privateConstructorUsedError;
-  double get yearOfMonthlyPrice => throw _privateConstructorUsedError;
-  double get offPercent => throw _privateConstructorUsedError;
+  List<dynamic> get offeringList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -70,9 +64,7 @@ abstract class $PurchaseStateCopyWith<$Res> {
       {bool isLoading,
       int purchaseType,
       Offerings? offerings,
-      double monthlyPrice,
-      double yearOfMonthlyPrice,
-      double offPercent});
+      List<dynamic> offeringList});
 
   $OfferingsCopyWith<$Res>? get offerings;
 }
@@ -91,9 +83,7 @@ class _$PurchaseStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? purchaseType = freezed,
     Object? offerings = freezed,
-    Object? monthlyPrice = freezed,
-    Object? yearOfMonthlyPrice = freezed,
-    Object? offPercent = freezed,
+    Object? offeringList = freezed,
   }) {
     return _then(_value.copyWith(
       isLoading: isLoading == freezed
@@ -108,18 +98,10 @@ class _$PurchaseStateCopyWithImpl<$Res>
           ? _value.offerings
           : offerings // ignore: cast_nullable_to_non_nullable
               as Offerings?,
-      monthlyPrice: monthlyPrice == freezed
-          ? _value.monthlyPrice
-          : monthlyPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      yearOfMonthlyPrice: yearOfMonthlyPrice == freezed
-          ? _value.yearOfMonthlyPrice
-          : yearOfMonthlyPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      offPercent: offPercent == freezed
-          ? _value.offPercent
-          : offPercent // ignore: cast_nullable_to_non_nullable
-              as double,
+      offeringList: offeringList == freezed
+          ? _value.offeringList
+          : offeringList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 
@@ -146,9 +128,7 @@ abstract class _$PurchaseStateCopyWith<$Res>
       {bool isLoading,
       int purchaseType,
       Offerings? offerings,
-      double monthlyPrice,
-      double yearOfMonthlyPrice,
-      double offPercent});
+      List<dynamic> offeringList});
 
   @override
   $OfferingsCopyWith<$Res>? get offerings;
@@ -170,9 +150,7 @@ class __$PurchaseStateCopyWithImpl<$Res>
     Object? isLoading = freezed,
     Object? purchaseType = freezed,
     Object? offerings = freezed,
-    Object? monthlyPrice = freezed,
-    Object? yearOfMonthlyPrice = freezed,
-    Object? offPercent = freezed,
+    Object? offeringList = freezed,
   }) {
     return _then(_PurchaseState(
       isLoading: isLoading == freezed
@@ -187,18 +165,10 @@ class __$PurchaseStateCopyWithImpl<$Res>
           ? _value.offerings
           : offerings // ignore: cast_nullable_to_non_nullable
               as Offerings?,
-      monthlyPrice: monthlyPrice == freezed
-          ? _value.monthlyPrice
-          : monthlyPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      yearOfMonthlyPrice: yearOfMonthlyPrice == freezed
-          ? _value.yearOfMonthlyPrice
-          : yearOfMonthlyPrice // ignore: cast_nullable_to_non_nullable
-              as double,
-      offPercent: offPercent == freezed
-          ? _value.offPercent
-          : offPercent // ignore: cast_nullable_to_non_nullable
-              as double,
+      offeringList: offeringList == freezed
+          ? _value.offeringList
+          : offeringList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -210,9 +180,7 @@ class _$_PurchaseState implements _PurchaseState {
       {this.isLoading = false,
       this.purchaseType = 1,
       this.offerings,
-      this.monthlyPrice = 0,
-      this.yearOfMonthlyPrice = 0,
-      this.offPercent = 0});
+      this.offeringList = const []});
 
   factory _$_PurchaseState.fromJson(Map<String, dynamic> json) =>
       _$$_PurchaseStateFromJson(json);
@@ -227,17 +195,11 @@ class _$_PurchaseState implements _PurchaseState {
   final Offerings? offerings;
   @JsonKey()
   @override
-  final double monthlyPrice;
-  @JsonKey()
-  @override
-  final double yearOfMonthlyPrice;
-  @JsonKey()
-  @override
-  final double offPercent;
+  final List<dynamic> offeringList;
 
   @override
   String toString() {
-    return 'PurchaseState(isLoading: $isLoading, purchaseType: $purchaseType, offerings: $offerings, monthlyPrice: $monthlyPrice, yearOfMonthlyPrice: $yearOfMonthlyPrice, offPercent: $offPercent)';
+    return 'PurchaseState(isLoading: $isLoading, purchaseType: $purchaseType, offerings: $offerings, offeringList: $offeringList)';
   }
 
   @override
@@ -250,11 +212,7 @@ class _$_PurchaseState implements _PurchaseState {
                 .equals(other.purchaseType, purchaseType) &&
             const DeepCollectionEquality().equals(other.offerings, offerings) &&
             const DeepCollectionEquality()
-                .equals(other.monthlyPrice, monthlyPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.yearOfMonthlyPrice, yearOfMonthlyPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.offPercent, offPercent));
+                .equals(other.offeringList, offeringList));
   }
 
   @override
@@ -263,9 +221,7 @@ class _$_PurchaseState implements _PurchaseState {
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(purchaseType),
       const DeepCollectionEquality().hash(offerings),
-      const DeepCollectionEquality().hash(monthlyPrice),
-      const DeepCollectionEquality().hash(yearOfMonthlyPrice),
-      const DeepCollectionEquality().hash(offPercent));
+      const DeepCollectionEquality().hash(offeringList));
 
   @JsonKey(ignore: true)
   @override
@@ -283,9 +239,7 @@ abstract class _PurchaseState implements PurchaseState {
       {bool isLoading,
       int purchaseType,
       Offerings? offerings,
-      double monthlyPrice,
-      double yearOfMonthlyPrice,
-      double offPercent}) = _$_PurchaseState;
+      List<dynamic> offeringList}) = _$_PurchaseState;
 
   factory _PurchaseState.fromJson(Map<String, dynamic> json) =
       _$_PurchaseState.fromJson;
@@ -297,11 +251,7 @@ abstract class _PurchaseState implements PurchaseState {
   @override
   Offerings? get offerings;
   @override
-  double get monthlyPrice;
-  @override
-  double get yearOfMonthlyPrice;
-  @override
-  double get offPercent;
+  List<dynamic> get offeringList;
   @override
   @JsonKey(ignore: true)
   _$PurchaseStateCopyWith<_PurchaseState> get copyWith =>

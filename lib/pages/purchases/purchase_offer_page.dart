@@ -13,7 +13,7 @@ class PurchaseOfferPage extends HookConsumerWidget {
 
     useEffect(() {
       Future.microtask(() async {
-        purchaseNotifier.initAction();
+        await purchaseNotifier.initAction();
       });
       return;
     }, const []);
