@@ -2,6 +2,7 @@ import '/import.dart';
 import '/views/molecules/columns/title_caption_view.dart';
 import '/views/organisms/purchases/purchase_price_cards.dart';
 import '/views/atoms/buttons/submit_button_view.dart';
+import '/views/molecules/dialogs/error_dialog_view.dart';
 
 class PurchaseOfferPage extends HookConsumerWidget {
   const PurchaseOfferPage({Key? key}) : super(key: key);
@@ -28,28 +29,41 @@ class PurchaseOfferPage extends HookConsumerWidget {
               ),
             ),
             body: SingleChildScrollView(
-                child: Center(
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                  const SizedBox(height: 40),
-                  const TitleCaptionView(
-                    title: 'Unlock Unlimited Access',
-                    caption: 'Unlimited access to the API',
-                  ),
-                  const SizedBox(height: 20),
-                  Image.asset(
-                    'assets/images/stories/disco.png',
-                    width: 250,
-                  ),
-                  const PurchasePriceCards(),
-                  const SizedBox(height: 30),
-                  SubmitButtonView(
-                      text: 'Unlock',
-                      onPressed: () {
-                        purchaseNotifier.purchaseProduct();
-                      }),
-                  const SizedBox(height: 50),
-                ]))));
+                child: Stack(children: [
+              Center(
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                    const SizedBox(height: 40),
+                    const TitleCaptionView(
+                      title: 'Unlock Unlimited Access',
+                      caption: 'Unlimited access to the API',
+                    ),
+                    const SizedBox(height: 20),
+                    Image.asset(
+                      'assets/images/stories/disco.png',
+                      width: 250,
+                    ),
+                    const PurchasePriceCards(),
+                    const SizedBox(height: 30),
+                    SubmitButtonView(
+                        text: 'Unlock',
+                        onPressed: () {
+                          purchaseNotifier.purchaseProduct();
+                        }),
+                    const SizedBox(height: 50),
+                  ])),
+              // Error dialog
+              if (purchaseState.errorMessage != '')
+                Positioned(
+                    top: 100.0,
+                    left: 30.0,
+                    right: 30.0,
+                    bottom: 100.0,
+                    child: ErrorDialogView(
+                      errorMessage: purchaseState.errorMessage,
+                      onPressed: () => purchaseNotifier.offErrorMessage(),
+                    )),
+            ])));
   }
 }

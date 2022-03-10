@@ -1,5 +1,6 @@
 import '/import.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import '/models/errors/subscribe_error.dart';
 import 'dart:developer' as developer;
 
 final purchaseNotifierProvider =
@@ -67,9 +68,20 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
     );
   }
 
+  Future<void> offErrorMessage() async {
+    state = state.copyWith(errorMessage: '');
+  }
+
   Future<void> purchaseProduct() async {
-    final PurchaserInfo _info = await Purchases.purchaseProduct(
-        state.offeringList[state.purchaseType]['id']);
-    print(_info);
+    try {
+      await Purchases.purchaseProduct(
+          state.offeringList[state.purchaseType]['id']);
+    } on PlatformException catch (e) {
+      final code = PurchasesErrorHelper.getErrorCode(e);
+      final error = convertPurchasesError(code, additionalCode: e.code);
+      state = state.copyWith(
+        errorMessage: error.message ?? 'Unknown error',
+      );
+    }
   }
 }
