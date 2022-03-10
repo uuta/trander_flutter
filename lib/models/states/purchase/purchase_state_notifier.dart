@@ -55,9 +55,21 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
         {
           'name': 'Monthly',
           'price': _monthlyPrice,
+          'id': state.offerings!.current!.monthly!.product.identifier,
         },
-        {'name': 'Yearly', 'price': _yearlyPrice, 'offPercent': _offPercent}
+        {
+          'name': 'Yearly',
+          'price': _yearlyPrice,
+          'offPercent': _offPercent,
+          'id': state.offerings!.current!.annual!.product.identifier
+        }
       ],
     );
+  }
+
+  Future<void> purchaseProduct() async {
+    final PurchaserInfo _info = await Purchases.purchaseProduct(
+        state.offeringList[state.purchaseType]['id']);
+    print(_info);
   }
 }

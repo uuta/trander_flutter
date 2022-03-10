@@ -44,7 +44,11 @@ class PurchaseOfferPage extends HookConsumerWidget {
                   ),
                   const PurchasePriceCards(),
                   const SizedBox(height: 30),
-                  SubmitButtonView(text: 'Unlock', onPressed: () {}),
+                  SubmitButtonView(
+                      text: 'Unlock',
+                      onPressed: () {
+                        purchaseNotifier.purchaseProduct();
+                      }),
                   const SizedBox(height: 50),
                 ]))));
   }

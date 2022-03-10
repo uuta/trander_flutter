@@ -97,13 +97,6 @@ class SettingView extends HookConsumerWidget {
                     description: const Text('Free'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.price_change),
-                    // TODO: Use the following methods
-                    // onPressed: (BuildContext context) async {
-                    //   final offerings = await Purchases.getOfferings();
-                    //   print(offerings.current);
-                    //   print(offerings.all);
-                    //   print(offerings.current!.monthly!.product.priceString);
-                    // },
                     onPressed: (BuildContext context) => Navigator.push(
                         context,
                         MaterialPageRoute(
