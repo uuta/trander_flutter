@@ -1,6 +1,6 @@
 import '/import.dart';
 import '/views/molecules/columns/title_caption_view.dart';
-import '/views/organisms/purchases/purchase_price_cards.dart';
+import '/views/organisms/purchases/purchase_price_cards_view.dart';
 import '/views/atoms/buttons/submit_button_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
 
