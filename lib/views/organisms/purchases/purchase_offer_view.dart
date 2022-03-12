@@ -12,7 +12,7 @@ class PurchaseOfferView extends HookConsumerWidget {
 
     return Center(
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      const SizedBox(height: 40),
+      const SizedBox(height: 30),
       const TitleCaptionView(
         title: 'Unlock Unlimited Access',
         caption: 'Unlimited access to the API',

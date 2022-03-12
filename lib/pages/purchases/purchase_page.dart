@@ -1,6 +1,7 @@
 import '/import.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
 import '/views/organisms/purchases/purchase_offer_view.dart';
+import '/views/organisms/purchases/purchase_subscribed_view.dart';
 
 class PurchasePage extends HookConsumerWidget {
   const PurchasePage({Key? key}) : super(key: key);
@@ -27,19 +28,23 @@ class PurchasePage extends HookConsumerWidget {
               ),
             ),
             body: SingleChildScrollView(
-                child: Stack(children: [
-              const PurchaseOfferView(),
-              // Error dialog
-              if (purchaseState.errorMessage != '')
-                Positioned(
-                    top: 100.0,
-                    left: 30.0,
-                    right: 30.0,
-                    bottom: 100.0,
-                    child: ErrorDialogView(
-                      errorMessage: purchaseState.errorMessage,
-                      onPressed: () => purchaseNotifier.offErrorMessage(),
-                    )),
-            ])));
+                child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Stack(children: [
+                      // const PurchaseOfferView(),
+                      const PurchaseSubscribedView(),
+                      // Error dialog
+                      if (purchaseState.errorMessage != '')
+                        Positioned(
+                            top: 100.0,
+                            left: 30.0,
+                            right: 30.0,
+                            bottom: 100.0,
+                            child: ErrorDialogView(
+                              errorMessage: purchaseState.errorMessage,
+                              onPressed: () =>
+                                  purchaseNotifier.offErrorMessage(),
+                            )),
+                    ]))));
   }
 }
