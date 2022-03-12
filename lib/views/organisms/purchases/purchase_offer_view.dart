@@ -26,8 +26,9 @@ class PurchaseOfferView extends HookConsumerWidget {
       const SizedBox(height: 30),
       SubmitButtonView(
           text: 'Unlock',
-          onPressed: () {
-            purchaseNotifier.purchaseProduct();
+          onPressed: () async {
+            await purchaseNotifier.purchaseProduct();
+            await purchaseNotifier.getPurchaserInfo();
           }),
       const SizedBox(height: 50),
     ]));

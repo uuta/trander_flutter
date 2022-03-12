@@ -12,6 +12,7 @@ class PurchaseState with _$PurchaseState {
     Offerings? offerings,
     @Default([]) List offeringList,
     @Default('') String currencySign,
+    @Default(false) bool isActive,
     @Default('') String errorMessage,
   }) = _PurchaseState;
 

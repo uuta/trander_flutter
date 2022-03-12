@@ -84,4 +84,10 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
       );
     }
   }
+
+  Future<void> getPurchaserInfo() async {
+    final purchaserInfo = await Purchases.getPurchaserInfo();
+    state = state.copyWith(
+        isActive: purchaserInfo.entitlements.all['unlimited']!.isActive);
+  }
 }

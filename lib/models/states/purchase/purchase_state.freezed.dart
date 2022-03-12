@@ -27,6 +27,7 @@ class _$PurchaseStateTearOff {
       Offerings? offerings,
       List<dynamic> offeringList = const [],
       String currencySign = '',
+      bool isActive = false,
       String errorMessage = ''}) {
     return _PurchaseState(
       isLoading: isLoading,
@@ -34,6 +35,7 @@ class _$PurchaseStateTearOff {
       offerings: offerings,
       offeringList: offeringList,
       currencySign: currencySign,
+      isActive: isActive,
       errorMessage: errorMessage,
     );
   }
@@ -53,6 +55,7 @@ mixin _$PurchaseState {
   Offerings? get offerings => throw _privateConstructorUsedError;
   List<dynamic> get offeringList => throw _privateConstructorUsedError;
   String get currencySign => throw _privateConstructorUsedError;
+  bool get isActive => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -72,6 +75,7 @@ abstract class $PurchaseStateCopyWith<$Res> {
       Offerings? offerings,
       List<dynamic> offeringList,
       String currencySign,
+      bool isActive,
       String errorMessage});
 
   $OfferingsCopyWith<$Res>? get offerings;
@@ -93,6 +97,7 @@ class _$PurchaseStateCopyWithImpl<$Res>
     Object? offerings = freezed,
     Object? offeringList = freezed,
     Object? currencySign = freezed,
+    Object? isActive = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -116,6 +121,10 @@ class _$PurchaseStateCopyWithImpl<$Res>
           ? _value.currencySign
           : currencySign // ignore: cast_nullable_to_non_nullable
               as String,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -148,6 +157,7 @@ abstract class _$PurchaseStateCopyWith<$Res>
       Offerings? offerings,
       List<dynamic> offeringList,
       String currencySign,
+      bool isActive,
       String errorMessage});
 
   @override
@@ -172,6 +182,7 @@ class __$PurchaseStateCopyWithImpl<$Res>
     Object? offerings = freezed,
     Object? offeringList = freezed,
     Object? currencySign = freezed,
+    Object? isActive = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_PurchaseState(
@@ -195,6 +206,10 @@ class __$PurchaseStateCopyWithImpl<$Res>
           ? _value.currencySign
           : currencySign // ignore: cast_nullable_to_non_nullable
               as String,
+      isActive: isActive == freezed
+          ? _value.isActive
+          : isActive // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -212,6 +227,7 @@ class _$_PurchaseState implements _PurchaseState {
       this.offerings,
       this.offeringList = const [],
       this.currencySign = '',
+      this.isActive = false,
       this.errorMessage = ''});
 
   factory _$_PurchaseState.fromJson(Map<String, dynamic> json) =>
@@ -233,11 +249,14 @@ class _$_PurchaseState implements _PurchaseState {
   final String currencySign;
   @JsonKey()
   @override
+  final bool isActive;
+  @JsonKey()
+  @override
   final String errorMessage;
 
   @override
   String toString() {
-    return 'PurchaseState(isLoading: $isLoading, purchaseType: $purchaseType, offerings: $offerings, offeringList: $offeringList, currencySign: $currencySign, errorMessage: $errorMessage)';
+    return 'PurchaseState(isLoading: $isLoading, purchaseType: $purchaseType, offerings: $offerings, offeringList: $offeringList, currencySign: $currencySign, isActive: $isActive, errorMessage: $errorMessage)';
   }
 
   @override
@@ -253,6 +272,7 @@ class _$_PurchaseState implements _PurchaseState {
                 .equals(other.offeringList, offeringList) &&
             const DeepCollectionEquality()
                 .equals(other.currencySign, currencySign) &&
+            const DeepCollectionEquality().equals(other.isActive, isActive) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -265,6 +285,7 @@ class _$_PurchaseState implements _PurchaseState {
       const DeepCollectionEquality().hash(offerings),
       const DeepCollectionEquality().hash(offeringList),
       const DeepCollectionEquality().hash(currencySign),
+      const DeepCollectionEquality().hash(isActive),
       const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
@@ -285,6 +306,7 @@ abstract class _PurchaseState implements PurchaseState {
       Offerings? offerings,
       List<dynamic> offeringList,
       String currencySign,
+      bool isActive,
       String errorMessage}) = _$_PurchaseState;
 
   factory _PurchaseState.fromJson(Map<String, dynamic> json) =
@@ -300,6 +322,8 @@ abstract class _PurchaseState implements PurchaseState {
   List<dynamic> get offeringList;
   @override
   String get currencySign;
+  @override
+  bool get isActive;
   @override
   String get errorMessage;
   @override

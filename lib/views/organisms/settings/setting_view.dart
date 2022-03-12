@@ -10,6 +10,7 @@ class SettingView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0State = ref.watch(auth0NotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
+    final purchaseState = ref.watch(purchaseNotifierProvider);
 
     final List _currentRange = <int>[
       locationState.settingData.minDistance,
@@ -94,7 +95,9 @@ class SettingView extends HookConsumerWidget {
                   ),
                   SettingsTile(
                     title: const Text('Plan'),
-                    description: const Text('Free'),
+                    description: (purchaseState.isActive)
+                        ? const Text('Trander Unlimited')
+                        : const Text('Free'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.price_change),
                     onPressed: (BuildContext context) => Navigator.push(
