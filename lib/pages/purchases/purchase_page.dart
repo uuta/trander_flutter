@@ -1,8 +1,6 @@
 import '/import.dart';
-import '/views/molecules/columns/title_caption_view.dart';
-import '/views/organisms/purchases/purchase_price_cards_view.dart';
-import '/views/atoms/buttons/submit_button_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
+import '/views/organisms/purchases/purchase_offer_view.dart';
 
 class PurchasePage extends HookConsumerWidget {
   const PurchasePage({Key? key}) : super(key: key);
@@ -30,29 +28,7 @@ class PurchasePage extends HookConsumerWidget {
             ),
             body: SingleChildScrollView(
                 child: Stack(children: [
-              Center(
-                  child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                    const SizedBox(height: 40),
-                    const TitleCaptionView(
-                      title: 'Unlock Unlimited Access',
-                      caption: 'Unlimited access to the API',
-                    ),
-                    const SizedBox(height: 20),
-                    Image.asset(
-                      'assets/images/stories/disco.png',
-                      width: 250,
-                    ),
-                    const PurchasePriceCards(),
-                    const SizedBox(height: 30),
-                    SubmitButtonView(
-                        text: 'Unlock',
-                        onPressed: () {
-                          purchaseNotifier.purchaseProduct();
-                        }),
-                    const SizedBox(height: 50),
-                  ])),
+              const PurchaseOfferView(),
               // Error dialog
               if (purchaseState.errorMessage != '')
                 Positioned(
