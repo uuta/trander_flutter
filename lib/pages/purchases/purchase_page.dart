@@ -31,8 +31,9 @@ class PurchasePage extends HookConsumerWidget {
                 child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: Stack(children: [
-                      // const PurchaseOfferView(),
-                      const PurchaseSubscribedView(),
+                      (PurchaseService.getPurchaserInfo())
+                          ? const PurchaseOfferView()
+                          : const PurchaseSubscribedView(),
                       // Error dialog
                       if (purchaseState.errorMessage != '')
                         Positioned(

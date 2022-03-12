@@ -18,4 +18,13 @@ class PurchaseService {
   static Future<void> logout() async {
     await Purchases.logOut();
   }
+
+  static bool getPurchaserInfo() {
+    return (_getPurchaserInfo() == Future<bool>.value(true));
+  }
+
+  static Future<bool> _getPurchaserInfo() async {
+    final purchaserInfo = await Purchases.getPurchaserInfo();
+    return purchaserInfo.entitlements.all['unlimited']!.isActive;
+  }
 }
