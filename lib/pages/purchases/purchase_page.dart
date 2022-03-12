@@ -4,8 +4,8 @@ import '/views/organisms/purchases/purchase_price_cards.dart';
 import '/views/atoms/buttons/submit_button_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
 
-class PurchaseOfferPage extends HookConsumerWidget {
-  const PurchaseOfferPage({Key? key}) : super(key: key);
+class PurchasePage extends HookConsumerWidget {
+  const PurchasePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

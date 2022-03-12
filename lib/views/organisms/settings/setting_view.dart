@@ -100,7 +100,7 @@ class SettingView extends HookConsumerWidget {
                     onPressed: (BuildContext context) => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const PurchaseOfferPage())),
+                            builder: (context) => const PurchasePage())),
                   ),
                 ],
               ),
