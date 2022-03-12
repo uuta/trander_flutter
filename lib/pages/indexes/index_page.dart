@@ -29,7 +29,7 @@ class IndexPage extends HookConsumerWidget {
         // RevenueCat
         PurchaseService.initAction();
         PurchaseService.login(auth0State.data.sub);
-        purchaseNotifier.getPurchaserInfo();
+        purchaseNotifier.restoreTransactions();
         await locationNotifier.switchPageLoading(false);
       });
       return;

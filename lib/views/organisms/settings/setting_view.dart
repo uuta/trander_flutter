@@ -106,7 +106,7 @@ class SettingView extends HookConsumerWidget {
                           context,
                           MaterialPageRoute(
                               builder: (context) => const PurchasePage()));
-                      await purchaseNotifier.getPurchaserInfo();
+                      await purchaseNotifier.restoreTransactions();
                     },
                   ),
                 ],

@@ -22,7 +22,7 @@ class App extends HookConsumerWidget {
     useEffect(() {
       Future.microtask(() async {
         auth0Notifier.initAction();
-        await purchaseNotifier.getPurchaserInfo();
+        await purchaseNotifier.restoreTransactions();
       });
       return;
     }, const []);

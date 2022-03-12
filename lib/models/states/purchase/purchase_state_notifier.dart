@@ -76,6 +76,9 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
     try {
       await Purchases.purchaseProduct(
           state.offeringList[state.purchaseType]['id']);
+      final purchaserInfo = await Purchases.getPurchaserInfo();
+      state = state.copyWith(
+          isActive: purchaserInfo.entitlements.all['unlimited']!.isActive);
     } on PlatformException catch (e) {
       final code = PurchasesErrorHelper.getErrorCode(e);
       final error = convertPurchasesError(code, additionalCode: e.code);
@@ -85,9 +88,9 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
     }
   }
 
-  Future<void> getPurchaserInfo() async {
-    final purchaserInfo = await Purchases.getPurchaserInfo();
-    state = state.copyWith(
-        isActive: purchaserInfo.entitlements.all['unlimited']!.isActive);
+  Future<void> restoreTransactions() async {
+    final info = await Purchases.restoreTransactions();
+    state =
+        state.copyWith(isActive: info.entitlements.all['unlimited']!.isActive);
   }
 }
