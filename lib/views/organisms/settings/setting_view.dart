@@ -11,6 +11,7 @@ class SettingView extends HookConsumerWidget {
     final auth0State = ref.watch(auth0NotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
     final purchaseState = ref.watch(purchaseNotifierProvider);
+    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
     final List _currentRange = <int>[
       locationState.settingData.minDistance,
@@ -100,10 +101,13 @@ class SettingView extends HookConsumerWidget {
                         : const Text('Free'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.price_change),
-                    onPressed: (BuildContext context) => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const PurchasePage())),
+                    onPressed: (BuildContext context) async {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const PurchasePage()));
+                      await purchaseNotifier.getPurchaserInfo();
+                    },
                   ),
                 ],
               ),
