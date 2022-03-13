@@ -9,6 +9,7 @@ class ThreeBottomBarView extends HookConsumerWidget {
     final navigationState = ref.watch(navigationNotifierProvider);
     final navigationNotifier = ref.watch(navigationNotifierProvider.notifier);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
+    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
     return Container(
         decoration: const BoxDecoration(boxShadow: [
@@ -24,6 +25,7 @@ class ThreeBottomBarView extends HookConsumerWidget {
             final NavigationState indexes =
                 await navigationNotifier.changeIndex(index);
             await locationNotifier.postSetting(auth0State.idToken, indexes);
+            await purchaseNotifier.restoreTransactions();
           },
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(

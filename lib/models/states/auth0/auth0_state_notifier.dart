@@ -7,7 +7,7 @@ final auth0NotifierProvider =
 );
 
 class Auth0StateNotifier extends StateNotifier<Auth0State> {
-  Auth0StateNotifier() : super(const Auth0State());
+  Auth0StateNotifier() : super(const Auth0State(data: Auth0DataState()));
 
   final repository = Auth0Repository();
 
@@ -28,10 +28,15 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       final data = repository.parseIdToken(res.idToken);
 
       state = state.copyWith(
-          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
+        isBusy: false,
+        isLoggedIn: true,
+        data: data,
+        idToken: res.idToken,
+      );
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       logout();
+      PurchaseService.logout();
     }
   }
 
@@ -41,7 +46,11 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       final res = await repository.login();
       final data = repository.parseIdToken(res.idToken);
       state = state.copyWith(
-          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
+        isBusy: false,
+        isLoggedIn: true,
+        data: data,
+        idToken: res.idToken,
+      );
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       state = state.copyWith(

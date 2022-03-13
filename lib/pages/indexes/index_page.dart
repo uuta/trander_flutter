@@ -4,7 +4,7 @@ import '/import.dart';
 // views
 import '/views/organisms/bottom_bars/three_bottom_bar_view.dart';
 import '/views/organisms/settings/setting_view.dart';
-import '../../views/organisms/locations/googlemaps/location_view.dart';
+import '/views/organisms/locations/googlemaps/location_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
 import '/views/organisms/locations/simples/location_simple_city_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_search_view.dart';
@@ -18,6 +18,7 @@ class IndexPage extends HookConsumerWidget {
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
     final locationState = ref.watch(locationNotifierProvider);
     final auth0State = ref.watch(auth0NotifierProvider);
+    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
@@ -25,6 +26,10 @@ class IndexPage extends HookConsumerWidget {
         await locationNotifier.getCurrentLocation();
         await locationNotifier.initSettingAction();
         await locationNotifier.getSetting(auth0State.idToken);
+        // RevenueCat
+        await PurchaseService.initAction();
+        await PurchaseService.login(auth0State.data.sub);
+        await purchaseNotifier.restoreTransactions();
         await locationNotifier.switchPageLoading(false);
       });
       return;

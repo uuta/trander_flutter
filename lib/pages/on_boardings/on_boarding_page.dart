@@ -7,6 +7,7 @@ class OnBoardingPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final auth0State = ref.watch(auth0NotifierProvider);
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
     Slides slides = Slides();
 
@@ -62,6 +63,7 @@ class OnBoardingPage extends HookConsumerWidget {
         ),
         onDone: () {
           auth0Notifier.login();
+          PurchaseService.login(auth0State.data.sub);
         },
       ),
     );

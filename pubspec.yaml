@@ -54,7 +54,7 @@ dependencies:
   settings_ui: ^2.0.1
   flutter_launcher_icons: ^0.9.2
   flutter_native_splash: ^2.0.1+1
-  purchases_flutter: ^3.9.3
+  purchases_flutter: ^3.9.5
 
 dev_dependencies:
   flutter_test:

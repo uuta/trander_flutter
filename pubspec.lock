@@ -622,7 +622,7 @@ packages:
       name: purchases_flutter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.9.3"
+    version: "3.9.5"
   riverpod:
     dependency: "direct main"
     description:

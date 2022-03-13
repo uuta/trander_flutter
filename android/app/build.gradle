@@ -101,11 +101,11 @@ android {
             'appAuthRedirectScheme': 'net.uuta.trander',
             'MAP_API_KEY': envProps.MAP_API_KEY
         ]
-        if (dartEnvironmentVariables.FLAVOR != 'prod') {
+        if (dartEnvironmentVariables.FLAVOR == 'dev') {
             applicationIdSuffix ".${dartEnvironmentVariables.FLAVOR}"
         }
         resValue "string", "app_name", "Trander" +
-            (dartEnvironmentVariables.FLAVOR == 'prod' ? '' : ".${dartEnvironmentVariables.FLAVOR}")
+            (dartEnvironmentVariables.FLAVOR == 'dev' ? ".${dartEnvironmentVariables.FLAVOR}" : '')
     }
 
     buildTypes {
