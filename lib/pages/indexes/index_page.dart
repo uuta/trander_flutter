@@ -27,9 +27,9 @@ class IndexPage extends HookConsumerWidget {
         await locationNotifier.initSettingAction();
         await locationNotifier.getSetting(auth0State.idToken);
         // RevenueCat
-        PurchaseService.initAction();
-        PurchaseService.login(auth0State.data.sub);
-        purchaseNotifier.restoreTransactions();
+        await PurchaseService.initAction();
+        await PurchaseService.login(auth0State.data.sub);
+        await purchaseNotifier.restoreTransactions();
         await locationNotifier.switchPageLoading(false);
       });
       return;

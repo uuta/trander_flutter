@@ -21,8 +21,8 @@ class App extends HookConsumerWidget {
 
     useEffect(() {
       Future.microtask(() async {
+        // Auth0
         auth0Notifier.initAction();
-        await purchaseNotifier.restoreTransactions();
       });
       return;
     }, const []);
