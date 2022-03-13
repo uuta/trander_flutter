@@ -17,7 +17,6 @@ class App extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0State = ref.watch(auth0NotifierProvider);
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
-    final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
