@@ -9,6 +9,7 @@ import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
 import '/views/organisms/locations/simples/location_simple_city_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_search_view.dart';
 
+// TODO: Add API request to register a user
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
 

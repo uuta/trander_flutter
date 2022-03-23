@@ -27,7 +27,7 @@ class _$CityStateTearOff {
       @JsonKey(name: 'direction') String direction = '',
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String? rating,
+      @JsonKey(name: 'rating') double rating = 0,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -75,7 +75,7 @@ mixin _$CityState {
   @JsonKey(name: 'icon')
   String? get icon => throw _privateConstructorUsedError;
   @JsonKey(name: 'rating')
-  String? get rating => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   @JsonKey(name: 'photo')
   String? get photo => throw _privateConstructorUsedError;
   @JsonKey(name: 'vicinity')
@@ -109,7 +109,7 @@ abstract class $CityStateCopyWith<$Res> {
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String? rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -169,7 +169,7 @@ class _$CityStateCopyWithImpl<$Res> implements $CityStateCopyWith<$Res> {
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double,
       photo: photo == freezed
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -218,7 +218,7 @@ abstract class _$CityStateCopyWith<$Res> implements $CityStateCopyWith<$Res> {
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String? rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -279,7 +279,7 @@ class __$CityStateCopyWithImpl<$Res> extends _$CityStateCopyWithImpl<$Res>
       rating: rating == freezed
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as double,
       photo: photo == freezed
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -325,7 +325,7 @@ class _$_CityState implements _CityState {
       @JsonKey(name: 'direction') this.direction = '',
       @JsonKey(name: 'countryCode') this.countryCode,
       @JsonKey(name: 'icon') this.icon,
-      @JsonKey(name: 'rating') this.rating,
+      @JsonKey(name: 'rating') this.rating = 0,
       @JsonKey(name: 'photo') this.photo,
       @JsonKey(name: 'vicinity') this.vicinity,
       @JsonKey(name: 'userRatingsTotal') this.userRatingsTotal,
@@ -355,7 +355,7 @@ class _$_CityState implements _CityState {
   final String? icon;
   @override
   @JsonKey(name: 'rating')
-  final String? rating;
+  final double rating;
   @override
   @JsonKey(name: 'photo')
   final String? photo;
@@ -447,7 +447,7 @@ abstract class _CityState implements CityState {
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String? rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -477,7 +477,7 @@ abstract class _CityState implements CityState {
   String? get icon;
   @override
   @JsonKey(name: 'rating')
-  String? get rating;
+  double get rating;
   @override
   @JsonKey(name: 'photo')
   String? get photo;

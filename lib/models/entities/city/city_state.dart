@@ -11,7 +11,7 @@ class CityState with _$CityState {
       @JsonKey(name: 'direction') @Default('') String direction,
       @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String? rating,
+      @JsonKey(name: 'rating') @Default(0) double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
