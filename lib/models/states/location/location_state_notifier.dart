@@ -67,9 +67,11 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> _failedRequest(Exception e, StackTrace s) async {
     debugPrint('error: $e - stack: $s');
-    state = state.copyWith(
-        isLoading: false,
-        errorMessage: ErrorHandler.getApiError(e).errorMessage);
+    (ErrorHandler.getApiError(e) == const ErrorHandler.paymentRequired())
+        ? state = state.copyWith(isLoading: false, paymentPage: true)
+        : state = state.copyWith(
+            isLoading: false,
+            errorMessage: ErrorHandler.getApiError(e).errorMessage);
   }
 
   Future<void> getCurrentLocation() async {
