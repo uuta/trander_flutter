@@ -22,6 +22,9 @@ class ErrorHandler with _$ErrorHandler {
 
   const factory ErrorHandler.emptyResponse() = _EmptyResponse;
 
+  const factory ErrorHandler.paymentRequired({ApiError? apiError}) =
+      _PaymentRequired;
+
   const factory ErrorHandler.unexpectedError() = _UnexpectedError;
 
   const ErrorHandler._();
@@ -44,6 +47,12 @@ class ErrorHandler with _$ErrorHandler {
               final int? statusCode = error.response!.statusCode;
 
               if (statusCode == null) {
+                break;
+              }
+
+              if (statusCode == 402) {
+                _error = ErrorHandler.paymentRequired(
+                    apiError: ApiError.fromJson(error.response!.data));
                 break;
               }
 
@@ -91,6 +100,19 @@ class ErrorHandler with _$ErrorHandler {
       serviceUnavailable: () => "Please wait for a while and try it again.",
       sendTimeout: () => "Send timeout in connection with API server.",
       emptyResponse: () => "No data found. Please try again.",
+      paymentRequired: (ApiError? error) => error!.message,
       noInternetConnection: () => "No internet connection.",
       unexpectedError: () => "Unexpected error occurred.");
+
+  String get type => when(
+      requestCancelled: () => "requestCancelled",
+      unauthorisedRequest: () => "unauthorisedRequest",
+      exceededRequestLimit: () => "exceededRequestLimit",
+      requestError: (ApiError? error) => "requestError",
+      serviceUnavailable: () => "serviceUnavailable",
+      sendTimeout: () => "sendTimeout",
+      emptyResponse: () => "emptyResponse",
+      paymentRequired: (ApiError? error) => "paymentRequired",
+      noInternetConnection: () => "noInternetConnection",
+      unexpectedError: () => "unexpectedError");
 }

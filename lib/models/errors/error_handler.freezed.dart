@@ -51,6 +51,12 @@ class _$ErrorHandlerTearOff {
     return const _EmptyResponse();
   }
 
+  _PaymentRequired paymentRequired({ApiError? apiError}) {
+    return _PaymentRequired(
+      apiError: apiError,
+    );
+  }
+
   _UnexpectedError unexpectedError() {
     return const _UnexpectedError();
   }
@@ -71,6 +77,7 @@ mixin _$ErrorHandler {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) =>
       throw _privateConstructorUsedError;
@@ -84,6 +91,7 @@ mixin _$ErrorHandler {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) =>
       throw _privateConstructorUsedError;
@@ -97,6 +105,7 @@ mixin _$ErrorHandler {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) =>
@@ -111,6 +120,7 @@ mixin _$ErrorHandler {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) =>
       throw _privateConstructorUsedError;
@@ -124,6 +134,7 @@ mixin _$ErrorHandler {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) =>
       throw _privateConstructorUsedError;
@@ -137,6 +148,7 @@ mixin _$ErrorHandler {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) =>
@@ -208,6 +220,7 @@ class _$_RequestCancelled extends _RequestCancelled {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return requestCancelled();
@@ -224,6 +237,7 @@ class _$_RequestCancelled extends _RequestCancelled {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return requestCancelled?.call();
@@ -240,6 +254,7 @@ class _$_RequestCancelled extends _RequestCancelled {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -260,6 +275,7 @@ class _$_RequestCancelled extends _RequestCancelled {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return requestCancelled(this);
@@ -276,6 +292,7 @@ class _$_RequestCancelled extends _RequestCancelled {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return requestCancelled?.call(this);
@@ -292,6 +309,7 @@ class _$_RequestCancelled extends _RequestCancelled {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -356,6 +374,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return unauthorisedRequest();
@@ -372,6 +391,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return unauthorisedRequest?.call();
@@ -388,6 +408,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -408,6 +429,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return unauthorisedRequest(this);
@@ -424,6 +446,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return unauthorisedRequest?.call(this);
@@ -440,6 +463,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -504,6 +528,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return exceededRequestLimit();
@@ -520,6 +545,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return exceededRequestLimit?.call();
@@ -536,6 +562,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -556,6 +583,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return exceededRequestLimit(this);
@@ -572,6 +600,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return exceededRequestLimit?.call(this);
@@ -588,6 +617,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -688,6 +718,7 @@ class _$_RequestError extends _RequestError {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return requestError(apiError);
@@ -704,6 +735,7 @@ class _$_RequestError extends _RequestError {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return requestError?.call(apiError);
@@ -720,6 +752,7 @@ class _$_RequestError extends _RequestError {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -740,6 +773,7 @@ class _$_RequestError extends _RequestError {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return requestError(this);
@@ -756,6 +790,7 @@ class _$_RequestError extends _RequestError {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return requestError?.call(this);
@@ -772,6 +807,7 @@ class _$_RequestError extends _RequestError {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -841,6 +877,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return serviceUnavailable();
@@ -857,6 +894,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return serviceUnavailable?.call();
@@ -873,6 +911,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -893,6 +932,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return serviceUnavailable(this);
@@ -909,6 +949,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return serviceUnavailable?.call(this);
@@ -925,6 +966,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -988,6 +1030,7 @@ class _$_SendTimeout extends _SendTimeout {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return sendTimeout();
@@ -1004,6 +1047,7 @@ class _$_SendTimeout extends _SendTimeout {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return sendTimeout?.call();
@@ -1020,6 +1064,7 @@ class _$_SendTimeout extends _SendTimeout {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1040,6 +1085,7 @@ class _$_SendTimeout extends _SendTimeout {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return sendTimeout(this);
@@ -1056,6 +1102,7 @@ class _$_SendTimeout extends _SendTimeout {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return sendTimeout?.call(this);
@@ -1072,6 +1119,7 @@ class _$_SendTimeout extends _SendTimeout {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1136,6 +1184,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return noInternetConnection();
@@ -1152,6 +1201,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return noInternetConnection?.call();
@@ -1168,6 +1218,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1188,6 +1239,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return noInternetConnection(this);
@@ -1204,6 +1256,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return noInternetConnection?.call(this);
@@ -1220,6 +1273,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1284,6 +1338,7 @@ class _$_EmptyResponse extends _EmptyResponse {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return emptyResponse();
@@ -1300,6 +1355,7 @@ class _$_EmptyResponse extends _EmptyResponse {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return emptyResponse?.call();
@@ -1316,6 +1372,7 @@ class _$_EmptyResponse extends _EmptyResponse {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1336,6 +1393,7 @@ class _$_EmptyResponse extends _EmptyResponse {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return emptyResponse(this);
@@ -1352,6 +1410,7 @@ class _$_EmptyResponse extends _EmptyResponse {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return emptyResponse?.call(this);
@@ -1368,6 +1427,7 @@ class _$_EmptyResponse extends _EmptyResponse {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1381,6 +1441,202 @@ class _$_EmptyResponse extends _EmptyResponse {
 abstract class _EmptyResponse extends ErrorHandler {
   const factory _EmptyResponse() = _$_EmptyResponse;
   const _EmptyResponse._() : super._();
+}
+
+/// @nodoc
+abstract class _$PaymentRequiredCopyWith<$Res> {
+  factory _$PaymentRequiredCopyWith(
+          _PaymentRequired value, $Res Function(_PaymentRequired) then) =
+      __$PaymentRequiredCopyWithImpl<$Res>;
+  $Res call({ApiError? apiError});
+
+  $ApiErrorCopyWith<$Res>? get apiError;
+}
+
+/// @nodoc
+class __$PaymentRequiredCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res>
+    implements _$PaymentRequiredCopyWith<$Res> {
+  __$PaymentRequiredCopyWithImpl(
+      _PaymentRequired _value, $Res Function(_PaymentRequired) _then)
+      : super(_value, (v) => _then(v as _PaymentRequired));
+
+  @override
+  _PaymentRequired get _value => super._value as _PaymentRequired;
+
+  @override
+  $Res call({
+    Object? apiError = freezed,
+  }) {
+    return _then(_PaymentRequired(
+      apiError: apiError == freezed
+          ? _value.apiError
+          : apiError // ignore: cast_nullable_to_non_nullable
+              as ApiError?,
+    ));
+  }
+
+  @override
+  $ApiErrorCopyWith<$Res>? get apiError {
+    if (_value.apiError == null) {
+      return null;
+    }
+
+    return $ApiErrorCopyWith<$Res>(_value.apiError!, (value) {
+      return _then(_value.copyWith(apiError: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_PaymentRequired extends _PaymentRequired {
+  const _$_PaymentRequired({this.apiError}) : super._();
+
+  @override
+  final ApiError? apiError;
+
+  @override
+  String toString() {
+    return 'ErrorHandler.paymentRequired(apiError: $apiError)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PaymentRequired &&
+            const DeepCollectionEquality().equals(other.apiError, apiError));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(apiError));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PaymentRequiredCopyWith<_PaymentRequired> get copyWith =>
+      __$PaymentRequiredCopyWithImpl<_PaymentRequired>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() requestCancelled,
+    required TResult Function() unauthorisedRequest,
+    required TResult Function() exceededRequestLimit,
+    required TResult Function(ApiError? apiError) requestError,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() sendTimeout,
+    required TResult Function() noInternetConnection,
+    required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
+    required TResult Function() unexpectedError,
+  }) {
+    return paymentRequired(apiError);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? requestCancelled,
+    TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
+    TResult Function(ApiError? apiError)? requestError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? sendTimeout,
+    TResult Function()? noInternetConnection,
+    TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
+    TResult Function()? unexpectedError,
+  }) {
+    return paymentRequired?.call(apiError);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? requestCancelled,
+    TResult Function()? unauthorisedRequest,
+    TResult Function()? exceededRequestLimit,
+    TResult Function(ApiError? apiError)? requestError,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? sendTimeout,
+    TResult Function()? noInternetConnection,
+    TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
+    TResult Function()? unexpectedError,
+    required TResult orElse(),
+  }) {
+    if (paymentRequired != null) {
+      return paymentRequired(apiError);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_RequestCancelled value) requestCancelled,
+    required TResult Function(_UnauthorisedRequest value) unauthorisedRequest,
+    required TResult Function(_ExceededRequestLimit value) exceededRequestLimit,
+    required TResult Function(_RequestError value) requestError,
+    required TResult Function(_ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(_SendTimeout value) sendTimeout,
+    required TResult Function(_NoInternetConnection value) noInternetConnection,
+    required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
+    required TResult Function(_UnexpectedError value) unexpectedError,
+  }) {
+    return paymentRequired(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_RequestCancelled value)? requestCancelled,
+    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult Function(_RequestError value)? requestError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_SendTimeout value)? sendTimeout,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+  }) {
+    return paymentRequired?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_RequestCancelled value)? requestCancelled,
+    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult Function(_RequestError value)? requestError,
+    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(_SendTimeout value)? sendTimeout,
+    TResult Function(_NoInternetConnection value)? noInternetConnection,
+    TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
+    TResult Function(_UnexpectedError value)? unexpectedError,
+    required TResult orElse(),
+  }) {
+    if (paymentRequired != null) {
+      return paymentRequired(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PaymentRequired extends ErrorHandler {
+  const factory _PaymentRequired({ApiError? apiError}) = _$_PaymentRequired;
+  const _PaymentRequired._() : super._();
+
+  ApiError? get apiError;
+  @JsonKey(ignore: true)
+  _$PaymentRequiredCopyWith<_PaymentRequired> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1432,6 +1688,7 @@ class _$_UnexpectedError extends _UnexpectedError {
     required TResult Function() sendTimeout,
     required TResult Function() noInternetConnection,
     required TResult Function() emptyResponse,
+    required TResult Function(ApiError? apiError) paymentRequired,
     required TResult Function() unexpectedError,
   }) {
     return unexpectedError();
@@ -1448,6 +1705,7 @@ class _$_UnexpectedError extends _UnexpectedError {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
   }) {
     return unexpectedError?.call();
@@ -1464,6 +1722,7 @@ class _$_UnexpectedError extends _UnexpectedError {
     TResult Function()? sendTimeout,
     TResult Function()? noInternetConnection,
     TResult Function()? emptyResponse,
+    TResult Function(ApiError? apiError)? paymentRequired,
     TResult Function()? unexpectedError,
     required TResult orElse(),
   }) {
@@ -1484,6 +1743,7 @@ class _$_UnexpectedError extends _UnexpectedError {
     required TResult Function(_SendTimeout value) sendTimeout,
     required TResult Function(_NoInternetConnection value) noInternetConnection,
     required TResult Function(_EmptyResponse value) emptyResponse,
+    required TResult Function(_PaymentRequired value) paymentRequired,
     required TResult Function(_UnexpectedError value) unexpectedError,
   }) {
     return unexpectedError(this);
@@ -1500,6 +1760,7 @@ class _$_UnexpectedError extends _UnexpectedError {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
   }) {
     return unexpectedError?.call(this);
@@ -1516,6 +1777,7 @@ class _$_UnexpectedError extends _UnexpectedError {
     TResult Function(_SendTimeout value)? sendTimeout,
     TResult Function(_NoInternetConnection value)? noInternetConnection,
     TResult Function(_EmptyResponse value)? emptyResponse,
+    TResult Function(_PaymentRequired value)? paymentRequired,
     TResult Function(_UnexpectedError value)? unexpectedError,
     required TResult orElse(),
   }) {

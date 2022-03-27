@@ -38,11 +38,19 @@ class Auth0Repository {
     );
   }
 
-  Map<String, Object> parseIdToken(String? idToken) {
+  Auth0DataState parseIdToken(String? idToken) {
     final List<String> parts = idToken!.split('.');
     assert(parts.length == 3);
 
-    return Map<String, Object>.from(jsonDecode(
+    return Auth0DataState.fromJson(jsonDecode(
         utf8.decode(base64Url.decode(base64Url.normalize(parts[1])))));
+  }
+
+  Future<Response> createUser(String? idToken) async {
+    return await Dio().post(dotenv.get('API_DOMAIN') + ConstsApi.user,
+        options: Options(headers: {
+          "Content-Type": "application/json",
+          "Authorization": " Bearer $idToken",
+        }));
   }
 }

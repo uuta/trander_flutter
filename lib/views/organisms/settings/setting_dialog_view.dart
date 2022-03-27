@@ -6,6 +6,7 @@ class SettingDialogView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+
     return AlertDialog(
       title: const Text('Logout'),
       titleTextStyle: Theme.of(context).textTheme.headline3,
@@ -18,6 +19,7 @@ class SettingDialogView extends HookConsumerWidget {
         TextButton(
           onPressed: () {
             auth0Notifier.logout();
+            PurchaseService.logout();
             Navigator.pop(context, 'OK');
           },
           child: const Text('OK'),

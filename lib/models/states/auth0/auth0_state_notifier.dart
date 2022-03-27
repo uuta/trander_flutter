@@ -7,7 +7,7 @@ final auth0NotifierProvider =
 );
 
 class Auth0StateNotifier extends StateNotifier<Auth0State> {
-  Auth0StateNotifier() : super(const Auth0State());
+  Auth0StateNotifier() : super(const Auth0State(data: Auth0DataState()));
 
   final repository = Auth0Repository();
 
@@ -28,10 +28,15 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       final data = repository.parseIdToken(res.idToken);
 
       state = state.copyWith(
-          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
+        isBusy: false,
+        isLoggedIn: true,
+        data: data,
+        idToken: res.idToken,
+      );
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       logout();
+      PurchaseService.logout();
     }
   }
 
@@ -41,7 +46,11 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
       final res = await repository.login();
       final data = repository.parseIdToken(res.idToken);
       state = state.copyWith(
-          isBusy: false, isLoggedIn: true, data: data, idToken: res.idToken);
+        isBusy: false,
+        isLoggedIn: true,
+        data: data,
+        idToken: res.idToken,
+      );
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       state = state.copyWith(
@@ -53,5 +62,19 @@ class Auth0StateNotifier extends StateNotifier<Auth0State> {
     state = state.copyWith(isBusy: true);
     await const FlutterSecureStorage().delete(key: 'refresh_token');
     state = state.copyWith(isBusy: false, isLoggedIn: false);
+  }
+
+  Future<void> createUser() async {
+    try {
+      await repository.createUser(state.idToken);
+    } on Exception catch (e, s) {
+      _failedRequest(e, s);
+    }
+  }
+
+  Future<void> _failedRequest(Exception e, StackTrace s) async {
+    debugPrint('error: $e - stack: $s');
+    state = state.copyWith(
+        isBusy: false, errorMessage: ErrorHandler.getApiError(e).errorMessage);
   }
 }

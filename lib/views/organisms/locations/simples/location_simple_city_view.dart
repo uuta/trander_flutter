@@ -1,9 +1,10 @@
 import '/import.dart';
-import '/views/organisms/locations/location_error_dialog_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
+import '/view_controllers/purchases/puchase_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
 import 'location_simple_city_buttons_view.dart';
 import '/views/molecules/columns/title_caption_view.dart';
+import '/views/molecules/dialogs/error_dialog_view.dart';
 
 class LocationSimpleCityView extends HookConsumerWidget {
   const LocationSimpleCityView({Key? key}) : super(key: key);
@@ -17,6 +18,12 @@ class LocationSimpleCityView extends HookConsumerWidget {
     // City dialog
     if (locationState.isCityDialog) {
       LocationDialogViewController.showCityDialog(
+          context, locationState, locationNotifier);
+    }
+
+    // Purchase dialog
+    if (locationState.purchaseDialog) {
+      PurchaseDialogViewController.showPurchaseDialog(
           context, locationState, locationNotifier);
     }
 
@@ -47,7 +54,10 @@ class LocationSimpleCityView extends HookConsumerWidget {
                     bottom: 100.0,
                     child: locationState.errorMessage == ''
                         ? const Text('')
-                        : const LocationErrorDialogView()),
+                        : ErrorDialogView(
+                            errorMessage: locationState.errorMessage.toString(),
+                            onPressed: () => locationNotifier.offErrorMessage(),
+                          )),
                 if (locationState.isCitySucceeded && !(locationState.isLoading))
                   const LocationSimpleCityButtonsView()
               ],

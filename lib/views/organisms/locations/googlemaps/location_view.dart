@@ -1,10 +1,12 @@
+import 'package:trander/view_controllers/purchases/puchase_dialog_view_controller.dart';
+
 import '/import.dart';
-import '../location_error_dialog_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/atoms/buttons/icon_button_view.dart';
 import 'location_googlemap_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
+import '/views/molecules/dialogs/error_dialog_view.dart';
 
 // It would be better to separate this file into 2 files for understainding easily.
 // But, if it was implemented, unnecessary builds would run.
@@ -40,6 +42,12 @@ class LocationView extends HookConsumerWidget {
           context, locationState, locationNotifier);
     }
 
+    // Purchase dialog
+    if (locationState.purchaseDialog) {
+      PurchaseDialogViewController.showPurchaseDialog(
+          context, locationState, locationNotifier);
+    }
+
     return Scaffold(
         body: locationState.isPageLoading
             ? Center(
@@ -61,7 +69,12 @@ class LocationView extends HookConsumerWidget {
                           ))
                         : locationState.errorMessage == ''
                             ? const Text('')
-                            : const LocationErrorDialogView()),
+                            : ErrorDialogView(
+                                errorMessage:
+                                    locationState.errorMessage.toString(),
+                                onPressed: () =>
+                                    locationNotifier.offErrorMessage(),
+                              )),
 
                 // City info button
                 if (navigationState.currentIndex ==

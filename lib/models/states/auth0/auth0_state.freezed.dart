@@ -20,7 +20,7 @@ class _$Auth0StateTearOff {
   _Auth0State call(
       {bool isBusy = false,
       bool isLoggedIn = false,
-      Map<dynamic, dynamic>? data,
+      required Auth0DataState data,
       String? idToken,
       String? errorMessage}) {
     return _Auth0State(
@@ -40,7 +40,7 @@ const $Auth0State = _$Auth0StateTearOff();
 mixin _$Auth0State {
   bool get isBusy => throw _privateConstructorUsedError;
   bool get isLoggedIn => throw _privateConstructorUsedError;
-  Map<dynamic, dynamic>? get data => throw _privateConstructorUsedError;
+  Auth0DataState get data => throw _privateConstructorUsedError;
   String? get idToken => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
@@ -57,9 +57,11 @@ abstract class $Auth0StateCopyWith<$Res> {
   $Res call(
       {bool isBusy,
       bool isLoggedIn,
-      Map<dynamic, dynamic>? data,
+      Auth0DataState data,
       String? idToken,
       String? errorMessage});
+
+  $Auth0DataStateCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -90,7 +92,7 @@ class _$Auth0StateCopyWithImpl<$Res> implements $Auth0StateCopyWith<$Res> {
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
+              as Auth0DataState,
       idToken: idToken == freezed
           ? _value.idToken
           : idToken // ignore: cast_nullable_to_non_nullable
@@ -100,6 +102,13 @@ class _$Auth0StateCopyWithImpl<$Res> implements $Auth0StateCopyWith<$Res> {
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
+  }
+
+  @override
+  $Auth0DataStateCopyWith<$Res> get data {
+    return $Auth0DataStateCopyWith<$Res>(_value.data, (value) {
+      return _then(_value.copyWith(data: value));
+    });
   }
 }
 
@@ -112,9 +121,12 @@ abstract class _$Auth0StateCopyWith<$Res> implements $Auth0StateCopyWith<$Res> {
   $Res call(
       {bool isBusy,
       bool isLoggedIn,
-      Map<dynamic, dynamic>? data,
+      Auth0DataState data,
       String? idToken,
       String? errorMessage});
+
+  @override
+  $Auth0DataStateCopyWith<$Res> get data;
 }
 
 /// @nodoc
@@ -147,7 +159,7 @@ class __$Auth0StateCopyWithImpl<$Res> extends _$Auth0StateCopyWithImpl<$Res>
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as Map<dynamic, dynamic>?,
+              as Auth0DataState,
       idToken: idToken == freezed
           ? _value.idToken
           : idToken // ignore: cast_nullable_to_non_nullable
@@ -166,7 +178,7 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
   const _$_Auth0State(
       {this.isBusy = false,
       this.isLoggedIn = false,
-      this.data,
+      required this.data,
       this.idToken,
       this.errorMessage});
 
@@ -177,7 +189,7 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
   @override
   final bool isLoggedIn;
   @override
-  final Map<dynamic, dynamic>? data;
+  final Auth0DataState data;
   @override
   final String? idToken;
   @override
@@ -233,7 +245,7 @@ abstract class _Auth0State implements Auth0State {
   const factory _Auth0State(
       {bool isBusy,
       bool isLoggedIn,
-      Map<dynamic, dynamic>? data,
+      required Auth0DataState data,
       String? idToken,
       String? errorMessage}) = _$_Auth0State;
 
@@ -242,7 +254,7 @@ abstract class _Auth0State implements Auth0State {
   @override
   bool get isLoggedIn;
   @override
-  Map<dynamic, dynamic>? get data;
+  Auth0DataState get data;
   @override
   String? get idToken;
   @override

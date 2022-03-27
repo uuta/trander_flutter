@@ -1,9 +1,8 @@
 import '/import.dart';
 import '/environment.dart';
-import 'pages/progresses/scaffold_progress_page.dart';
 
 Future<void> main() async {
-  // Environement configuration
+  // Environment configuration
   await Environment.setup();
 
   runApp(const ProviderScope(
@@ -21,6 +20,7 @@ class App extends HookConsumerWidget {
 
     useEffect(() {
       Future.microtask(() async {
+        // Auth0
         auth0Notifier.initAction();
       });
       return;
@@ -122,6 +122,7 @@ class App extends HookConsumerWidget {
             onPrimary: const Color(0xff22332E),
           ),
         ),
+        dialogBackgroundColor: Colors.grey[900],
         textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
                 foregroundColor:

@@ -12,7 +12,7 @@ _$_CityState _$$_CityStateFromJson(Map<String, dynamic> json) => _$_CityState(
       direction: json['direction'] as String? ?? '',
       countryCode: json['countryCode'] as String?,
       icon: json['icon'] as String?,
-      rating: json['rating'] as String?,
+      rating: (json['rating'] as num?)?.toDouble() ?? 0,
       photo: json['photo'] as String?,
       vicinity: json['vicinity'] as String?,
       userRatingsTotal: json['userRatingsTotal'] as int?,

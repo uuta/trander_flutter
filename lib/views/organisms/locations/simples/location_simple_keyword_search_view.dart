@@ -1,11 +1,13 @@
+import 'package:trander/view_controllers/purchases/puchase_dialog_view_controller.dart';
+
 import '/import.dart';
-import '/views/organisms/locations/location_error_dialog_view.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_text_field_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_buttons_view.dart';
 import '/views/molecules/columns/title_caption_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
+import '/views/molecules/dialogs/error_dialog_view.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
   const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
@@ -19,6 +21,12 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
     // Keyword search dialog
     if (locationState.isKeywordSearchDialog) {
       LocationDialogViewController.showKeywordSearchDialog(
+          context, locationState, locationNotifier);
+    }
+
+    // Purchase dialog
+    if (locationState.purchaseDialog) {
+      PurchaseDialogViewController.showPurchaseDialog(
           context, locationState, locationNotifier);
     }
 
@@ -51,12 +59,15 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
 
                 // Error dialog
                 if (locationState.errorMessage != '')
-                  const Positioned(
+                  Positioned(
                       top: 100.0,
                       left: 30.0,
                       right: 30.0,
                       bottom: 100.0,
-                      child: LocationErrorDialogView()),
+                      child: ErrorDialogView(
+                        errorMessage: locationState.errorMessage.toString(),
+                        onPressed: () => locationNotifier.offErrorMessage(),
+                      )),
 
                 // Info buttons
                 if (locationState.isKeywordSearchSucceeded &&

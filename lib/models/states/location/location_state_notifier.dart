@@ -48,6 +48,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(keywordSearchData: data);
   }
 
+  Future<void> switchPaymantDialog(bool data) async {
+    state = state.copyWith(purchaseDialog: data);
+  }
+
   Future<void> _succeedKeywordSearch() async {
     state = state.copyWith(
         isLoading: false,
@@ -67,9 +71,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> _failedRequest(Exception e, StackTrace s) async {
     debugPrint('error: $e - stack: $s');
-    state = state.copyWith(
-        isLoading: false,
-        errorMessage: ErrorHandler.getApiError(e).errorMessage);
+    (ErrorHandler.getApiError(e).type == 'paymentRequired')
+        ? state = state.copyWith(
+            isLoading: false,
+            purchaseDialog: true,
+            purchaseErrorMessage: ErrorHandler.getApiError(e).errorMessage)
+        : state = state.copyWith(
+            isLoading: false,
+            errorMessage: ErrorHandler.getApiError(e).errorMessage);
   }
 
   Future<void> getCurrentLocation() async {
