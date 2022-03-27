@@ -1,3 +1,5 @@
+import 'package:trander/view_controllers/purchases/puchase_dialog_view_controller.dart';
+
 import '/import.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
@@ -19,6 +21,12 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
     // Keyword search dialog
     if (locationState.isKeywordSearchDialog) {
       LocationDialogViewController.showKeywordSearchDialog(
+          context, locationState, locationNotifier);
+    }
+
+    // Purchase dialog
+    if (locationState.paymentDialog) {
+      PurchaseDialogViewController.showPurchaseDialog(
           context, locationState, locationNotifier);
     }
 

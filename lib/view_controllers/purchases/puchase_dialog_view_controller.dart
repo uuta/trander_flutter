@@ -10,6 +10,7 @@ class PurchaseDialogViewController {
           context: context,
           barrierDismissible: true,
           builder: (BuildContext childContext) {
+            // Possible to dismiss this dialog by passing a value to Riverpod as tapping outside the dialog
             return WillPopScope(
                 child: PurchaseDialogView(
                     onPressed: () => {
