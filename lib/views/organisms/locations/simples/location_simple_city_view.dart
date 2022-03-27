@@ -22,7 +22,7 @@ class LocationSimpleCityView extends HookConsumerWidget {
     }
 
     // Purchase dialog
-    if (!locationState.paymentDialog) {
+    if (locationState.paymentDialog) {
       PurchaseDialogViewController.showPurchaseDialog(
           context, locationState, locationNotifier);
     }
