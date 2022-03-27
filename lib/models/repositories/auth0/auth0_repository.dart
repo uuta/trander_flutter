@@ -45,4 +45,12 @@ class Auth0Repository {
     return Auth0DataState.fromJson(jsonDecode(
         utf8.decode(base64Url.decode(base64Url.normalize(parts[1])))));
   }
+
+  Future<Response> createUser(String? idToken) async {
+    return await Dio().post(dotenv.get('API_DOMAIN') + ConstsApi.user,
+        options: Options(headers: {
+          "Content-Type": "application/json",
+          "Authorization": " Bearer $idToken",
+        }));
+  }
 }

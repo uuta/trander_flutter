@@ -9,7 +9,6 @@ import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
 import '/views/organisms/locations/simples/location_simple_city_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_search_view.dart';
 
-// TODO: Add API request to register a user
 class IndexPage extends HookConsumerWidget {
   const IndexPage({Key? key}) : super(key: key);
 
@@ -19,19 +18,21 @@ class IndexPage extends HookConsumerWidget {
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
     final locationState = ref.watch(locationNotifierProvider);
     final auth0State = ref.watch(auth0NotifierProvider);
+    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
-        await locationNotifier.switchPageLoading(true);
+        locationNotifier.switchPageLoading(true);
         await locationNotifier.getCurrentLocation();
         await locationNotifier.initSettingAction();
-        await locationNotifier.getSetting(auth0State.idToken);
+        locationNotifier.getSetting(auth0State.idToken);
+        auth0Notifier.createUser();
         // RevenueCat
         await PurchaseService.initAction();
         await PurchaseService.login(auth0State.data.sub);
-        await purchaseNotifier.restoreTransactions();
-        await locationNotifier.switchPageLoading(false);
+        purchaseNotifier.restoreTransactions();
+        locationNotifier.switchPageLoading(false);
       });
       return;
     }, const []);
