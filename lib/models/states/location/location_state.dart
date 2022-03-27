@@ -26,7 +26,7 @@ class LocationState with _$LocationState {
     @Default('') String keyword,
     required SettingState settingData,
     @Default(0) int settingMode,
-    @Default(false) bool paymentPage,
+    @Default(false) bool paymentDialog,
     @Default('') String errorMessage,
   }) = _LocationState;
 }

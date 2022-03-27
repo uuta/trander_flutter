@@ -35,7 +35,7 @@ class _$LocationStateTearOff {
       String keyword = '',
       required SettingState settingData,
       int settingMode = 0,
-      bool paymentPage = false,
+      bool paymentDialog = false,
       String errorMessage = ''}) {
     return _LocationState(
       isLoading: isLoading,
@@ -55,7 +55,7 @@ class _$LocationStateTearOff {
       keyword: keyword,
       settingData: settingData,
       settingMode: settingMode,
-      paymentPage: paymentPage,
+      paymentDialog: paymentDialog,
       errorMessage: errorMessage,
     );
   }
@@ -86,7 +86,7 @@ mixin _$LocationState {
   String get keyword => throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
   int get settingMode => throw _privateConstructorUsedError;
-  bool get paymentPage => throw _privateConstructorUsedError;
+  bool get paymentDialog => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -117,7 +117,7 @@ abstract class $LocationStateCopyWith<$Res> {
       String keyword,
       SettingState settingData,
       int settingMode,
-      bool paymentPage,
+      bool paymentDialog,
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
@@ -155,7 +155,7 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? keyword = freezed,
     Object? settingData = freezed,
     Object? settingMode = freezed,
-    Object? paymentPage = freezed,
+    Object? paymentDialog = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -227,9 +227,9 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
               as int,
-      paymentPage: paymentPage == freezed
-          ? _value.paymentPage
-          : paymentPage // ignore: cast_nullable_to_non_nullable
+      paymentDialog: paymentDialog == freezed
+          ? _value.paymentDialog
+          : paymentDialog // ignore: cast_nullable_to_non_nullable
               as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
@@ -300,7 +300,7 @@ abstract class _$LocationStateCopyWith<$Res>
       String keyword,
       SettingState settingData,
       int settingMode,
-      bool paymentPage,
+      bool paymentDialog,
       String errorMessage});
 
   @override
@@ -345,7 +345,7 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? keyword = freezed,
     Object? settingData = freezed,
     Object? settingMode = freezed,
-    Object? paymentPage = freezed,
+    Object? paymentDialog = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_LocationState(
@@ -417,9 +417,9 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
               as int,
-      paymentPage: paymentPage == freezed
-          ? _value.paymentPage
-          : paymentPage // ignore: cast_nullable_to_non_nullable
+      paymentDialog: paymentDialog == freezed
+          ? _value.paymentDialog
+          : paymentDialog // ignore: cast_nullable_to_non_nullable
               as bool,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
@@ -450,7 +450,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.keyword = '',
       required this.settingData,
       this.settingMode = 0,
-      this.paymentPage = false,
+      this.paymentDialog = false,
       this.errorMessage = ''});
 
   @JsonKey()
@@ -500,14 +500,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final int settingMode;
   @JsonKey()
   @override
-  final bool paymentPage;
+  final bool paymentDialog;
   @JsonKey()
   @override
   final String errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, paymentPage: $paymentPage, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, paymentDialog: $paymentDialog, errorMessage: $errorMessage)';
   }
 
   @override
@@ -534,7 +534,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('keyword', keyword))
       ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('settingMode', settingMode))
-      ..add(DiagnosticsProperty('paymentPage', paymentPage))
+      ..add(DiagnosticsProperty('paymentDialog', paymentDialog))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -574,7 +574,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
             const DeepCollectionEquality()
                 .equals(other.settingMode, settingMode) &&
             const DeepCollectionEquality()
-                .equals(other.paymentPage, paymentPage) &&
+                .equals(other.paymentDialog, paymentDialog) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -599,7 +599,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         const DeepCollectionEquality().hash(keyword),
         const DeepCollectionEquality().hash(settingData),
         const DeepCollectionEquality().hash(settingMode),
-        const DeepCollectionEquality().hash(paymentPage),
+        const DeepCollectionEquality().hash(paymentDialog),
         const DeepCollectionEquality().hash(errorMessage)
       ]);
 
@@ -628,7 +628,7 @@ abstract class _LocationState implements LocationState {
       String keyword,
       required SettingState settingData,
       int settingMode,
-      bool paymentPage,
+      bool paymentDialog,
       String errorMessage}) = _$_LocationState;
 
   @override
@@ -666,7 +666,7 @@ abstract class _LocationState implements LocationState {
   @override
   int get settingMode;
   @override
-  bool get paymentPage;
+  bool get paymentDialog;
   @override
   String get errorMessage;
   @override

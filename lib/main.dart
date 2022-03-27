@@ -122,6 +122,7 @@ class App extends HookConsumerWidget {
             onPrimary: const Color(0xff22332E),
           ),
         ),
+        dialogBackgroundColor: Colors.grey[900],
         textButtonTheme: TextButtonThemeData(
             style: ButtonStyle(
                 foregroundColor:

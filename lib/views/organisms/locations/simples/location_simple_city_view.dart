@@ -1,5 +1,6 @@
 import '/import.dart';
 import '/view_controllers/locations/location_dialog_view_controller.dart';
+import '/view_controllers/purchases/puchase_dialog_view_controller.dart';
 import '/views/molecules/columns/three_text_column_view.dart';
 import 'location_simple_city_buttons_view.dart';
 import '/views/molecules/columns/title_caption_view.dart';
@@ -17,6 +18,12 @@ class LocationSimpleCityView extends HookConsumerWidget {
     // City dialog
     if (locationState.isCityDialog) {
       LocationDialogViewController.showCityDialog(
+          context, locationState, locationNotifier);
+    }
+
+    // Purchase dialog
+    if (!locationState.paymentDialog) {
+      PurchaseDialogViewController.showPurchaseDialog(
           context, locationState, locationNotifier);
     }
 
