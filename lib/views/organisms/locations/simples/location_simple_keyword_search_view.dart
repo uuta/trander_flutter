@@ -25,7 +25,7 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
     }
 
     // Purchase dialog
-    if (locationState.paymentDialog) {
+    if (locationState.purchaseDialog) {
       PurchaseDialogViewController.showPurchaseDialog(
           context, locationState, locationNotifier);
     }

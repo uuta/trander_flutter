@@ -35,7 +35,8 @@ class _$LocationStateTearOff {
       String keyword = '',
       required SettingState settingData,
       int settingMode = 0,
-      bool paymentDialog = false,
+      bool purchaseDialog = false,
+      String purchaseErrorMessage = '',
       String errorMessage = ''}) {
     return _LocationState(
       isLoading: isLoading,
@@ -55,7 +56,8 @@ class _$LocationStateTearOff {
       keyword: keyword,
       settingData: settingData,
       settingMode: settingMode,
-      paymentDialog: paymentDialog,
+      purchaseDialog: purchaseDialog,
+      purchaseErrorMessage: purchaseErrorMessage,
       errorMessage: errorMessage,
     );
   }
@@ -86,7 +88,8 @@ mixin _$LocationState {
   String get keyword => throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
   int get settingMode => throw _privateConstructorUsedError;
-  bool get paymentDialog => throw _privateConstructorUsedError;
+  bool get purchaseDialog => throw _privateConstructorUsedError;
+  String get purchaseErrorMessage => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -117,7 +120,8 @@ abstract class $LocationStateCopyWith<$Res> {
       String keyword,
       SettingState settingData,
       int settingMode,
-      bool paymentDialog,
+      bool purchaseDialog,
+      String purchaseErrorMessage,
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
@@ -155,7 +159,8 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? keyword = freezed,
     Object? settingData = freezed,
     Object? settingMode = freezed,
-    Object? paymentDialog = freezed,
+    Object? purchaseDialog = freezed,
+    Object? purchaseErrorMessage = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -227,10 +232,14 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
               as int,
-      paymentDialog: paymentDialog == freezed
-          ? _value.paymentDialog
-          : paymentDialog // ignore: cast_nullable_to_non_nullable
+      purchaseDialog: purchaseDialog == freezed
+          ? _value.purchaseDialog
+          : purchaseDialog // ignore: cast_nullable_to_non_nullable
               as bool,
+      purchaseErrorMessage: purchaseErrorMessage == freezed
+          ? _value.purchaseErrorMessage
+          : purchaseErrorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -300,7 +309,8 @@ abstract class _$LocationStateCopyWith<$Res>
       String keyword,
       SettingState settingData,
       int settingMode,
-      bool paymentDialog,
+      bool purchaseDialog,
+      String purchaseErrorMessage,
       String errorMessage});
 
   @override
@@ -345,7 +355,8 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? keyword = freezed,
     Object? settingData = freezed,
     Object? settingMode = freezed,
-    Object? paymentDialog = freezed,
+    Object? purchaseDialog = freezed,
+    Object? purchaseErrorMessage = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_LocationState(
@@ -417,10 +428,14 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
               as int,
-      paymentDialog: paymentDialog == freezed
-          ? _value.paymentDialog
-          : paymentDialog // ignore: cast_nullable_to_non_nullable
+      purchaseDialog: purchaseDialog == freezed
+          ? _value.purchaseDialog
+          : purchaseDialog // ignore: cast_nullable_to_non_nullable
               as bool,
+      purchaseErrorMessage: purchaseErrorMessage == freezed
+          ? _value.purchaseErrorMessage
+          : purchaseErrorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       errorMessage: errorMessage == freezed
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -450,7 +465,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.keyword = '',
       required this.settingData,
       this.settingMode = 0,
-      this.paymentDialog = false,
+      this.purchaseDialog = false,
+      this.purchaseErrorMessage = '',
       this.errorMessage = ''});
 
   @JsonKey()
@@ -500,14 +516,17 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final int settingMode;
   @JsonKey()
   @override
-  final bool paymentDialog;
+  final bool purchaseDialog;
+  @JsonKey()
+  @override
+  final String purchaseErrorMessage;
   @JsonKey()
   @override
   final String errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, paymentDialog: $paymentDialog, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
   }
 
   @override
@@ -534,7 +553,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('keyword', keyword))
       ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('settingMode', settingMode))
-      ..add(DiagnosticsProperty('paymentDialog', paymentDialog))
+      ..add(DiagnosticsProperty('purchaseDialog', purchaseDialog))
+      ..add(DiagnosticsProperty('purchaseErrorMessage', purchaseErrorMessage))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -574,7 +594,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
             const DeepCollectionEquality()
                 .equals(other.settingMode, settingMode) &&
             const DeepCollectionEquality()
-                .equals(other.paymentDialog, paymentDialog) &&
+                .equals(other.purchaseDialog, purchaseDialog) &&
+            const DeepCollectionEquality()
+                .equals(other.purchaseErrorMessage, purchaseErrorMessage) &&
             const DeepCollectionEquality()
                 .equals(other.errorMessage, errorMessage));
   }
@@ -599,7 +621,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         const DeepCollectionEquality().hash(keyword),
         const DeepCollectionEquality().hash(settingData),
         const DeepCollectionEquality().hash(settingMode),
-        const DeepCollectionEquality().hash(paymentDialog),
+        const DeepCollectionEquality().hash(purchaseDialog),
+        const DeepCollectionEquality().hash(purchaseErrorMessage),
         const DeepCollectionEquality().hash(errorMessage)
       ]);
 
@@ -628,7 +651,8 @@ abstract class _LocationState implements LocationState {
       String keyword,
       required SettingState settingData,
       int settingMode,
-      bool paymentDialog,
+      bool purchaseDialog,
+      String purchaseErrorMessage,
       String errorMessage}) = _$_LocationState;
 
   @override
@@ -666,7 +690,9 @@ abstract class _LocationState implements LocationState {
   @override
   int get settingMode;
   @override
-  bool get paymentDialog;
+  bool get purchaseDialog;
+  @override
+  String get purchaseErrorMessage;
   @override
   String get errorMessage;
   @override

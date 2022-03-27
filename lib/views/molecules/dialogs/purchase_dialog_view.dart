@@ -3,7 +3,9 @@ import '/views/atoms/buttons/elevated_text_button_view.dart';
 
 class PurchaseDialogView extends StatelessWidget {
   final VoidCallback onPressed;
-  const PurchaseDialogView({Key? key, required this.onPressed})
+  final String purchaseErrorMessage;
+  const PurchaseDialogView(
+      {Key? key, required this.onPressed, required this.purchaseErrorMessage})
       : super(key: key);
 
   @override
@@ -25,7 +27,7 @@ class PurchaseDialogView extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 Text(
-                  '8 days, 1 hour, 22 seconds',
+                  purchaseErrorMessage,
                   style: Theme.of(context).textTheme.headline4,
                 ),
                 const SizedBox(height: 40.0),

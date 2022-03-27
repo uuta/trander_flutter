@@ -13,6 +13,7 @@ class PurchaseDialogViewController {
             // Possible to dismiss this dialog by passing a value to Riverpod as tapping outside the dialog
             return WillPopScope(
                 child: PurchaseDialogView(
+                    purchaseErrorMessage: locationState.purchaseErrorMessage,
                     onPressed: () => {
                           Navigator.push(
                               context,
