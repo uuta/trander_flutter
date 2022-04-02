@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 part 'location_state.freezed.dart';
 
@@ -23,7 +25,7 @@ class LocationState with _$LocationState {
     @Default(false) bool isKeywordSearchDialog,
     required KeywordSearchState keywordSearchData,
     required KeywordSearchExploreState keywordSearchExploreState,
-    @Default('') String keyword,
+    required TextEditingController keywordTextEditingController,
     required SettingState settingData,
     @Default(0) int settingMode,
     @Default(false) bool purchaseDialog,

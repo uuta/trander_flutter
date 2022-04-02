@@ -15,6 +15,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           cityExploreState: const CityExploreState(),
           keywordSearchData: const KeywordSearchState(),
           keywordSearchExploreState: const KeywordSearchExploreState(),
+          keywordTextEditingController: TextEditingController(),
         ));
 
   Future<void> initMapAction() async {
@@ -60,7 +61,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   }
 
   Future<void> setKeyword(String data) async {
-    state = state.copyWith(keyword: data);
+    state.keywordTextEditingController.text = data;
+    // state = state.copyWith(keywordTextEditingController: data);
   }
 
   Future<void> setMode(int data) async {

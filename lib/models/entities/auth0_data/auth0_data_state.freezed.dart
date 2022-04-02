@@ -26,28 +26,28 @@ class _$Auth0DataStateTearOff {
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'email') String? email,
       @JsonKey(name: 'picture') String? picture,
-      @JsonKey(name: 'updated_at') String? updated_at,
-      @JsonKey(name: 'email_verified') bool? email_vefified,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'email_verified') bool? emailVefified,
       @JsonKey(name: 'iss') String? iss,
       @JsonKey(name: 'sub') String sub = '',
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
-      @JsonKey(name: 'auth_time') int? auth_time,
+      @JsonKey(name: 'auth_time') int? authTime,
       @JsonKey(name: 'nonce') String? nonce}) {
     return _Auth0DataState(
       nickname: nickname,
       name: name,
       email: email,
       picture: picture,
-      updated_at: updated_at,
-      email_vefified: email_vefified,
+      updatedAt: updatedAt,
+      emailVefified: emailVefified,
       iss: iss,
       sub: sub,
       aud: aud,
       iat: iat,
       exp: exp,
-      auth_time: auth_time,
+      authTime: authTime,
       nonce: nonce,
     );
   }
@@ -71,9 +71,9 @@ mixin _$Auth0DataState {
   @JsonKey(name: 'picture')
   String? get picture => throw _privateConstructorUsedError;
   @JsonKey(name: 'updated_at')
-  String? get updated_at => throw _privateConstructorUsedError;
+  String? get updatedAt => throw _privateConstructorUsedError;
   @JsonKey(name: 'email_verified')
-  bool? get email_vefified => throw _privateConstructorUsedError;
+  bool? get emailVefified => throw _privateConstructorUsedError;
   @JsonKey(name: 'iss')
   String? get iss => throw _privateConstructorUsedError;
   @JsonKey(name: 'sub')
@@ -85,7 +85,7 @@ mixin _$Auth0DataState {
   @JsonKey(name: 'exp')
   int? get exp => throw _privateConstructorUsedError;
   @JsonKey(name: 'auth_time')
-  int? get auth_time => throw _privateConstructorUsedError;
+  int? get authTime => throw _privateConstructorUsedError;
   @JsonKey(name: 'nonce')
   String? get nonce => throw _privateConstructorUsedError;
 
@@ -105,14 +105,14 @@ abstract class $Auth0DataStateCopyWith<$Res> {
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'email') String? email,
       @JsonKey(name: 'picture') String? picture,
-      @JsonKey(name: 'updated_at') String? updated_at,
-      @JsonKey(name: 'email_verified') bool? email_vefified,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'email_verified') bool? emailVefified,
       @JsonKey(name: 'iss') String? iss,
       @JsonKey(name: 'sub') String sub,
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
-      @JsonKey(name: 'auth_time') int? auth_time,
+      @JsonKey(name: 'auth_time') int? authTime,
       @JsonKey(name: 'nonce') String? nonce});
 }
 
@@ -131,14 +131,14 @@ class _$Auth0DataStateCopyWithImpl<$Res>
     Object? name = freezed,
     Object? email = freezed,
     Object? picture = freezed,
-    Object? updated_at = freezed,
-    Object? email_vefified = freezed,
+    Object? updatedAt = freezed,
+    Object? emailVefified = freezed,
     Object? iss = freezed,
     Object? sub = freezed,
     Object? aud = freezed,
     Object? iat = freezed,
     Object? exp = freezed,
-    Object? auth_time = freezed,
+    Object? authTime = freezed,
     Object? nonce = freezed,
   }) {
     return _then(_value.copyWith(
@@ -158,13 +158,13 @@ class _$Auth0DataStateCopyWithImpl<$Res>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String?,
-      updated_at: updated_at == freezed
-          ? _value.updated_at
-          : updated_at // ignore: cast_nullable_to_non_nullable
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      email_vefified: email_vefified == freezed
-          ? _value.email_vefified
-          : email_vefified // ignore: cast_nullable_to_non_nullable
+      emailVefified: emailVefified == freezed
+          ? _value.emailVefified
+          : emailVefified // ignore: cast_nullable_to_non_nullable
               as bool?,
       iss: iss == freezed
           ? _value.iss
@@ -186,9 +186,9 @@ class _$Auth0DataStateCopyWithImpl<$Res>
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
               as int?,
-      auth_time: auth_time == freezed
-          ? _value.auth_time
-          : auth_time // ignore: cast_nullable_to_non_nullable
+      authTime: authTime == freezed
+          ? _value.authTime
+          : authTime // ignore: cast_nullable_to_non_nullable
               as int?,
       nonce: nonce == freezed
           ? _value.nonce
@@ -210,14 +210,14 @@ abstract class _$Auth0DataStateCopyWith<$Res>
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'email') String? email,
       @JsonKey(name: 'picture') String? picture,
-      @JsonKey(name: 'updated_at') String? updated_at,
-      @JsonKey(name: 'email_verified') bool? email_vefified,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'email_verified') bool? emailVefified,
       @JsonKey(name: 'iss') String? iss,
       @JsonKey(name: 'sub') String sub,
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
-      @JsonKey(name: 'auth_time') int? auth_time,
+      @JsonKey(name: 'auth_time') int? authTime,
       @JsonKey(name: 'nonce') String? nonce});
 }
 
@@ -238,14 +238,14 @@ class __$Auth0DataStateCopyWithImpl<$Res>
     Object? name = freezed,
     Object? email = freezed,
     Object? picture = freezed,
-    Object? updated_at = freezed,
-    Object? email_vefified = freezed,
+    Object? updatedAt = freezed,
+    Object? emailVefified = freezed,
     Object? iss = freezed,
     Object? sub = freezed,
     Object? aud = freezed,
     Object? iat = freezed,
     Object? exp = freezed,
-    Object? auth_time = freezed,
+    Object? authTime = freezed,
     Object? nonce = freezed,
   }) {
     return _then(_Auth0DataState(
@@ -265,13 +265,13 @@ class __$Auth0DataStateCopyWithImpl<$Res>
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String?,
-      updated_at: updated_at == freezed
-          ? _value.updated_at
-          : updated_at // ignore: cast_nullable_to_non_nullable
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as String?,
-      email_vefified: email_vefified == freezed
-          ? _value.email_vefified
-          : email_vefified // ignore: cast_nullable_to_non_nullable
+      emailVefified: emailVefified == freezed
+          ? _value.emailVefified
+          : emailVefified // ignore: cast_nullable_to_non_nullable
               as bool?,
       iss: iss == freezed
           ? _value.iss
@@ -293,9 +293,9 @@ class __$Auth0DataStateCopyWithImpl<$Res>
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
               as int?,
-      auth_time: auth_time == freezed
-          ? _value.auth_time
-          : auth_time // ignore: cast_nullable_to_non_nullable
+      authTime: authTime == freezed
+          ? _value.authTime
+          : authTime // ignore: cast_nullable_to_non_nullable
               as int?,
       nonce: nonce == freezed
           ? _value.nonce
@@ -313,14 +313,14 @@ class _$_Auth0DataState implements _Auth0DataState {
       @JsonKey(name: 'name') this.name,
       @JsonKey(name: 'email') this.email,
       @JsonKey(name: 'picture') this.picture,
-      @JsonKey(name: 'updated_at') this.updated_at,
-      @JsonKey(name: 'email_verified') this.email_vefified,
+      @JsonKey(name: 'updated_at') this.updatedAt,
+      @JsonKey(name: 'email_verified') this.emailVefified,
       @JsonKey(name: 'iss') this.iss,
       @JsonKey(name: 'sub') this.sub = '',
       @JsonKey(name: 'aud') this.aud,
       @JsonKey(name: 'iat') this.iat,
       @JsonKey(name: 'exp') this.exp,
-      @JsonKey(name: 'auth_time') this.auth_time,
+      @JsonKey(name: 'auth_time') this.authTime,
       @JsonKey(name: 'nonce') this.nonce});
 
   factory _$_Auth0DataState.fromJson(Map<String, dynamic> json) =>
@@ -340,10 +340,10 @@ class _$_Auth0DataState implements _Auth0DataState {
   final String? picture;
   @override
   @JsonKey(name: 'updated_at')
-  final String? updated_at;
+  final String? updatedAt;
   @override
   @JsonKey(name: 'email_verified')
-  final bool? email_vefified;
+  final bool? emailVefified;
   @override
   @JsonKey(name: 'iss')
   final String? iss;
@@ -361,14 +361,14 @@ class _$_Auth0DataState implements _Auth0DataState {
   final int? exp;
   @override
   @JsonKey(name: 'auth_time')
-  final int? auth_time;
+  final int? authTime;
   @override
   @JsonKey(name: 'nonce')
   final String? nonce;
 
   @override
   String toString() {
-    return 'Auth0DataState(nickname: $nickname, name: $name, email: $email, picture: $picture, updated_at: $updated_at, email_vefified: $email_vefified, iss: $iss, sub: $sub, aud: $aud, iat: $iat, exp: $exp, auth_time: $auth_time, nonce: $nonce)';
+    return 'Auth0DataState(nickname: $nickname, name: $name, email: $email, picture: $picture, updatedAt: $updatedAt, emailVefified: $emailVefified, iss: $iss, sub: $sub, aud: $aud, iat: $iat, exp: $exp, authTime: $authTime, nonce: $nonce)';
   }
 
   @override
@@ -380,16 +380,15 @@ class _$_Auth0DataState implements _Auth0DataState {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.picture, picture) &&
+            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
             const DeepCollectionEquality()
-                .equals(other.updated_at, updated_at) &&
-            const DeepCollectionEquality()
-                .equals(other.email_vefified, email_vefified) &&
+                .equals(other.emailVefified, emailVefified) &&
             const DeepCollectionEquality().equals(other.iss, iss) &&
             const DeepCollectionEquality().equals(other.sub, sub) &&
             const DeepCollectionEquality().equals(other.aud, aud) &&
             const DeepCollectionEquality().equals(other.iat, iat) &&
             const DeepCollectionEquality().equals(other.exp, exp) &&
-            const DeepCollectionEquality().equals(other.auth_time, auth_time) &&
+            const DeepCollectionEquality().equals(other.authTime, authTime) &&
             const DeepCollectionEquality().equals(other.nonce, nonce));
   }
 
@@ -400,14 +399,14 @@ class _$_Auth0DataState implements _Auth0DataState {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(picture),
-      const DeepCollectionEquality().hash(updated_at),
-      const DeepCollectionEquality().hash(email_vefified),
+      const DeepCollectionEquality().hash(updatedAt),
+      const DeepCollectionEquality().hash(emailVefified),
       const DeepCollectionEquality().hash(iss),
       const DeepCollectionEquality().hash(sub),
       const DeepCollectionEquality().hash(aud),
       const DeepCollectionEquality().hash(iat),
       const DeepCollectionEquality().hash(exp),
-      const DeepCollectionEquality().hash(auth_time),
+      const DeepCollectionEquality().hash(authTime),
       const DeepCollectionEquality().hash(nonce));
 
   @JsonKey(ignore: true)
@@ -427,14 +426,14 @@ abstract class _Auth0DataState implements Auth0DataState {
       @JsonKey(name: 'name') String? name,
       @JsonKey(name: 'email') String? email,
       @JsonKey(name: 'picture') String? picture,
-      @JsonKey(name: 'updated_at') String? updated_at,
-      @JsonKey(name: 'email_verified') bool? email_vefified,
+      @JsonKey(name: 'updated_at') String? updatedAt,
+      @JsonKey(name: 'email_verified') bool? emailVefified,
       @JsonKey(name: 'iss') String? iss,
       @JsonKey(name: 'sub') String sub,
       @JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'iat') int? iat,
       @JsonKey(name: 'exp') int? exp,
-      @JsonKey(name: 'auth_time') int? auth_time,
+      @JsonKey(name: 'auth_time') int? authTime,
       @JsonKey(name: 'nonce') String? nonce}) = _$_Auth0DataState;
 
   factory _Auth0DataState.fromJson(Map<String, dynamic> json) =
@@ -454,10 +453,10 @@ abstract class _Auth0DataState implements Auth0DataState {
   String? get picture;
   @override
   @JsonKey(name: 'updated_at')
-  String? get updated_at;
+  String? get updatedAt;
   @override
   @JsonKey(name: 'email_verified')
-  bool? get email_vefified;
+  bool? get emailVefified;
   @override
   @JsonKey(name: 'iss')
   String? get iss;
@@ -475,7 +474,7 @@ abstract class _Auth0DataState implements Auth0DataState {
   int? get exp;
   @override
   @JsonKey(name: 'auth_time')
-  int? get auth_time;
+  int? get authTime;
   @override
   @JsonKey(name: 'nonce')
   String? get nonce;
