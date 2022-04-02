@@ -1,7 +1,6 @@
 import '/import.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
 import '/models/errors/subscribe_error.dart';
-import 'dart:developer' as developer;
 
 final purchaseNotifierProvider =
     StateNotifierProvider<PurchaseStateNotifier, PurchaseState>(
