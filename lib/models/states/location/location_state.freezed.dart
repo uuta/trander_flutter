@@ -32,7 +32,7 @@ class _$LocationStateTearOff {
       bool isKeywordSearchDialog = false,
       required KeywordSearchState keywordSearchData,
       required KeywordSearchExploreState keywordSearchExploreState,
-      String keyword = '',
+      required TextEditingController keywordTextEditingController,
       required SettingState settingData,
       int settingMode = 0,
       bool purchaseDialog = false,
@@ -53,7 +53,7 @@ class _$LocationStateTearOff {
       isKeywordSearchDialog: isKeywordSearchDialog,
       keywordSearchData: keywordSearchData,
       keywordSearchExploreState: keywordSearchExploreState,
-      keyword: keyword,
+      keywordTextEditingController: keywordTextEditingController,
       settingData: settingData,
       settingMode: settingMode,
       purchaseDialog: purchaseDialog,
@@ -85,7 +85,8 @@ mixin _$LocationState {
       throw _privateConstructorUsedError;
   KeywordSearchExploreState get keywordSearchExploreState =>
       throw _privateConstructorUsedError;
-  String get keyword => throw _privateConstructorUsedError;
+  TextEditingController get keywordTextEditingController =>
+      throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
   int get settingMode => throw _privateConstructorUsedError;
   bool get purchaseDialog => throw _privateConstructorUsedError;
@@ -117,7 +118,7 @@ abstract class $LocationStateCopyWith<$Res> {
       bool isKeywordSearchDialog,
       KeywordSearchState keywordSearchData,
       KeywordSearchExploreState keywordSearchExploreState,
-      String keyword,
+      TextEditingController keywordTextEditingController,
       SettingState settingData,
       int settingMode,
       bool purchaseDialog,
@@ -156,7 +157,7 @@ class _$LocationStateCopyWithImpl<$Res>
     Object? isKeywordSearchDialog = freezed,
     Object? keywordSearchData = freezed,
     Object? keywordSearchExploreState = freezed,
-    Object? keyword = freezed,
+    Object? keywordTextEditingController = freezed,
     Object? settingData = freezed,
     Object? settingMode = freezed,
     Object? purchaseDialog = freezed,
@@ -220,10 +221,10 @@ class _$LocationStateCopyWithImpl<$Res>
           ? _value.keywordSearchExploreState
           : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
               as KeywordSearchExploreState,
-      keyword: keyword == freezed
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String,
+      keywordTextEditingController: keywordTextEditingController == freezed
+          ? _value.keywordTextEditingController
+          : keywordTextEditingController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
       settingData: settingData == freezed
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
@@ -306,7 +307,7 @@ abstract class _$LocationStateCopyWith<$Res>
       bool isKeywordSearchDialog,
       KeywordSearchState keywordSearchData,
       KeywordSearchExploreState keywordSearchExploreState,
-      String keyword,
+      TextEditingController keywordTextEditingController,
       SettingState settingData,
       int settingMode,
       bool purchaseDialog,
@@ -352,7 +353,7 @@ class __$LocationStateCopyWithImpl<$Res>
     Object? isKeywordSearchDialog = freezed,
     Object? keywordSearchData = freezed,
     Object? keywordSearchExploreState = freezed,
-    Object? keyword = freezed,
+    Object? keywordTextEditingController = freezed,
     Object? settingData = freezed,
     Object? settingMode = freezed,
     Object? purchaseDialog = freezed,
@@ -416,10 +417,10 @@ class __$LocationStateCopyWithImpl<$Res>
           ? _value.keywordSearchExploreState
           : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
               as KeywordSearchExploreState,
-      keyword: keyword == freezed
-          ? _value.keyword
-          : keyword // ignore: cast_nullable_to_non_nullable
-              as String,
+      keywordTextEditingController: keywordTextEditingController == freezed
+          ? _value.keywordTextEditingController
+          : keywordTextEditingController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
       settingData: settingData == freezed
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
@@ -462,7 +463,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.isKeywordSearchDialog = false,
       required this.keywordSearchData,
       required this.keywordSearchExploreState,
-      this.keyword = '',
+      required this.keywordTextEditingController,
       required this.settingData,
       this.settingMode = 0,
       this.purchaseDialog = false,
@@ -506,9 +507,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final KeywordSearchState keywordSearchData;
   @override
   final KeywordSearchExploreState keywordSearchExploreState;
-  @JsonKey()
   @override
-  final String keyword;
+  final TextEditingController keywordTextEditingController;
   @override
   final SettingState settingData;
   @JsonKey()
@@ -526,7 +526,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keyword: $keyword, settingData: $settingData, settingMode: $settingMode, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, settingMode: $settingMode, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
   }
 
   @override
@@ -550,7 +550,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('keywordSearchData', keywordSearchData))
       ..add(DiagnosticsProperty(
           'keywordSearchExploreState', keywordSearchExploreState))
-      ..add(DiagnosticsProperty('keyword', keyword))
+      ..add(DiagnosticsProperty(
+          'keywordTextEditingController', keywordTextEditingController))
       ..add(DiagnosticsProperty('settingData', settingData))
       ..add(DiagnosticsProperty('settingMode', settingMode))
       ..add(DiagnosticsProperty('purchaseDialog', purchaseDialog))
@@ -588,7 +589,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                 .equals(other.keywordSearchData, keywordSearchData) &&
             const DeepCollectionEquality().equals(
                 other.keywordSearchExploreState, keywordSearchExploreState) &&
-            const DeepCollectionEquality().equals(other.keyword, keyword) &&
+            const DeepCollectionEquality().equals(
+                other.keywordTextEditingController,
+                keywordTextEditingController) &&
             const DeepCollectionEquality()
                 .equals(other.settingData, settingData) &&
             const DeepCollectionEquality()
@@ -618,7 +621,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         const DeepCollectionEquality().hash(isKeywordSearchDialog),
         const DeepCollectionEquality().hash(keywordSearchData),
         const DeepCollectionEquality().hash(keywordSearchExploreState),
-        const DeepCollectionEquality().hash(keyword),
+        const DeepCollectionEquality().hash(keywordTextEditingController),
         const DeepCollectionEquality().hash(settingData),
         const DeepCollectionEquality().hash(settingMode),
         const DeepCollectionEquality().hash(purchaseDialog),
@@ -648,7 +651,7 @@ abstract class _LocationState implements LocationState {
       bool isKeywordSearchDialog,
       required KeywordSearchState keywordSearchData,
       required KeywordSearchExploreState keywordSearchExploreState,
-      String keyword,
+      required TextEditingController keywordTextEditingController,
       required SettingState settingData,
       int settingMode,
       bool purchaseDialog,
@@ -684,7 +687,7 @@ abstract class _LocationState implements LocationState {
   @override
   KeywordSearchExploreState get keywordSearchExploreState;
   @override
-  String get keyword;
+  TextEditingController get keywordTextEditingController;
   @override
   SettingState get settingData;
   @override
