@@ -89,7 +89,8 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
 
   Future<void> restoreTransactions() async {
     final info = await Purchases.restoreTransactions();
-    state =
-        state.copyWith(isActive: info.entitlements.all['unlimited']!.isActive);
+    final all = info.entitlements.all;
+    state = state.copyWith(
+        isActive: all.isNotEmpty ? all['unlimited']!.isActive : false);
   }
 }
