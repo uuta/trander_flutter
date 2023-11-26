@@ -20,6 +20,7 @@ jobs:
       - name: install flutter
         uses: subosito/flutter-action@v2
         with:
+          # TODO: change the version
           flutter-version: "2.8.1"
           channel: "stable"
 
