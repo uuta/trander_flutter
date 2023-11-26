@@ -12,7 +12,7 @@ class ErrorDialogView extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(title ?? 'Oops!'),
-      titleTextStyle: Theme.of(context).textTheme.headline3,
+      titleTextStyle: Theme.of(context).textTheme.displaySmall,
       content: Text(errorMessage),
       actions: <Widget>[
         TextButton(

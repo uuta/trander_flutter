@@ -20,7 +20,7 @@ class FullsizeIconTextButtonView extends HookConsumerWidget {
             icon: icon,
             label: Text(
               text,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(

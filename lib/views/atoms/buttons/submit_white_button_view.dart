@@ -14,7 +14,7 @@ class SubmitWhiteButtonView extends StatelessWidget {
     return TextButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          primary: Theme.of(context).primaryColorLight,
+          backgroundColor: Theme.of(context).primaryColorLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),

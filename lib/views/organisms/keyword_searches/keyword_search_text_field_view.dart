@@ -16,7 +16,7 @@ class KeywordSearchTextFieldView extends HookConsumerWidget {
             elevation: 5.0,
             child: TextField(
               controller: locationState.keywordTextEditingController,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
               cursorColor: Theme.of(context).primaryColorLight,
               decoration: InputDecoration(
                 prefixIcon: Icon(

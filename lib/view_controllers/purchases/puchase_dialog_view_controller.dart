@@ -5,7 +5,7 @@ class PurchaseDialogViewController {
   // City dialog
   static void showPurchaseDialog(BuildContext context,
       LocationState locationState, LocationStateNotifier locationNotifier) {
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       showDialog(
           context: context,
           barrierDismissible: true,

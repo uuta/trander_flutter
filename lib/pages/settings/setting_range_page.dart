@@ -16,7 +16,7 @@ class SettingRangePage extends HookConsumerWidget {
         appBar: AppBar(
           title: Text(
             'Distance Range',
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.displayMedium,
           ),
         ),
         body: Column(children: <Widget>[

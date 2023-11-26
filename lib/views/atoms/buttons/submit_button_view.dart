@@ -14,7 +14,7 @@ class SubmitButtonView extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           minimumSize: const Size(300, 50),
           maximumSize: const Size(300, 50),
-          primary: Theme.of(context).primaryColorLight,
+          backgroundColor: Theme.of(context).primaryColorLight,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
           ),
