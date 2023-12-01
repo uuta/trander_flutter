@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'auth0_data_state.freezed.dart';
 part 'auth0_data_state.g.dart';
 
+// TODO: Auth0DataState will be deleted
 @freezed
 class Auth0DataState with _$Auth0DataState {
   const factory Auth0DataState({
