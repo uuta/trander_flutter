@@ -32,18 +32,18 @@ class ErrorHandler with _$ErrorHandler {
   static ErrorHandler getApiError(error) {
     if (error is Exception) {
       try {
-        ErrorHandler _error = const ErrorHandler.unexpectedError();
-        if (error is DioError) {
+        ErrorHandler e = const ErrorHandler.unexpectedError();
+        if (error is DioException) {
           switch (error.type) {
-            case DioErrorType.connectTimeout:
-            case DioErrorType.sendTimeout:
-            case DioErrorType.receiveTimeout:
-              _error = const ErrorHandler.sendTimeout();
+            case DioExceptionType.connectionTimeout:
+            case DioExceptionType.sendTimeout:
+            case DioExceptionType.receiveTimeout:
+              e = const ErrorHandler.sendTimeout();
               break;
-            case DioErrorType.cancel:
-              _error = const ErrorHandler.requestCancelled();
+            case DioExceptionType.cancel:
+              e = const ErrorHandler.requestCancelled();
               break;
-            case DioErrorType.response:
+            case DioExceptionType.badResponse:
               final int? statusCode = error.response!.statusCode;
 
               if (statusCode == null) {
@@ -51,39 +51,39 @@ class ErrorHandler with _$ErrorHandler {
               }
 
               if (statusCode == 402) {
-                _error = ErrorHandler.paymentRequired(
+                e = ErrorHandler.paymentRequired(
                     apiError: ApiError.fromJson(error.response!.data));
                 break;
               }
 
               if (statusCode == 429) {
-                _error = const ErrorHandler.exceededRequestLimit();
+                e = const ErrorHandler.exceededRequestLimit();
                 break;
               }
 
               if (400 <= statusCode && statusCode < 500) {
-                _error = ErrorHandler.requestError(
+                e = ErrorHandler.requestError(
                     apiError: ApiError.fromJson(error.response!.data));
                 break;
               }
 
               if (500 <= statusCode) {
-                _error = const ErrorHandler.serviceUnavailable();
+                e = const ErrorHandler.serviceUnavailable();
                 break;
               }
 
               break;
             default:
-              _error = const ErrorHandler.unexpectedError();
+              e = const ErrorHandler.unexpectedError();
           }
         } else if (error is SocketException) {
-          _error = const ErrorHandler.noInternetConnection();
+          e = const ErrorHandler.noInternetConnection();
         } else if (error is EmptyResponseException) {
-          _error = const ErrorHandler.emptyResponse();
+          e = const ErrorHandler.emptyResponse();
         } else {
-          _error = const ErrorHandler.unexpectedError();
+          e = const ErrorHandler.unexpectedError();
         }
-        return _error;
+        return e;
       } catch (_) {
         return const ErrorHandler.unexpectedError();
       }

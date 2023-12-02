@@ -20,8 +20,9 @@ class OnBoardingPage extends HookConsumerWidget {
         pages: slides.generateSlides(),
         showNextButton: true,
         showSkipButton: true,
-        doneColor: Theme.of(context).primaryColorLight,
-        nextColor: Theme.of(context).primaryColorLight,
+        // TODO: Check the following lines are properly indented
+        // doneColor: Theme.of(context).primaryColorLight,
+        // nextColor: Theme.of(context).primaryColorLight,
         dotsDecorator:
             DotsDecorator(activeColor: Theme.of(context).primaryColorLight),
         skip: Text("Skip",
