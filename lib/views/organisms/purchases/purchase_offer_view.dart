@@ -4,7 +4,7 @@ import '/views/organisms/purchases/purchase_price_cards_view.dart';
 import '/views/atoms/buttons/submit_button_view.dart';
 
 class PurchaseOfferView extends HookConsumerWidget {
-  const PurchaseOfferView({Key? key}) : super(key: key);
+  const PurchaseOfferView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

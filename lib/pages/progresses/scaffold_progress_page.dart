@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class ScaffoldProgressPage extends StatelessWidget {
-  const ScaffoldProgressPage({Key? key}) : super(key: key);
+  const ScaffoldProgressPage({super.key});
 
   @override
   Widget build(BuildContext context) {

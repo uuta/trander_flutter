@@ -1,14 +1,14 @@
 import '/import.dart';
 
 class SettingRangePage extends HookConsumerWidget {
-  const SettingRangePage({Key? key}) : super(key: key);
+  const SettingRangePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
-    final RangeValues _currentRange = RangeValues(
+    final RangeValues currentRange = RangeValues(
         locationState.settingData.minDistance.toDouble(),
         locationState.settingData.maxDistance.toDouble());
 
@@ -22,15 +22,15 @@ class SettingRangePage extends HookConsumerWidget {
         body: Column(children: <Widget>[
           const SizedBox(height: 40),
           RangeSlider(
-            values: RangeValues(_currentRange.start, _currentRange.end),
+            values: RangeValues(currentRange.start, currentRange.end),
             onChanged: (RangeValues values) {
               locationNotifier.setRange(values);
             },
             min: 0.0,
             max: 100.0,
             divisions: 100,
-            labels: RangeLabels(
-                '${_currentRange.start}km', '${_currentRange.end}km'),
+            labels:
+                RangeLabels('${currentRange.start}km', '${currentRange.end}km'),
             activeColor: Theme.of(context).primaryColorLight,
           ),
         ]));

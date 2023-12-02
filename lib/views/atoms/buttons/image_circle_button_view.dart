@@ -6,14 +6,12 @@ class ImageCircleButtonView extends StatelessWidget {
   final VoidCallback? onPressed;
 
   const ImageCircleButtonView(
-      {Key? key, required this.image, this.iconColor, this.onPressed})
-      : super(key: key);
+      {super.key, required this.image, this.iconColor, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      child: image,
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(18),
@@ -21,6 +19,7 @@ class ImageCircleButtonView extends StatelessWidget {
         backgroundColor: iconColor ?? iconColor,
         elevation: 3,
       ),
+      child: image,
     );
   }
 }

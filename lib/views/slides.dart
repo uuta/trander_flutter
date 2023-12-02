@@ -50,8 +50,9 @@ class Slides {
             ),
           ),
           onTap: () async {
-            if (await canLaunch(link)) {
-              await launch(link);
+            final parseUrl = Uri.parse(link);
+            if (await canLaunchUrl(parseUrl)) {
+              await launchUrl(parseUrl);
             }
           },
         ),

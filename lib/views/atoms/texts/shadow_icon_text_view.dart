@@ -7,13 +7,12 @@ class ShadowIconTextView extends StatelessWidget {
   final int shortenStr;
   final MainAxisAlignment mainAxisAlignment;
   const ShadowIconTextView(
-      {Key? key,
+      {super.key,
       this.name = '',
       this.textStyle,
       this.icon,
       this.shortenStr = 0,
-      this.mainAxisAlignment = MainAxisAlignment.center})
-      : super(key: key);
+      this.mainAxisAlignment = MainAxisAlignment.center});
 
   @override
   Widget build(BuildContext context) {

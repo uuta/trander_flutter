@@ -6,8 +6,7 @@ class SubmitWhiteButtonView extends StatelessWidget {
   final double? fontSize;
 
   const SubmitWhiteButtonView(
-      {Key? key, required this.text, this.onPressed, this.fontSize})
-      : super(key: key);
+      {super.key, required this.text, this.onPressed, this.fontSize});
 
   @override
   Widget build(BuildContext context) {

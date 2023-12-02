@@ -9,6 +9,6 @@ class UtilService {
       return text;
     }
 
-    return text.substring(min, max) + '...';
+    return "${text.substring(min, max)}...";
   }
 }

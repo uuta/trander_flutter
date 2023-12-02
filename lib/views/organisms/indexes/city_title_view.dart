@@ -2,7 +2,7 @@ import '/import.dart';
 import '/views/atoms/texts/shadow_icon_text_view.dart';
 
 class CityTitleView extends HookConsumerWidget {
-  const CityTitleView({Key? key}) : super(key: key);
+  const CityTitleView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

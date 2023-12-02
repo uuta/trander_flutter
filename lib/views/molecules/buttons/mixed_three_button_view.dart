@@ -6,7 +6,7 @@ class MixedThreeButton extends StatelessWidget {
   final String leftText, rightText, bottomText;
   final VoidCallback leftOnPressed, rightOnPressed, bottomOnPressed;
   const MixedThreeButton(
-      {Key? key,
+      {super.key,
       required this.leftIcon,
       required this.rightIcon,
       required this.bottomIcon,
@@ -15,8 +15,7 @@ class MixedThreeButton extends StatelessWidget {
       required this.bottomText,
       required this.leftOnPressed,
       required this.rightOnPressed,
-      required this.bottomOnPressed})
-      : super(key: key);
+      required this.bottomOnPressed});
 
   @override
   Widget build(BuildContext context) {

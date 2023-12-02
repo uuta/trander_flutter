@@ -2,7 +2,7 @@ import '/import.dart';
 import '/views/molecules/buttons/four_button_view.dart';
 
 class LocationSimpleKeywordButtonsView extends HookConsumerWidget {
-  const LocationSimpleKeywordButtonsView({Key? key}) : super(key: key);
+  const LocationSimpleKeywordButtonsView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

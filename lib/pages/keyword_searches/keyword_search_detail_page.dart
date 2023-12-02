@@ -3,7 +3,7 @@ import '/views/molecules/buttons/mixed_three_button_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_title_view.dart';
 
 class KeywordSearchDetailPage extends HookConsumerWidget {
-  const KeywordSearchDetailPage({Key? key}) : super(key: key);
+  const KeywordSearchDetailPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -60,9 +60,7 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                             SettingsTile(
                               title: const Text('Rating'),
                               trailing: Text(
-                                locationState.keywordSearchData.rating
-                                        .toString() +
-                                    ' (${locationState.keywordSearchData.userRatingsTotal})',
+                                "${locationState.keywordSearchData.rating} (${locationState.keywordSearchData.userRatingsTotal})",
                               ),
                               leading: const Icon(Icons.star_rate),
                             ),
@@ -81,10 +79,8 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                             ),
                             SettingsTile(
                               title: const Text('Distance'),
-                              trailing: Text(locationState
-                                      .keywordSearchData.distance
-                                      .toString() +
-                                  ' km'),
+                              trailing: Text(
+                                  "${locationState.keywordSearchData.distance} km"),
                               leading: const Icon(Icons.map),
                             ),
                           ],

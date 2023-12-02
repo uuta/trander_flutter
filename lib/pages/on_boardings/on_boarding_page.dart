@@ -3,7 +3,7 @@ import 'package:introduction_screen/introduction_screen.dart';
 import '/views/slides.dart';
 
 class OnBoardingPage extends HookConsumerWidget {
-  const OnBoardingPage({Key? key}) : super(key: key);
+  const OnBoardingPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

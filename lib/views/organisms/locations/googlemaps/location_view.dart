@@ -11,7 +11,7 @@ import '/views/molecules/dialogs/error_dialog_view.dart';
 // It would be better to separate this file into 2 files for understainding easily.
 // But, if it was implemented, unnecessary builds would run.
 class LocationView extends HookConsumerWidget {
-  const LocationView({Key? key}) : super(key: key);
+  const LocationView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

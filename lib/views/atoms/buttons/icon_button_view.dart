@@ -2,7 +2,7 @@ import '/import.dart';
 
 class IconButtonView extends StatelessWidget {
   final Function()? onPressed;
-  const IconButtonView({Key? key, this.onPressed}) : super(key: key);
+  const IconButtonView({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {

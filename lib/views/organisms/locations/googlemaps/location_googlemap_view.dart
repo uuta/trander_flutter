@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class LocationGooglemapView extends HookConsumerWidget {
-  const LocationGooglemapView({Key? key}) : super(key: key);
+  const LocationGooglemapView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

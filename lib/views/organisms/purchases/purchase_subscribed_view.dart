@@ -3,7 +3,7 @@ import '/views/molecules/columns/title_caption_view.dart';
 import '/views/atoms/buttons/elevated_text_button_view.dart';
 
 class PurchaseSubscribedView extends HookConsumerWidget {
-  const PurchaseSubscribedView({Key? key}) : super(key: key);
+  const PurchaseSubscribedView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

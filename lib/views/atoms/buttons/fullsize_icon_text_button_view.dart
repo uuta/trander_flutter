@@ -6,12 +6,11 @@ class FullsizeIconTextButtonView extends HookConsumerWidget {
   final double radius;
   final VoidCallback? onPressed;
   const FullsizeIconTextButtonView(
-      {Key? key,
+      {super.key,
       required this.text,
       required this.icon,
       this.radius = 20.0,
-      this.onPressed})
-      : super(key: key);
+      this.onPressed});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

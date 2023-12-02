@@ -2,8 +2,8 @@ import '/import.dart';
 
 class TitleCaptionView extends StatelessWidget {
   final String title, caption;
-  const TitleCaptionView({Key? key, required this.title, required this.caption})
-      : super(key: key);
+  const TitleCaptionView(
+      {super.key, required this.title, required this.caption});
 
   @override
   Widget build(BuildContext context) {

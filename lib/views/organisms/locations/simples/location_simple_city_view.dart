@@ -7,7 +7,7 @@ import '/views/molecules/columns/title_caption_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
 
 class LocationSimpleCityView extends HookConsumerWidget {
-  const LocationSimpleCityView({Key? key}) : super(key: key);
+  const LocationSimpleCityView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

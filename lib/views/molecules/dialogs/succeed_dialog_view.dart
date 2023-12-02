@@ -13,7 +13,7 @@ class SucceedDialogView extends StatelessWidget {
       closeOnPressed;
 
   const SucceedDialogView(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.buttonText,
       required this.name,
@@ -25,8 +25,7 @@ class SucceedDialogView extends StatelessWidget {
       required this.leftOnPressed,
       required this.centerOnPressed,
       required this.rightOnPressed,
-      required this.closeOnPressed})
-      : super(key: key);
+      required this.closeOnPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +119,9 @@ class SucceedDialogView extends StatelessWidget {
           left: padding,
           right: padding,
           child: CircleAvatar(
-            child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
             backgroundColor: Color(0xff7ecc00),
             radius: avatarRadius,
+            child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
           ),
         ),
       ]),

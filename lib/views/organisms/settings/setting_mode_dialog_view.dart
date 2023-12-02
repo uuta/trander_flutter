@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class SettingModeDialogView extends HookConsumerWidget {
-  const SettingModeDialogView({Key? key}) : super(key: key);
+  const SettingModeDialogView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,18 +22,18 @@ class SettingModeDialogView extends HookConsumerWidget {
           child: locationState.settingMode == e.value
               ? Container(
                   color: Theme.of(context).primaryColorLight,
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     e.key,
                     style: const TextStyle(color: Colors.white),
                   ),
-                  padding: const EdgeInsets.all(10),
                 )
               : Container(
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     e.key,
                     style: const TextStyle(color: Colors.white),
                   ),
-                  padding: const EdgeInsets.all(10),
                 ),
         );
       }).toList(),

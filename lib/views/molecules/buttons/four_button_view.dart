@@ -9,7 +9,7 @@ class FourButtonView extends StatelessWidget {
       thirdOnPressed,
       fourthOnPressed;
   const FourButtonView(
-      {Key? key,
+      {super.key,
       required this.firstIcon,
       required this.secondIcon,
       required this.thirdIcon,
@@ -21,8 +21,7 @@ class FourButtonView extends StatelessWidget {
       required this.firstOnPressed,
       required this.secondOnPressed,
       required this.thirdOnPressed,
-      required this.fourthOnPressed})
-      : super(key: key);
+      required this.fourthOnPressed});
 
   @override
   Widget build(BuildContext context) {

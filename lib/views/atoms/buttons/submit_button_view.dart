@@ -4,8 +4,7 @@ class SubmitButtonView extends StatelessWidget {
   final String text;
   final Function()? onPressed;
 
-  const SubmitButtonView({Key? key, required this.text, this.onPressed})
-      : super(key: key);
+  const SubmitButtonView({super.key, required this.text, this.onPressed});
 
   @override
   Widget build(BuildContext context) {

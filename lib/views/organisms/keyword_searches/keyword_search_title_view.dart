@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class KeywordSearchTitleView extends HookConsumerWidget {
-  const KeywordSearchTitleView({Key? key}) : super(key: key);
+  const KeywordSearchTitleView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

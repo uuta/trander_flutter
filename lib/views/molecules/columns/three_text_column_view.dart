@@ -5,10 +5,10 @@ class ThreeTextColumnView extends StatelessWidget {
   final String name;
   final String? countryCode;
   const ThreeTextColumnView({
-    Key? key,
+    super.key,
     this.name = '',
     this.countryCode,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

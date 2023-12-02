@@ -2,7 +2,7 @@ import '/import.dart';
 import '/views/molecules/buttons/multiple_text_button_view.dart';
 
 class KeywordSearchKeywordsView extends HookConsumerWidget {
-  const KeywordSearchKeywordsView({Key? key}) : super(key: key);
+  const KeywordSearchKeywordsView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -5,8 +5,7 @@ class PurchaseDialogView extends StatelessWidget {
   final VoidCallback onPressed;
   final String purchaseErrorMessage;
   const PurchaseDialogView(
-      {Key? key, required this.onPressed, required this.purchaseErrorMessage})
-      : super(key: key);
+      {super.key, required this.onPressed, required this.purchaseErrorMessage});
 
   @override
   Widget build(BuildContext context) {

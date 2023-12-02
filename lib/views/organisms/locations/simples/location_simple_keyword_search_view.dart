@@ -10,7 +10,7 @@ import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
-  const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
+  const LocationSimpleKeywordSearchView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

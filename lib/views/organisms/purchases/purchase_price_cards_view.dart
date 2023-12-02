@@ -1,13 +1,13 @@
 import '/import.dart';
 
 class PurchasePriceCards extends HookConsumerWidget {
-  const PurchasePriceCards({Key? key}) : super(key: key);
+  const PurchasePriceCards({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final purchaseState = ref.watch(purchaseNotifierProvider);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
-    final _list = purchaseState.offeringList;
+    final offeringList = purchaseState.offeringList;
 
     return Container(
         height: 180,
@@ -15,12 +15,13 @@ class PurchasePriceCards extends HookConsumerWidget {
         child: ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: _list.length,
+          itemCount: offeringList.length,
           itemBuilder: (context, index) {
             return Center(
                 child: Row(children: [
               Card(
-                shape: (_list[index] == _list[purchaseState.purchaseType])
+                shape: (offeringList[index] ==
+                        offeringList[purchaseState.purchaseType])
                     ? RoundedRectangleBorder(
                         side: BorderSide(
                             color: Theme.of(context).primaryColor, width: 5),
@@ -29,6 +30,7 @@ class PurchasePriceCards extends HookConsumerWidget {
                     : RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
+                color: Colors.grey[800],
                 child: InkWell(
                     onTap: () {
                       purchaseNotifier.switchPurchaseType(index);
@@ -39,7 +41,7 @@ class PurchasePriceCards extends HookConsumerWidget {
                         children: [
                           Column(children: [
                             const SizedBox(height: 20),
-                            Text(_list[index]['name'],
+                            Text(offeringList[index]['name'],
                                 style: const TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w500,
@@ -47,14 +49,14 @@ class PurchasePriceCards extends HookConsumerWidget {
                                 )),
                             const SizedBox(height: 10),
                             Text(
-                              _list[index]['price'] + '/mo',
+                              offeringList[index]['price'] + '/mo',
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
                                 color: Theme.of(context).primaryColor,
                               ),
                             ),
-                            if (_list[index] == _list[1])
+                            if (offeringList[index] == offeringList[1])
                               Column(children: [
                                 const SizedBox(height: 10),
                                 Container(
@@ -66,9 +68,7 @@ class PurchasePriceCards extends HookConsumerWidget {
                                   ),
                                   child: Center(
                                       child: Text(
-                                          _list[index]['offPercent']
-                                                  .toString() +
-                                              '% off',
+                                          "${offeringList[index]['offPercent']}% off",
                                           style: const TextStyle(
                                               color: Colors.black))),
                                 ),
@@ -77,7 +77,6 @@ class PurchasePriceCards extends HookConsumerWidget {
                         ],
                       ),
                     )),
-                color: Colors.grey[800],
               ),
             ]));
           },

@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class SettingDialogView extends HookConsumerWidget {
-  const SettingDialogView({Key? key}) : super(key: key);
+  const SettingDialogView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

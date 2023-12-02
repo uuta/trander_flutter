@@ -3,7 +3,7 @@ import '/views/organisms/indexes/city_title_view.dart';
 import '/views/molecules/buttons/mixed_three_button_view.dart';
 
 class CityDetailPage extends HookConsumerWidget {
-  const CityDetailPage({Key? key}) : super(key: key);
+  const CityDetailPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -63,9 +63,8 @@ class CityDetailPage extends HookConsumerWidget {
                             ),
                             SettingsTile(
                               title: const Text('Distance'),
-                              trailing: Text(
-                                  locationState.cityData.distance.toString() +
-                                      ' km'),
+                              trailing:
+                                  Text("${locationState.cityData.distance} km"),
                               leading: const Icon(Icons.map),
                             ),
                           ],

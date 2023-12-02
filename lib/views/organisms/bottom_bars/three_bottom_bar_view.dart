@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class ThreeBottomBarView extends HookConsumerWidget {
-  const ThreeBottomBarView({Key? key}) : super(key: key);
+  const ThreeBottomBarView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

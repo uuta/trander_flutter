@@ -6,12 +6,11 @@ class IconFormView extends StatelessWidget {
   final Color iconColor;
   final bool obscureText;
   const IconFormView(
-      {Key? key,
+      {super.key,
       required this.label,
       required this.icon,
       required this.iconColor,
-      required this.obscureText})
-      : super(key: key);
+      required this.obscureText});
 
   @override
   Widget build(BuildContext context) {

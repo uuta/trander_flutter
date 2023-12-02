@@ -4,7 +4,7 @@ import '/views/organisms/purchases/purchase_offer_view.dart';
 import '/views/organisms/purchases/purchase_subscribed_view.dart';
 
 class PurchasePage extends HookConsumerWidget {
-  const PurchasePage({Key? key}) : super(key: key);
+  const PurchasePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
