@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'keyword_search_state.dart';
 
@@ -11,54 +12,11 @@ part of 'keyword_search_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 KeywordSearchState _$KeywordSearchStateFromJson(Map<String, dynamic> json) {
   return _KeywordSearchState.fromJson(json);
 }
-
-/// @nodoc
-class _$KeywordSearchStateTearOff {
-  const _$KeywordSearchStateTearOff();
-
-  _KeywordSearchState call(
-      {@JsonKey(name: 'name') String name = '',
-      @JsonKey(name: 'distance') double distance = 0,
-      @JsonKey(name: 'direction') String direction = '',
-      @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String rating = '0',
-      @JsonKey(name: 'photo') String? photo,
-      @JsonKey(name: 'vicinity') String? vicinity,
-      @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
-      @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double lat = 0,
-      @JsonKey(name: 'lng') double lng = 0,
-      @JsonKey(name: 'placeId') String? placeId,
-      @JsonKey(name: 'ratingStar') String? ratingStar}) {
-    return _KeywordSearchState(
-      name: name,
-      distance: distance,
-      direction: direction,
-      icon: icon,
-      rating: rating,
-      photo: photo,
-      vicinity: vicinity,
-      userRatingsTotal: userRatingsTotal,
-      priceLevel: priceLevel,
-      lat: lat,
-      lng: lng,
-      placeId: placeId,
-      ratingStar: ratingStar,
-    );
-  }
-
-  KeywordSearchState fromJson(Map<String, Object?> json) {
-    return KeywordSearchState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeywordSearchState = _$KeywordSearchStateTearOff();
 
 /// @nodoc
 mixin _$KeywordSearchState {
@@ -99,7 +57,8 @@ mixin _$KeywordSearchState {
 abstract class $KeywordSearchStateCopyWith<$Res> {
   factory $KeywordSearchStateCopyWith(
           KeywordSearchState value, $Res Function(KeywordSearchState) then) =
-      _$KeywordSearchStateCopyWithImpl<$Res>;
+      _$KeywordSearchStateCopyWithImpl<$Res, KeywordSearchState>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
@@ -117,94 +76,97 @@ abstract class $KeywordSearchStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$KeywordSearchStateCopyWithImpl<$Res>
+class _$KeywordSearchStateCopyWithImpl<$Res, $Val extends KeywordSearchState>
     implements $KeywordSearchStateCopyWith<$Res> {
   _$KeywordSearchStateCopyWithImpl(this._value, this._then);
 
-  final KeywordSearchState _value;
   // ignore: unused_field
-  final $Res Function(KeywordSearchState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? distance = freezed,
-    Object? direction = freezed,
+    Object? name = null,
+    Object? distance = null,
+    Object? direction = null,
     Object? icon = freezed,
-    Object? rating = freezed,
+    Object? rating = null,
     Object? photo = freezed,
     Object? vicinity = freezed,
     Object? userRatingsTotal = freezed,
     Object? priceLevel = freezed,
-    Object? lat = freezed,
-    Object? lng = freezed,
+    Object? lat = null,
+    Object? lng = null,
     Object? placeId = freezed,
     Object? ratingStar = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      distance: distance == freezed
+      distance: null == distance
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
               as double,
-      direction: direction == freezed
+      direction: null == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: photo == freezed
+      photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
               as String?,
-      vicinity: vicinity == freezed
+      vicinity: freezed == vicinity
           ? _value.vicinity
           : vicinity // ignore: cast_nullable_to_non_nullable
               as String?,
-      userRatingsTotal: userRatingsTotal == freezed
+      userRatingsTotal: freezed == userRatingsTotal
           ? _value.userRatingsTotal
           : userRatingsTotal // ignore: cast_nullable_to_non_nullable
               as int?,
-      priceLevel: priceLevel == freezed
+      priceLevel: freezed == priceLevel
           ? _value.priceLevel
           : priceLevel // ignore: cast_nullable_to_non_nullable
               as int?,
-      lat: lat == freezed
+      lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
               as double,
-      lng: lng == freezed
+      lng: null == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      placeId: placeId == freezed
+      placeId: freezed == placeId
           ? _value.placeId
           : placeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      ratingStar: ratingStar == freezed
+      ratingStar: freezed == ratingStar
           ? _value.ratingStar
           : ratingStar // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$KeywordSearchStateCopyWith<$Res>
+abstract class _$$KeywordSearchStateImplCopyWith<$Res>
     implements $KeywordSearchStateCopyWith<$Res> {
-  factory _$KeywordSearchStateCopyWith(
-          _KeywordSearchState value, $Res Function(_KeywordSearchState) then) =
-      __$KeywordSearchStateCopyWithImpl<$Res>;
+  factory _$$KeywordSearchStateImplCopyWith(_$KeywordSearchStateImpl value,
+          $Res Function(_$KeywordSearchStateImpl) then) =
+      __$$KeywordSearchStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
@@ -222,82 +184,80 @@ abstract class _$KeywordSearchStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$KeywordSearchStateCopyWithImpl<$Res>
-    extends _$KeywordSearchStateCopyWithImpl<$Res>
-    implements _$KeywordSearchStateCopyWith<$Res> {
-  __$KeywordSearchStateCopyWithImpl(
-      _KeywordSearchState _value, $Res Function(_KeywordSearchState) _then)
-      : super(_value, (v) => _then(v as _KeywordSearchState));
+class __$$KeywordSearchStateImplCopyWithImpl<$Res>
+    extends _$KeywordSearchStateCopyWithImpl<$Res, _$KeywordSearchStateImpl>
+    implements _$$KeywordSearchStateImplCopyWith<$Res> {
+  __$$KeywordSearchStateImplCopyWithImpl(_$KeywordSearchStateImpl _value,
+      $Res Function(_$KeywordSearchStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _KeywordSearchState get _value => super._value as _KeywordSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? distance = freezed,
-    Object? direction = freezed,
+    Object? name = null,
+    Object? distance = null,
+    Object? direction = null,
     Object? icon = freezed,
-    Object? rating = freezed,
+    Object? rating = null,
     Object? photo = freezed,
     Object? vicinity = freezed,
     Object? userRatingsTotal = freezed,
     Object? priceLevel = freezed,
-    Object? lat = freezed,
-    Object? lng = freezed,
+    Object? lat = null,
+    Object? lng = null,
     Object? placeId = freezed,
     Object? ratingStar = freezed,
   }) {
-    return _then(_KeywordSearchState(
-      name: name == freezed
+    return _then(_$KeywordSearchStateImpl(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      distance: distance == freezed
+      distance: null == distance
           ? _value.distance
           : distance // ignore: cast_nullable_to_non_nullable
               as double,
-      direction: direction == freezed
+      direction: null == direction
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as String?,
-      rating: rating == freezed
+      rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
               as String,
-      photo: photo == freezed
+      photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
               as String?,
-      vicinity: vicinity == freezed
+      vicinity: freezed == vicinity
           ? _value.vicinity
           : vicinity // ignore: cast_nullable_to_non_nullable
               as String?,
-      userRatingsTotal: userRatingsTotal == freezed
+      userRatingsTotal: freezed == userRatingsTotal
           ? _value.userRatingsTotal
           : userRatingsTotal // ignore: cast_nullable_to_non_nullable
               as int?,
-      priceLevel: priceLevel == freezed
+      priceLevel: freezed == priceLevel
           ? _value.priceLevel
           : priceLevel // ignore: cast_nullable_to_non_nullable
               as int?,
-      lat: lat == freezed
+      lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
               as double,
-      lng: lng == freezed
+      lng: null == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
               as double,
-      placeId: placeId == freezed
+      placeId: freezed == placeId
           ? _value.placeId
           : placeId // ignore: cast_nullable_to_non_nullable
               as String?,
-      ratingStar: ratingStar == freezed
+      ratingStar: freezed == ratingStar
           ? _value.ratingStar
           : ratingStar // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -307,8 +267,8 @@ class __$KeywordSearchStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_KeywordSearchState implements _KeywordSearchState {
-  const _$_KeywordSearchState(
+class _$KeywordSearchStateImpl implements _KeywordSearchState {
+  const _$KeywordSearchStateImpl(
       {@JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'distance') this.distance = 0,
       @JsonKey(name: 'direction') this.direction = '',
@@ -323,8 +283,8 @@ class _$_KeywordSearchState implements _KeywordSearchState {
       @JsonKey(name: 'placeId') this.placeId,
       @JsonKey(name: 'ratingStar') this.ratingStar});
 
-  factory _$_KeywordSearchState.fromJson(Map<String, dynamic> json) =>
-      _$$_KeywordSearchStateFromJson(json);
+  factory _$KeywordSearchStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$KeywordSearchStateImplFromJson(json);
 
   @override
   @JsonKey(name: 'name')
@@ -375,71 +335,80 @@ class _$_KeywordSearchState implements _KeywordSearchState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _KeywordSearchState &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.distance, distance) &&
-            const DeepCollectionEquality().equals(other.direction, direction) &&
-            const DeepCollectionEquality().equals(other.icon, icon) &&
-            const DeepCollectionEquality().equals(other.rating, rating) &&
-            const DeepCollectionEquality().equals(other.photo, photo) &&
-            const DeepCollectionEquality().equals(other.vicinity, vicinity) &&
-            const DeepCollectionEquality()
-                .equals(other.userRatingsTotal, userRatingsTotal) &&
-            const DeepCollectionEquality()
-                .equals(other.priceLevel, priceLevel) &&
-            const DeepCollectionEquality().equals(other.lat, lat) &&
-            const DeepCollectionEquality().equals(other.lng, lng) &&
-            const DeepCollectionEquality().equals(other.placeId, placeId) &&
-            const DeepCollectionEquality()
-                .equals(other.ratingStar, ratingStar));
+            other is _$KeywordSearchStateImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.distance, distance) ||
+                other.distance == distance) &&
+            (identical(other.direction, direction) ||
+                other.direction == direction) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.rating, rating) || other.rating == rating) &&
+            (identical(other.photo, photo) || other.photo == photo) &&
+            (identical(other.vicinity, vicinity) ||
+                other.vicinity == vicinity) &&
+            (identical(other.userRatingsTotal, userRatingsTotal) ||
+                other.userRatingsTotal == userRatingsTotal) &&
+            (identical(other.priceLevel, priceLevel) ||
+                other.priceLevel == priceLevel) &&
+            (identical(other.lat, lat) || other.lat == lat) &&
+            (identical(other.lng, lng) || other.lng == lng) &&
+            (identical(other.placeId, placeId) || other.placeId == placeId) &&
+            (identical(other.ratingStar, ratingStar) ||
+                other.ratingStar == ratingStar));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(distance),
-      const DeepCollectionEquality().hash(direction),
-      const DeepCollectionEquality().hash(icon),
-      const DeepCollectionEquality().hash(rating),
-      const DeepCollectionEquality().hash(photo),
-      const DeepCollectionEquality().hash(vicinity),
-      const DeepCollectionEquality().hash(userRatingsTotal),
-      const DeepCollectionEquality().hash(priceLevel),
-      const DeepCollectionEquality().hash(lat),
-      const DeepCollectionEquality().hash(lng),
-      const DeepCollectionEquality().hash(placeId),
-      const DeepCollectionEquality().hash(ratingStar));
 
   @JsonKey(ignore: true)
   @override
-  _$KeywordSearchStateCopyWith<_KeywordSearchState> get copyWith =>
-      __$KeywordSearchStateCopyWithImpl<_KeywordSearchState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      distance,
+      direction,
+      icon,
+      rating,
+      photo,
+      vicinity,
+      userRatingsTotal,
+      priceLevel,
+      lat,
+      lng,
+      placeId,
+      ratingStar);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$KeywordSearchStateImplCopyWith<_$KeywordSearchStateImpl> get copyWith =>
+      __$$KeywordSearchStateImplCopyWithImpl<_$KeywordSearchStateImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KeywordSearchStateToJson(this);
+    return _$$KeywordSearchStateImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeywordSearchState implements KeywordSearchState {
   const factory _KeywordSearchState(
-      {@JsonKey(name: 'name') String name,
-      @JsonKey(name: 'distance') double distance,
-      @JsonKey(name: 'direction') String direction,
-      @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String rating,
-      @JsonKey(name: 'photo') String? photo,
-      @JsonKey(name: 'vicinity') String? vicinity,
-      @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
-      @JsonKey(name: 'priceLevel') int? priceLevel,
-      @JsonKey(name: 'lat') double lat,
-      @JsonKey(name: 'lng') double lng,
-      @JsonKey(name: 'placeId') String? placeId,
-      @JsonKey(name: 'ratingStar') String? ratingStar}) = _$_KeywordSearchState;
+          {@JsonKey(name: 'name') final String name,
+          @JsonKey(name: 'distance') final double distance,
+          @JsonKey(name: 'direction') final String direction,
+          @JsonKey(name: 'icon') final String? icon,
+          @JsonKey(name: 'rating') final String rating,
+          @JsonKey(name: 'photo') final String? photo,
+          @JsonKey(name: 'vicinity') final String? vicinity,
+          @JsonKey(name: 'userRatingsTotal') final int? userRatingsTotal,
+          @JsonKey(name: 'priceLevel') final int? priceLevel,
+          @JsonKey(name: 'lat') final double lat,
+          @JsonKey(name: 'lng') final double lng,
+          @JsonKey(name: 'placeId') final String? placeId,
+          @JsonKey(name: 'ratingStar') final String? ratingStar}) =
+      _$KeywordSearchStateImpl;
 
   factory _KeywordSearchState.fromJson(Map<String, dynamic> json) =
-      _$_KeywordSearchState.fromJson;
+      _$KeywordSearchStateImpl.fromJson;
 
   @override
   @JsonKey(name: 'name')
@@ -482,6 +451,6 @@ abstract class _KeywordSearchState implements KeywordSearchState {
   String? get ratingStar;
   @override
   @JsonKey(ignore: true)
-  _$KeywordSearchStateCopyWith<_KeywordSearchState> get copyWith =>
+  _$$KeywordSearchStateImplCopyWith<_$KeywordSearchStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

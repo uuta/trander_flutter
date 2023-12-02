@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'navigation_state.dart';
 
@@ -11,22 +12,7 @@ part of 'navigation_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$NavigationStateTearOff {
-  const _$NavigationStateTearOff();
-
-  _NavigationState call({int currentIndex = 0, int prevIndex = 0}) {
-    return _NavigationState(
-      currentIndex: currentIndex,
-      prevIndex: prevIndex,
-    );
-  }
-}
-
-/// @nodoc
-const $NavigationState = _$NavigationStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$NavigationState {
@@ -42,69 +28,71 @@ mixin _$NavigationState {
 abstract class $NavigationStateCopyWith<$Res> {
   factory $NavigationStateCopyWith(
           NavigationState value, $Res Function(NavigationState) then) =
-      _$NavigationStateCopyWithImpl<$Res>;
+      _$NavigationStateCopyWithImpl<$Res, NavigationState>;
+  @useResult
   $Res call({int currentIndex, int prevIndex});
 }
 
 /// @nodoc
-class _$NavigationStateCopyWithImpl<$Res>
+class _$NavigationStateCopyWithImpl<$Res, $Val extends NavigationState>
     implements $NavigationStateCopyWith<$Res> {
   _$NavigationStateCopyWithImpl(this._value, this._then);
 
-  final NavigationState _value;
   // ignore: unused_field
-  final $Res Function(NavigationState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentIndex = freezed,
-    Object? prevIndex = freezed,
+    Object? currentIndex = null,
+    Object? prevIndex = null,
   }) {
     return _then(_value.copyWith(
-      currentIndex: currentIndex == freezed
+      currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      prevIndex: prevIndex == freezed
+      prevIndex: null == prevIndex
           ? _value.prevIndex
           : prevIndex // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$NavigationStateCopyWith<$Res>
+abstract class _$$NavigationStateImplCopyWith<$Res>
     implements $NavigationStateCopyWith<$Res> {
-  factory _$NavigationStateCopyWith(
-          _NavigationState value, $Res Function(_NavigationState) then) =
-      __$NavigationStateCopyWithImpl<$Res>;
+  factory _$$NavigationStateImplCopyWith(_$NavigationStateImpl value,
+          $Res Function(_$NavigationStateImpl) then) =
+      __$$NavigationStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int currentIndex, int prevIndex});
 }
 
 /// @nodoc
-class __$NavigationStateCopyWithImpl<$Res>
-    extends _$NavigationStateCopyWithImpl<$Res>
-    implements _$NavigationStateCopyWith<$Res> {
-  __$NavigationStateCopyWithImpl(
-      _NavigationState _value, $Res Function(_NavigationState) _then)
-      : super(_value, (v) => _then(v as _NavigationState));
+class __$$NavigationStateImplCopyWithImpl<$Res>
+    extends _$NavigationStateCopyWithImpl<$Res, _$NavigationStateImpl>
+    implements _$$NavigationStateImplCopyWith<$Res> {
+  __$$NavigationStateImplCopyWithImpl(
+      _$NavigationStateImpl _value, $Res Function(_$NavigationStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _NavigationState get _value => super._value as _NavigationState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentIndex = freezed,
-    Object? prevIndex = freezed,
+    Object? currentIndex = null,
+    Object? prevIndex = null,
   }) {
-    return _then(_NavigationState(
-      currentIndex: currentIndex == freezed
+    return _then(_$NavigationStateImpl(
+      currentIndex: null == currentIndex
           ? _value.currentIndex
           : currentIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      prevIndex: prevIndex == freezed
+      prevIndex: null == prevIndex
           ? _value.prevIndex
           : prevIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -114,16 +102,16 @@ class __$NavigationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NavigationState
+class _$NavigationStateImpl
     with DiagnosticableTreeMixin
     implements _NavigationState {
-  const _$_NavigationState({this.currentIndex = 0, this.prevIndex = 0});
+  const _$NavigationStateImpl({this.currentIndex = 0, this.prevIndex = 0});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final int currentIndex;
-  @JsonKey()
   @override
+  @JsonKey()
   final int prevIndex;
 
   @override
@@ -144,27 +132,27 @@ class _$_NavigationState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NavigationState &&
-            const DeepCollectionEquality()
-                .equals(other.currentIndex, currentIndex) &&
-            const DeepCollectionEquality().equals(other.prevIndex, prevIndex));
+            other is _$NavigationStateImpl &&
+            (identical(other.currentIndex, currentIndex) ||
+                other.currentIndex == currentIndex) &&
+            (identical(other.prevIndex, prevIndex) ||
+                other.prevIndex == prevIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(currentIndex),
-      const DeepCollectionEquality().hash(prevIndex));
+  int get hashCode => Object.hash(runtimeType, currentIndex, prevIndex);
 
   @JsonKey(ignore: true)
   @override
-  _$NavigationStateCopyWith<_NavigationState> get copyWith =>
-      __$NavigationStateCopyWithImpl<_NavigationState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NavigationStateImplCopyWith<_$NavigationStateImpl> get copyWith =>
+      __$$NavigationStateImplCopyWithImpl<_$NavigationStateImpl>(
+          this, _$identity);
 }
 
 abstract class _NavigationState implements NavigationState {
-  const factory _NavigationState({int currentIndex, int prevIndex}) =
-      _$_NavigationState;
+  const factory _NavigationState(
+      {final int currentIndex, final int prevIndex}) = _$NavigationStateImpl;
 
   @override
   int get currentIndex;
@@ -172,6 +160,6 @@ abstract class _NavigationState implements NavigationState {
   int get prevIndex;
   @override
   @JsonKey(ignore: true)
-  _$NavigationStateCopyWith<_NavigationState> get copyWith =>
+  _$$NavigationStateImplCopyWith<_$NavigationStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

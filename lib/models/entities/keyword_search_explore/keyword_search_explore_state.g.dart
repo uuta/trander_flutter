@@ -6,16 +6,16 @@ part of 'keyword_search_explore_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_KeywordSearchExploreState _$$_KeywordSearchExploreStateFromJson(
+_$KeywordSearchExploreStateImpl _$$KeywordSearchExploreStateImplFromJson(
         Map<String, dynamic> json) =>
-    _$_KeywordSearchExploreState(
+    _$KeywordSearchExploreStateImpl(
       streetview: json['streetview'] as String?,
       googlemap: json['googlemap'] as String?,
       twitter: json['twitter'] as String?,
     );
 
-Map<String, dynamic> _$$_KeywordSearchExploreStateToJson(
-        _$_KeywordSearchExploreState instance) =>
+Map<String, dynamic> _$$KeywordSearchExploreStateImplToJson(
+        _$KeywordSearchExploreStateImpl instance) =>
     <String, dynamic>{
       'streetview': instance.streetview,
       'googlemap': instance.googlemap,

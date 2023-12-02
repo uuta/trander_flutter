@@ -6,7 +6,8 @@ part of 'city_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CityState _$$_CityStateFromJson(Map<String, dynamic> json) => _$_CityState(
+_$CityStateImpl _$$CityStateImplFromJson(Map<String, dynamic> json) =>
+    _$CityStateImpl(
       name: json['name'] as String? ?? '',
       distance: (json['distance'] as num?)?.toDouble() ?? 0,
       direction: json['direction'] as String? ?? '',
@@ -23,7 +24,7 @@ _$_CityState _$$_CityStateFromJson(Map<String, dynamic> json) => _$_CityState(
       ratingStar: json['ratingStar'] as String?,
     );
 
-Map<String, dynamic> _$$_CityStateToJson(_$_CityState instance) =>
+Map<String, dynamic> _$$CityStateImplToJson(_$CityStateImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'distance': instance.distance,

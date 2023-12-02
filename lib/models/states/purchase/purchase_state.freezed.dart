@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'purchase_state.dart';
 
@@ -11,42 +12,11 @@ part of 'purchase_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 PurchaseState _$PurchaseStateFromJson(Map<String, dynamic> json) {
   return _PurchaseState.fromJson(json);
 }
-
-/// @nodoc
-class _$PurchaseStateTearOff {
-  const _$PurchaseStateTearOff();
-
-  _PurchaseState call(
-      {bool isLoading = false,
-      int purchaseType = 1,
-      Offerings? offerings,
-      List<dynamic> offeringList = const [],
-      String currencySign = '',
-      bool isActive = false,
-      String errorMessage = ''}) {
-    return _PurchaseState(
-      isLoading: isLoading,
-      purchaseType: purchaseType,
-      offerings: offerings,
-      offeringList: offeringList,
-      currencySign: currencySign,
-      isActive: isActive,
-      errorMessage: errorMessage,
-    );
-  }
-
-  PurchaseState fromJson(Map<String, Object?> json) {
-    return PurchaseState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $PurchaseState = _$PurchaseStateTearOff();
 
 /// @nodoc
 mixin _$PurchaseState {
@@ -68,7 +38,8 @@ mixin _$PurchaseState {
 abstract class $PurchaseStateCopyWith<$Res> {
   factory $PurchaseStateCopyWith(
           PurchaseState value, $Res Function(PurchaseState) then) =
-      _$PurchaseStateCopyWithImpl<$Res>;
+      _$PurchaseStateCopyWithImpl<$Res, PurchaseState>;
+  @useResult
   $Res call(
       {bool isLoading,
       int purchaseType,
@@ -82,75 +53,79 @@ abstract class $PurchaseStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PurchaseStateCopyWithImpl<$Res>
+class _$PurchaseStateCopyWithImpl<$Res, $Val extends PurchaseState>
     implements $PurchaseStateCopyWith<$Res> {
   _$PurchaseStateCopyWithImpl(this._value, this._then);
 
-  final PurchaseState _value;
   // ignore: unused_field
-  final $Res Function(PurchaseState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? purchaseType = freezed,
+    Object? isLoading = null,
+    Object? purchaseType = null,
     Object? offerings = freezed,
-    Object? offeringList = freezed,
-    Object? currencySign = freezed,
-    Object? isActive = freezed,
-    Object? errorMessage = freezed,
+    Object? offeringList = null,
+    Object? currencySign = null,
+    Object? isActive = null,
+    Object? errorMessage = null,
   }) {
     return _then(_value.copyWith(
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      purchaseType: purchaseType == freezed
+      purchaseType: null == purchaseType
           ? _value.purchaseType
           : purchaseType // ignore: cast_nullable_to_non_nullable
               as int,
-      offerings: offerings == freezed
+      offerings: freezed == offerings
           ? _value.offerings
           : offerings // ignore: cast_nullable_to_non_nullable
               as Offerings?,
-      offeringList: offeringList == freezed
+      offeringList: null == offeringList
           ? _value.offeringList
           : offeringList // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
-      currencySign: currencySign == freezed
+      currencySign: null == currencySign
           ? _value.currencySign
           : currencySign // ignore: cast_nullable_to_non_nullable
               as String,
-      isActive: isActive == freezed
+      isActive: null == isActive
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorMessage: errorMessage == freezed
+      errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $OfferingsCopyWith<$Res>? get offerings {
     if (_value.offerings == null) {
       return null;
     }
 
     return $OfferingsCopyWith<$Res>(_value.offerings!, (value) {
-      return _then(_value.copyWith(offerings: value));
+      return _then(_value.copyWith(offerings: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$PurchaseStateCopyWith<$Res>
+abstract class _$$PurchaseStateImplCopyWith<$Res>
     implements $PurchaseStateCopyWith<$Res> {
-  factory _$PurchaseStateCopyWith(
-          _PurchaseState value, $Res Function(_PurchaseState) then) =
-      __$PurchaseStateCopyWithImpl<$Res>;
+  factory _$$PurchaseStateImplCopyWith(
+          _$PurchaseStateImpl value, $Res Function(_$PurchaseStateImpl) then) =
+      __$$PurchaseStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool isLoading,
       int purchaseType,
@@ -165,52 +140,50 @@ abstract class _$PurchaseStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PurchaseStateCopyWithImpl<$Res>
-    extends _$PurchaseStateCopyWithImpl<$Res>
-    implements _$PurchaseStateCopyWith<$Res> {
-  __$PurchaseStateCopyWithImpl(
-      _PurchaseState _value, $Res Function(_PurchaseState) _then)
-      : super(_value, (v) => _then(v as _PurchaseState));
+class __$$PurchaseStateImplCopyWithImpl<$Res>
+    extends _$PurchaseStateCopyWithImpl<$Res, _$PurchaseStateImpl>
+    implements _$$PurchaseStateImplCopyWith<$Res> {
+  __$$PurchaseStateImplCopyWithImpl(
+      _$PurchaseStateImpl _value, $Res Function(_$PurchaseStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _PurchaseState get _value => super._value as _PurchaseState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? purchaseType = freezed,
+    Object? isLoading = null,
+    Object? purchaseType = null,
     Object? offerings = freezed,
-    Object? offeringList = freezed,
-    Object? currencySign = freezed,
-    Object? isActive = freezed,
-    Object? errorMessage = freezed,
+    Object? offeringList = null,
+    Object? currencySign = null,
+    Object? isActive = null,
+    Object? errorMessage = null,
   }) {
-    return _then(_PurchaseState(
-      isLoading: isLoading == freezed
+    return _then(_$PurchaseStateImpl(
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      purchaseType: purchaseType == freezed
+      purchaseType: null == purchaseType
           ? _value.purchaseType
           : purchaseType // ignore: cast_nullable_to_non_nullable
               as int,
-      offerings: offerings == freezed
+      offerings: freezed == offerings
           ? _value.offerings
           : offerings // ignore: cast_nullable_to_non_nullable
               as Offerings?,
-      offeringList: offeringList == freezed
-          ? _value.offeringList
+      offeringList: null == offeringList
+          ? _value._offeringList
           : offeringList // ignore: cast_nullable_to_non_nullable
               as List<dynamic>,
-      currencySign: currencySign == freezed
+      currencySign: null == currencySign
           ? _value.currencySign
           : currencySign // ignore: cast_nullable_to_non_nullable
               as String,
-      isActive: isActive == freezed
+      isActive: null == isActive
           ? _value.isActive
           : isActive // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorMessage: errorMessage == freezed
+      errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
@@ -220,38 +193,45 @@ class __$PurchaseStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_PurchaseState implements _PurchaseState {
-  const _$_PurchaseState(
+class _$PurchaseStateImpl implements _PurchaseState {
+  const _$PurchaseStateImpl(
       {this.isLoading = false,
       this.purchaseType = 1,
       this.offerings,
-      this.offeringList = const [],
+      final List<dynamic> offeringList = const [],
       this.currencySign = '',
       this.isActive = false,
-      this.errorMessage = ''});
+      this.errorMessage = ''})
+      : _offeringList = offeringList;
 
-  factory _$_PurchaseState.fromJson(Map<String, dynamic> json) =>
-      _$$_PurchaseStateFromJson(json);
+  factory _$PurchaseStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PurchaseStateImplFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final int purchaseType;
   @override
   final Offerings? offerings;
-  @JsonKey()
+  final List<dynamic> _offeringList;
   @override
-  final List<dynamic> offeringList;
   @JsonKey()
+  List<dynamic> get offeringList {
+    if (_offeringList is EqualUnmodifiableListView) return _offeringList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_offeringList);
+  }
+
   @override
+  @JsonKey()
   final String currencySign;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isActive;
-  @JsonKey()
   @override
+  @JsonKey()
   final String errorMessage;
 
   @override
@@ -263,54 +243,61 @@ class _$_PurchaseState implements _PurchaseState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PurchaseState &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            other is _$PurchaseStateImpl &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.purchaseType, purchaseType) ||
+                other.purchaseType == purchaseType) &&
+            (identical(other.offerings, offerings) ||
+                other.offerings == offerings) &&
             const DeepCollectionEquality()
-                .equals(other.purchaseType, purchaseType) &&
-            const DeepCollectionEquality().equals(other.offerings, offerings) &&
-            const DeepCollectionEquality()
-                .equals(other.offeringList, offeringList) &&
-            const DeepCollectionEquality()
-                .equals(other.currencySign, currencySign) &&
-            const DeepCollectionEquality().equals(other.isActive, isActive) &&
-            const DeepCollectionEquality()
-                .equals(other.errorMessage, errorMessage));
+                .equals(other._offeringList, _offeringList) &&
+            (identical(other.currencySign, currencySign) ||
+                other.currencySign == currencySign) &&
+            (identical(other.isActive, isActive) ||
+                other.isActive == isActive) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(purchaseType),
-      const DeepCollectionEquality().hash(offerings),
-      const DeepCollectionEquality().hash(offeringList),
-      const DeepCollectionEquality().hash(currencySign),
-      const DeepCollectionEquality().hash(isActive),
-      const DeepCollectionEquality().hash(errorMessage));
 
   @JsonKey(ignore: true)
   @override
-  _$PurchaseStateCopyWith<_PurchaseState> get copyWith =>
-      __$PurchaseStateCopyWithImpl<_PurchaseState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType,
+      isLoading,
+      purchaseType,
+      offerings,
+      const DeepCollectionEquality().hash(_offeringList),
+      currencySign,
+      isActive,
+      errorMessage);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PurchaseStateImplCopyWith<_$PurchaseStateImpl> get copyWith =>
+      __$$PurchaseStateImplCopyWithImpl<_$PurchaseStateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PurchaseStateToJson(this);
+    return _$$PurchaseStateImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _PurchaseState implements PurchaseState {
   const factory _PurchaseState(
-      {bool isLoading,
-      int purchaseType,
-      Offerings? offerings,
-      List<dynamic> offeringList,
-      String currencySign,
-      bool isActive,
-      String errorMessage}) = _$_PurchaseState;
+      {final bool isLoading,
+      final int purchaseType,
+      final Offerings? offerings,
+      final List<dynamic> offeringList,
+      final String currencySign,
+      final bool isActive,
+      final String errorMessage}) = _$PurchaseStateImpl;
 
   factory _PurchaseState.fromJson(Map<String, dynamic> json) =
-      _$_PurchaseState.fromJson;
+      _$PurchaseStateImpl.fromJson;
 
   @override
   bool get isLoading;
@@ -328,6 +315,6 @@ abstract class _PurchaseState implements PurchaseState {
   String get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$PurchaseStateCopyWith<_PurchaseState> get copyWith =>
+  _$$PurchaseStateImplCopyWith<_$PurchaseStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

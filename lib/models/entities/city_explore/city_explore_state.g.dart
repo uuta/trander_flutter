@@ -6,14 +6,16 @@ part of 'city_explore_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CityExploreState _$$_CityExploreStateFromJson(Map<String, dynamic> json) =>
-    _$_CityExploreState(
+_$CityExploreStateImpl _$$CityExploreStateImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CityExploreStateImpl(
       streetview: json['streetview'] as String?,
       googlemap: json['googlemap'] as String?,
       twitter: json['twitter'] as String?,
     );
 
-Map<String, dynamic> _$$_CityExploreStateToJson(_$_CityExploreState instance) =>
+Map<String, dynamic> _$$CityExploreStateImplToJson(
+        _$CityExploreStateImpl instance) =>
     <String, dynamic>{
       'streetview': instance.streetview,
       'googlemap': instance.googlemap,

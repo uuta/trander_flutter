@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'setting_state.dart';
 
@@ -11,34 +12,11 @@ part of 'setting_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SettingState _$SettingStateFromJson(Map<String, dynamic> json) {
   return _SettingState.fromJson(json);
 }
-
-/// @nodoc
-class _$SettingStateTearOff {
-  const _$SettingStateTearOff();
-
-  _SettingState call(
-      {@JsonKey(name: 'minDistance') int minDistance = 0,
-      @JsonKey(name: 'maxDistance') int maxDistance = 100,
-      @JsonKey(name: 'directionType') int directionType = 0}) {
-    return _SettingState(
-      minDistance: minDistance,
-      maxDistance: maxDistance,
-      directionType: directionType,
-    );
-  }
-
-  SettingState fromJson(Map<String, Object?> json) {
-    return SettingState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SettingState = _$SettingStateTearOff();
 
 /// @nodoc
 mixin _$SettingState {
@@ -59,7 +37,8 @@ mixin _$SettingState {
 abstract class $SettingStateCopyWith<$Res> {
   factory $SettingStateCopyWith(
           SettingState value, $Res Function(SettingState) then) =
-      _$SettingStateCopyWithImpl<$Res>;
+      _$SettingStateCopyWithImpl<$Res, SettingState>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'minDistance') int minDistance,
       @JsonKey(name: 'maxDistance') int maxDistance,
@@ -67,43 +46,47 @@ abstract class $SettingStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingStateCopyWithImpl<$Res> implements $SettingStateCopyWith<$Res> {
+class _$SettingStateCopyWithImpl<$Res, $Val extends SettingState>
+    implements $SettingStateCopyWith<$Res> {
   _$SettingStateCopyWithImpl(this._value, this._then);
 
-  final SettingState _value;
   // ignore: unused_field
-  final $Res Function(SettingState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? minDistance = freezed,
-    Object? maxDistance = freezed,
-    Object? directionType = freezed,
+    Object? minDistance = null,
+    Object? maxDistance = null,
+    Object? directionType = null,
   }) {
     return _then(_value.copyWith(
-      minDistance: minDistance == freezed
+      minDistance: null == minDistance
           ? _value.minDistance
           : minDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      maxDistance: maxDistance == freezed
+      maxDistance: null == maxDistance
           ? _value.maxDistance
           : maxDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      directionType: directionType == freezed
+      directionType: null == directionType
           ? _value.directionType
           : directionType // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SettingStateCopyWith<$Res>
+abstract class _$$SettingStateImplCopyWith<$Res>
     implements $SettingStateCopyWith<$Res> {
-  factory _$SettingStateCopyWith(
-          _SettingState value, $Res Function(_SettingState) then) =
-      __$SettingStateCopyWithImpl<$Res>;
+  factory _$$SettingStateImplCopyWith(
+          _$SettingStateImpl value, $Res Function(_$SettingStateImpl) then) =
+      __$$SettingStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'minDistance') int minDistance,
       @JsonKey(name: 'maxDistance') int maxDistance,
@@ -111,31 +94,30 @@ abstract class _$SettingStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingStateCopyWithImpl<$Res> extends _$SettingStateCopyWithImpl<$Res>
-    implements _$SettingStateCopyWith<$Res> {
-  __$SettingStateCopyWithImpl(
-      _SettingState _value, $Res Function(_SettingState) _then)
-      : super(_value, (v) => _then(v as _SettingState));
+class __$$SettingStateImplCopyWithImpl<$Res>
+    extends _$SettingStateCopyWithImpl<$Res, _$SettingStateImpl>
+    implements _$$SettingStateImplCopyWith<$Res> {
+  __$$SettingStateImplCopyWithImpl(
+      _$SettingStateImpl _value, $Res Function(_$SettingStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _SettingState get _value => super._value as _SettingState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? minDistance = freezed,
-    Object? maxDistance = freezed,
-    Object? directionType = freezed,
+    Object? minDistance = null,
+    Object? maxDistance = null,
+    Object? directionType = null,
   }) {
-    return _then(_SettingState(
-      minDistance: minDistance == freezed
+    return _then(_$SettingStateImpl(
+      minDistance: null == minDistance
           ? _value.minDistance
           : minDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      maxDistance: maxDistance == freezed
+      maxDistance: null == maxDistance
           ? _value.maxDistance
           : maxDistance // ignore: cast_nullable_to_non_nullable
               as int,
-      directionType: directionType == freezed
+      directionType: null == directionType
           ? _value.directionType
           : directionType // ignore: cast_nullable_to_non_nullable
               as int,
@@ -145,14 +127,14 @@ class __$SettingStateCopyWithImpl<$Res> extends _$SettingStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_SettingState implements _SettingState {
-  const _$_SettingState(
+class _$SettingStateImpl implements _SettingState {
+  const _$SettingStateImpl(
       {@JsonKey(name: 'minDistance') this.minDistance = 0,
       @JsonKey(name: 'maxDistance') this.maxDistance = 100,
       @JsonKey(name: 'directionType') this.directionType = 0});
 
-  factory _$_SettingState.fromJson(Map<String, dynamic> json) =>
-      _$$_SettingStateFromJson(json);
+  factory _$SettingStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SettingStateImplFromJson(json);
 
   @override
   @JsonKey(name: 'minDistance')
@@ -173,41 +155,43 @@ class _$_SettingState implements _SettingState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingState &&
-            const DeepCollectionEquality()
-                .equals(other.minDistance, minDistance) &&
-            const DeepCollectionEquality()
-                .equals(other.maxDistance, maxDistance) &&
-            const DeepCollectionEquality()
-                .equals(other.directionType, directionType));
+            other is _$SettingStateImpl &&
+            (identical(other.minDistance, minDistance) ||
+                other.minDistance == minDistance) &&
+            (identical(other.maxDistance, maxDistance) ||
+                other.maxDistance == maxDistance) &&
+            (identical(other.directionType, directionType) ||
+                other.directionType == directionType));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(minDistance),
-      const DeepCollectionEquality().hash(maxDistance),
-      const DeepCollectionEquality().hash(directionType));
 
   @JsonKey(ignore: true)
   @override
-  _$SettingStateCopyWith<_SettingState> get copyWith =>
-      __$SettingStateCopyWithImpl<_SettingState>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, minDistance, maxDistance, directionType);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SettingStateImplCopyWith<_$SettingStateImpl> get copyWith =>
+      __$$SettingStateImplCopyWithImpl<_$SettingStateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SettingStateToJson(this);
+    return _$$SettingStateImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _SettingState implements SettingState {
   const factory _SettingState(
-      {@JsonKey(name: 'minDistance') int minDistance,
-      @JsonKey(name: 'maxDistance') int maxDistance,
-      @JsonKey(name: 'directionType') int directionType}) = _$_SettingState;
+          {@JsonKey(name: 'minDistance') final int minDistance,
+          @JsonKey(name: 'maxDistance') final int maxDistance,
+          @JsonKey(name: 'directionType') final int directionType}) =
+      _$SettingStateImpl;
 
   factory _SettingState.fromJson(Map<String, dynamic> json) =
-      _$_SettingState.fromJson;
+      _$SettingStateImpl.fromJson;
 
   @override
   @JsonKey(name: 'minDistance')
@@ -220,6 +204,6 @@ abstract class _SettingState implements SettingState {
   int get directionType;
   @override
   @JsonKey(ignore: true)
-  _$SettingStateCopyWith<_SettingState> get copyWith =>
+  _$$SettingStateImplCopyWith<_$SettingStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

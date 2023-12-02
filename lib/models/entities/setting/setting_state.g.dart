@@ -6,14 +6,14 @@ part of 'setting_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SettingState _$$_SettingStateFromJson(Map<String, dynamic> json) =>
-    _$_SettingState(
+_$SettingStateImpl _$$SettingStateImplFromJson(Map<String, dynamic> json) =>
+    _$SettingStateImpl(
       minDistance: json['minDistance'] as int? ?? 0,
       maxDistance: json['maxDistance'] as int? ?? 100,
       directionType: json['directionType'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_SettingStateToJson(_$_SettingState instance) =>
+Map<String, dynamic> _$$SettingStateImplToJson(_$SettingStateImpl instance) =>
     <String, dynamic>{
       'minDistance': instance.minDistance,
       'maxDistance': instance.maxDistance,

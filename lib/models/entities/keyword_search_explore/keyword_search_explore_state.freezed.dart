@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'keyword_search_explore_state.dart';
 
@@ -11,35 +12,12 @@ part of 'keyword_search_explore_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 KeywordSearchExploreState _$KeywordSearchExploreStateFromJson(
     Map<String, dynamic> json) {
   return _KeywordSearchExploreState.fromJson(json);
 }
-
-/// @nodoc
-class _$KeywordSearchExploreStateTearOff {
-  const _$KeywordSearchExploreStateTearOff();
-
-  _KeywordSearchExploreState call(
-      {@JsonKey(name: 'streetview') String? streetview,
-      @JsonKey(name: 'googlemap') String? googlemap,
-      @JsonKey(name: 'twitter') String? twitter}) {
-    return _KeywordSearchExploreState(
-      streetview: streetview,
-      googlemap: googlemap,
-      twitter: twitter,
-    );
-  }
-
-  KeywordSearchExploreState fromJson(Map<String, Object?> json) {
-    return KeywordSearchExploreState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $KeywordSearchExploreState = _$KeywordSearchExploreStateTearOff();
 
 /// @nodoc
 mixin _$KeywordSearchExploreState {
@@ -60,7 +38,8 @@ mixin _$KeywordSearchExploreState {
 abstract class $KeywordSearchExploreStateCopyWith<$Res> {
   factory $KeywordSearchExploreStateCopyWith(KeywordSearchExploreState value,
           $Res Function(KeywordSearchExploreState) then) =
-      _$KeywordSearchExploreStateCopyWithImpl<$Res>;
+      _$KeywordSearchExploreStateCopyWithImpl<$Res, KeywordSearchExploreState>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'streetview') String? streetview,
       @JsonKey(name: 'googlemap') String? googlemap,
@@ -68,14 +47,17 @@ abstract class $KeywordSearchExploreStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$KeywordSearchExploreStateCopyWithImpl<$Res>
+class _$KeywordSearchExploreStateCopyWithImpl<$Res,
+        $Val extends KeywordSearchExploreState>
     implements $KeywordSearchExploreStateCopyWith<$Res> {
   _$KeywordSearchExploreStateCopyWithImpl(this._value, this._then);
 
-  final KeywordSearchExploreState _value;
   // ignore: unused_field
-  final $Res Function(KeywordSearchExploreState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? streetview = freezed,
@@ -83,29 +65,31 @@ class _$KeywordSearchExploreStateCopyWithImpl<$Res>
     Object? twitter = freezed,
   }) {
     return _then(_value.copyWith(
-      streetview: streetview == freezed
+      streetview: freezed == streetview
           ? _value.streetview
           : streetview // ignore: cast_nullable_to_non_nullable
               as String?,
-      googlemap: googlemap == freezed
+      googlemap: freezed == googlemap
           ? _value.googlemap
           : googlemap // ignore: cast_nullable_to_non_nullable
               as String?,
-      twitter: twitter == freezed
+      twitter: freezed == twitter
           ? _value.twitter
           : twitter // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$KeywordSearchExploreStateCopyWith<$Res>
+abstract class _$$KeywordSearchExploreStateImplCopyWith<$Res>
     implements $KeywordSearchExploreStateCopyWith<$Res> {
-  factory _$KeywordSearchExploreStateCopyWith(_KeywordSearchExploreState value,
-          $Res Function(_KeywordSearchExploreState) then) =
-      __$KeywordSearchExploreStateCopyWithImpl<$Res>;
+  factory _$$KeywordSearchExploreStateImplCopyWith(
+          _$KeywordSearchExploreStateImpl value,
+          $Res Function(_$KeywordSearchExploreStateImpl) then) =
+      __$$KeywordSearchExploreStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'streetview') String? streetview,
       @JsonKey(name: 'googlemap') String? googlemap,
@@ -113,33 +97,32 @@ abstract class _$KeywordSearchExploreStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$KeywordSearchExploreStateCopyWithImpl<$Res>
-    extends _$KeywordSearchExploreStateCopyWithImpl<$Res>
-    implements _$KeywordSearchExploreStateCopyWith<$Res> {
-  __$KeywordSearchExploreStateCopyWithImpl(_KeywordSearchExploreState _value,
-      $Res Function(_KeywordSearchExploreState) _then)
-      : super(_value, (v) => _then(v as _KeywordSearchExploreState));
+class __$$KeywordSearchExploreStateImplCopyWithImpl<$Res>
+    extends _$KeywordSearchExploreStateCopyWithImpl<$Res,
+        _$KeywordSearchExploreStateImpl>
+    implements _$$KeywordSearchExploreStateImplCopyWith<$Res> {
+  __$$KeywordSearchExploreStateImplCopyWithImpl(
+      _$KeywordSearchExploreStateImpl _value,
+      $Res Function(_$KeywordSearchExploreStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _KeywordSearchExploreState get _value =>
-      super._value as _KeywordSearchExploreState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? streetview = freezed,
     Object? googlemap = freezed,
     Object? twitter = freezed,
   }) {
-    return _then(_KeywordSearchExploreState(
-      streetview: streetview == freezed
+    return _then(_$KeywordSearchExploreStateImpl(
+      streetview: freezed == streetview
           ? _value.streetview
           : streetview // ignore: cast_nullable_to_non_nullable
               as String?,
-      googlemap: googlemap == freezed
+      googlemap: freezed == googlemap
           ? _value.googlemap
           : googlemap // ignore: cast_nullable_to_non_nullable
               as String?,
-      twitter: twitter == freezed
+      twitter: freezed == twitter
           ? _value.twitter
           : twitter // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -149,14 +132,14 @@ class __$KeywordSearchExploreStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_KeywordSearchExploreState implements _KeywordSearchExploreState {
-  const _$_KeywordSearchExploreState(
+class _$KeywordSearchExploreStateImpl implements _KeywordSearchExploreState {
+  const _$KeywordSearchExploreStateImpl(
       {@JsonKey(name: 'streetview') this.streetview,
       @JsonKey(name: 'googlemap') this.googlemap,
       @JsonKey(name: 'twitter') this.twitter});
 
-  factory _$_KeywordSearchExploreState.fromJson(Map<String, dynamic> json) =>
-      _$$_KeywordSearchExploreStateFromJson(json);
+  factory _$KeywordSearchExploreStateImpl.fromJson(Map<String, dynamic> json) =>
+      _$$KeywordSearchExploreStateImplFromJson(json);
 
   @override
   @JsonKey(name: 'streetview')
@@ -177,42 +160,42 @@ class _$_KeywordSearchExploreState implements _KeywordSearchExploreState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _KeywordSearchExploreState &&
-            const DeepCollectionEquality()
-                .equals(other.streetview, streetview) &&
-            const DeepCollectionEquality().equals(other.googlemap, googlemap) &&
-            const DeepCollectionEquality().equals(other.twitter, twitter));
+            other is _$KeywordSearchExploreStateImpl &&
+            (identical(other.streetview, streetview) ||
+                other.streetview == streetview) &&
+            (identical(other.googlemap, googlemap) ||
+                other.googlemap == googlemap) &&
+            (identical(other.twitter, twitter) || other.twitter == twitter));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(streetview),
-      const DeepCollectionEquality().hash(googlemap),
-      const DeepCollectionEquality().hash(twitter));
 
   @JsonKey(ignore: true)
   @override
-  _$KeywordSearchExploreStateCopyWith<_KeywordSearchExploreState>
-      get copyWith =>
-          __$KeywordSearchExploreStateCopyWithImpl<_KeywordSearchExploreState>(
-              this, _$identity);
+  int get hashCode => Object.hash(runtimeType, streetview, googlemap, twitter);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$KeywordSearchExploreStateImplCopyWith<_$KeywordSearchExploreStateImpl>
+      get copyWith => __$$KeywordSearchExploreStateImplCopyWithImpl<
+          _$KeywordSearchExploreStateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_KeywordSearchExploreStateToJson(this);
+    return _$$KeywordSearchExploreStateImplToJson(
+      this,
+    );
   }
 }
 
 abstract class _KeywordSearchExploreState implements KeywordSearchExploreState {
   const factory _KeywordSearchExploreState(
-          {@JsonKey(name: 'streetview') String? streetview,
-          @JsonKey(name: 'googlemap') String? googlemap,
-          @JsonKey(name: 'twitter') String? twitter}) =
-      _$_KeywordSearchExploreState;
+          {@JsonKey(name: 'streetview') final String? streetview,
+          @JsonKey(name: 'googlemap') final String? googlemap,
+          @JsonKey(name: 'twitter') final String? twitter}) =
+      _$KeywordSearchExploreStateImpl;
 
   factory _KeywordSearchExploreState.fromJson(Map<String, dynamic> json) =
-      _$_KeywordSearchExploreState.fromJson;
+      _$KeywordSearchExploreStateImpl.fromJson;
 
   @override
   @JsonKey(name: 'streetview')
@@ -225,6 +208,6 @@ abstract class _KeywordSearchExploreState implements KeywordSearchExploreState {
   String? get twitter;
   @override
   @JsonKey(ignore: true)
-  _$KeywordSearchExploreStateCopyWith<_KeywordSearchExploreState>
+  _$$KeywordSearchExploreStateImplCopyWith<_$KeywordSearchExploreStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

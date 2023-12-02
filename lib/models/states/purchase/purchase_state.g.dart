@@ -6,8 +6,8 @@ part of 'purchase_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_PurchaseState _$$_PurchaseStateFromJson(Map<String, dynamic> json) =>
-    _$_PurchaseState(
+_$PurchaseStateImpl _$$PurchaseStateImplFromJson(Map<String, dynamic> json) =>
+    _$PurchaseStateImpl(
       isLoading: json['isLoading'] as bool? ?? false,
       purchaseType: json['purchaseType'] as int? ?? 1,
       offerings: json['offerings'] == null
@@ -19,7 +19,7 @@ _$_PurchaseState _$$_PurchaseStateFromJson(Map<String, dynamic> json) =>
       errorMessage: json['errorMessage'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_PurchaseStateToJson(_$_PurchaseState instance) =>
+Map<String, dynamic> _$$PurchaseStateImplToJson(_$PurchaseStateImpl instance) =>
     <String, dynamic>{
       'isLoading': instance.isLoading,
       'purchaseType': instance.purchaseType,

@@ -6,9 +6,9 @@ part of 'keyword_search_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_KeywordSearchState _$$_KeywordSearchStateFromJson(
+_$KeywordSearchStateImpl _$$KeywordSearchStateImplFromJson(
         Map<String, dynamic> json) =>
-    _$_KeywordSearchState(
+    _$KeywordSearchStateImpl(
       name: json['name'] as String? ?? '',
       distance: (json['distance'] as num?)?.toDouble() ?? 0,
       direction: json['direction'] as String? ?? '',
@@ -24,8 +24,8 @@ _$_KeywordSearchState _$$_KeywordSearchStateFromJson(
       ratingStar: json['ratingStar'] as String?,
     );
 
-Map<String, dynamic> _$$_KeywordSearchStateToJson(
-        _$_KeywordSearchState instance) =>
+Map<String, dynamic> _$$KeywordSearchStateImplToJson(
+        _$KeywordSearchStateImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'distance': instance.distance,

@@ -6,8 +6,8 @@ part of 'auth0_data_state.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Auth0DataState _$$_Auth0DataStateFromJson(Map<String, dynamic> json) =>
-    _$_Auth0DataState(
+_$Auth0DataStateImpl _$$Auth0DataStateImplFromJson(Map<String, dynamic> json) =>
+    _$Auth0DataStateImpl(
       nickname: json['nickname'] as String?,
       name: json['name'] as String?,
       email: json['email'] as String?,
@@ -23,7 +23,8 @@ _$_Auth0DataState _$$_Auth0DataStateFromJson(Map<String, dynamic> json) =>
       nonce: json['nonce'] as String?,
     );
 
-Map<String, dynamic> _$$_Auth0DataStateToJson(_$_Auth0DataState instance) =>
+Map<String, dynamic> _$$Auth0DataStateImplToJson(
+        _$Auth0DataStateImpl instance) =>
     <String, dynamic>{
       'nickname': instance.nickname,
       'name': instance.name,
