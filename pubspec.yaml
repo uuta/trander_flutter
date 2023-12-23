@@ -55,6 +55,7 @@ dependencies:
   flutter_launcher_icons: ^0.9.2
   flutter_native_splash: ^2.0.1+1
   purchases_flutter: ^3.9.5
+  supabase_flutter: ^1.6.2
 
 dev_dependencies:
   flutter_test:
