@@ -23,8 +23,11 @@ if (flutterVersionName == null) {
 
 // Read variables from env file
 def envProps = new Properties()
-new File('../.env').withReader('UTF-8') {
-    envProps.load(it)
+def envFile = rootProject.file('../.env') // put .env file in the root directory in the project
+if (envFile.exists()) {
+    envFile.withReader('UTF-8') { reader ->
+        envProps.load(reader)
+    }
 }
 
 // Declare a variable to put dart-define
