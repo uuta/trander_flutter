@@ -7,8 +7,7 @@ class OnBoardingPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
-    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     Slides slides = Slides();
 
     return Scaffold(
@@ -62,8 +61,11 @@ class OnBoardingPage extends HookConsumerWidget {
           ),
         ),
         onDone: () {
-          auth0Notifier.login();
-          PurchaseService.login(auth0State.data.sub);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const LoginPage()),
+          );
+          PurchaseService.login(supabaseState.data.sub);
         },
       ),
     );
