@@ -1,5 +1,4 @@
 import '/import.dart';
-import '/models/repositories/supabase/supabase_repository.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -11,8 +10,6 @@ final supabaseNotifierProvider =
 class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
   SupabaseStateNotifier()
       : super(const SupabaseState(data: SupabaseDataState()));
-
-  final repository = SupabaseRepository();
 
   Future<void> initialize() async {
     try {

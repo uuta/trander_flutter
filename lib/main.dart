@@ -1,6 +1,5 @@
 import '/import.dart';
 import '/environment.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   // Environment configuration
