@@ -45,8 +45,15 @@
               android:resource="@drawable/launch_background"
               />
             <intent-filter>
+                <!-- @see: https://megalodon.jp/2023-1228-2109-03/https://mitoroid.com:443/category/android/android_implicit_intent.php -->
                 <action android:name="android.intent.action.MAIN"/>
+                <!-- <action android:name="android.intent.action.VIEW" /> -->
                 <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="io.supabase.trander"
+                    android:host="login-callback" />
             </intent-filter>
         </activity>
         <!-- Don't delete the meta-data below.

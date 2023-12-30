@@ -56,6 +56,7 @@ dependencies:
   flutter_native_splash: ^2.0.1+1
   purchases_flutter: ^3.9.5
   supabase_flutter: ^1.6.2
+  google_sign_in: ^5.4.1
 
 dev_dependencies:
   flutter_test:
@@ -93,6 +94,7 @@ flutter:
     - assets/images/stories/
     - assets/images/onBoarding/slides/
     - assets/images/utils/
+    - assets/images/other-logos/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

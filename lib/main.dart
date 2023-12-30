@@ -17,14 +17,17 @@ class App extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0State = ref.watch(auth0NotifierProvider);
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+    final supabaseNotifier = ref.watch(supabaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
         // Auth0
         auth0Notifier.initAction();
+        // supabase
+        supabaseNotifier.initialize();
       });
       return;
-    }, const []);
+    }, []);
 
     return MaterialApp(
       title: 'Trander',
