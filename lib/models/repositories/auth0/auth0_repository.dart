@@ -11,7 +11,7 @@ class Auth0Repository {
   }
 
   Future<TokenResponse?> _tokenRequest(String? storedRefreshToken) async {
-    return await FlutterAppAuth().token(TokenRequest(
+    return await const FlutterAppAuth().token(TokenRequest(
       ConstsAuth0.auth0ClientId,
       ConstsAuth0.auth0RedirectUri,
       issuer: ConstsAuth0.auth0Issuer,
@@ -29,7 +29,7 @@ class Auth0Repository {
   }
 
   Future<AuthorizationTokenResponse?> _authorizeExchange() async {
-    return await FlutterAppAuth().authorizeAndExchangeCode(
+    return await const FlutterAppAuth().authorizeAndExchangeCode(
       AuthorizationTokenRequest(
           ConstsAuth0.auth0ClientId, ConstsAuth0.auth0RedirectUri,
           issuer: ConstsAuth0.auth0Issuer,
