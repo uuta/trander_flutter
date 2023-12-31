@@ -23,22 +23,22 @@ class PurchaseDialogView extends StatelessWidget {
               child: Column(mainAxisSize: MainAxisSize.min, children: <Widget>[
                 Text(
                   'The next available time is after',
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const SizedBox(height: 16.0),
                 Text(
                   purchaseErrorMessage,
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(height: 40.0),
                 Text(
                   'Unlock Trander Unlimited',
-                  style: Theme.of(context).textTheme.headline3,
+                  style: Theme.of(context).textTheme.displaySmall,
                 ),
                 const SizedBox(height: 16.0),
                 Text(
                   'Limitless access',
-                  style: Theme.of(context).textTheme.bodyText2,
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 const SizedBox(height: 24.0),
                 ElevatedTextButtonView(

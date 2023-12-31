@@ -23,7 +23,7 @@ class ElevatedTextButtonView extends StatelessWidget {
           child: Text(text),
           style: ElevatedButton.styleFrom(
               shape: const StadiumBorder(),
-              onPrimary: onPrimary ?? Theme.of(context).primaryColor),
+              foregroundColor: onPrimary ?? Theme.of(context).primaryColor),
           onPressed: onPressed,
         ));
   }

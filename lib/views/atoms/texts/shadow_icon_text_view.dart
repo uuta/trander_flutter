@@ -30,7 +30,7 @@ class ShadowIconTextView extends StatelessWidget {
           (shortenStr != 0)
               ? UtilService.shortenStr(name, max: shortenStr)
               : name,
-          style: textStyle ?? Theme.of(context).textTheme.headline5,
+          style: textStyle ?? Theme.of(context).textTheme.headlineSmall,
         )),
       ],
     );

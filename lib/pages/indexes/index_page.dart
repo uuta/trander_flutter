@@ -57,7 +57,7 @@ class IndexPage extends HookConsumerWidget {
           : Image.asset("assets/images/icons/keyword-search.png", width: 250),
       Text(
         'Settings',
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.displayMedium,
       ),
     ];
 

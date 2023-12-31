@@ -11,7 +11,7 @@ class SettingDirectionDialogView extends HookConsumerWidget {
     return SimpleDialog(
       title: Text(
         "Direction Type",
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.displayMedium,
       ),
       children: ConstsSetting.directionType.entries.toList().map((e) {
         return SimpleDialogOption(

@@ -5,13 +5,13 @@ class PurchaseDialogViewController {
   // City dialog
   static void showPurchaseDialog(BuildContext context,
       LocationState locationState, LocationStateNotifier locationNotifier) {
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       showDialog(
           context: context,
           barrierDismissible: true,
           builder: (BuildContext childContext) {
             // Possible to dismiss this dialog by passing a value to Riverpod as tapping outside the dialog
-            return WillPopScope(
+            return PopScope(
                 child: PurchaseDialogView(
                     purchaseErrorMessage: locationState.purchaseErrorMessage,
                     onPressed: () => {
@@ -20,11 +20,11 @@ class PurchaseDialogViewController {
                               MaterialPageRoute(
                                   builder: (context) => const PurchasePage())),
                         }),
-                onWillPop: () {
+                canPop: () {
                   locationNotifier.switchPaymantDialog(false);
                   Navigator.pop(context);
-                  return Future.value(false);
-                });
+                  return false;
+                }());
           });
     });
   }

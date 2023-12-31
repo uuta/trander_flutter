@@ -11,7 +11,7 @@ class SettingModeDialogView extends HookConsumerWidget {
     return SimpleDialog(
       title: Text(
         "Mode",
-        style: Theme.of(context).textTheme.headline2,
+        style: Theme.of(context).textTheme.displayMedium,
       ),
       children: ConstsSetting.mode.entries.toList().map((e) {
         return SimpleDialogOption(

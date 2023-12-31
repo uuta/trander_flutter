@@ -18,7 +18,7 @@ class ThreeTextColumnView extends StatelessWidget {
         children: [
           Text(
             "Let's go here today",
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.displayMedium,
           ),
           const SizedBox(height: 25),
           ShadowIconTextView(
@@ -30,7 +30,7 @@ class ThreeTextColumnView extends StatelessWidget {
           const SizedBox(height: 25),
           Text(
             'Discover the unexpected',
-            style: Theme.of(context).textTheme.bodyText2,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ]);
   }

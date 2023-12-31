@@ -5,7 +5,7 @@ class LocationDialogViewController {
   // City dialog
   static void showCityDialog(BuildContext context, LocationState locationState,
       LocationStateNotifier locationNotifier) {
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       final countryCode = locationState.cityData.countryCode;
       showDialog(
           context: context,
@@ -43,7 +43,7 @@ class LocationDialogViewController {
   // Keyword search dialog
   static void showKeywordSearchDialog(BuildContext context,
       LocationState locationState, LocationStateNotifier locationNotifier) {
-    WidgetsBinding.instance?.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       showDialog(
           context: context,
           barrierDismissible: false,

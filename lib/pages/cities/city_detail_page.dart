@@ -21,7 +21,7 @@ class CityDetailPage extends HookConsumerWidget {
                 children: <Widget>[
                   Text(
                     'More Exploration',
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                   const SizedBox(height: 20),
                   MixedThreeButton(
@@ -44,7 +44,7 @@ class CityDetailPage extends HookConsumerWidget {
                   const SizedBox(height: 40),
                   Text(
                     'Details',
-                    style: Theme.of(context).textTheme.headline3,
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                   const SizedBox(height: 20),
                   SettingsList(

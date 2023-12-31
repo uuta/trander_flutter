@@ -24,7 +24,7 @@ class PurchasePage extends HookConsumerWidget {
             appBar: AppBar(
               title: Text(
                 'Subscription',
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.displayMedium,
               ),
             ),
             body: SingleChildScrollView(
