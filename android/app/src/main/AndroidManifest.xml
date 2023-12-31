@@ -1,6 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="net.uuta.trander">
-    <!-- Added the below to open google map and street view -->
     <!-- https://huynguyennovem.github.io/articles/2020-11/android11-package-visibility -->
     <!-- https://stackoverflow.com/questions/70224911/i-urllauncher17669-component-name-for-url-is-null -->
     <queries>
@@ -22,6 +21,7 @@
           android:value="${MAP_API_KEY}" />
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
@@ -45,9 +45,7 @@
               android:resource="@drawable/launch_background"
               />
             <intent-filter>
-                <!-- @see: https://megalodon.jp/2023-1228-2109-03/https://mitoroid.com:443/category/android/android_implicit_intent.php -->
                 <action android:name="android.intent.action.MAIN"/>
-                <!-- <action android:name="android.intent.action.VIEW" /> -->
                 <category android:name="android.intent.category.LAUNCHER"/>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
