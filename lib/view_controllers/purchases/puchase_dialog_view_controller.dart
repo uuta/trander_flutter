@@ -11,7 +11,7 @@ class PurchaseDialogViewController {
           barrierDismissible: true,
           builder: (BuildContext childContext) {
             // Possible to dismiss this dialog by passing a value to Riverpod as tapping outside the dialog
-            return PopScope(
+            return WillPopScope(
                 child: PurchaseDialogView(
                     purchaseErrorMessage: locationState.purchaseErrorMessage,
                     onPressed: () => {
@@ -20,11 +20,11 @@ class PurchaseDialogViewController {
                               MaterialPageRoute(
                                   builder: (context) => const PurchasePage())),
                         }),
-                canPop: () {
+                onWillPop: () {
                   locationNotifier.switchPaymantDialog(false);
                   Navigator.pop(context);
-                  return false;
-                }());
+                  return Future.value(false);
+                });
           });
     });
   }

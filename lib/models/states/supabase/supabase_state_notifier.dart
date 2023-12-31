@@ -1,5 +1,5 @@
 import '/import.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 import 'package:google_sign_in/google_sign_in.dart';
 
 final supabaseNotifierProvider =
@@ -13,11 +13,11 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
 
   Future<void> initialize() async {
     try {
-      await Supabase.initialize(
+      await sb.Supabase.initialize(
         url: ConstsSupabase.supabaseUrl,
         anonKey: ConstsSupabase.supabaseAnonKey,
       );
-      state = state.copyWith(client: Supabase.instance.client);
+      state = state.copyWith(client: sb.Supabase.instance.client);
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       // TODO:
@@ -42,7 +42,7 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
   //   });
   // }
 
-  Future<AuthResponse> googleSignIn() async {
+  Future<sb.AuthResponse> googleSignIn() async {
     final supabase = state.client;
 
     /// TODO: update the Web client ID with your own.
@@ -76,9 +76,8 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
     }
 
     return supabase!.auth.signInWithIdToken(
-      provider: OAuthProvider.google,
+      provider: sb.Provider.google,
       idToken: idToken,
-      // TODO: upgrade
       accessToken: accessToken,
     );
   }
