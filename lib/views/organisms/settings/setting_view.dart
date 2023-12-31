@@ -13,7 +13,7 @@ class SettingView extends HookConsumerWidget {
     final purchaseState = ref.watch(purchaseNotifierProvider);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
-    final List _currentRange = <int>[
+    final List currentRange = <int>[
       locationState.settingData.minDistance,
       locationState.settingData.maxDistance
     ];
@@ -52,7 +52,7 @@ class SettingView extends HookConsumerWidget {
                   SettingsTile(
                     title: const Text('Range'),
                     description:
-                        Text('${_currentRange[0]}km - ${_currentRange[1]}km'),
+                        Text('${currentRange[0]}km - ${currentRange[1]}km'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.ramen_dining),
                     onPressed: (BuildContext context) {

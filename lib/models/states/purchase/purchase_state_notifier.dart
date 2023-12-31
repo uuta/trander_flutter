@@ -38,13 +38,13 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
   }
 
   Future<void> _setOfferingList() async {
-    final _monthlyPrice = state.currencySign +
+    final monthlyPrice = state.currencySign +
         state.offerings!.current!.monthly!.product.price.toString();
-    final _yearlyPrice = state.currencySign +
+    final yearlyPrice = state.currencySign +
         UtilPriceService.getMonthlyPrice(
                 state.offerings!.current!.annual!.product.price)
             .toString();
-    final _offPercent = UtilPriceService.getOffPercent(
+    final offPercent = UtilPriceService.getOffPercent(
       UtilPriceService.getMonthlyPrice(
           state.offerings!.current!.annual!.product.price),
       state.offerings!.current!.monthly!.product.price,
@@ -54,13 +54,13 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
       offeringList: [
         {
           'name': 'Monthly',
-          'price': _monthlyPrice,
+          'price': monthlyPrice,
           'id': state.offerings!.current!.monthly!.product.identifier,
         },
         {
           'name': 'Yearly',
-          'price': _yearlyPrice,
-          'offPercent': _offPercent,
+          'price': yearlyPrice,
+          'offPercent': offPercent,
           'id': state.offerings!.current!.annual!.product.identifier
         }
       ],
