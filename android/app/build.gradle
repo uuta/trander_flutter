@@ -31,7 +31,7 @@ if (envFile.exists()) {
 }
 
 // Declare a variable to put dart-define
-// Reference: https://zenn.dev/riscait/articles/separating-environments-in-flutter
+// see https://zenn.dev/altiveinc/articles/separating-environments-in-flutter-old-edition
 // `Key: Value` 形式で初期値を設定することもできます
 def dartEnvironmentVariables = [:];
 if (project.hasProperty('dart-defines')) {
@@ -133,4 +133,12 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:29.0.4')
     // implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-analytics'
+}
+
+task copySources(type: Copy) {
+   from "src/${dartEnvironmentVariables.FLAVOR}/res"
+   into 'src/main/res'
+}
+tasks.whenTaskAdded { task ->
+   task.dependsOn copySources
 }
