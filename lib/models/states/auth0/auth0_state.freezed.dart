@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'auth0_state.dart';
 
@@ -11,30 +12,7 @@ part of 'auth0_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$Auth0StateTearOff {
-  const _$Auth0StateTearOff();
-
-  _Auth0State call(
-      {bool isBusy = false,
-      bool isLoggedIn = false,
-      required Auth0DataState data,
-      String? idToken,
-      String? errorMessage}) {
-    return _Auth0State(
-      isBusy: isBusy,
-      isLoggedIn: isLoggedIn,
-      data: data,
-      idToken: idToken,
-      errorMessage: errorMessage,
-    );
-  }
-}
-
-/// @nodoc
-const $Auth0State = _$Auth0StateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Auth0State {
@@ -53,7 +31,8 @@ mixin _$Auth0State {
 abstract class $Auth0StateCopyWith<$Res> {
   factory $Auth0StateCopyWith(
           Auth0State value, $Res Function(Auth0State) then) =
-      _$Auth0StateCopyWithImpl<$Res>;
+      _$Auth0StateCopyWithImpl<$Res, Auth0State>;
+  @useResult
   $Res call(
       {bool isBusy,
       bool isLoggedIn,
@@ -65,59 +44,65 @@ abstract class $Auth0StateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$Auth0StateCopyWithImpl<$Res> implements $Auth0StateCopyWith<$Res> {
+class _$Auth0StateCopyWithImpl<$Res, $Val extends Auth0State>
+    implements $Auth0StateCopyWith<$Res> {
   _$Auth0StateCopyWithImpl(this._value, this._then);
 
-  final Auth0State _value;
   // ignore: unused_field
-  final $Res Function(Auth0State) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isBusy = freezed,
-    Object? isLoggedIn = freezed,
-    Object? data = freezed,
+    Object? isBusy = null,
+    Object? isLoggedIn = null,
+    Object? data = null,
     Object? idToken = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
-      isBusy: isBusy == freezed
+      isBusy: null == isBusy
           ? _value.isBusy
           : isBusy // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoggedIn: isLoggedIn == freezed
+      isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
           : isLoggedIn // ignore: cast_nullable_to_non_nullable
               as bool,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Auth0DataState,
-      idToken: idToken == freezed
+      idToken: freezed == idToken
           ? _value.idToken
           : idToken // ignore: cast_nullable_to_non_nullable
               as String?,
-      errorMessage: errorMessage == freezed
+      errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $Auth0DataStateCopyWith<$Res> get data {
     return $Auth0DataStateCopyWith<$Res>(_value.data, (value) {
-      return _then(_value.copyWith(data: value));
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$Auth0StateCopyWith<$Res> implements $Auth0StateCopyWith<$Res> {
-  factory _$Auth0StateCopyWith(
-          _Auth0State value, $Res Function(_Auth0State) then) =
-      __$Auth0StateCopyWithImpl<$Res>;
+abstract class _$$_Auth0StateCopyWith<$Res>
+    implements $Auth0StateCopyWith<$Res> {
+  factory _$$_Auth0StateCopyWith(
+          _$_Auth0State value, $Res Function(_$_Auth0State) then) =
+      __$$_Auth0StateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool isBusy,
       bool isLoggedIn,
@@ -130,41 +115,40 @@ abstract class _$Auth0StateCopyWith<$Res> implements $Auth0StateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$Auth0StateCopyWithImpl<$Res> extends _$Auth0StateCopyWithImpl<$Res>
-    implements _$Auth0StateCopyWith<$Res> {
-  __$Auth0StateCopyWithImpl(
-      _Auth0State _value, $Res Function(_Auth0State) _then)
-      : super(_value, (v) => _then(v as _Auth0State));
+class __$$_Auth0StateCopyWithImpl<$Res>
+    extends _$Auth0StateCopyWithImpl<$Res, _$_Auth0State>
+    implements _$$_Auth0StateCopyWith<$Res> {
+  __$$_Auth0StateCopyWithImpl(
+      _$_Auth0State _value, $Res Function(_$_Auth0State) _then)
+      : super(_value, _then);
 
-  @override
-  _Auth0State get _value => super._value as _Auth0State;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isBusy = freezed,
-    Object? isLoggedIn = freezed,
-    Object? data = freezed,
+    Object? isBusy = null,
+    Object? isLoggedIn = null,
+    Object? data = null,
     Object? idToken = freezed,
     Object? errorMessage = freezed,
   }) {
-    return _then(_Auth0State(
-      isBusy: isBusy == freezed
+    return _then(_$_Auth0State(
+      isBusy: null == isBusy
           ? _value.isBusy
           : isBusy // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoggedIn: isLoggedIn == freezed
+      isLoggedIn: null == isLoggedIn
           ? _value.isLoggedIn
           : isLoggedIn // ignore: cast_nullable_to_non_nullable
               as bool,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as Auth0DataState,
-      idToken: idToken == freezed
+      idToken: freezed == idToken
           ? _value.idToken
           : idToken // ignore: cast_nullable_to_non_nullable
               as String?,
-      errorMessage: errorMessage == freezed
+      errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -174,7 +158,7 @@ class __$Auth0StateCopyWithImpl<$Res> extends _$Auth0StateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
+class _$_Auth0State implements _Auth0State {
   const _$_Auth0State(
       {this.isBusy = false,
       this.isLoggedIn = false,
@@ -182,11 +166,11 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
       this.idToken,
       this.errorMessage});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isBusy;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoggedIn;
   @override
   final Auth0DataState data;
@@ -196,58 +180,42 @@ class _$_Auth0State with DiagnosticableTreeMixin implements _Auth0State {
   final String? errorMessage;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'Auth0State(isBusy: $isBusy, isLoggedIn: $isLoggedIn, data: $data, idToken: $idToken, errorMessage: $errorMessage)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Auth0State'))
-      ..add(DiagnosticsProperty('isBusy', isBusy))
-      ..add(DiagnosticsProperty('isLoggedIn', isLoggedIn))
-      ..add(DiagnosticsProperty('data', data))
-      ..add(DiagnosticsProperty('idToken', idToken))
-      ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Auth0State &&
-            const DeepCollectionEquality().equals(other.isBusy, isBusy) &&
-            const DeepCollectionEquality()
-                .equals(other.isLoggedIn, isLoggedIn) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.idToken, idToken) &&
-            const DeepCollectionEquality()
-                .equals(other.errorMessage, errorMessage));
+            other is _$_Auth0State &&
+            (identical(other.isBusy, isBusy) || other.isBusy == isBusy) &&
+            (identical(other.isLoggedIn, isLoggedIn) ||
+                other.isLoggedIn == isLoggedIn) &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.idToken, idToken) || other.idToken == idToken) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(isBusy),
-      const DeepCollectionEquality().hash(isLoggedIn),
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(idToken),
-      const DeepCollectionEquality().hash(errorMessage));
+  int get hashCode =>
+      Object.hash(runtimeType, isBusy, isLoggedIn, data, idToken, errorMessage);
 
   @JsonKey(ignore: true)
   @override
-  _$Auth0StateCopyWith<_Auth0State> get copyWith =>
-      __$Auth0StateCopyWithImpl<_Auth0State>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_Auth0StateCopyWith<_$_Auth0State> get copyWith =>
+      __$$_Auth0StateCopyWithImpl<_$_Auth0State>(this, _$identity);
 }
 
 abstract class _Auth0State implements Auth0State {
   const factory _Auth0State(
-      {bool isBusy,
-      bool isLoggedIn,
-      required Auth0DataState data,
-      String? idToken,
-      String? errorMessage}) = _$_Auth0State;
+      {final bool isBusy,
+      final bool isLoggedIn,
+      required final Auth0DataState data,
+      final String? idToken,
+      final String? errorMessage}) = _$_Auth0State;
 
   @override
   bool get isBusy;
@@ -261,6 +229,6 @@ abstract class _Auth0State implements Auth0State {
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$Auth0StateCopyWith<_Auth0State> get copyWith =>
+  _$$_Auth0StateCopyWith<_$_Auth0State> get copyWith =>
       throw _privateConstructorUsedError;
 }

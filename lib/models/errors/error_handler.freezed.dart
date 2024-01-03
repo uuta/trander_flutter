@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'error_handler.dart';
 
@@ -11,59 +12,7 @@ part of 'error_handler.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ErrorHandlerTearOff {
-  const _$ErrorHandlerTearOff();
-
-  _RequestCancelled requestCancelled() {
-    return const _RequestCancelled();
-  }
-
-  _UnauthorisedRequest unauthorisedRequest() {
-    return const _UnauthorisedRequest();
-  }
-
-  _ExceededRequestLimit exceededRequestLimit() {
-    return const _ExceededRequestLimit();
-  }
-
-  _RequestError requestError({ApiError? apiError}) {
-    return _RequestError(
-      apiError: apiError,
-    );
-  }
-
-  _ServiceUnavailable serviceUnavailable() {
-    return const _ServiceUnavailable();
-  }
-
-  _SendTimeout sendTimeout() {
-    return const _SendTimeout();
-  }
-
-  _NoInternetConnection noInternetConnection() {
-    return const _NoInternetConnection();
-  }
-
-  _EmptyResponse emptyResponse() {
-    return const _EmptyResponse();
-  }
-
-  _PaymentRequired paymentRequired({ApiError? apiError}) {
-    return _PaymentRequired(
-      apiError: apiError,
-    );
-  }
-
-  _UnexpectedError unexpectedError() {
-    return const _UnexpectedError();
-  }
-}
-
-/// @nodoc
-const $ErrorHandler = _$ErrorHandlerTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ErrorHandler {
@@ -83,16 +32,16 @@ mixin _$ErrorHandler {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -126,16 +75,16 @@ mixin _$ErrorHandler {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -159,35 +108,34 @@ mixin _$ErrorHandler {
 abstract class $ErrorHandlerCopyWith<$Res> {
   factory $ErrorHandlerCopyWith(
           ErrorHandler value, $Res Function(ErrorHandler) then) =
-      _$ErrorHandlerCopyWithImpl<$Res>;
+      _$ErrorHandlerCopyWithImpl<$Res, ErrorHandler>;
 }
 
 /// @nodoc
-class _$ErrorHandlerCopyWithImpl<$Res> implements $ErrorHandlerCopyWith<$Res> {
+class _$ErrorHandlerCopyWithImpl<$Res, $Val extends ErrorHandler>
+    implements $ErrorHandlerCopyWith<$Res> {
   _$ErrorHandlerCopyWithImpl(this._value, this._then);
 
-  final ErrorHandler _value;
   // ignore: unused_field
-  final $Res Function(ErrorHandler) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$RequestCancelledCopyWith<$Res> {
-  factory _$RequestCancelledCopyWith(
-          _RequestCancelled value, $Res Function(_RequestCancelled) then) =
-      __$RequestCancelledCopyWithImpl<$Res>;
+abstract class _$$_RequestCancelledCopyWith<$Res> {
+  factory _$$_RequestCancelledCopyWith(
+          _$_RequestCancelled value, $Res Function(_$_RequestCancelled) then) =
+      __$$_RequestCancelledCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RequestCancelledCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$RequestCancelledCopyWith<$Res> {
-  __$RequestCancelledCopyWithImpl(
-      _RequestCancelled _value, $Res Function(_RequestCancelled) _then)
-      : super(_value, (v) => _then(v as _RequestCancelled));
-
-  @override
-  _RequestCancelled get _value => super._value as _RequestCancelled;
+class __$$_RequestCancelledCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_RequestCancelled>
+    implements _$$_RequestCancelledCopyWith<$Res> {
+  __$$_RequestCancelledCopyWithImpl(
+      _$_RequestCancelled _value, $Res Function(_$_RequestCancelled) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -203,7 +151,7 @@ class _$_RequestCancelled extends _RequestCancelled {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RequestCancelled);
+        (other.runtimeType == runtimeType && other is _$_RequestCancelled);
   }
 
   @override
@@ -229,16 +177,16 @@ class _$_RequestCancelled extends _RequestCancelled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return requestCancelled?.call();
   }
@@ -284,16 +232,16 @@ class _$_RequestCancelled extends _RequestCancelled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return requestCancelled?.call(this);
   }
@@ -326,22 +274,19 @@ abstract class _RequestCancelled extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$UnauthorisedRequestCopyWith<$Res> {
-  factory _$UnauthorisedRequestCopyWith(_UnauthorisedRequest value,
-          $Res Function(_UnauthorisedRequest) then) =
-      __$UnauthorisedRequestCopyWithImpl<$Res>;
+abstract class _$$_UnauthorisedRequestCopyWith<$Res> {
+  factory _$$_UnauthorisedRequestCopyWith(_$_UnauthorisedRequest value,
+          $Res Function(_$_UnauthorisedRequest) then) =
+      __$$_UnauthorisedRequestCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnauthorisedRequestCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$UnauthorisedRequestCopyWith<$Res> {
-  __$UnauthorisedRequestCopyWithImpl(
-      _UnauthorisedRequest _value, $Res Function(_UnauthorisedRequest) _then)
-      : super(_value, (v) => _then(v as _UnauthorisedRequest));
-
-  @override
-  _UnauthorisedRequest get _value => super._value as _UnauthorisedRequest;
+class __$$_UnauthorisedRequestCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_UnauthorisedRequest>
+    implements _$$_UnauthorisedRequestCopyWith<$Res> {
+  __$$_UnauthorisedRequestCopyWithImpl(_$_UnauthorisedRequest _value,
+      $Res Function(_$_UnauthorisedRequest) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -357,7 +302,7 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UnauthorisedRequest);
+        (other.runtimeType == runtimeType && other is _$_UnauthorisedRequest);
   }
 
   @override
@@ -383,16 +328,16 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return unauthorisedRequest?.call();
   }
@@ -438,16 +383,16 @@ class _$_UnauthorisedRequest extends _UnauthorisedRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return unauthorisedRequest?.call(this);
   }
@@ -480,22 +425,19 @@ abstract class _UnauthorisedRequest extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$ExceededRequestLimitCopyWith<$Res> {
-  factory _$ExceededRequestLimitCopyWith(_ExceededRequestLimit value,
-          $Res Function(_ExceededRequestLimit) then) =
-      __$ExceededRequestLimitCopyWithImpl<$Res>;
+abstract class _$$_ExceededRequestLimitCopyWith<$Res> {
+  factory _$$_ExceededRequestLimitCopyWith(_$_ExceededRequestLimit value,
+          $Res Function(_$_ExceededRequestLimit) then) =
+      __$$_ExceededRequestLimitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ExceededRequestLimitCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$ExceededRequestLimitCopyWith<$Res> {
-  __$ExceededRequestLimitCopyWithImpl(
-      _ExceededRequestLimit _value, $Res Function(_ExceededRequestLimit) _then)
-      : super(_value, (v) => _then(v as _ExceededRequestLimit));
-
-  @override
-  _ExceededRequestLimit get _value => super._value as _ExceededRequestLimit;
+class __$$_ExceededRequestLimitCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_ExceededRequestLimit>
+    implements _$$_ExceededRequestLimitCopyWith<$Res> {
+  __$$_ExceededRequestLimitCopyWithImpl(_$_ExceededRequestLimit _value,
+      $Res Function(_$_ExceededRequestLimit) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -511,7 +453,7 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ExceededRequestLimit);
+        (other.runtimeType == runtimeType && other is _$_ExceededRequestLimit);
   }
 
   @override
@@ -537,16 +479,16 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return exceededRequestLimit?.call();
   }
@@ -592,16 +534,16 @@ class _$_ExceededRequestLimit extends _ExceededRequestLimit {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return exceededRequestLimit?.call(this);
   }
@@ -634,31 +576,31 @@ abstract class _ExceededRequestLimit extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$RequestErrorCopyWith<$Res> {
-  factory _$RequestErrorCopyWith(
-          _RequestError value, $Res Function(_RequestError) then) =
-      __$RequestErrorCopyWithImpl<$Res>;
+abstract class _$$_RequestErrorCopyWith<$Res> {
+  factory _$$_RequestErrorCopyWith(
+          _$_RequestError value, $Res Function(_$_RequestError) then) =
+      __$$_RequestErrorCopyWithImpl<$Res>;
+  @useResult
   $Res call({ApiError? apiError});
 
   $ApiErrorCopyWith<$Res>? get apiError;
 }
 
 /// @nodoc
-class __$RequestErrorCopyWithImpl<$Res> extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$RequestErrorCopyWith<$Res> {
-  __$RequestErrorCopyWithImpl(
-      _RequestError _value, $Res Function(_RequestError) _then)
-      : super(_value, (v) => _then(v as _RequestError));
+class __$$_RequestErrorCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_RequestError>
+    implements _$$_RequestErrorCopyWith<$Res> {
+  __$$_RequestErrorCopyWithImpl(
+      _$_RequestError _value, $Res Function(_$_RequestError) _then)
+      : super(_value, _then);
 
-  @override
-  _RequestError get _value => super._value as _RequestError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? apiError = freezed,
   }) {
-    return _then(_RequestError(
-      apiError: apiError == freezed
+    return _then(_$_RequestError(
+      apiError: freezed == apiError
           ? _value.apiError
           : apiError // ignore: cast_nullable_to_non_nullable
               as ApiError?,
@@ -666,6 +608,7 @@ class __$RequestErrorCopyWithImpl<$Res> extends _$ErrorHandlerCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ApiErrorCopyWith<$Res>? get apiError {
     if (_value.apiError == null) {
       return null;
@@ -694,18 +637,19 @@ class _$_RequestError extends _RequestError {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RequestError &&
-            const DeepCollectionEquality().equals(other.apiError, apiError));
+            other is _$_RequestError &&
+            (identical(other.apiError, apiError) ||
+                other.apiError == apiError));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(apiError));
+  int get hashCode => Object.hash(runtimeType, apiError);
 
   @JsonKey(ignore: true)
   @override
-  _$RequestErrorCopyWith<_RequestError> get copyWith =>
-      __$RequestErrorCopyWithImpl<_RequestError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_RequestErrorCopyWith<_$_RequestError> get copyWith =>
+      __$$_RequestErrorCopyWithImpl<_$_RequestError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -727,16 +671,16 @@ class _$_RequestError extends _RequestError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return requestError?.call(apiError);
   }
@@ -782,16 +726,16 @@ class _$_RequestError extends _RequestError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return requestError?.call(this);
   }
@@ -819,32 +763,29 @@ class _$_RequestError extends _RequestError {
 }
 
 abstract class _RequestError extends ErrorHandler {
-  const factory _RequestError({ApiError? apiError}) = _$_RequestError;
+  const factory _RequestError({final ApiError? apiError}) = _$_RequestError;
   const _RequestError._() : super._();
 
   ApiError? get apiError;
   @JsonKey(ignore: true)
-  _$RequestErrorCopyWith<_RequestError> get copyWith =>
+  _$$_RequestErrorCopyWith<_$_RequestError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ServiceUnavailableCopyWith<$Res> {
-  factory _$ServiceUnavailableCopyWith(
-          _ServiceUnavailable value, $Res Function(_ServiceUnavailable) then) =
-      __$ServiceUnavailableCopyWithImpl<$Res>;
+abstract class _$$_ServiceUnavailableCopyWith<$Res> {
+  factory _$$_ServiceUnavailableCopyWith(_$_ServiceUnavailable value,
+          $Res Function(_$_ServiceUnavailable) then) =
+      __$$_ServiceUnavailableCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ServiceUnavailableCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$ServiceUnavailableCopyWith<$Res> {
-  __$ServiceUnavailableCopyWithImpl(
-      _ServiceUnavailable _value, $Res Function(_ServiceUnavailable) _then)
-      : super(_value, (v) => _then(v as _ServiceUnavailable));
-
-  @override
-  _ServiceUnavailable get _value => super._value as _ServiceUnavailable;
+class __$$_ServiceUnavailableCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_ServiceUnavailable>
+    implements _$$_ServiceUnavailableCopyWith<$Res> {
+  __$$_ServiceUnavailableCopyWithImpl(
+      _$_ServiceUnavailable _value, $Res Function(_$_ServiceUnavailable) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -860,7 +801,7 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ServiceUnavailable);
+        (other.runtimeType == runtimeType && other is _$_ServiceUnavailable);
   }
 
   @override
@@ -886,16 +827,16 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return serviceUnavailable?.call();
   }
@@ -941,16 +882,16 @@ class _$_ServiceUnavailable extends _ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return serviceUnavailable?.call(this);
   }
@@ -983,21 +924,19 @@ abstract class _ServiceUnavailable extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$SendTimeoutCopyWith<$Res> {
-  factory _$SendTimeoutCopyWith(
-          _SendTimeout value, $Res Function(_SendTimeout) then) =
-      __$SendTimeoutCopyWithImpl<$Res>;
+abstract class _$$_SendTimeoutCopyWith<$Res> {
+  factory _$$_SendTimeoutCopyWith(
+          _$_SendTimeout value, $Res Function(_$_SendTimeout) then) =
+      __$$_SendTimeoutCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SendTimeoutCopyWithImpl<$Res> extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$SendTimeoutCopyWith<$Res> {
-  __$SendTimeoutCopyWithImpl(
-      _SendTimeout _value, $Res Function(_SendTimeout) _then)
-      : super(_value, (v) => _then(v as _SendTimeout));
-
-  @override
-  _SendTimeout get _value => super._value as _SendTimeout;
+class __$$_SendTimeoutCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_SendTimeout>
+    implements _$$_SendTimeoutCopyWith<$Res> {
+  __$$_SendTimeoutCopyWithImpl(
+      _$_SendTimeout _value, $Res Function(_$_SendTimeout) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1013,7 +952,7 @@ class _$_SendTimeout extends _SendTimeout {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SendTimeout);
+        (other.runtimeType == runtimeType && other is _$_SendTimeout);
   }
 
   @override
@@ -1039,16 +978,16 @@ class _$_SendTimeout extends _SendTimeout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return sendTimeout?.call();
   }
@@ -1094,16 +1033,16 @@ class _$_SendTimeout extends _SendTimeout {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return sendTimeout?.call(this);
   }
@@ -1136,22 +1075,19 @@ abstract class _SendTimeout extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$NoInternetConnectionCopyWith<$Res> {
-  factory _$NoInternetConnectionCopyWith(_NoInternetConnection value,
-          $Res Function(_NoInternetConnection) then) =
-      __$NoInternetConnectionCopyWithImpl<$Res>;
+abstract class _$$_NoInternetConnectionCopyWith<$Res> {
+  factory _$$_NoInternetConnectionCopyWith(_$_NoInternetConnection value,
+          $Res Function(_$_NoInternetConnection) then) =
+      __$$_NoInternetConnectionCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NoInternetConnectionCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$NoInternetConnectionCopyWith<$Res> {
-  __$NoInternetConnectionCopyWithImpl(
-      _NoInternetConnection _value, $Res Function(_NoInternetConnection) _then)
-      : super(_value, (v) => _then(v as _NoInternetConnection));
-
-  @override
-  _NoInternetConnection get _value => super._value as _NoInternetConnection;
+class __$$_NoInternetConnectionCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_NoInternetConnection>
+    implements _$$_NoInternetConnectionCopyWith<$Res> {
+  __$$_NoInternetConnectionCopyWithImpl(_$_NoInternetConnection _value,
+      $Res Function(_$_NoInternetConnection) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1167,7 +1103,7 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NoInternetConnection);
+        (other.runtimeType == runtimeType && other is _$_NoInternetConnection);
   }
 
   @override
@@ -1193,16 +1129,16 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return noInternetConnection?.call();
   }
@@ -1248,16 +1184,16 @@ class _$_NoInternetConnection extends _NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return noInternetConnection?.call(this);
   }
@@ -1290,22 +1226,19 @@ abstract class _NoInternetConnection extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$EmptyResponseCopyWith<$Res> {
-  factory _$EmptyResponseCopyWith(
-          _EmptyResponse value, $Res Function(_EmptyResponse) then) =
-      __$EmptyResponseCopyWithImpl<$Res>;
+abstract class _$$_EmptyResponseCopyWith<$Res> {
+  factory _$$_EmptyResponseCopyWith(
+          _$_EmptyResponse value, $Res Function(_$_EmptyResponse) then) =
+      __$$_EmptyResponseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EmptyResponseCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$EmptyResponseCopyWith<$Res> {
-  __$EmptyResponseCopyWithImpl(
-      _EmptyResponse _value, $Res Function(_EmptyResponse) _then)
-      : super(_value, (v) => _then(v as _EmptyResponse));
-
-  @override
-  _EmptyResponse get _value => super._value as _EmptyResponse;
+class __$$_EmptyResponseCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_EmptyResponse>
+    implements _$$_EmptyResponseCopyWith<$Res> {
+  __$$_EmptyResponseCopyWithImpl(
+      _$_EmptyResponse _value, $Res Function(_$_EmptyResponse) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1321,7 +1254,7 @@ class _$_EmptyResponse extends _EmptyResponse {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _EmptyResponse);
+        (other.runtimeType == runtimeType && other is _$_EmptyResponse);
   }
 
   @override
@@ -1347,16 +1280,16 @@ class _$_EmptyResponse extends _EmptyResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return emptyResponse?.call();
   }
@@ -1402,16 +1335,16 @@ class _$_EmptyResponse extends _EmptyResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return emptyResponse?.call(this);
   }
@@ -1444,32 +1377,31 @@ abstract class _EmptyResponse extends ErrorHandler {
 }
 
 /// @nodoc
-abstract class _$PaymentRequiredCopyWith<$Res> {
-  factory _$PaymentRequiredCopyWith(
-          _PaymentRequired value, $Res Function(_PaymentRequired) then) =
-      __$PaymentRequiredCopyWithImpl<$Res>;
+abstract class _$$_PaymentRequiredCopyWith<$Res> {
+  factory _$$_PaymentRequiredCopyWith(
+          _$_PaymentRequired value, $Res Function(_$_PaymentRequired) then) =
+      __$$_PaymentRequiredCopyWithImpl<$Res>;
+  @useResult
   $Res call({ApiError? apiError});
 
   $ApiErrorCopyWith<$Res>? get apiError;
 }
 
 /// @nodoc
-class __$PaymentRequiredCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$PaymentRequiredCopyWith<$Res> {
-  __$PaymentRequiredCopyWithImpl(
-      _PaymentRequired _value, $Res Function(_PaymentRequired) _then)
-      : super(_value, (v) => _then(v as _PaymentRequired));
+class __$$_PaymentRequiredCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_PaymentRequired>
+    implements _$$_PaymentRequiredCopyWith<$Res> {
+  __$$_PaymentRequiredCopyWithImpl(
+      _$_PaymentRequired _value, $Res Function(_$_PaymentRequired) _then)
+      : super(_value, _then);
 
-  @override
-  _PaymentRequired get _value => super._value as _PaymentRequired;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? apiError = freezed,
   }) {
-    return _then(_PaymentRequired(
-      apiError: apiError == freezed
+    return _then(_$_PaymentRequired(
+      apiError: freezed == apiError
           ? _value.apiError
           : apiError // ignore: cast_nullable_to_non_nullable
               as ApiError?,
@@ -1477,6 +1409,7 @@ class __$PaymentRequiredCopyWithImpl<$Res>
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $ApiErrorCopyWith<$Res>? get apiError {
     if (_value.apiError == null) {
       return null;
@@ -1505,18 +1438,19 @@ class _$_PaymentRequired extends _PaymentRequired {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PaymentRequired &&
-            const DeepCollectionEquality().equals(other.apiError, apiError));
+            other is _$_PaymentRequired &&
+            (identical(other.apiError, apiError) ||
+                other.apiError == apiError));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(apiError));
+  int get hashCode => Object.hash(runtimeType, apiError);
 
   @JsonKey(ignore: true)
   @override
-  _$PaymentRequiredCopyWith<_PaymentRequired> get copyWith =>
-      __$PaymentRequiredCopyWithImpl<_PaymentRequired>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_PaymentRequiredCopyWith<_$_PaymentRequired> get copyWith =>
+      __$$_PaymentRequiredCopyWithImpl<_$_PaymentRequired>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1538,16 +1472,16 @@ class _$_PaymentRequired extends _PaymentRequired {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return paymentRequired?.call(apiError);
   }
@@ -1593,16 +1527,16 @@ class _$_PaymentRequired extends _PaymentRequired {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return paymentRequired?.call(this);
   }
@@ -1630,32 +1564,30 @@ class _$_PaymentRequired extends _PaymentRequired {
 }
 
 abstract class _PaymentRequired extends ErrorHandler {
-  const factory _PaymentRequired({ApiError? apiError}) = _$_PaymentRequired;
+  const factory _PaymentRequired({final ApiError? apiError}) =
+      _$_PaymentRequired;
   const _PaymentRequired._() : super._();
 
   ApiError? get apiError;
   @JsonKey(ignore: true)
-  _$PaymentRequiredCopyWith<_PaymentRequired> get copyWith =>
+  _$$_PaymentRequiredCopyWith<_$_PaymentRequired> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnexpectedErrorCopyWith<$Res> {
-  factory _$UnexpectedErrorCopyWith(
-          _UnexpectedError value, $Res Function(_UnexpectedError) then) =
-      __$UnexpectedErrorCopyWithImpl<$Res>;
+abstract class _$$_UnexpectedErrorCopyWith<$Res> {
+  factory _$$_UnexpectedErrorCopyWith(
+          _$_UnexpectedError value, $Res Function(_$_UnexpectedError) then) =
+      __$$_UnexpectedErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$UnexpectedErrorCopyWithImpl<$Res>
-    extends _$ErrorHandlerCopyWithImpl<$Res>
-    implements _$UnexpectedErrorCopyWith<$Res> {
-  __$UnexpectedErrorCopyWithImpl(
-      _UnexpectedError _value, $Res Function(_UnexpectedError) _then)
-      : super(_value, (v) => _then(v as _UnexpectedError));
-
-  @override
-  _UnexpectedError get _value => super._value as _UnexpectedError;
+class __$$_UnexpectedErrorCopyWithImpl<$Res>
+    extends _$ErrorHandlerCopyWithImpl<$Res, _$_UnexpectedError>
+    implements _$$_UnexpectedErrorCopyWith<$Res> {
+  __$$_UnexpectedErrorCopyWithImpl(
+      _$_UnexpectedError _value, $Res Function(_$_UnexpectedError) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1671,7 +1603,7 @@ class _$_UnexpectedError extends _UnexpectedError {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _UnexpectedError);
+        (other.runtimeType == runtimeType && other is _$_UnexpectedError);
   }
 
   @override
@@ -1697,16 +1629,16 @@ class _$_UnexpectedError extends _UnexpectedError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? requestCancelled,
-    TResult Function()? unauthorisedRequest,
-    TResult Function()? exceededRequestLimit,
-    TResult Function(ApiError? apiError)? requestError,
-    TResult Function()? serviceUnavailable,
-    TResult Function()? sendTimeout,
-    TResult Function()? noInternetConnection,
-    TResult Function()? emptyResponse,
-    TResult Function(ApiError? apiError)? paymentRequired,
-    TResult Function()? unexpectedError,
+    TResult? Function()? requestCancelled,
+    TResult? Function()? unauthorisedRequest,
+    TResult? Function()? exceededRequestLimit,
+    TResult? Function(ApiError? apiError)? requestError,
+    TResult? Function()? serviceUnavailable,
+    TResult? Function()? sendTimeout,
+    TResult? Function()? noInternetConnection,
+    TResult? Function()? emptyResponse,
+    TResult? Function(ApiError? apiError)? paymentRequired,
+    TResult? Function()? unexpectedError,
   }) {
     return unexpectedError?.call();
   }
@@ -1752,16 +1684,16 @@ class _$_UnexpectedError extends _UnexpectedError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RequestCancelled value)? requestCancelled,
-    TResult Function(_UnauthorisedRequest value)? unauthorisedRequest,
-    TResult Function(_ExceededRequestLimit value)? exceededRequestLimit,
-    TResult Function(_RequestError value)? requestError,
-    TResult Function(_ServiceUnavailable value)? serviceUnavailable,
-    TResult Function(_SendTimeout value)? sendTimeout,
-    TResult Function(_NoInternetConnection value)? noInternetConnection,
-    TResult Function(_EmptyResponse value)? emptyResponse,
-    TResult Function(_PaymentRequired value)? paymentRequired,
-    TResult Function(_UnexpectedError value)? unexpectedError,
+    TResult? Function(_RequestCancelled value)? requestCancelled,
+    TResult? Function(_UnauthorisedRequest value)? unauthorisedRequest,
+    TResult? Function(_ExceededRequestLimit value)? exceededRequestLimit,
+    TResult? Function(_RequestError value)? requestError,
+    TResult? Function(_ServiceUnavailable value)? serviceUnavailable,
+    TResult? Function(_SendTimeout value)? sendTimeout,
+    TResult? Function(_NoInternetConnection value)? noInternetConnection,
+    TResult? Function(_EmptyResponse value)? emptyResponse,
+    TResult? Function(_PaymentRequired value)? paymentRequired,
+    TResult? Function(_UnexpectedError value)? unexpectedError,
   }) {
     return unexpectedError?.call(this);
   }

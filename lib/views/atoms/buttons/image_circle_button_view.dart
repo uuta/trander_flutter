@@ -17,8 +17,8 @@ class ImageCircleButtonView extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(18),
-        onPrimary: Theme.of(context).primaryColor,
-        primary: iconColor ?? iconColor,
+        foregroundColor: Theme.of(context).primaryColor,
+        backgroundColor: iconColor ?? iconColor,
         elevation: 3,
       ),
     );

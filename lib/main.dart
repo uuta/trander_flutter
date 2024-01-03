@@ -1,5 +1,6 @@
 import '/import.dart';
 import '/environment.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
 Future<void> main() async {
   // Environment configuration
@@ -11,20 +12,24 @@ Future<void> main() async {
 }
 
 class App extends HookConsumerWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     final supabaseNotifier = ref.watch(supabaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
         // Auth0
-        auth0Notifier.initAction();
-        // supabase
-        supabaseNotifier.initialize();
+        await auth0Notifier.initAction();
+        // Supabase
+        await supabaseNotifier.initialize();
+        final supabase = sb.Supabase.instance.client;
+        supabase.auth.onAuthStateChange.listen((state) {
+          supabaseNotifier.authStateChangeAction(state);
+        });
       });
       return;
     }, []);
@@ -36,7 +41,7 @@ class App extends HookConsumerWidget {
         primaryColor: const Color(0xff9dff00),
         primaryColorLight: const Color(0xfffd026f),
         primaryTextTheme:
-            const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
+            const TextTheme(bodyMedium: TextStyle(color: Color(0xff5c6360))),
         disabledColor: const Color(0xff9b9b9b),
         fontFamily: 'Arial, Hiragino Kaku Gothic ProN, Meiryo, sans-serif',
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -60,35 +65,35 @@ class App extends HookConsumerWidget {
                 borderSide: BorderSide.none)),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: Colors.grey[200],
-            onPrimary: const Color(0xff22332E),
+            backgroundColor: Colors.grey[200],
+            foregroundColor: const Color(0xff22332E),
           ),
         ),
         textTheme: ThemeData.light().textTheme.copyWith(
-              headline1: const TextStyle(
+              displayLarge: const TextStyle(
                   fontSize: 28,
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
-              headline2: const TextStyle(
+              displayMedium: const TextStyle(
                   fontSize: 24,
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
-              headline4: const TextStyle(
+              headlineMedium: const TextStyle(
                   fontSize: 22,
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
-              headline5: const TextStyle(
+              headlineSmall: const TextStyle(
                   fontSize: 20,
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
-              headline6: const TextStyle(
+              titleLarge: const TextStyle(
                   fontSize: 18,
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
-              bodyText1: const TextStyle(
+              bodyLarge: const TextStyle(
                 color: Color(0xff22332E),
               ),
-              bodyText2: TextStyle(
+              bodyMedium: TextStyle(
                 color: Colors.grey[600],
                 fontSize: 16,
               ),
@@ -99,7 +104,7 @@ class App extends HookConsumerWidget {
         primaryColor: const Color(0xff9dff00),
         primaryColorLight: const Color(0xfffd026f),
         primaryTextTheme:
-            const TextTheme(bodyText2: TextStyle(color: Color(0xff5c6360))),
+            const TextTheme(bodyMedium: TextStyle(color: Color(0xff5c6360))),
         disabledColor: const Color(0xff9b9b9b),
         fontFamily: 'Arial, Hiragino Kaku Gothic ProN, Meiryo, sans-serif',
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
@@ -121,8 +126,8 @@ class App extends HookConsumerWidget {
                 borderSide: BorderSide.none)),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            primary: Colors.grey[700],
-            onPrimary: const Color(0xff22332E),
+            backgroundColor: Colors.grey[700],
+            foregroundColor: const Color(0xff22332E),
           ),
         ),
         dialogBackgroundColor: Colors.grey[900],
@@ -131,43 +136,43 @@ class App extends HookConsumerWidget {
                 foregroundColor:
                     MaterialStateProperty.all(const Color(0xfffd026f)))),
         textTheme: ThemeData.dark().textTheme.copyWith(
-              headline1: const TextStyle(
+              displayLarge: const TextStyle(
                   fontSize: 28,
                   color: Colors.white,
                   fontWeight: FontWeight.w500),
-              headline2: const TextStyle(
+              displayMedium: const TextStyle(
                   fontSize: 24,
                   color: Colors.white,
                   fontWeight: FontWeight.w500),
-              headline3: const TextStyle(
+              displaySmall: const TextStyle(
                   fontSize: 24,
                   color: Color(0xff9dff00),
                   fontWeight: FontWeight.w500),
-              headline4: const TextStyle(
+              headlineMedium: const TextStyle(
                   fontSize: 22,
                   color: Colors.white,
                   fontWeight: FontWeight.w500),
-              headline5: const TextStyle(
+              headlineSmall: const TextStyle(
                   fontSize: 20,
                   color: Colors.white,
                   fontWeight: FontWeight.w500),
-              headline6: const TextStyle(
+              titleLarge: const TextStyle(
                   fontSize: 18,
                   color: Colors.white,
                   fontWeight: FontWeight.w500),
-              bodyText1: const TextStyle(
+              bodyLarge: const TextStyle(
                 color: Color(0xff22332E),
               ),
-              bodyText2: TextStyle(
+              bodyMedium: TextStyle(
                 color: Colors.grey[600],
                 fontSize: 16,
               ),
             ),
       ),
       themeMode: ThemeMode.dark,
-      home: auth0State.isBusy
+      home: supabaseState.isBusy
           ? const ScaffoldProgressPage()
-          : auth0State.isLoggedIn
+          : supabaseState.isLoggedIn
               ? const IndexPage()
               : const OnBoardingPage(),
     );

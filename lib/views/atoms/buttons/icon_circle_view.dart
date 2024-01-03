@@ -18,8 +18,8 @@ class IconCircleView extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: const EdgeInsets.all(20),
-        primary: Colors.white,
-        onPrimary: Colors.black38,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black38,
         elevation: 3,
       ),
     );

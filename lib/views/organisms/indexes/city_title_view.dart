@@ -13,11 +13,11 @@ class CityTitleView extends HookConsumerWidget {
         ? ShadowIconTextView(
             name: locationState.cityData.name,
             icon: Image.network('https://flagcdn.com/h20/$countryCode.png'),
-            textStyle: Theme.of(context).textTheme.headline4,
+            textStyle: Theme.of(context).textTheme.headlineMedium,
             shortenStr: 28,
             mainAxisAlignment: MainAxisAlignment.start,
           )
         : Text(locationState.cityData.name,
-            style: Theme.of(context).textTheme.headline5);
+            style: Theme.of(context).textTheme.headlineSmall);
   }
 }

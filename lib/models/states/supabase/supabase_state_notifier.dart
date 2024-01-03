@@ -17,7 +17,6 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
         url: ConstsSupabase.supabaseUrl,
         anonKey: ConstsSupabase.supabaseAnonKey,
       );
-      state = state.copyWith(client: sb.Supabase.instance.client);
     } on Exception catch (e, s) {
       debugPrint('error: $e - stack: $s');
       // TODO:
@@ -26,24 +25,8 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
     }
   }
 
-  // TODO: Consider using this later
-  // https://supabase.com/blog/flutter-authentication#:~:text=void%20_setupAuthListener
-  // Future<void> setupAuthListener() async {
-  //   final supabase = state.client;
-  //   supabase!.auth.onAuthStateChange.listen((data) {
-  //     final event = data.event;
-  //     if (event == AuthChangeEvent.signedIn) {
-  //       Navigator.of(context).pushReplacement(
-  //         MaterialPageRoute(
-  //           builder: (context) => const ProfileScreen(),
-  //         ),
-  //       );
-  //     }
-  //   });
-  // }
-
   Future<sb.AuthResponse> googleSignIn() async {
-    final supabase = state.client;
+    final supabase = sb.Supabase.instance.client;
 
     /// TODO: update the Web client ID with your own.
     ///
@@ -53,13 +36,13 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
     /// TODO: update the iOS client ID with your own.
     ///
     /// iOS Client ID that you registered with Google Cloud.
-    final iosClientId = ConstsAuth.googleCliendId;
+    // final iosClientId = ConstsAuth.googleCliendId;
 
     // Google sign in on Android will work without providing the Android
     // Client ID registered on Google Cloud.
 
     final GoogleSignIn googleSignIn = GoogleSignIn(
-      clientId: iosClientId,
+      // clientId: iosClientId,
       serverClientId: webClientId,
     );
     final googleUser = await googleSignIn.signIn();
@@ -75,11 +58,23 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
       throw 'No ID Token found.';
     }
 
-    return supabase!.auth.signInWithIdToken(
+    final res = await supabase.auth.signInWithIdToken(
       provider: sb.Provider.google,
       idToken: idToken,
-      // TODO: upgrade
-      // accessToken: accessToken,
+      accessToken: accessToken,
     );
+    state = state.copyWith(authResponse: res);
+
+    return res;
+  }
+
+  Future authStateChangeAction(sb.AuthState authState) async {
+    final supabase = sb.Supabase.instance.client;
+    if (authState.event == sb.AuthChangeEvent.signedIn) {
+      final userData = supabase.auth.currentUser!;
+      state = state.copyWith(isLoggedIn: true, user: userData);
+    } else if (authState.event == sb.AuthChangeEvent.signedOut) {
+      state = state.copyWith(isLoggedIn: false, user: null);
+    }
   }
 }

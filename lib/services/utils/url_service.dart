@@ -6,8 +6,8 @@ class UrlService {
       return;
     }
 
-    if (await canLaunch(url)) {
-      await launch(url);
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(url);
     }
   }
 }

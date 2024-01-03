@@ -48,3 +48,6 @@ app.*.map.json
 # env file
 .env*
 !.env.example
+
+# performance files
+flutter_jank_metrics_*.json

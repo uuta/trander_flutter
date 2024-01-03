@@ -13,7 +13,7 @@ class SettingView extends HookConsumerWidget {
     final purchaseState = ref.watch(purchaseNotifierProvider);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
 
-    final List _currentRange = <int>[
+    final List currentRange = <int>[
       locationState.settingData.minDistance,
       locationState.settingData.maxDistance
     ];
@@ -30,7 +30,7 @@ class SettingView extends HookConsumerWidget {
                 sections: [
               SettingsSection(
                 title: Text('Location',
-                    style: Theme.of(context).textTheme.headline3),
+                    style: Theme.of(context).textTheme.displaySmall),
                 tiles: [
                   SettingsTile(
                     title: const Text('Direction'),
@@ -52,7 +52,7 @@ class SettingView extends HookConsumerWidget {
                   SettingsTile(
                     title: const Text('Range'),
                     description:
-                        Text('${_currentRange[0]}km - ${_currentRange[1]}km'),
+                        Text('${currentRange[0]}km - ${currentRange[1]}km'),
                     trailing: const Icon(Icons.navigate_next),
                     leading: const Icon(Icons.ramen_dining),
                     onPressed: (BuildContext context) {
@@ -80,7 +80,7 @@ class SettingView extends HookConsumerWidget {
               ),
               SettingsSection(
                 title: Text('Account',
-                    style: Theme.of(context).textTheme.headline3),
+                    style: Theme.of(context).textTheme.displaySmall),
                 tiles: [
                   SettingsTile(
                     title: const Text('Name'),
@@ -113,7 +113,7 @@ class SettingView extends HookConsumerWidget {
               ),
               SettingsSection(
                 title: Text('Logout',
-                    style: Theme.of(context).textTheme.headline3),
+                    style: Theme.of(context).textTheme.displaySmall),
                 tiles: [
                   SettingsTile(
                     title: const Text('Logout'),

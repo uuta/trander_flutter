@@ -9,7 +9,7 @@ class SettingDialogView extends HookConsumerWidget {
 
     return AlertDialog(
       title: const Text('Logout'),
-      titleTextStyle: Theme.of(context).textTheme.headline3,
+      titleTextStyle: Theme.of(context).textTheme.displaySmall,
       content: const Text('Are you sure you want to logout?'),
       actions: <Widget>[
         TextButton(

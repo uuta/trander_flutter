@@ -65,12 +65,12 @@ class SucceedDialogView extends StatelessWidget {
             children: <Widget>[
               Text(
                 title,
-                style: Theme.of(context).textTheme.headline2,
+                style: Theme.of(context).textTheme.displayMedium,
               ),
               const SizedBox(height: 16.0),
               Text.rich(
                 TextSpan(
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                   children: [
                     WidgetSpan(
                         alignment: PlaceholderAlignment.middle,
@@ -83,7 +83,8 @@ class SucceedDialogView extends StatelessWidget {
                                 )
                               : Text(
                                   name,
-                                  style: Theme.of(context).textTheme.headline5,
+                                  style:
+                                      Theme.of(context).textTheme.headlineSmall,
                                 ),
                         )),
                   ],

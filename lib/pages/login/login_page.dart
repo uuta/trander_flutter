@@ -49,7 +49,7 @@ class LoginPage extends HookConsumerWidget {
                       Text(
                           'Trander is an app that suggests random locations around the world. Some features require access to your current location.',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.bodyText2),
+                          style: Theme.of(context).textTheme.bodyMedium),
                     ]))
               ]))),
     );
