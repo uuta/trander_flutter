@@ -33,21 +33,21 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
 
   Future<void> _getCurrencySign() async {
     final String currencySign = UtilPriceService.getCurrencySign(
-        state.offerings!.current!.monthly!.product.priceString);
+        state.offerings!.current!.monthly!.storeProduct.priceString);
     state = state.copyWith(currencySign: currencySign);
   }
 
   Future<void> _setOfferingList() async {
     final monthlyPrice = state.currencySign +
-        state.offerings!.current!.monthly!.product.price.toString();
+        state.offerings!.current!.monthly!.storeProduct.price.toString();
     final yearlyPrice = state.currencySign +
         UtilPriceService.getMonthlyPrice(
-                state.offerings!.current!.annual!.product.price)
+                state.offerings!.current!.annual!.storeProduct.price)
             .toString();
     final offPercent = UtilPriceService.getOffPercent(
       UtilPriceService.getMonthlyPrice(
-          state.offerings!.current!.annual!.product.price),
-      state.offerings!.current!.monthly!.product.price,
+          state.offerings!.current!.annual!.storeProduct.price),
+      state.offerings!.current!.monthly!.storeProduct.price,
     );
 
     state = state.copyWith(
@@ -55,13 +55,13 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
         {
           'name': 'Monthly',
           'price': monthlyPrice,
-          'id': state.offerings!.current!.monthly!.product.identifier,
+          'id': state.offerings!.current!.monthly!.storeProduct.identifier,
         },
         {
           'name': 'Yearly',
           'price': yearlyPrice,
           'offPercent': offPercent,
-          'id': state.offerings!.current!.annual!.product.identifier
+          'id': state.offerings!.current!.annual!.storeProduct.identifier
         }
       ],
     );
@@ -73,9 +73,9 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
 
   Future<void> purchaseProduct() async {
     try {
-      await Purchases.purchaseProduct(
+      await Purchases.purchaseStoreProduct(
           state.offeringList[state.purchaseType]['id']);
-      final purchaserInfo = await Purchases.getPurchaserInfo();
+      final purchaserInfo = await Purchases.getCustomerInfo();
       state = state.copyWith(
           isActive: purchaserInfo.entitlements.all['unlimited']!.isActive);
     } on PlatformException catch (e) {
@@ -88,7 +88,7 @@ class PurchaseStateNotifier extends StateNotifier<PurchaseState> {
   }
 
   Future<void> restoreTransactions() async {
-    final info = await Purchases.restoreTransactions();
+    final info = await Purchases.restorePurchases();
     final all = info.entitlements.all;
     state = state.copyWith(
         isActive: all.isNotEmpty ? all['unlimited']!.isActive : false);

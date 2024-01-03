@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'supabase_data_state.dart';
 
@@ -11,46 +12,11 @@ part of 'supabase_data_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 SupabaseDataState _$SupabaseDataStateFromJson(Map<String, dynamic> json) {
   return _SupabaseDataState.fromJson(json);
 }
-
-/// @nodoc
-class _$SupabaseDataStateTearOff {
-  const _$SupabaseDataStateTearOff();
-
-  _SupabaseDataState call(
-      {@JsonKey(name: 'aud') String? aud,
-      @JsonKey(name: 'exp') int? exp,
-      @JsonKey(name: 'iat') int? iat,
-      @JsonKey(name: 'iss') String? iss,
-      @JsonKey(name: 'sub') String sub = '',
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'email') String? email,
-      @JsonKey(name: 'phone') String? picture,
-      @JsonKey(name: 'role') String? role}) {
-    return _SupabaseDataState(
-      aud: aud,
-      exp: exp,
-      iat: iat,
-      iss: iss,
-      sub: sub,
-      name: name,
-      email: email,
-      picture: picture,
-      role: role,
-    );
-  }
-
-  SupabaseDataState fromJson(Map<String, Object?> json) {
-    return SupabaseDataState.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $SupabaseDataState = _$SupabaseDataStateTearOff();
 
 /// @nodoc
 mixin _$SupabaseDataState {
@@ -83,7 +49,8 @@ mixin _$SupabaseDataState {
 abstract class $SupabaseDataStateCopyWith<$Res> {
   factory $SupabaseDataStateCopyWith(
           SupabaseDataState value, $Res Function(SupabaseDataState) then) =
-      _$SupabaseDataStateCopyWithImpl<$Res>;
+      _$SupabaseDataStateCopyWithImpl<$Res, SupabaseDataState>;
+  @useResult
   $Res call(
       {@JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'exp') int? exp,
@@ -97,74 +64,77 @@ abstract class $SupabaseDataStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SupabaseDataStateCopyWithImpl<$Res>
+class _$SupabaseDataStateCopyWithImpl<$Res, $Val extends SupabaseDataState>
     implements $SupabaseDataStateCopyWith<$Res> {
   _$SupabaseDataStateCopyWithImpl(this._value, this._then);
 
-  final SupabaseDataState _value;
   // ignore: unused_field
-  final $Res Function(SupabaseDataState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? aud = freezed,
     Object? exp = freezed,
     Object? iat = freezed,
     Object? iss = freezed,
-    Object? sub = freezed,
+    Object? sub = null,
     Object? name = freezed,
     Object? email = freezed,
     Object? picture = freezed,
     Object? role = freezed,
   }) {
     return _then(_value.copyWith(
-      aud: aud == freezed
+      aud: freezed == aud
           ? _value.aud
           : aud // ignore: cast_nullable_to_non_nullable
               as String?,
-      exp: exp == freezed
+      exp: freezed == exp
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
               as int?,
-      iat: iat == freezed
+      iat: freezed == iat
           ? _value.iat
           : iat // ignore: cast_nullable_to_non_nullable
               as int?,
-      iss: iss == freezed
+      iss: freezed == iss
           ? _value.iss
           : iss // ignore: cast_nullable_to_non_nullable
               as String?,
-      sub: sub == freezed
+      sub: null == sub
           ? _value.sub
           : sub // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      picture: picture == freezed
+      picture: freezed == picture
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: role == freezed
+      role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SupabaseDataStateCopyWith<$Res>
+abstract class _$$_SupabaseDataStateCopyWith<$Res>
     implements $SupabaseDataStateCopyWith<$Res> {
-  factory _$SupabaseDataStateCopyWith(
-          _SupabaseDataState value, $Res Function(_SupabaseDataState) then) =
-      __$SupabaseDataStateCopyWithImpl<$Res>;
+  factory _$$_SupabaseDataStateCopyWith(_$_SupabaseDataState value,
+          $Res Function(_$_SupabaseDataState) then) =
+      __$$_SupabaseDataStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {@JsonKey(name: 'aud') String? aud,
       @JsonKey(name: 'exp') int? exp,
@@ -178,62 +148,60 @@ abstract class _$SupabaseDataStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SupabaseDataStateCopyWithImpl<$Res>
-    extends _$SupabaseDataStateCopyWithImpl<$Res>
-    implements _$SupabaseDataStateCopyWith<$Res> {
-  __$SupabaseDataStateCopyWithImpl(
-      _SupabaseDataState _value, $Res Function(_SupabaseDataState) _then)
-      : super(_value, (v) => _then(v as _SupabaseDataState));
+class __$$_SupabaseDataStateCopyWithImpl<$Res>
+    extends _$SupabaseDataStateCopyWithImpl<$Res, _$_SupabaseDataState>
+    implements _$$_SupabaseDataStateCopyWith<$Res> {
+  __$$_SupabaseDataStateCopyWithImpl(
+      _$_SupabaseDataState _value, $Res Function(_$_SupabaseDataState) _then)
+      : super(_value, _then);
 
-  @override
-  _SupabaseDataState get _value => super._value as _SupabaseDataState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? aud = freezed,
     Object? exp = freezed,
     Object? iat = freezed,
     Object? iss = freezed,
-    Object? sub = freezed,
+    Object? sub = null,
     Object? name = freezed,
     Object? email = freezed,
     Object? picture = freezed,
     Object? role = freezed,
   }) {
-    return _then(_SupabaseDataState(
-      aud: aud == freezed
+    return _then(_$_SupabaseDataState(
+      aud: freezed == aud
           ? _value.aud
           : aud // ignore: cast_nullable_to_non_nullable
               as String?,
-      exp: exp == freezed
+      exp: freezed == exp
           ? _value.exp
           : exp // ignore: cast_nullable_to_non_nullable
               as int?,
-      iat: iat == freezed
+      iat: freezed == iat
           ? _value.iat
           : iat // ignore: cast_nullable_to_non_nullable
               as int?,
-      iss: iss == freezed
+      iss: freezed == iss
           ? _value.iss
           : iss // ignore: cast_nullable_to_non_nullable
               as String?,
-      sub: sub == freezed
+      sub: null == sub
           ? _value.sub
           : sub // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      email: email == freezed
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
-      picture: picture == freezed
+      picture: freezed == picture
           ? _value.picture
           : picture // ignore: cast_nullable_to_non_nullable
               as String?,
-      role: role == freezed
+      role: freezed == role
           ? _value.role
           : role // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -295,53 +263,49 @@ class _$_SupabaseDataState implements _SupabaseDataState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SupabaseDataState &&
-            const DeepCollectionEquality().equals(other.aud, aud) &&
-            const DeepCollectionEquality().equals(other.exp, exp) &&
-            const DeepCollectionEquality().equals(other.iat, iat) &&
-            const DeepCollectionEquality().equals(other.iss, iss) &&
-            const DeepCollectionEquality().equals(other.sub, sub) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.picture, picture) &&
-            const DeepCollectionEquality().equals(other.role, role));
+            other is _$_SupabaseDataState &&
+            (identical(other.aud, aud) || other.aud == aud) &&
+            (identical(other.exp, exp) || other.exp == exp) &&
+            (identical(other.iat, iat) || other.iat == iat) &&
+            (identical(other.iss, iss) || other.iss == iss) &&
+            (identical(other.sub, sub) || other.sub == sub) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.picture, picture) || other.picture == picture) &&
+            (identical(other.role, role) || other.role == role));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(aud),
-      const DeepCollectionEquality().hash(exp),
-      const DeepCollectionEquality().hash(iat),
-      const DeepCollectionEquality().hash(iss),
-      const DeepCollectionEquality().hash(sub),
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(picture),
-      const DeepCollectionEquality().hash(role));
 
   @JsonKey(ignore: true)
   @override
-  _$SupabaseDataStateCopyWith<_SupabaseDataState> get copyWith =>
-      __$SupabaseDataStateCopyWithImpl<_SupabaseDataState>(this, _$identity);
+  int get hashCode => Object.hash(
+      runtimeType, aud, exp, iat, iss, sub, name, email, picture, role);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_SupabaseDataStateCopyWith<_$_SupabaseDataState> get copyWith =>
+      __$$_SupabaseDataStateCopyWithImpl<_$_SupabaseDataState>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_SupabaseDataStateToJson(this);
+    return _$$_SupabaseDataStateToJson(
+      this,
+    );
   }
 }
 
 abstract class _SupabaseDataState implements SupabaseDataState {
   const factory _SupabaseDataState(
-      {@JsonKey(name: 'aud') String? aud,
-      @JsonKey(name: 'exp') int? exp,
-      @JsonKey(name: 'iat') int? iat,
-      @JsonKey(name: 'iss') String? iss,
-      @JsonKey(name: 'sub') String sub,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'email') String? email,
-      @JsonKey(name: 'phone') String? picture,
-      @JsonKey(name: 'role') String? role}) = _$_SupabaseDataState;
+      {@JsonKey(name: 'aud') final String? aud,
+      @JsonKey(name: 'exp') final int? exp,
+      @JsonKey(name: 'iat') final int? iat,
+      @JsonKey(name: 'iss') final String? iss,
+      @JsonKey(name: 'sub') final String sub,
+      @JsonKey(name: 'name') final String? name,
+      @JsonKey(name: 'email') final String? email,
+      @JsonKey(name: 'phone') final String? picture,
+      @JsonKey(name: 'role') final String? role}) = _$_SupabaseDataState;
 
   factory _SupabaseDataState.fromJson(Map<String, dynamic> json) =
       _$_SupabaseDataState.fromJson;
@@ -375,6 +339,6 @@ abstract class _SupabaseDataState implements SupabaseDataState {
   String? get role;
   @override
   @JsonKey(ignore: true)
-  _$SupabaseDataStateCopyWith<_SupabaseDataState> get copyWith =>
+  _$$_SupabaseDataStateCopyWith<_$_SupabaseDataState> get copyWith =>
       throw _privateConstructorUsedError;
 }

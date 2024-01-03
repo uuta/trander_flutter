@@ -1,6 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: type=lint
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'location_state.dart';
 
@@ -11,60 +12,7 @@ part of 'location_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$LocationStateTearOff {
-  const _$LocationStateTearOff();
-
-  _LocationState call(
-      {bool isLoading = false,
-      bool isPageLoading = false,
-      required Completer<GoogleMapController> mapController,
-      LatLng currentLocation = const LatLng(35.658034, 139.701636),
-      LatLng newLocation = const LatLng(35.658034, 139.701636),
-      Set<Marker> markers = const {},
-      bool isCitySucceeded = false,
-      bool isCityDialog = false,
-      required CityState cityData,
-      required CityExploreState cityExploreState,
-      bool isKeywordSearchSucceeded = false,
-      bool isKeywordSearchDialog = false,
-      required KeywordSearchState keywordSearchData,
-      required KeywordSearchExploreState keywordSearchExploreState,
-      required TextEditingController keywordTextEditingController,
-      required SettingState settingData,
-      int settingMode = 0,
-      bool purchaseDialog = false,
-      String purchaseErrorMessage = '',
-      String errorMessage = ''}) {
-    return _LocationState(
-      isLoading: isLoading,
-      isPageLoading: isPageLoading,
-      mapController: mapController,
-      currentLocation: currentLocation,
-      newLocation: newLocation,
-      markers: markers,
-      isCitySucceeded: isCitySucceeded,
-      isCityDialog: isCityDialog,
-      cityData: cityData,
-      cityExploreState: cityExploreState,
-      isKeywordSearchSucceeded: isKeywordSearchSucceeded,
-      isKeywordSearchDialog: isKeywordSearchDialog,
-      keywordSearchData: keywordSearchData,
-      keywordSearchExploreState: keywordSearchExploreState,
-      keywordTextEditingController: keywordTextEditingController,
-      settingData: settingData,
-      settingMode: settingMode,
-      purchaseDialog: purchaseDialog,
-      purchaseErrorMessage: purchaseErrorMessage,
-      errorMessage: errorMessage,
-    );
-  }
-}
-
-/// @nodoc
-const $LocationState = _$LocationStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$LocationState {
@@ -102,7 +50,8 @@ mixin _$LocationState {
 abstract class $LocationStateCopyWith<$Res> {
   factory $LocationStateCopyWith(
           LocationState value, $Res Function(LocationState) then) =
-      _$LocationStateCopyWithImpl<$Res>;
+      _$LocationStateCopyWithImpl<$Res, LocationState>;
+  @useResult
   $Res call(
       {bool isLoading,
       bool isPageLoading,
@@ -133,165 +82,173 @@ abstract class $LocationStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LocationStateCopyWithImpl<$Res>
+class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
     implements $LocationStateCopyWith<$Res> {
   _$LocationStateCopyWithImpl(this._value, this._then);
 
-  final LocationState _value;
   // ignore: unused_field
-  final $Res Function(LocationState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? isPageLoading = freezed,
-    Object? mapController = freezed,
-    Object? currentLocation = freezed,
-    Object? newLocation = freezed,
-    Object? markers = freezed,
-    Object? isCitySucceeded = freezed,
-    Object? isCityDialog = freezed,
-    Object? cityData = freezed,
-    Object? cityExploreState = freezed,
-    Object? isKeywordSearchSucceeded = freezed,
-    Object? isKeywordSearchDialog = freezed,
-    Object? keywordSearchData = freezed,
-    Object? keywordSearchExploreState = freezed,
-    Object? keywordTextEditingController = freezed,
-    Object? settingData = freezed,
-    Object? settingMode = freezed,
-    Object? purchaseDialog = freezed,
-    Object? purchaseErrorMessage = freezed,
-    Object? errorMessage = freezed,
+    Object? isLoading = null,
+    Object? isPageLoading = null,
+    Object? mapController = null,
+    Object? currentLocation = null,
+    Object? newLocation = null,
+    Object? markers = null,
+    Object? isCitySucceeded = null,
+    Object? isCityDialog = null,
+    Object? cityData = null,
+    Object? cityExploreState = null,
+    Object? isKeywordSearchSucceeded = null,
+    Object? isKeywordSearchDialog = null,
+    Object? keywordSearchData = null,
+    Object? keywordSearchExploreState = null,
+    Object? keywordTextEditingController = null,
+    Object? settingData = null,
+    Object? settingMode = null,
+    Object? purchaseDialog = null,
+    Object? purchaseErrorMessage = null,
+    Object? errorMessage = null,
   }) {
     return _then(_value.copyWith(
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPageLoading: isPageLoading == freezed
+      isPageLoading: null == isPageLoading
           ? _value.isPageLoading
           : isPageLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      mapController: mapController == freezed
+      mapController: null == mapController
           ? _value.mapController
           : mapController // ignore: cast_nullable_to_non_nullable
               as Completer<GoogleMapController>,
-      currentLocation: currentLocation == freezed
+      currentLocation: null == currentLocation
           ? _value.currentLocation
           : currentLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      newLocation: newLocation == freezed
+      newLocation: null == newLocation
           ? _value.newLocation
           : newLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      markers: markers == freezed
+      markers: null == markers
           ? _value.markers
           : markers // ignore: cast_nullable_to_non_nullable
               as Set<Marker>,
-      isCitySucceeded: isCitySucceeded == freezed
+      isCitySucceeded: null == isCitySucceeded
           ? _value.isCitySucceeded
           : isCitySucceeded // ignore: cast_nullable_to_non_nullable
               as bool,
-      isCityDialog: isCityDialog == freezed
+      isCityDialog: null == isCityDialog
           ? _value.isCityDialog
           : isCityDialog // ignore: cast_nullable_to_non_nullable
               as bool,
-      cityData: cityData == freezed
+      cityData: null == cityData
           ? _value.cityData
           : cityData // ignore: cast_nullable_to_non_nullable
               as CityState,
-      cityExploreState: cityExploreState == freezed
+      cityExploreState: null == cityExploreState
           ? _value.cityExploreState
           : cityExploreState // ignore: cast_nullable_to_non_nullable
               as CityExploreState,
-      isKeywordSearchSucceeded: isKeywordSearchSucceeded == freezed
+      isKeywordSearchSucceeded: null == isKeywordSearchSucceeded
           ? _value.isKeywordSearchSucceeded
           : isKeywordSearchSucceeded // ignore: cast_nullable_to_non_nullable
               as bool,
-      isKeywordSearchDialog: isKeywordSearchDialog == freezed
+      isKeywordSearchDialog: null == isKeywordSearchDialog
           ? _value.isKeywordSearchDialog
           : isKeywordSearchDialog // ignore: cast_nullable_to_non_nullable
               as bool,
-      keywordSearchData: keywordSearchData == freezed
+      keywordSearchData: null == keywordSearchData
           ? _value.keywordSearchData
           : keywordSearchData // ignore: cast_nullable_to_non_nullable
               as KeywordSearchState,
-      keywordSearchExploreState: keywordSearchExploreState == freezed
+      keywordSearchExploreState: null == keywordSearchExploreState
           ? _value.keywordSearchExploreState
           : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
               as KeywordSearchExploreState,
-      keywordTextEditingController: keywordTextEditingController == freezed
+      keywordTextEditingController: null == keywordTextEditingController
           ? _value.keywordTextEditingController
           : keywordTextEditingController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      settingData: settingData == freezed
+      settingData: null == settingData
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
               as SettingState,
-      settingMode: settingMode == freezed
+      settingMode: null == settingMode
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
               as int,
-      purchaseDialog: purchaseDialog == freezed
+      purchaseDialog: null == purchaseDialog
           ? _value.purchaseDialog
           : purchaseDialog // ignore: cast_nullable_to_non_nullable
               as bool,
-      purchaseErrorMessage: purchaseErrorMessage == freezed
+      purchaseErrorMessage: null == purchaseErrorMessage
           ? _value.purchaseErrorMessage
           : purchaseErrorMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      errorMessage: errorMessage == freezed
+      errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CityStateCopyWith<$Res> get cityData {
     return $CityStateCopyWith<$Res>(_value.cityData, (value) {
-      return _then(_value.copyWith(cityData: value));
+      return _then(_value.copyWith(cityData: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $CityExploreStateCopyWith<$Res> get cityExploreState {
     return $CityExploreStateCopyWith<$Res>(_value.cityExploreState, (value) {
-      return _then(_value.copyWith(cityExploreState: value));
+      return _then(_value.copyWith(cityExploreState: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $KeywordSearchStateCopyWith<$Res> get keywordSearchData {
     return $KeywordSearchStateCopyWith<$Res>(_value.keywordSearchData, (value) {
-      return _then(_value.copyWith(keywordSearchData: value));
+      return _then(_value.copyWith(keywordSearchData: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState {
     return $KeywordSearchExploreStateCopyWith<$Res>(
         _value.keywordSearchExploreState, (value) {
-      return _then(_value.copyWith(keywordSearchExploreState: value));
+      return _then(_value.copyWith(keywordSearchExploreState: value) as $Val);
     });
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $SettingStateCopyWith<$Res> get settingData {
     return $SettingStateCopyWith<$Res>(_value.settingData, (value) {
-      return _then(_value.copyWith(settingData: value));
+      return _then(_value.copyWith(settingData: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$LocationStateCopyWith<$Res>
+abstract class _$$_LocationStateCopyWith<$Res>
     implements $LocationStateCopyWith<$Res> {
-  factory _$LocationStateCopyWith(
-          _LocationState value, $Res Function(_LocationState) then) =
-      __$LocationStateCopyWithImpl<$Res>;
+  factory _$$_LocationStateCopyWith(
+          _$_LocationState value, $Res Function(_$_LocationState) then) =
+      __$$_LocationStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool isLoading,
       bool isPageLoading,
@@ -327,117 +284,115 @@ abstract class _$LocationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$LocationStateCopyWithImpl<$Res>
-    extends _$LocationStateCopyWithImpl<$Res>
-    implements _$LocationStateCopyWith<$Res> {
-  __$LocationStateCopyWithImpl(
-      _LocationState _value, $Res Function(_LocationState) _then)
-      : super(_value, (v) => _then(v as _LocationState));
+class __$$_LocationStateCopyWithImpl<$Res>
+    extends _$LocationStateCopyWithImpl<$Res, _$_LocationState>
+    implements _$$_LocationStateCopyWith<$Res> {
+  __$$_LocationStateCopyWithImpl(
+      _$_LocationState _value, $Res Function(_$_LocationState) _then)
+      : super(_value, _then);
 
-  @override
-  _LocationState get _value => super._value as _LocationState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isLoading = freezed,
-    Object? isPageLoading = freezed,
-    Object? mapController = freezed,
-    Object? currentLocation = freezed,
-    Object? newLocation = freezed,
-    Object? markers = freezed,
-    Object? isCitySucceeded = freezed,
-    Object? isCityDialog = freezed,
-    Object? cityData = freezed,
-    Object? cityExploreState = freezed,
-    Object? isKeywordSearchSucceeded = freezed,
-    Object? isKeywordSearchDialog = freezed,
-    Object? keywordSearchData = freezed,
-    Object? keywordSearchExploreState = freezed,
-    Object? keywordTextEditingController = freezed,
-    Object? settingData = freezed,
-    Object? settingMode = freezed,
-    Object? purchaseDialog = freezed,
-    Object? purchaseErrorMessage = freezed,
-    Object? errorMessage = freezed,
+    Object? isLoading = null,
+    Object? isPageLoading = null,
+    Object? mapController = null,
+    Object? currentLocation = null,
+    Object? newLocation = null,
+    Object? markers = null,
+    Object? isCitySucceeded = null,
+    Object? isCityDialog = null,
+    Object? cityData = null,
+    Object? cityExploreState = null,
+    Object? isKeywordSearchSucceeded = null,
+    Object? isKeywordSearchDialog = null,
+    Object? keywordSearchData = null,
+    Object? keywordSearchExploreState = null,
+    Object? keywordTextEditingController = null,
+    Object? settingData = null,
+    Object? settingMode = null,
+    Object? purchaseDialog = null,
+    Object? purchaseErrorMessage = null,
+    Object? errorMessage = null,
   }) {
-    return _then(_LocationState(
-      isLoading: isLoading == freezed
+    return _then(_$_LocationState(
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPageLoading: isPageLoading == freezed
+      isPageLoading: null == isPageLoading
           ? _value.isPageLoading
           : isPageLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      mapController: mapController == freezed
+      mapController: null == mapController
           ? _value.mapController
           : mapController // ignore: cast_nullable_to_non_nullable
               as Completer<GoogleMapController>,
-      currentLocation: currentLocation == freezed
+      currentLocation: null == currentLocation
           ? _value.currentLocation
           : currentLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      newLocation: newLocation == freezed
+      newLocation: null == newLocation
           ? _value.newLocation
           : newLocation // ignore: cast_nullable_to_non_nullable
               as LatLng,
-      markers: markers == freezed
-          ? _value.markers
+      markers: null == markers
+          ? _value._markers
           : markers // ignore: cast_nullable_to_non_nullable
               as Set<Marker>,
-      isCitySucceeded: isCitySucceeded == freezed
+      isCitySucceeded: null == isCitySucceeded
           ? _value.isCitySucceeded
           : isCitySucceeded // ignore: cast_nullable_to_non_nullable
               as bool,
-      isCityDialog: isCityDialog == freezed
+      isCityDialog: null == isCityDialog
           ? _value.isCityDialog
           : isCityDialog // ignore: cast_nullable_to_non_nullable
               as bool,
-      cityData: cityData == freezed
+      cityData: null == cityData
           ? _value.cityData
           : cityData // ignore: cast_nullable_to_non_nullable
               as CityState,
-      cityExploreState: cityExploreState == freezed
+      cityExploreState: null == cityExploreState
           ? _value.cityExploreState
           : cityExploreState // ignore: cast_nullable_to_non_nullable
               as CityExploreState,
-      isKeywordSearchSucceeded: isKeywordSearchSucceeded == freezed
+      isKeywordSearchSucceeded: null == isKeywordSearchSucceeded
           ? _value.isKeywordSearchSucceeded
           : isKeywordSearchSucceeded // ignore: cast_nullable_to_non_nullable
               as bool,
-      isKeywordSearchDialog: isKeywordSearchDialog == freezed
+      isKeywordSearchDialog: null == isKeywordSearchDialog
           ? _value.isKeywordSearchDialog
           : isKeywordSearchDialog // ignore: cast_nullable_to_non_nullable
               as bool,
-      keywordSearchData: keywordSearchData == freezed
+      keywordSearchData: null == keywordSearchData
           ? _value.keywordSearchData
           : keywordSearchData // ignore: cast_nullable_to_non_nullable
               as KeywordSearchState,
-      keywordSearchExploreState: keywordSearchExploreState == freezed
+      keywordSearchExploreState: null == keywordSearchExploreState
           ? _value.keywordSearchExploreState
           : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
               as KeywordSearchExploreState,
-      keywordTextEditingController: keywordTextEditingController == freezed
+      keywordTextEditingController: null == keywordTextEditingController
           ? _value.keywordTextEditingController
           : keywordTextEditingController // ignore: cast_nullable_to_non_nullable
               as TextEditingController,
-      settingData: settingData == freezed
+      settingData: null == settingData
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
               as SettingState,
-      settingMode: settingMode == freezed
+      settingMode: null == settingMode
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
               as int,
-      purchaseDialog: purchaseDialog == freezed
+      purchaseDialog: null == purchaseDialog
           ? _value.purchaseDialog
           : purchaseDialog // ignore: cast_nullable_to_non_nullable
               as bool,
-      purchaseErrorMessage: purchaseErrorMessage == freezed
+      purchaseErrorMessage: null == purchaseErrorMessage
           ? _value.purchaseErrorMessage
           : purchaseErrorMessage // ignore: cast_nullable_to_non_nullable
               as String,
-      errorMessage: errorMessage == freezed
+      errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
@@ -454,7 +409,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       required this.mapController,
       this.currentLocation = const LatLng(35.658034, 139.701636),
       this.newLocation = const LatLng(35.658034, 139.701636),
-      this.markers = const {},
+      final Set<Marker> markers = const {},
       this.isCitySucceeded = false,
       this.isCityDialog = false,
       required this.cityData,
@@ -468,40 +423,47 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.settingMode = 0,
       this.purchaseDialog = false,
       this.purchaseErrorMessage = '',
-      this.errorMessage = ''});
+      this.errorMessage = ''})
+      : _markers = markers;
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isPageLoading;
   @override
   final Completer<GoogleMapController> mapController;
-  @JsonKey()
   @override
+  @JsonKey()
   final LatLng currentLocation;
-  @JsonKey()
   @override
+  @JsonKey()
   final LatLng newLocation;
-  @JsonKey()
+  final Set<Marker> _markers;
   @override
-  final Set<Marker> markers;
   @JsonKey()
+  Set<Marker> get markers {
+    if (_markers is EqualUnmodifiableSetView) return _markers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableSetView(_markers);
+  }
+
   @override
+  @JsonKey()
   final bool isCitySucceeded;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isCityDialog;
   @override
   final CityState cityData;
   @override
   final CityExploreState cityExploreState;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isKeywordSearchSucceeded;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isKeywordSearchDialog;
   @override
   final KeywordSearchState keywordSearchData;
@@ -511,17 +473,17 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final TextEditingController keywordTextEditingController;
   @override
   final SettingState settingData;
-  @JsonKey()
   @override
+  @JsonKey()
   final int settingMode;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool purchaseDialog;
-  @JsonKey()
   @override
+  @JsonKey()
   final String purchaseErrorMessage;
-  @JsonKey()
   @override
+  @JsonKey()
   final String errorMessage;
 
   @override
@@ -563,100 +525,106 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LocationState &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality()
-                .equals(other.isPageLoading, isPageLoading) &&
-            const DeepCollectionEquality()
-                .equals(other.mapController, mapController) &&
-            const DeepCollectionEquality()
-                .equals(other.currentLocation, currentLocation) &&
-            const DeepCollectionEquality()
-                .equals(other.newLocation, newLocation) &&
-            const DeepCollectionEquality().equals(other.markers, markers) &&
-            const DeepCollectionEquality()
-                .equals(other.isCitySucceeded, isCitySucceeded) &&
-            const DeepCollectionEquality()
-                .equals(other.isCityDialog, isCityDialog) &&
-            const DeepCollectionEquality().equals(other.cityData, cityData) &&
-            const DeepCollectionEquality()
-                .equals(other.cityExploreState, cityExploreState) &&
-            const DeepCollectionEquality().equals(
-                other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) &&
-            const DeepCollectionEquality()
-                .equals(other.isKeywordSearchDialog, isKeywordSearchDialog) &&
-            const DeepCollectionEquality()
-                .equals(other.keywordSearchData, keywordSearchData) &&
-            const DeepCollectionEquality().equals(
-                other.keywordSearchExploreState, keywordSearchExploreState) &&
-            const DeepCollectionEquality().equals(
-                other.keywordTextEditingController,
-                keywordTextEditingController) &&
-            const DeepCollectionEquality()
-                .equals(other.settingData, settingData) &&
-            const DeepCollectionEquality()
-                .equals(other.settingMode, settingMode) &&
-            const DeepCollectionEquality()
-                .equals(other.purchaseDialog, purchaseDialog) &&
-            const DeepCollectionEquality()
-                .equals(other.purchaseErrorMessage, purchaseErrorMessage) &&
-            const DeepCollectionEquality()
-                .equals(other.errorMessage, errorMessage));
+            other is _$_LocationState &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isPageLoading, isPageLoading) ||
+                other.isPageLoading == isPageLoading) &&
+            (identical(other.mapController, mapController) ||
+                other.mapController == mapController) &&
+            (identical(other.currentLocation, currentLocation) ||
+                other.currentLocation == currentLocation) &&
+            (identical(other.newLocation, newLocation) ||
+                other.newLocation == newLocation) &&
+            const DeepCollectionEquality().equals(other._markers, _markers) &&
+            (identical(other.isCitySucceeded, isCitySucceeded) ||
+                other.isCitySucceeded == isCitySucceeded) &&
+            (identical(other.isCityDialog, isCityDialog) ||
+                other.isCityDialog == isCityDialog) &&
+            (identical(other.cityData, cityData) ||
+                other.cityData == cityData) &&
+            (identical(other.cityExploreState, cityExploreState) ||
+                other.cityExploreState == cityExploreState) &&
+            (identical(
+                    other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) ||
+                other.isKeywordSearchSucceeded == isKeywordSearchSucceeded) &&
+            (identical(other.isKeywordSearchDialog, isKeywordSearchDialog) ||
+                other.isKeywordSearchDialog == isKeywordSearchDialog) &&
+            (identical(other.keywordSearchData, keywordSearchData) ||
+                other.keywordSearchData == keywordSearchData) &&
+            (identical(other.keywordSearchExploreState,
+                    keywordSearchExploreState) ||
+                other.keywordSearchExploreState == keywordSearchExploreState) &&
+            (identical(other.keywordTextEditingController,
+                    keywordTextEditingController) ||
+                other.keywordTextEditingController ==
+                    keywordTextEditingController) &&
+            (identical(other.settingData, settingData) ||
+                other.settingData == settingData) &&
+            (identical(other.settingMode, settingMode) ||
+                other.settingMode == settingMode) &&
+            (identical(other.purchaseDialog, purchaseDialog) ||
+                other.purchaseDialog == purchaseDialog) &&
+            (identical(other.purchaseErrorMessage, purchaseErrorMessage) ||
+                other.purchaseErrorMessage == purchaseErrorMessage) &&
+            (identical(other.errorMessage, errorMessage) ||
+                other.errorMessage == errorMessage));
   }
 
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(isLoading),
-        const DeepCollectionEquality().hash(isPageLoading),
-        const DeepCollectionEquality().hash(mapController),
-        const DeepCollectionEquality().hash(currentLocation),
-        const DeepCollectionEquality().hash(newLocation),
-        const DeepCollectionEquality().hash(markers),
-        const DeepCollectionEquality().hash(isCitySucceeded),
-        const DeepCollectionEquality().hash(isCityDialog),
-        const DeepCollectionEquality().hash(cityData),
-        const DeepCollectionEquality().hash(cityExploreState),
-        const DeepCollectionEquality().hash(isKeywordSearchSucceeded),
-        const DeepCollectionEquality().hash(isKeywordSearchDialog),
-        const DeepCollectionEquality().hash(keywordSearchData),
-        const DeepCollectionEquality().hash(keywordSearchExploreState),
-        const DeepCollectionEquality().hash(keywordTextEditingController),
-        const DeepCollectionEquality().hash(settingData),
-        const DeepCollectionEquality().hash(settingMode),
-        const DeepCollectionEquality().hash(purchaseDialog),
-        const DeepCollectionEquality().hash(purchaseErrorMessage),
-        const DeepCollectionEquality().hash(errorMessage)
+        isLoading,
+        isPageLoading,
+        mapController,
+        currentLocation,
+        newLocation,
+        const DeepCollectionEquality().hash(_markers),
+        isCitySucceeded,
+        isCityDialog,
+        cityData,
+        cityExploreState,
+        isKeywordSearchSucceeded,
+        isKeywordSearchDialog,
+        keywordSearchData,
+        keywordSearchExploreState,
+        keywordTextEditingController,
+        settingData,
+        settingMode,
+        purchaseDialog,
+        purchaseErrorMessage,
+        errorMessage
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$LocationStateCopyWith<_LocationState> get copyWith =>
-      __$LocationStateCopyWithImpl<_LocationState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_LocationStateCopyWith<_$_LocationState> get copyWith =>
+      __$$_LocationStateCopyWithImpl<_$_LocationState>(this, _$identity);
 }
 
 abstract class _LocationState implements LocationState {
   const factory _LocationState(
-      {bool isLoading,
-      bool isPageLoading,
-      required Completer<GoogleMapController> mapController,
-      LatLng currentLocation,
-      LatLng newLocation,
-      Set<Marker> markers,
-      bool isCitySucceeded,
-      bool isCityDialog,
-      required CityState cityData,
-      required CityExploreState cityExploreState,
-      bool isKeywordSearchSucceeded,
-      bool isKeywordSearchDialog,
-      required KeywordSearchState keywordSearchData,
-      required KeywordSearchExploreState keywordSearchExploreState,
-      required TextEditingController keywordTextEditingController,
-      required SettingState settingData,
-      int settingMode,
-      bool purchaseDialog,
-      String purchaseErrorMessage,
-      String errorMessage}) = _$_LocationState;
+      {final bool isLoading,
+      final bool isPageLoading,
+      required final Completer<GoogleMapController> mapController,
+      final LatLng currentLocation,
+      final LatLng newLocation,
+      final Set<Marker> markers,
+      final bool isCitySucceeded,
+      final bool isCityDialog,
+      required final CityState cityData,
+      required final CityExploreState cityExploreState,
+      final bool isKeywordSearchSucceeded,
+      final bool isKeywordSearchDialog,
+      required final KeywordSearchState keywordSearchData,
+      required final KeywordSearchExploreState keywordSearchExploreState,
+      required final TextEditingController keywordTextEditingController,
+      required final SettingState settingData,
+      final int settingMode,
+      final bool purchaseDialog,
+      final String purchaseErrorMessage,
+      final String errorMessage}) = _$_LocationState;
 
   @override
   bool get isLoading;
@@ -700,6 +668,6 @@ abstract class _LocationState implements LocationState {
   String get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$LocationStateCopyWith<_LocationState> get copyWith =>
+  _$$_LocationStateCopyWith<_$_LocationState> get copyWith =>
       throw _privateConstructorUsedError;
 }
