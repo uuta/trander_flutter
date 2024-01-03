@@ -1,7 +1,7 @@
 class ConstsApi {
-  static const String cities = '/api/cities';
-  static const String keywordSearch = '/api/external/near-by-search';
-  static const String distance = '/api/distance';
-  static const String setting = '/api/setting';
-  static const String user = '/api/user';
+  static const String cities = '/cities';
+  static const String keywordSearch = '/near-by-search';
+  static const String distance = '/distance';
+  static const String setting = '/setting';
+  static const String user = '/user';
 }
