@@ -22,6 +22,8 @@ mixin _$SupabaseState {
   String? get idToken => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
   SupabaseClient? get client => throw _privateConstructorUsedError;
+  AuthResponse? get authResponse => throw _privateConstructorUsedError;
+  User? get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SupabaseStateCopyWith<SupabaseState> get copyWith =>
@@ -40,7 +42,9 @@ abstract class $SupabaseStateCopyWith<$Res> {
       SupabaseDataState data,
       String? idToken,
       String? errorMessage,
-      SupabaseClient? client});
+      SupabaseClient? client,
+      AuthResponse? authResponse,
+      User? user});
 
   $SupabaseDataStateCopyWith<$Res> get data;
 }
@@ -64,6 +68,8 @@ class _$SupabaseStateCopyWithImpl<$Res, $Val extends SupabaseState>
     Object? idToken = freezed,
     Object? errorMessage = freezed,
     Object? client = freezed,
+    Object? authResponse = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       isBusy: null == isBusy
@@ -90,6 +96,14 @@ class _$SupabaseStateCopyWithImpl<$Res, $Val extends SupabaseState>
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
               as SupabaseClient?,
+      authResponse: freezed == authResponse
+          ? _value.authResponse
+          : authResponse // ignore: cast_nullable_to_non_nullable
+              as AuthResponse?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
   }
 
@@ -116,7 +130,9 @@ abstract class _$$_SupabaseStateCopyWith<$Res>
       SupabaseDataState data,
       String? idToken,
       String? errorMessage,
-      SupabaseClient? client});
+      SupabaseClient? client,
+      AuthResponse? authResponse,
+      User? user});
 
   @override
   $SupabaseDataStateCopyWith<$Res> get data;
@@ -139,6 +155,8 @@ class __$$_SupabaseStateCopyWithImpl<$Res>
     Object? idToken = freezed,
     Object? errorMessage = freezed,
     Object? client = freezed,
+    Object? authResponse = freezed,
+    Object? user = freezed,
   }) {
     return _then(_$_SupabaseState(
       isBusy: null == isBusy
@@ -165,6 +183,14 @@ class __$$_SupabaseStateCopyWithImpl<$Res>
           ? _value.client
           : client // ignore: cast_nullable_to_non_nullable
               as SupabaseClient?,
+      authResponse: freezed == authResponse
+          ? _value.authResponse
+          : authResponse // ignore: cast_nullable_to_non_nullable
+              as AuthResponse?,
+      user: freezed == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -178,7 +204,9 @@ class _$_SupabaseState implements _SupabaseState {
       required this.data,
       this.idToken,
       this.errorMessage,
-      this.client});
+      this.client,
+      this.authResponse,
+      this.user});
 
   @override
   @JsonKey()
@@ -194,10 +222,14 @@ class _$_SupabaseState implements _SupabaseState {
   final String? errorMessage;
   @override
   final SupabaseClient? client;
+  @override
+  final AuthResponse? authResponse;
+  @override
+  final User? user;
 
   @override
   String toString() {
-    return 'SupabaseState(isBusy: $isBusy, isLoggedIn: $isLoggedIn, data: $data, idToken: $idToken, errorMessage: $errorMessage, client: $client)';
+    return 'SupabaseState(isBusy: $isBusy, isLoggedIn: $isLoggedIn, data: $data, idToken: $idToken, errorMessage: $errorMessage, client: $client, authResponse: $authResponse, user: $user)';
   }
 
   @override
@@ -212,12 +244,15 @@ class _$_SupabaseState implements _SupabaseState {
             (identical(other.idToken, idToken) || other.idToken == idToken) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage) &&
-            (identical(other.client, client) || other.client == client));
+            (identical(other.client, client) || other.client == client) &&
+            (identical(other.authResponse, authResponse) ||
+                other.authResponse == authResponse) &&
+            (identical(other.user, user) || other.user == user));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, isBusy, isLoggedIn, data, idToken, errorMessage, client);
+  int get hashCode => Object.hash(runtimeType, isBusy, isLoggedIn, data,
+      idToken, errorMessage, client, authResponse, user);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +268,9 @@ abstract class _SupabaseState implements SupabaseState {
       required final SupabaseDataState data,
       final String? idToken,
       final String? errorMessage,
-      final SupabaseClient? client}) = _$_SupabaseState;
+      final SupabaseClient? client,
+      final AuthResponse? authResponse,
+      final User? user}) = _$_SupabaseState;
 
   @override
   bool get isBusy;
@@ -247,6 +284,10 @@ abstract class _SupabaseState implements SupabaseState {
   String? get errorMessage;
   @override
   SupabaseClient? get client;
+  @override
+  AuthResponse? get authResponse;
+  @override
+  User? get user;
   @override
   @JsonKey(ignore: true)
   _$$_SupabaseStateCopyWith<_$_SupabaseState> get copyWith =>

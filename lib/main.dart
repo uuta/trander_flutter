@@ -1,5 +1,6 @@
 import '/import.dart';
 import '/environment.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
 Future<void> main() async {
   // Environment configuration
@@ -11,20 +12,24 @@ Future<void> main() async {
 }
 
 class App extends HookConsumerWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     final supabaseNotifier = ref.watch(supabaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
         // Auth0
-        auth0Notifier.initAction();
-        // supabase
-        supabaseNotifier.initialize();
+        await auth0Notifier.initAction();
+        // Supabase
+        await supabaseNotifier.initialize();
+        final supabase = sb.Supabase.instance.client;
+        supabase.auth.onAuthStateChange.listen((state) {
+          supabaseNotifier.authStateChangeAction(state);
+        });
       });
       return;
     }, []);
@@ -165,9 +170,9 @@ class App extends HookConsumerWidget {
             ),
       ),
       themeMode: ThemeMode.dark,
-      home: auth0State.isBusy
+      home: supabaseState.isBusy
           ? const ScaffoldProgressPage()
-          : auth0State.isLoggedIn
+          : supabaseState.isLoggedIn
               ? const IndexPage()
               : const OnBoardingPage(),
     );
