@@ -3,13 +3,22 @@ import '/environment.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // Environment configuration
   await Environment.setup();
+
+  await sb.Supabase.initialize(
+    url: ConstsSupabase.supabaseUrl,
+    anonKey: ConstsSupabase.supabaseAnonKey,
+  );
 
   runApp(const ProviderScope(
     child: App(),
   ));
 }
+
+// Supabase
+final supabase = sb.Supabase.instance.client;
 
 class App extends HookConsumerWidget {
   const App({super.key});
@@ -24,9 +33,6 @@ class App extends HookConsumerWidget {
       Future.microtask(() async {
         // Auth0
         await auth0Notifier.initAction();
-        // Supabase
-        await supabaseNotifier.initialize();
-        final supabase = sb.Supabase.instance.client;
         // Watch the auth state
         supabase.auth.onAuthStateChange.listen((state) {
           supabaseNotifier.authStateChangeAction(state);
@@ -172,7 +178,7 @@ class App extends HookConsumerWidget {
         themeMode: ThemeMode.dark,
         home: supabaseState.isBusy
             ? const ScaffoldProgressPage()
-            : supabaseNotifier.isExpired()
+            : supabase.auth.currentSession?.isExpired ?? false
                 ? const OnBoardingPage()
                 : const IndexPage());
   }
