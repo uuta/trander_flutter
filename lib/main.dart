@@ -17,9 +17,6 @@ Future<void> main() async {
   ));
 }
 
-// Supabase
-final supabase = sb.Supabase.instance.client;
-
 class App extends HookConsumerWidget {
   const App({super.key});
 
@@ -178,7 +175,7 @@ class App extends HookConsumerWidget {
         themeMode: ThemeMode.dark,
         home: supabaseState.isBusy
             ? const ScaffoldProgressPage()
-            : supabase.auth.currentSession?.isExpired ?? false
+            : supabase.auth.currentSession?.isExpired ?? true
                 ? const OnBoardingPage()
                 : const IndexPage());
   }

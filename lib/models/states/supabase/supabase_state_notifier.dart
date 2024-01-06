@@ -6,12 +6,12 @@ final supabaseNotifierProvider =
     StateNotifierProvider<SupabaseStateNotifier, SupabaseState>(
   (ref) => SupabaseStateNotifier(),
 );
+final supabase = sb.Supabase.instance.client;
 
 class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
   SupabaseStateNotifier()
       : super(const SupabaseState(data: SupabaseDataState()));
 
-  final supabase = sb.Supabase.instance.client;
   Future<sb.AuthResponse> googleSignIn() async {
     /// TODO: update the Web client ID with your own.
     ///
