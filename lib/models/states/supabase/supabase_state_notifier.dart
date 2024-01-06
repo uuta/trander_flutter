@@ -77,4 +77,9 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
       state = state.copyWith(isLoggedIn: false, user: null);
     }
   }
+
+  bool isExpired() {
+    final supabase = sb.Supabase.instance.client;
+    return supabase.auth.currentSession?.isExpired ?? false;
+  }
 }
