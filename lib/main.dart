@@ -1,10 +1,17 @@
 import '/import.dart';
 import '/environment.dart';
+import '/main_handler.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   // Environment configuration
   await Environment.setup();
+
+  await sb.Supabase.initialize(
+    url: ConstsSupabase.supabaseUrl,
+    anonKey: ConstsSupabase.supabaseAnonKey,
+  );
 
   runApp(const ProviderScope(
     child: App(),
@@ -17,19 +24,11 @@ class App extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
-    final supabaseState = ref.watch(supabaseNotifierProvider);
-    final supabaseNotifier = ref.watch(supabaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
         // Auth0
         await auth0Notifier.initAction();
-        // Supabase
-        await supabaseNotifier.initialize();
-        final supabase = sb.Supabase.instance.client;
-        supabase.auth.onAuthStateChange.listen((state) {
-          supabaseNotifier.authStateChangeAction(state);
-        });
       });
       return;
     }, []);
@@ -117,7 +116,6 @@ class App extends HookConsumerWidget {
           ),
           iconTheme: IconThemeData(color: Colors.grey),
         ),
-        // scaffoldBackgroundColor: const Color(0xfffd026f),
         inputDecorationTheme: InputDecorationTheme(
             filled: false,
             contentPadding: const EdgeInsets.symmetric(vertical: 15),
@@ -170,11 +168,7 @@ class App extends HookConsumerWidget {
             ),
       ),
       themeMode: ThemeMode.dark,
-      home: supabaseState.isBusy
-          ? const ScaffoldProgressPage()
-          : supabaseState.isLoggedIn
-              ? const IndexPage()
-              : const OnBoardingPage(),
+      home: const MainHandler(),
     );
   }
 }

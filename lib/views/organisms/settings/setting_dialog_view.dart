@@ -5,8 +5,6 @@ class SettingDialogView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
-
     return AlertDialog(
       title: const Text('Logout'),
       titleTextStyle: Theme.of(context).textTheme.displaySmall,
@@ -17,10 +15,18 @@ class SettingDialogView extends HookConsumerWidget {
           child: const Text('Cancel'),
         ),
         TextButton(
-          onPressed: () {
-            auth0Notifier.logout();
+          onPressed: () async {
+            if (context.mounted) {
+              Navigator.pop(context, 'OK');
+            }
+            if (context.mounted) {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+              );
+            }
+            await supabase.auth.signOut();
+            await googleSignIn.signOut();
             PurchaseService.logout();
-            Navigator.pop(context, 'OK');
           },
           child: const Text('OK'),
         ),

@@ -44,7 +44,7 @@ class LoginPage extends HookConsumerWidget {
                                       width: 20),
                                   text: 'Login with Google',
                                   radius: 30.0,
-                                  onPressed: supabaseNotifier.googleSignIn))),
+                                  onPressed: supabaseNotifier.googleSignInFn))),
                       const SizedBox(height: 30),
                       Text(
                           'Trander is an app that suggests random locations around the world. Some features require access to your current location.',

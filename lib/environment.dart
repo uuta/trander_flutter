@@ -10,10 +10,12 @@ class Environment {
   // Environement configuration
   static Future<void> setup() async {
     const flavor = String.fromEnvironment('FLAVOR');
-    env.forEach((key, value) async {
-      if (key == flavor) {
-        await dotenv.load(fileName: value);
+    // https://scrapbox.io/babbab/Flutter
+    for (var entry in env.entries) {
+      if (entry.key == flavor) {
+        await dotenv.load(fileName: entry.value);
+        break;
       }
-    });
+    }
   }
 }
