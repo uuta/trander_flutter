@@ -1,6 +1,7 @@
 import '/import.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
+// Navigator.of(context) should be used in MaterialApp()
 class MainHandler extends HookConsumerWidget {
   const MainHandler({super.key});
 
