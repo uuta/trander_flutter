@@ -14,7 +14,7 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
@@ -77,7 +77,7 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
             )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              locationNotifier.getSimpleKeywordSearch(auth0State.idToken);
+              locationNotifier.getSimpleKeywordSearch(supabaseState.idToken);
             },
             child: const Icon(Icons.location_searching)));
   }

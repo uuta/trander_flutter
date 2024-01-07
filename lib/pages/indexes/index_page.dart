@@ -10,34 +10,32 @@ import '/views/organisms/locations/simples/location_simple_city_view.dart';
 import '/views/organisms/locations/simples/location_simple_keyword_search_view.dart';
 
 class IndexPage extends HookConsumerWidget {
-  const IndexPage({Key? key}) : super(key: key);
+  const IndexPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final navigationState = ref.watch(navigationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
     final locationState = ref.watch(locationNotifierProvider);
-    final auth0State = ref.watch(auth0NotifierProvider);
-    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
 
     useEffect(() {
       Future.microtask(() async {
         locationNotifier.switchPageLoading(true);
         await locationNotifier.getCurrentLocation();
         await locationNotifier.initSettingAction();
-        locationNotifier.getSetting(auth0State.idToken);
-        auth0Notifier.createUser();
+        locationNotifier.getSetting(supabaseState.idToken);
         // RevenueCat
         await PurchaseService.initAction();
-        await PurchaseService.login(auth0State.data.sub);
+        await PurchaseService.login(supabaseState.data.sub);
         purchaseNotifier.restoreTransactions();
         locationNotifier.switchPageLoading(false);
       });
       return;
     }, const []);
 
-    final List<Widget> _pageList = [
+    final List<Widget> pageList = [
       locationState.settingMode == 0
           ? const LocationSimpleCityView()
           : const LocationView(),
@@ -48,7 +46,7 @@ class IndexPage extends HookConsumerWidget {
     ];
 
     // Title: flexible change
-    List<Widget> _titleList = [
+    List<Widget> titleList = [
       locationState.isCitySucceeded
           ? const CityTitleView()
           : Image.asset("assets/images/icons/city-search.png", width: 200),
@@ -62,8 +60,8 @@ class IndexPage extends HookConsumerWidget {
     ];
 
     return Scaffold(
-        appBar: AppBar(title: _titleList[navigationState.currentIndex]),
-        body: _pageList[navigationState.currentIndex],
+        appBar: AppBar(title: titleList[navigationState.currentIndex]),
+        body: pageList[navigationState.currentIndex],
         bottomNavigationBar: const ThreeBottomBarView());
   }
 }

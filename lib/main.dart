@@ -23,16 +23,6 @@ class App extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
-
-    useEffect(() {
-      Future.microtask(() async {
-        // Auth0
-        await auth0Notifier.initAction();
-      });
-      return;
-    }, []);
-
     return MaterialApp(
       title: 'Trander',
       theme: ThemeData(

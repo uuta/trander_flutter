@@ -15,7 +15,7 @@ class LocationView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
     final navigationState = ref.watch(navigationNotifierProvider);
@@ -108,8 +108,8 @@ class LocationView extends HookConsumerWidget {
             onPressed: () async {
               navigationState.currentIndex ==
                       NavigationStateNotifier.pages['city']
-                  ? locationNotifier.getCity(auth0State.idToken)
-                  : locationNotifier.getKeywordSearch(auth0State.idToken);
+                  ? locationNotifier.getCity(supabaseState.idToken)
+                  : locationNotifier.getKeywordSearch(supabaseState.idToken);
             },
             child: const Icon(Icons.location_searching)));
   }

@@ -11,7 +11,7 @@ class LocationSimpleCityView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
 
@@ -64,7 +64,7 @@ class LocationSimpleCityView extends HookConsumerWidget {
             )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              await locationNotifier.getSimpleCity(auth0State.idToken);
+              await locationNotifier.getSimpleCity(supabaseState.idToken);
             },
             child: const Icon(Icons.location_searching)));
   }

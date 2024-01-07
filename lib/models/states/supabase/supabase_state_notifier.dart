@@ -48,8 +48,23 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
       idToken: idToken,
       accessToken: accessToken,
     );
-    state = state.copyWith(authResponse: res);
+    state = state.copyWith(idToken: idToken, data: parseJwtPayload(idToken));
 
     return res;
+  }
+
+  // parse jwt payload after login
+  SupabaseDataState parseJwtPayload(String token) {
+    final parts = token.split('.');
+    if (parts.length != 3) {
+      throw Exception('invalid token');
+    }
+
+    final payload = parts[1];
+    final normalized = base64Url.normalize(payload);
+    final resp = utf8.decode(base64Url.decode(normalized));
+    final payloadMap = json.decode(resp);
+
+    return SupabaseDataState.fromJson(payloadMap);
   }
 }
