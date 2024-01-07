@@ -1,5 +1,6 @@
 import '/import.dart';
 import '/environment.dart';
+import '/main_handler.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
 Future<void> main() async {
@@ -23,160 +24,151 @@ class App extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final auth0Notifier = ref.watch(auth0NotifierProvider.notifier);
-    final supabaseState = ref.watch(supabaseNotifierProvider);
-    final supabaseNotifier = ref.watch(supabaseNotifierProvider.notifier);
 
     useEffect(() {
       Future.microtask(() async {
         // Auth0
         await auth0Notifier.initAction();
-        // Watch the auth state
-        supabase.auth.onAuthStateChange.listen((state) {
-          supabaseNotifier.authStateChangeAction(context, state);
-        });
       });
       return;
     }, []);
 
     return MaterialApp(
-        title: 'Trander',
-        theme: ThemeData(
-          brightness: Brightness.light,
-          primaryColor: const Color(0xff9dff00),
-          primaryColorLight: const Color(0xfffd026f),
-          primaryTextTheme:
-              const TextTheme(bodyMedium: TextStyle(color: Color(0xff5c6360))),
-          disabledColor: const Color(0xff9b9b9b),
-          fontFamily: 'Arial, Hiragino Kaku Gothic ProN, Meiryo, sans-serif',
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Color(0xff9dff00),
-            foregroundColor: Color(0xfffd026f),
-          ),
-          appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
-            titleTextStyle: TextStyle(
-              color: Color(0xff3316F2),
-            ),
-            iconTheme: IconThemeData(color: Colors.grey),
-          ),
-          scaffoldBackgroundColor: const Color(0xfffd026f),
-          inputDecorationTheme: InputDecorationTheme(
-              filled: false,
-              fillColor: Colors.white,
-              contentPadding: const EdgeInsets.symmetric(vertical: 15),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide.none)),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.grey[200],
-              foregroundColor: const Color(0xff22332E),
-            ),
-          ),
-          textTheme: ThemeData.light().textTheme.copyWith(
-                displayLarge: const TextStyle(
-                    fontSize: 28,
-                    color: Color(0xff22332E),
-                    fontWeight: FontWeight.w500),
-                displayMedium: const TextStyle(
-                    fontSize: 24,
-                    color: Color(0xff22332E),
-                    fontWeight: FontWeight.w500),
-                headlineMedium: const TextStyle(
-                    fontSize: 22,
-                    color: Color(0xff22332E),
-                    fontWeight: FontWeight.w500),
-                headlineSmall: const TextStyle(
-                    fontSize: 20,
-                    color: Color(0xff22332E),
-                    fontWeight: FontWeight.w500),
-                titleLarge: const TextStyle(
-                    fontSize: 18,
-                    color: Color(0xff22332E),
-                    fontWeight: FontWeight.w500),
-                bodyLarge: const TextStyle(
-                  color: Color(0xff22332E),
-                ),
-                bodyMedium: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 16,
-                ),
-              ),
+      title: 'Trander',
+      theme: ThemeData(
+        brightness: Brightness.light,
+        primaryColor: const Color(0xff9dff00),
+        primaryColorLight: const Color(0xfffd026f),
+        primaryTextTheme:
+            const TextTheme(bodyMedium: TextStyle(color: Color(0xff5c6360))),
+        disabledColor: const Color(0xff9b9b9b),
+        fontFamily: 'Arial, Hiragino Kaku Gothic ProN, Meiryo, sans-serif',
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xff9dff00),
+          foregroundColor: Color(0xfffd026f),
         ),
-        darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          primaryColor: const Color(0xff9dff00),
-          primaryColorLight: const Color(0xfffd026f),
-          primaryTextTheme:
-              const TextTheme(bodyMedium: TextStyle(color: Color(0xff5c6360))),
-          disabledColor: const Color(0xff9b9b9b),
-          fontFamily: 'Arial, Hiragino Kaku Gothic ProN, Meiryo, sans-serif',
-          floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            backgroundColor: Color(0xfffd026f),
-            foregroundColor: Color(0xff9dff00),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          titleTextStyle: TextStyle(
+            color: Color(0xff3316F2),
           ),
-          appBarTheme: const AppBarTheme(
-            titleTextStyle: TextStyle(
-              color: Color(0xff3316F2),
-            ),
-            iconTheme: IconThemeData(color: Colors.grey),
-          ),
-          inputDecorationTheme: InputDecorationTheme(
-              filled: false,
-              contentPadding: const EdgeInsets.symmetric(vertical: 15),
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(30.0),
-                  borderSide: BorderSide.none)),
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.grey[700],
-              foregroundColor: const Color(0xff22332E),
-            ),
-          ),
-          dialogBackgroundColor: Colors.grey[900],
-          textButtonTheme: TextButtonThemeData(
-              style: ButtonStyle(
-                  foregroundColor:
-                      MaterialStateProperty.all(const Color(0xfffd026f)))),
-          textTheme: ThemeData.dark().textTheme.copyWith(
-                displayLarge: const TextStyle(
-                    fontSize: 28,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-                displayMedium: const TextStyle(
-                    fontSize: 24,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-                displaySmall: const TextStyle(
-                    fontSize: 24,
-                    color: Color(0xff9dff00),
-                    fontWeight: FontWeight.w500),
-                headlineMedium: const TextStyle(
-                    fontSize: 22,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-                headlineSmall: const TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-                titleLarge: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w500),
-                bodyLarge: const TextStyle(
-                  color: Color(0xff22332E),
-                ),
-                bodyMedium: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 16,
-                ),
-              ),
+          iconTheme: IconThemeData(color: Colors.grey),
         ),
-        themeMode: ThemeMode.dark,
-        home: supabaseState.isBusy
-            ? const ScaffoldProgressPage()
-            : supabase.auth.currentSession?.isExpired ?? true
-                ? const OnBoardingPage()
-                : const IndexPage());
+        scaffoldBackgroundColor: const Color(0xfffd026f),
+        inputDecorationTheme: InputDecorationTheme(
+            filled: false,
+            fillColor: Colors.white,
+            contentPadding: const EdgeInsets.symmetric(vertical: 15),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
+                borderSide: BorderSide.none)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey[200],
+            foregroundColor: const Color(0xff22332E),
+          ),
+        ),
+        textTheme: ThemeData.light().textTheme.copyWith(
+              displayLarge: const TextStyle(
+                  fontSize: 28,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              displayMedium: const TextStyle(
+                  fontSize: 24,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              headlineMedium: const TextStyle(
+                  fontSize: 22,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              headlineSmall: const TextStyle(
+                  fontSize: 20,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              titleLarge: const TextStyle(
+                  fontSize: 18,
+                  color: Color(0xff22332E),
+                  fontWeight: FontWeight.w500),
+              bodyLarge: const TextStyle(
+                color: Color(0xff22332E),
+              ),
+              bodyMedium: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 16,
+              ),
+            ),
+      ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: const Color(0xff9dff00),
+        primaryColorLight: const Color(0xfffd026f),
+        primaryTextTheme:
+            const TextTheme(bodyMedium: TextStyle(color: Color(0xff5c6360))),
+        disabledColor: const Color(0xff9b9b9b),
+        fontFamily: 'Arial, Hiragino Kaku Gothic ProN, Meiryo, sans-serif',
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xfffd026f),
+          foregroundColor: Color(0xff9dff00),
+        ),
+        appBarTheme: const AppBarTheme(
+          titleTextStyle: TextStyle(
+            color: Color(0xff3316F2),
+          ),
+          iconTheme: IconThemeData(color: Colors.grey),
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+            filled: false,
+            contentPadding: const EdgeInsets.symmetric(vertical: 15),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30.0),
+                borderSide: BorderSide.none)),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.grey[700],
+            foregroundColor: const Color(0xff22332E),
+          ),
+        ),
+        dialogBackgroundColor: Colors.grey[900],
+        textButtonTheme: TextButtonThemeData(
+            style: ButtonStyle(
+                foregroundColor:
+                    MaterialStateProperty.all(const Color(0xfffd026f)))),
+        textTheme: ThemeData.dark().textTheme.copyWith(
+              displayLarge: const TextStyle(
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              displayMedium: const TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              displaySmall: const TextStyle(
+                  fontSize: 24,
+                  color: Color(0xff9dff00),
+                  fontWeight: FontWeight.w500),
+              headlineMedium: const TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              headlineSmall: const TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              titleLarge: const TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500),
+              bodyLarge: const TextStyle(
+                color: Color(0xff22332E),
+              ),
+              bodyMedium: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 16,
+              ),
+            ),
+      ),
+      themeMode: ThemeMode.dark,
+      home: const MainHandler(),
+    );
   }
 }

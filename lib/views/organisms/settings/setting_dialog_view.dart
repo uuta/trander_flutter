@@ -19,6 +19,11 @@ class SettingDialogView extends HookConsumerWidget {
             if (context.mounted) {
               Navigator.pop(context, 'OK');
             }
+            if (context.mounted) {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => const LoginPage()),
+              );
+            }
             await supabase.auth.signOut();
             await googleSignIn.signOut();
             PurchaseService.logout();

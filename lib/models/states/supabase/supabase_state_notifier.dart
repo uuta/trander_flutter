@@ -52,24 +52,4 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
 
     return res;
   }
-
-  Future authStateChangeAction(
-      BuildContext context, sb.AuthState authState) async {
-    if (authState.event == sb.AuthChangeEvent.signedIn) {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const IndexPage(),
-        ),
-      );
-      final userData = supabase.auth.currentUser;
-      state = state.copyWith(isLoggedIn: true, user: userData);
-    } else if (authState.event == sb.AuthChangeEvent.signedOut) {
-      state = state.copyWith(isLoggedIn: false, user: null);
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const LoginPage(),
-        ),
-      );
-    }
-  }
 }
