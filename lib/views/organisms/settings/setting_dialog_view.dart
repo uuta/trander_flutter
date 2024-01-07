@@ -16,13 +16,12 @@ class SettingDialogView extends HookConsumerWidget {
         ),
         TextButton(
           onPressed: () async {
-            await supabase.auth.signOut();
-            PurchaseService.logout();
             if (context.mounted) {
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const LoginPage()),
-              );
+              Navigator.pop(context, 'OK');
             }
+            await supabase.auth.signOut();
+            await googleSignIn.signOut();
+            PurchaseService.logout();
           },
           child: const Text('OK'),
         ),

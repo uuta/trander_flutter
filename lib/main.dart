@@ -32,7 +32,7 @@ class App extends HookConsumerWidget {
         await auth0Notifier.initAction();
         // Watch the auth state
         supabase.auth.onAuthStateChange.listen((state) {
-          supabaseNotifier.authStateChangeAction(state);
+          supabaseNotifier.authStateChangeAction(context, state);
         });
       });
       return;
