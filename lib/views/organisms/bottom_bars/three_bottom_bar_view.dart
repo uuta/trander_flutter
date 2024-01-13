@@ -24,7 +24,8 @@ class ThreeBottomBarView extends HookConsumerWidget {
           onTap: (index) async {
             final NavigationState indexes =
                 await navigationNotifier.changeIndex(index);
-            await locationNotifier.postSetting(supabaseState.idToken, indexes);
+            await locationNotifier.postSetting(
+                supabaseState.accessToken, indexes);
             await purchaseNotifier.restoreTransactions();
           },
           items: const <BottomNavigationBarItem>[

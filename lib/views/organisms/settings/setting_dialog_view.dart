@@ -25,6 +25,7 @@ class SettingDialogView extends HookConsumerWidget {
               );
             }
             await supabase.auth.signOut();
+            await supabase.auth.refreshSession();
             await googleSignIn.signOut();
             PurchaseService.logout();
           },

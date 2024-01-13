@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SupabaseState {
   bool get isBusy => throw _privateConstructorUsedError;
   SupabaseDataState get data => throw _privateConstructorUsedError;
-  String? get idToken => throw _privateConstructorUsedError;
+  String? get accessToken => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $SupabaseStateCopyWith<$Res> {
   $Res call(
       {bool isBusy,
       SupabaseDataState data,
-      String? idToken,
+      String? accessToken,
       String? errorMessage});
 
   $SupabaseDataStateCopyWith<$Res> get data;
@@ -56,7 +56,7 @@ class _$SupabaseStateCopyWithImpl<$Res, $Val extends SupabaseState>
   $Res call({
     Object? isBusy = null,
     Object? data = null,
-    Object? idToken = freezed,
+    Object? accessToken = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -68,9 +68,9 @@ class _$SupabaseStateCopyWithImpl<$Res, $Val extends SupabaseState>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SupabaseDataState,
-      idToken: freezed == idToken
-          ? _value.idToken
-          : idToken // ignore: cast_nullable_to_non_nullable
+      accessToken: freezed == accessToken
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
               as String?,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
@@ -99,7 +99,7 @@ abstract class _$$_SupabaseStateCopyWith<$Res>
   $Res call(
       {bool isBusy,
       SupabaseDataState data,
-      String? idToken,
+      String? accessToken,
       String? errorMessage});
 
   @override
@@ -119,7 +119,7 @@ class __$$_SupabaseStateCopyWithImpl<$Res>
   $Res call({
     Object? isBusy = null,
     Object? data = null,
-    Object? idToken = freezed,
+    Object? accessToken = freezed,
     Object? errorMessage = freezed,
   }) {
     return _then(_$_SupabaseState(
@@ -131,9 +131,9 @@ class __$$_SupabaseStateCopyWithImpl<$Res>
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as SupabaseDataState,
-      idToken: freezed == idToken
-          ? _value.idToken
-          : idToken // ignore: cast_nullable_to_non_nullable
+      accessToken: freezed == accessToken
+          ? _value.accessToken
+          : accessToken // ignore: cast_nullable_to_non_nullable
               as String?,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
@@ -149,7 +149,7 @@ class _$_SupabaseState implements _SupabaseState {
   const _$_SupabaseState(
       {this.isBusy = false,
       required this.data,
-      this.idToken,
+      this.accessToken,
       this.errorMessage});
 
   @override
@@ -158,13 +158,13 @@ class _$_SupabaseState implements _SupabaseState {
   @override
   final SupabaseDataState data;
   @override
-  final String? idToken;
+  final String? accessToken;
   @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'SupabaseState(isBusy: $isBusy, data: $data, idToken: $idToken, errorMessage: $errorMessage)';
+    return 'SupabaseState(isBusy: $isBusy, data: $data, accessToken: $accessToken, errorMessage: $errorMessage)';
   }
 
   @override
@@ -174,14 +174,15 @@ class _$_SupabaseState implements _SupabaseState {
             other is _$_SupabaseState &&
             (identical(other.isBusy, isBusy) || other.isBusy == isBusy) &&
             (identical(other.data, data) || other.data == data) &&
-            (identical(other.idToken, idToken) || other.idToken == idToken) &&
+            (identical(other.accessToken, accessToken) ||
+                other.accessToken == accessToken) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, isBusy, data, idToken, errorMessage);
+      Object.hash(runtimeType, isBusy, data, accessToken, errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -194,7 +195,7 @@ abstract class _SupabaseState implements SupabaseState {
   const factory _SupabaseState(
       {final bool isBusy,
       required final SupabaseDataState data,
-      final String? idToken,
+      final String? accessToken,
       final String? errorMessage}) = _$_SupabaseState;
 
   @override
@@ -202,7 +203,7 @@ abstract class _SupabaseState implements SupabaseState {
   @override
   SupabaseDataState get data;
   @override
-  String? get idToken;
+  String? get accessToken;
   @override
   String? get errorMessage;
   @override

@@ -7,8 +7,10 @@ class MainHandler extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final supabaseNotifier = ref.watch(supabaseNotifierProvider.notifier);
     useEffect(() {
       Future.microtask(() async {
+        supabaseNotifier.load();
         // Watch the auth state
         supabase.auth.onAuthStateChange.listen((state) {
           if (state.event == sb.AuthChangeEvent.signedIn) {

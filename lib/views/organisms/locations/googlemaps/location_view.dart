@@ -108,8 +108,9 @@ class LocationView extends HookConsumerWidget {
             onPressed: () async {
               navigationState.currentIndex ==
                       NavigationStateNotifier.pages['city']
-                  ? locationNotifier.getCity(supabaseState.idToken)
-                  : locationNotifier.getKeywordSearch(supabaseState.idToken);
+                  ? locationNotifier.getCity(supabaseState.accessToken)
+                  : locationNotifier
+                      .getKeywordSearch(supabaseState.accessToken);
             },
             child: const Icon(Icons.location_searching)));
   }

@@ -3,8 +3,9 @@ import '/import.dart';
 class SettingService {
   final settingRepository = SettingRepository();
 
-  Future<LocationState> getSetting(LocationState state, String? idToken) async {
-    final res = await settingRepository.getSetting(idToken);
+  Future<LocationState> getSetting(
+      LocationState state, String? accessToken) async {
+    final res = await settingRepository.getSetting(accessToken);
     return (res.data.isNotEmpty)
         ? state = state.copyWith(
             isLoading: false, settingData: SettingState.fromJson(res.data))
@@ -12,8 +13,9 @@ class SettingService {
   }
 
   Future<LocationState> postSetting(
-      LocationState state, String? idToken) async {
-    await settingRepository.postSetting(idToken, state.settingData.toJson());
+      LocationState state, String? accessToken) async {
+    await settingRepository.postSetting(
+        accessToken, state.settingData.toJson());
     return state.copyWith(isLoading: false);
   }
 }

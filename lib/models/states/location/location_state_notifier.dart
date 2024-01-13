@@ -105,10 +105,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     await LocationService().shiftCameraPosition(state, state.newLocation);
   }
 
-  Future<void> getCity(String? idToken) async {
+  Future<void> getCity(String? accessToken) async {
     try {
       state = state.copyWith(isLoading: true);
-      state = await CityService().getCity(state, idToken);
+      state = await CityService().getCity(state, accessToken);
 
       // Store location explore data
       state = await LocationExploreDataService(
@@ -129,10 +129,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
-  Future<void> getSimpleCity(String? idToken) async {
+  Future<void> getSimpleCity(String? accessToken) async {
     try {
       state = state.copyWith(isLoading: true);
-      state = await CityService().getCity(state, idToken);
+      state = await CityService().getCity(state, accessToken);
 
       // Store location explore data
       state = await LocationExploreDataService(
@@ -152,11 +152,11 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
-  Future<void> getKeywordSearch(String? idToken) async {
+  Future<void> getKeywordSearch(String? accessToken) async {
     try {
       state = state.copyWith(isLoading: true);
 
-      await _processKeywordSearch(idToken);
+      await _processKeywordSearch(accessToken);
 
       // Shift camera position
       await shiftCameraPosition(
@@ -168,11 +168,11 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
-  Future<void> getSimpleKeywordSearch(String? idToken) async {
+  Future<void> getSimpleKeywordSearch(String? accessToken) async {
     try {
       state = state.copyWith(isLoading: true);
 
-      await _processKeywordSearch(idToken);
+      await _processKeywordSearch(accessToken);
 
       state = await LocationService().setNewLocation(
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
@@ -183,13 +183,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
-  Future<void> _processKeywordSearch(String? idToken) async {
+  Future<void> _processKeywordSearch(String? accessToken) async {
     final double lat = state.currentLocation.latitude;
     final double lng = state.currentLocation.longitude;
 
     FocusManager.instance.primaryFocus?.unfocus();
 
-    final kwRes = await KeywordSearchService().getKeywordSearch(state, idToken);
+    final kwRes =
+        await KeywordSearchService().getKeywordSearch(state, accessToken);
 
     if (kwRes.data['data'].isEmpty) {
       throw const EmptyResponseException('Keyword search data is empty');
@@ -198,7 +199,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     final kwData = kwRes.data['data'] as Map;
     final distanceRes = await DistanceService().getDistance(
       state,
-      idToken,
+      accessToken,
       lat,
       lng,
       kwData['lat'],
@@ -217,9 +218,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     ).storeKeywordSearchExploreData();
   }
 
-  Future<void> getSetting(String? idToken) async {
+  Future<void> getSetting(String? accessToken) async {
     try {
-      state = await SettingService().getSetting(state, idToken);
+      state = await SettingService().getSetting(state, accessToken);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }
@@ -235,7 +236,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   }
 
   Future<void> postSetting(
-      String? idToken, NavigationState navigationState) async {
+      String? accessToken, NavigationState navigationState) async {
     // Request only when shifting from page three
     if (navigationState.currentIndex == 2) {
       return;
@@ -246,7 +247,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
 
     try {
-      state = await SettingService().postSetting(state, idToken);
+      state = await SettingService().postSetting(state, accessToken);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }

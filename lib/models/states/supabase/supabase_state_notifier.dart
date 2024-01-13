@@ -29,6 +29,15 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
   SupabaseStateNotifier()
       : super(const SupabaseState(data: SupabaseDataState()));
 
+  Future<void> load() async {
+    final accessToken = supabase.auth.currentSession?.accessToken;
+    if (accessToken == null) {
+      return;
+    }
+    state = state.copyWith(
+        accessToken: accessToken, data: parseJwtPayload(accessToken));
+  }
+
   Future<sb.AuthResponse> googleSignInFn() async {
     final googleUser = await googleSignIn.signIn();
     final googleAuth = await googleUser!.authentication;
@@ -48,7 +57,12 @@ class SupabaseStateNotifier extends StateNotifier<SupabaseState> {
       idToken: idToken,
       accessToken: accessToken,
     );
-    state = state.copyWith(idToken: idToken, data: parseJwtPayload(idToken));
+    final sbAccessToken = res.session?.accessToken;
+    if (sbAccessToken == null) {
+      throw 'No Access Token found.';
+    }
+    state = state.copyWith(
+        accessToken: sbAccessToken, data: parseJwtPayload(idToken));
 
     return res;
   }

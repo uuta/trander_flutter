@@ -64,7 +64,7 @@ class LocationSimpleCityView extends HookConsumerWidget {
             )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              await locationNotifier.getSimpleCity(supabaseState.idToken);
+              await locationNotifier.getSimpleCity(supabaseState.accessToken);
             },
             child: const Icon(Icons.location_searching)));
   }

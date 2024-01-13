@@ -3,7 +3,8 @@ import '/import.dart';
 class CityService {
   final cityRepository = CityRepository();
 
-  Future<LocationState> getCity(LocationState state, String? idToken) async {
+  Future<LocationState> getCity(
+      LocationState state, String? accessToken) async {
     // params
     final Map<String, dynamic> params = {
       'lat': state.currentLocation.latitude,
@@ -13,7 +14,7 @@ class CityService {
       'directionType': state.settingData.directionType,
     };
 
-    final res = await cityRepository.getCity(params, idToken);
+    final res = await cityRepository.getCity(params, accessToken);
 
     if (res.data.isEmpty) {
       throw const EmptyResponseException('Keyword search data is empty');

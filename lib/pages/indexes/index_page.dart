@@ -25,7 +25,7 @@ class IndexPage extends HookConsumerWidget {
         locationNotifier.switchPageLoading(true);
         await locationNotifier.getCurrentLocation();
         await locationNotifier.initSettingAction();
-        locationNotifier.getSetting(supabaseState.idToken);
+        locationNotifier.getSetting(supabaseState.accessToken);
         // RevenueCat
         await PurchaseService.initAction();
         await PurchaseService.login(supabaseState.data.sub);

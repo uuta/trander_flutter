@@ -77,7 +77,8 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
             )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
-              locationNotifier.getSimpleKeywordSearch(supabaseState.idToken);
+              locationNotifier
+                  .getSimpleKeywordSearch(supabaseState.accessToken);
             },
             child: const Icon(Icons.location_searching)));
   }
