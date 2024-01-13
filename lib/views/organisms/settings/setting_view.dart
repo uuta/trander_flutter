@@ -8,7 +8,7 @@ class SettingView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final auth0State = ref.watch(auth0NotifierProvider);
+    final supabaseState = ref.watch(supabaseNotifierProvider);
     final locationState = ref.watch(locationNotifierProvider);
     final purchaseState = ref.watch(purchaseNotifierProvider);
     final purchaseNotifier = ref.watch(purchaseNotifierProvider.notifier);
@@ -84,13 +84,13 @@ class SettingView extends HookConsumerWidget {
                 tiles: [
                   SettingsTile(
                     title: const Text('Name'),
-                    description: Text(auth0State.data.name ?? '-'),
+                    description: Text(supabaseState.data.name ?? '-'),
                     leading: const Icon(Icons.person),
                     onPressed: (BuildContext context) {},
                   ),
                   SettingsTile(
                     title: const Text('Email'),
-                    description: Text(auth0State.data.email ?? '-'),
+                    description: Text(supabaseState.data.email ?? '-'),
                     leading: const Icon(Icons.email),
                     onPressed: (BuildContext context) {},
                   ),

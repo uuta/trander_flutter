@@ -3,8 +3,8 @@ import '/import.dart';
 class DistanceService {
   final distanceRepository = DistanceRepository();
 
-  Future<dynamic> getDistance(LocationState state, String? idToken, double lat,
-      double lng, double targetLat, double targetLng) async {
+  Future<dynamic> getDistance(LocationState state, String? accessToken,
+      double lat, double lng, double targetLat, double targetLng) async {
     // params
     final Map<String, dynamic> params = {
       'lat': lat,
@@ -13,6 +13,6 @@ class DistanceService {
       'targetLng': targetLng,
     };
 
-    return await distanceRepository.getDistance(params, idToken);
+    return await distanceRepository.getDistance(params, accessToken);
   }
 }
