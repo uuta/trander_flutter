@@ -9,11 +9,10 @@ class KeywordSearchService {
       'lat': state.currentLocation.latitude,
       'lng': state.currentLocation.longitude,
       'keyword': state.keywordTextEditingController.text,
-      'max': state.settingData.minDistance,
-      'min': state.settingData.maxDistance,
+      'min': state.settingData.minDistance,
+      'max': state.settingData.maxDistance,
       'directionType': state.settingData.directionType,
     };
-
     return await keywordSearchRepository.getKeywordSearch(params, accessToken);
   }
 }
