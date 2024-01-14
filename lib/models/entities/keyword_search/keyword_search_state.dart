@@ -9,6 +9,7 @@ class KeywordSearchState with _$KeywordSearchState {
       {@JsonKey(name: 'name') @Default('') String name,
       @JsonKey(name: 'distance') @Default(0) double distance,
       @JsonKey(name: 'direction') @Default('') String direction,
+      @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
       @JsonKey(name: 'rating') @Default(0) double rating,
       @JsonKey(name: 'photo') String? photo,
