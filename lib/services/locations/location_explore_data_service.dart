@@ -42,7 +42,7 @@ class LocationExploreDataService {
     final String twitterUrl = 'https://trander.net/kw/share/$placeId';
 
     final String twitterContent =
-        "How about this place?%0a%0a%20%23Trander%0a%0a" + name + "%0a";
+        "How about this place?%0a%0a%20%23Trander%0a%0a$name%0a";
 
     return 'https://twitter.com/intent/tweet?text=$twitterContent&url=$twitterUrl';
   }

@@ -21,11 +21,11 @@ class LocationSimpleCityButtonsView extends HookConsumerWidget {
             size: 22.0,
           ),
           firstOnPressed: () =>
-              UrlService.launchUrl(locationState.cityExploreState.streetview),
+              UrlService.openUrl(locationState.cityExploreState.streetview),
           secondOnPressed: () =>
-              UrlService.launchUrl(locationState.cityExploreState.googlemap),
+              UrlService.openUrl(locationState.cityExploreState.googlemap),
           thirdOnPressed: () =>
-              UrlService.launchUrl(locationState.cityExploreState.twitter),
+              UrlService.openUrl(locationState.cityExploreState.twitter),
           fourthOnPressed: () => Navigator.push(context,
               MaterialPageRoute(builder: (context) => const CityDetailPage()))),
     );

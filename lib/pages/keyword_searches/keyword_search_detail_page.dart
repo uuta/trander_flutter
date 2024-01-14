@@ -28,17 +28,17 @@ class KeywordSearchDetailPage extends HookConsumerWidget {
                     leftIcon: Image.asset("assets/images/utils/streetview.png",
                         width: 20),
                     leftText: 'Street View',
-                    leftOnPressed: () => UrlService.launchUrl(
+                    leftOnPressed: () => UrlService.openUrl(
                         locationState.keywordSearchExploreState.streetview),
                     rightIcon: Image.asset("assets/images/utils/googlemap.png",
                         width: 20),
                     rightText: 'Google Map',
-                    rightOnPressed: () => UrlService.launchUrl(
+                    rightOnPressed: () => UrlService.openUrl(
                         locationState.keywordSearchExploreState.googlemap),
                     bottomIcon: Image.asset("assets/images/utils/twitter.png",
                         width: 20),
                     bottomText: 'Share on Twitter',
-                    bottomOnPressed: () => UrlService.launchUrl(
+                    bottomOnPressed: () => UrlService.openUrl(
                         locationState.keywordSearchExploreState.twitter),
                   ),
                   const SizedBox(height: 40),

@@ -26,10 +26,12 @@ mixin _$KeywordSearchState {
   double get distance => throw _privateConstructorUsedError;
   @JsonKey(name: 'direction')
   String get direction => throw _privateConstructorUsedError;
+  @JsonKey(name: 'countryCode')
+  String? get countryCode => throw _privateConstructorUsedError;
   @JsonKey(name: 'icon')
   String? get icon => throw _privateConstructorUsedError;
   @JsonKey(name: 'rating')
-  String get rating => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   @JsonKey(name: 'photo')
   String? get photo => throw _privateConstructorUsedError;
   @JsonKey(name: 'vicinity')
@@ -63,8 +65,9 @@ abstract class $KeywordSearchStateCopyWith<$Res> {
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
+      @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -91,6 +94,7 @@ class _$KeywordSearchStateCopyWithImpl<$Res, $Val extends KeywordSearchState>
     Object? name = null,
     Object? distance = null,
     Object? direction = null,
+    Object? countryCode = freezed,
     Object? icon = freezed,
     Object? rating = null,
     Object? photo = freezed,
@@ -115,6 +119,10 @@ class _$KeywordSearchStateCopyWithImpl<$Res, $Val extends KeywordSearchState>
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as String,
+      countryCode: freezed == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -122,7 +130,7 @@ class _$KeywordSearchStateCopyWithImpl<$Res, $Val extends KeywordSearchState>
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -171,8 +179,9 @@ abstract class _$$_KeywordSearchStateCopyWith<$Res>
       {@JsonKey(name: 'name') String name,
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
+      @JsonKey(name: 'countryCode') String? countryCode,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -197,6 +206,7 @@ class __$$_KeywordSearchStateCopyWithImpl<$Res>
     Object? name = null,
     Object? distance = null,
     Object? direction = null,
+    Object? countryCode = freezed,
     Object? icon = freezed,
     Object? rating = null,
     Object? photo = freezed,
@@ -221,6 +231,10 @@ class __$$_KeywordSearchStateCopyWithImpl<$Res>
           ? _value.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as String,
+      countryCode: freezed == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -228,7 +242,7 @@ class __$$_KeywordSearchStateCopyWithImpl<$Res>
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -272,8 +286,9 @@ class _$_KeywordSearchState implements _KeywordSearchState {
       {@JsonKey(name: 'name') this.name = '',
       @JsonKey(name: 'distance') this.distance = 0,
       @JsonKey(name: 'direction') this.direction = '',
+      @JsonKey(name: 'countryCode') this.countryCode,
       @JsonKey(name: 'icon') this.icon,
-      @JsonKey(name: 'rating') this.rating = '0',
+      @JsonKey(name: 'rating') this.rating = 0,
       @JsonKey(name: 'photo') this.photo,
       @JsonKey(name: 'vicinity') this.vicinity,
       @JsonKey(name: 'userRatingsTotal') this.userRatingsTotal,
@@ -296,11 +311,14 @@ class _$_KeywordSearchState implements _KeywordSearchState {
   @JsonKey(name: 'direction')
   final String direction;
   @override
+  @JsonKey(name: 'countryCode')
+  final String? countryCode;
+  @override
   @JsonKey(name: 'icon')
   final String? icon;
   @override
   @JsonKey(name: 'rating')
-  final String rating;
+  final double rating;
   @override
   @JsonKey(name: 'photo')
   final String? photo;
@@ -328,7 +346,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
 
   @override
   String toString() {
-    return 'KeywordSearchState(name: $name, distance: $distance, direction: $direction, icon: $icon, rating: $rating, photo: $photo, vicinity: $vicinity, userRatingsTotal: $userRatingsTotal, priceLevel: $priceLevel, lat: $lat, lng: $lng, placeId: $placeId, ratingStar: $ratingStar)';
+    return 'KeywordSearchState(name: $name, distance: $distance, direction: $direction, countryCode: $countryCode, icon: $icon, rating: $rating, photo: $photo, vicinity: $vicinity, userRatingsTotal: $userRatingsTotal, priceLevel: $priceLevel, lat: $lat, lng: $lng, placeId: $placeId, ratingStar: $ratingStar)';
   }
 
   @override
@@ -341,6 +359,8 @@ class _$_KeywordSearchState implements _KeywordSearchState {
                 other.distance == distance) &&
             (identical(other.direction, direction) ||
                 other.direction == direction) &&
+            (identical(other.countryCode, countryCode) ||
+                other.countryCode == countryCode) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.photo, photo) || other.photo == photo) &&
@@ -364,6 +384,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
       name,
       distance,
       direction,
+      countryCode,
       icon,
       rating,
       photo,
@@ -395,8 +416,9 @@ abstract class _KeywordSearchState implements KeywordSearchState {
           {@JsonKey(name: 'name') final String name,
           @JsonKey(name: 'distance') final double distance,
           @JsonKey(name: 'direction') final String direction,
+          @JsonKey(name: 'countryCode') final String? countryCode,
           @JsonKey(name: 'icon') final String? icon,
-          @JsonKey(name: 'rating') final String rating,
+          @JsonKey(name: 'rating') final double rating,
           @JsonKey(name: 'photo') final String? photo,
           @JsonKey(name: 'vicinity') final String? vicinity,
           @JsonKey(name: 'userRatingsTotal') final int? userRatingsTotal,
@@ -420,11 +442,14 @@ abstract class _KeywordSearchState implements KeywordSearchState {
   @JsonKey(name: 'direction')
   String get direction;
   @override
+  @JsonKey(name: 'countryCode')
+  String? get countryCode;
+  @override
   @JsonKey(name: 'icon')
   String? get icon;
   @override
   @JsonKey(name: 'rating')
-  String get rating;
+  double get rating;
   @override
   @JsonKey(name: 'photo')
   String? get photo;

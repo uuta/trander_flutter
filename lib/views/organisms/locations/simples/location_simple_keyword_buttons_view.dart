@@ -20,11 +20,11 @@ class LocationSimpleKeywordButtonsView extends HookConsumerWidget {
             Icons.info_outline,
             size: 22.0,
           ),
-          firstOnPressed: () => UrlService.launchUrl(
+          firstOnPressed: () => UrlService.openUrl(
               locationState.keywordSearchExploreState.streetview),
-          secondOnPressed: () => UrlService.launchUrl(
+          secondOnPressed: () => UrlService.openUrl(
               locationState.keywordSearchExploreState.googlemap),
-          thirdOnPressed: () => UrlService.launchUrl(
+          thirdOnPressed: () => UrlService.openUrl(
               locationState.keywordSearchExploreState.twitter),
           fourthOnPressed: () => Navigator.push(
               context,
