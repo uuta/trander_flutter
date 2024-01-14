@@ -25,7 +25,7 @@ class MainHandler extends HookConsumerWidget {
       return;
     }, []);
 
-    return Scaffold(
+    return const Scaffold(
       body: OnBoardingPage(),
     );
   }
