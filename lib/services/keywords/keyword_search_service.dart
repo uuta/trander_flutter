@@ -5,7 +5,6 @@ class KeywordSearchService {
 
   Future<dynamic> getKeywordSearch(
       LocationState state, String? accessToken) async {
-    // params
     final Map<String, dynamic> params = {
       'lat': state.currentLocation.latitude,
       'lng': state.currentLocation.longitude,

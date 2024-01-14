@@ -184,29 +184,16 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   }
 
   Future<void> _processKeywordSearch(String? accessToken) async {
-    final double lat = state.currentLocation.latitude;
-    final double lng = state.currentLocation.longitude;
-
     FocusManager.instance.primaryFocus?.unfocus();
 
     final kwRes =
         await KeywordSearchService().getKeywordSearch(state, accessToken);
 
-    if (kwRes.data['data'].isEmpty) {
+    if (kwRes.data.isEmpty) {
       throw const EmptyResponseException('Keyword search data is empty');
     }
 
-    final kwData = kwRes.data['data'] as Map;
-    final distanceRes = await DistanceService().getDistance(
-      state,
-      accessToken,
-      lat,
-      lng,
-      kwData['lat'],
-      kwData['lng'],
-    );
-    setKeywordSearchData(KeywordSearchState.fromJson(
-        {...kwRes.data['data'], ...distanceRes.data}));
+    setKeywordSearchData(KeywordSearchState.fromJson({...kwRes.data}));
 
     // Store location explore data
     state = await LocationExploreDataService(
