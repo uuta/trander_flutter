@@ -13,7 +13,7 @@ _$_KeywordSearchState _$$_KeywordSearchStateFromJson(
       distance: (json['distance'] as num?)?.toDouble() ?? 0,
       direction: json['direction'] as String? ?? '',
       icon: json['icon'] as String?,
-      rating: json['rating'] as String? ?? '0',
+      rating: (json['rating'] as num?)?.toDouble() ?? 0,
       photo: json['photo'] as String?,
       vicinity: json['vicinity'] as String?,
       userRatingsTotal: json['userRatingsTotal'] as int?,

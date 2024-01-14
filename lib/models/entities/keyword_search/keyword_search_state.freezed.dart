@@ -29,7 +29,7 @@ mixin _$KeywordSearchState {
   @JsonKey(name: 'icon')
   String? get icon => throw _privateConstructorUsedError;
   @JsonKey(name: 'rating')
-  String get rating => throw _privateConstructorUsedError;
+  double get rating => throw _privateConstructorUsedError;
   @JsonKey(name: 'photo')
   String? get photo => throw _privateConstructorUsedError;
   @JsonKey(name: 'vicinity')
@@ -64,7 +64,7 @@ abstract class $KeywordSearchStateCopyWith<$Res> {
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -122,7 +122,7 @@ class _$KeywordSearchStateCopyWithImpl<$Res, $Val extends KeywordSearchState>
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -172,7 +172,7 @@ abstract class _$$_KeywordSearchStateCopyWith<$Res>
       @JsonKey(name: 'distance') double distance,
       @JsonKey(name: 'direction') String direction,
       @JsonKey(name: 'icon') String? icon,
-      @JsonKey(name: 'rating') String rating,
+      @JsonKey(name: 'rating') double rating,
       @JsonKey(name: 'photo') String? photo,
       @JsonKey(name: 'vicinity') String? vicinity,
       @JsonKey(name: 'userRatingsTotal') int? userRatingsTotal,
@@ -228,7 +228,7 @@ class __$$_KeywordSearchStateCopyWithImpl<$Res>
       rating: null == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as String,
+              as double,
       photo: freezed == photo
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
@@ -273,7 +273,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
       @JsonKey(name: 'distance') this.distance = 0,
       @JsonKey(name: 'direction') this.direction = '',
       @JsonKey(name: 'icon') this.icon,
-      @JsonKey(name: 'rating') this.rating = '0',
+      @JsonKey(name: 'rating') this.rating = 0,
       @JsonKey(name: 'photo') this.photo,
       @JsonKey(name: 'vicinity') this.vicinity,
       @JsonKey(name: 'userRatingsTotal') this.userRatingsTotal,
@@ -300,7 +300,7 @@ class _$_KeywordSearchState implements _KeywordSearchState {
   final String? icon;
   @override
   @JsonKey(name: 'rating')
-  final String rating;
+  final double rating;
   @override
   @JsonKey(name: 'photo')
   final String? photo;
@@ -396,7 +396,7 @@ abstract class _KeywordSearchState implements KeywordSearchState {
           @JsonKey(name: 'distance') final double distance,
           @JsonKey(name: 'direction') final String direction,
           @JsonKey(name: 'icon') final String? icon,
-          @JsonKey(name: 'rating') final String rating,
+          @JsonKey(name: 'rating') final double rating,
           @JsonKey(name: 'photo') final String? photo,
           @JsonKey(name: 'vicinity') final String? vicinity,
           @JsonKey(name: 'userRatingsTotal') final int? userRatingsTotal,
@@ -424,7 +424,7 @@ abstract class _KeywordSearchState implements KeywordSearchState {
   String? get icon;
   @override
   @JsonKey(name: 'rating')
-  String get rating;
+  double get rating;
   @override
   @JsonKey(name: 'photo')
   String? get photo;
