@@ -25,12 +25,12 @@ class LocationDialogViewController {
                   Image.asset("assets/images/utils/googlemap.png", width: 20),
               rightIcon:
                   Image.asset("assets/images/utils/twitter.png", width: 20),
-              leftOnPressed: () => UrlService.launchUrl(
-                  locationState.cityExploreState.streetview),
-              centerOnPressed: () => UrlService.launchUrl(
-                  locationState.cityExploreState.googlemap),
+              leftOnPressed: () =>
+                  UrlService.openUrl(locationState.cityExploreState.streetview),
+              centerOnPressed: () =>
+                  UrlService.openUrl(locationState.cityExploreState.googlemap),
               rightOnPressed: () =>
-                  UrlService.launchUrl(locationState.cityExploreState.twitter),
+                  UrlService.openUrl(locationState.cityExploreState.twitter),
               closeOnPressed: () {
                 locationNotifier.switchCityDialog(false);
                 Navigator.pop(context);
@@ -44,6 +44,7 @@ class LocationDialogViewController {
   static void showKeywordSearchDialog(BuildContext context,
       LocationState locationState, LocationStateNotifier locationNotifier) {
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      final countryCode = locationState.keywordSearchData.countryCode;
       showDialog(
           context: context,
           barrierDismissible: false,
@@ -53,6 +54,7 @@ class LocationDialogViewController {
               title: 'Found succcessfully',
               buttonText: 'Close',
               name: locationState.keywordSearchData.name,
+              image: Image.network('https://flagcdn.com/h20/$countryCode.png'),
               leftIcon: Image.asset(
                 "assets/images/utils/streetview.png",
                 width: 20,
@@ -61,11 +63,11 @@ class LocationDialogViewController {
                   Image.asset("assets/images/utils/googlemap.png", width: 20),
               rightIcon:
                   Image.asset("assets/images/utils/twitter.png", width: 20),
-              leftOnPressed: () => UrlService.launchUrl(
+              leftOnPressed: () => UrlService.openUrl(
                   locationState.keywordSearchExploreState.streetview),
-              centerOnPressed: () => UrlService.launchUrl(
+              centerOnPressed: () => UrlService.openUrl(
                   locationState.keywordSearchExploreState.googlemap),
-              rightOnPressed: () => UrlService.launchUrl(
+              rightOnPressed: () => UrlService.openUrl(
                   locationState.keywordSearchExploreState.twitter),
               closeOnPressed: () {
                 locationNotifier.switchKeywordSearchDialog(false);

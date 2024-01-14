@@ -29,7 +29,7 @@ class PurchaseSubscribedView extends HookConsumerWidget {
         text: 'For Android users',
         onPrimary: Colors.grey[300],
         onPressed: () => {
-          UrlService.launchUrl(
+          UrlService.openUrl(
               'https://support.google.com/googleplay/answer/7018481')
         },
       ),
@@ -38,7 +38,7 @@ class PurchaseSubscribedView extends HookConsumerWidget {
         text: 'For iOS users',
         onPrimary: Colors.grey[300],
         onPressed: () =>
-            {UrlService.launchUrl('https://support.apple.com/HT202039')},
+            {UrlService.openUrl('https://support.apple.com/HT202039')},
       ),
     ]));
   }

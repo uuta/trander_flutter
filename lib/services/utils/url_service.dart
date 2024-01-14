@@ -1,13 +1,13 @@
-import '/import.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class UrlService {
-  static Future<void> launchUrl(String? url) async {
+  static Future<void> openUrl(String? url) async {
     if (url == null) {
       return;
     }
-
-    if (await canLaunchUrl(Uri.parse(url))) {
-      await launchUrl(url);
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 }
