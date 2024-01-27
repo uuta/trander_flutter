@@ -8,6 +8,8 @@ import 'package:flutter/widgets.dart';
 
 part 'location_state.freezed.dart';
 
+enum LocationType { backpacker, fromYourLocation }
+
 @freezed
 class LocationState with _$LocationState {
   const factory LocationState({
@@ -28,6 +30,7 @@ class LocationState with _$LocationState {
     required TextEditingController keywordTextEditingController,
     required SettingState settingData,
     @Default(0) int settingMode,
+    @Default(LocationType.backpacker) LocationType locationType,
     @Default(false) bool purchaseDialog,
     @Default('') String purchaseErrorMessage,
     @Default('') String errorMessage,

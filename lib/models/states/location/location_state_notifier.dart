@@ -248,4 +248,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       'directionType': directionType,
     }));
   }
+
+  Future<void> setLocationType(LocationType locationType) async {
+    state = state.copyWith(locationType: locationType);
+  }
 }

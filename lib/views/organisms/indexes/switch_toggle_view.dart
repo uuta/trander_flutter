@@ -7,12 +7,16 @@ class SwitchToggleView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final locationState = ref.watch(locationNotifierProvider);
+    final locationStateNotifier = ref.watch(locationNotifierProvider.notifier);
+
     return ToggleSwitch(
       minWidth: MediaQuery.of(context).size.width,
       cornerRadius: 20.0,
       inactiveFgColor: Theme.of(context).primaryColor,
       inactiveBgColor: Colors.grey[700],
-      initialLabelIndex: null,
+      initialLabelIndex:
+          locationState.locationType == LocationType.backpacker ? 0 : 1,
       radiusStyle: true,
       doubleTapDisable: false, // re-tap active widget to de-activate
       totalSwitches: 2,
@@ -22,7 +26,10 @@ class SwitchToggleView extends HookConsumerWidget {
         TextStyle(fontWeight: FontWeight.w500)
       ],
       onToggle: (index) {
-        debugPrint('switched to: $index');
+        final locationType = index == 0
+            ? LocationType.backpacker
+            : LocationType.fromYourLocation;
+        locationStateNotifier.setLocationType(locationType);
       },
     );
   }
