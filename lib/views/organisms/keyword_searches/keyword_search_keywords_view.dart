@@ -19,11 +19,6 @@ class KeywordSearchKeywordsView extends HookConsumerWidget {
       'forest': () => locationNotifier.setKeyword('forest'),
     };
 
-    return Positioned(
-        top: 140.0,
-        left: 5.0,
-        right: 5.0,
-        height: 50,
-        child: MultipleTextButtonView(textFeatures: keywordList));
+    return MultipleTextButtonView(textFeatures: keywordList);
   }
 }
