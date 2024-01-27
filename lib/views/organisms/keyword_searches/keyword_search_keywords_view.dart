@@ -20,7 +20,7 @@ class KeywordSearchKeywordsView extends HookConsumerWidget {
     };
 
     return Positioned(
-        top: 80.0,
+        top: 140.0,
         left: 5.0,
         right: 5.0,
         height: 50,

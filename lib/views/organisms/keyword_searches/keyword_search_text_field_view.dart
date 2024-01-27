@@ -8,7 +8,7 @@ class KeywordSearchTextFieldView extends HookConsumerWidget {
     final locationState = ref.watch(locationNotifierProvider);
 
     return Positioned(
-        top: 20.0,
+        top: 80.0,
         left: 5.0,
         right: 5.0,
         child: Material(

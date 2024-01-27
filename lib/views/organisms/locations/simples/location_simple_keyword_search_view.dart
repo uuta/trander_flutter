@@ -8,6 +8,7 @@ import '/views/organisms/locations/simples/location_simple_keyword_buttons_view.
 import '/views/molecules/columns/title_caption_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
   const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
@@ -37,6 +38,31 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
               children: [
                 // Keyword text field
                 const KeywordSearchTextFieldView(),
+
+                // TODO: Toggle switch
+                Positioned(
+                    top: 20.0,
+                    left: 5.0,
+                    right: 5.0,
+                    child: ToggleSwitch(
+                      minWidth: 150.0,
+                      cornerRadius: 20.0,
+                      inactiveFgColor: Theme.of(context).primaryColor,
+                      inactiveBgColor: Colors.grey[700],
+                      initialLabelIndex: null,
+                      radiusStyle: true,
+                      doubleTapDisable:
+                          false, // re-tap active widget to de-activate
+                      totalSwitches: 2,
+                      labels: const ['Backpacker', 'From your location'],
+                      customTextStyles: const [
+                        TextStyle(fontWeight: FontWeight.w500),
+                        TextStyle(fontWeight: FontWeight.w500)
+                      ],
+                      onToggle: (index) {
+                        print('switched to: $index');
+                      },
+                    )),
 
                 // Keywords
                 const KeywordSearchKeywordsView(),
