@@ -57,6 +57,7 @@ dependencies:
   purchases_flutter: ^5.0.0
   supabase_flutter: ^1.10.25
   google_sign_in: ^6.0.2
+  toggle_switch: ^2.1.0
 
 dev_dependencies:
   flutter_test:
