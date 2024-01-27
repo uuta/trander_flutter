@@ -11,7 +11,7 @@ import '/views/molecules/dialogs/error_dialog_view.dart';
 import '/views/organisms/indexes/switch_toggle_view.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
-  const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
+  const LocationSimpleKeywordSearchView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -36,7 +36,8 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Stack(
               children: [
-                Column(children: const [
+                Center(
+                    child: Column(children: const [
                   SizedBox(height: 20),
 
                   // switch toggle
@@ -49,7 +50,7 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
 
                   // Keywords
                   KeywordSearchKeywordsView(),
-                ]),
+                ])),
 
                 // Main content
                 Center(

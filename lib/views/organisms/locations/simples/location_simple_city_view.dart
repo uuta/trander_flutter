@@ -33,12 +33,14 @@ class LocationSimpleCityView extends HookConsumerWidget {
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Stack(
               children: [
-                Column(children: const [
+                Center(
+                    child: Column(children: const [
                   SizedBox(height: 20),
 
                   // switch toggle
                   SwitchToggleView(),
-                ]),
+                  SizedBox(height: 20),
+                ])),
                 Center(
                     child: locationState.isLoading
                         ? Center(
