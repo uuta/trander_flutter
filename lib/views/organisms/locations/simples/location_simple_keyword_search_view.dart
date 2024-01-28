@@ -8,9 +8,10 @@ import '/views/organisms/locations/simples/location_simple_keyword_buttons_view.
 import '/views/molecules/columns/title_caption_view.dart';
 import '/views/organisms/keyword_searches/keyword_search_keywords_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
+import '/views/organisms/indexes/switch_toggle_view.dart';
 
 class LocationSimpleKeywordSearchView extends HookConsumerWidget {
-  const LocationSimpleKeywordSearchView({Key? key}) : super(key: key);
+  const LocationSimpleKeywordSearchView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,11 +36,21 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Stack(
               children: [
-                // Keyword text field
-                const KeywordSearchTextFieldView(),
+                Center(
+                    child: Column(children: const [
+                  SizedBox(height: 20),
 
-                // Keywords
-                const KeywordSearchKeywordsView(),
+                  // switch toggle
+                  SwitchToggleView(),
+                  SizedBox(height: 20),
+
+                  // Keyword text field
+                  KeywordSearchTextFieldView(),
+                  SizedBox(height: 5),
+
+                  // Keywords
+                  KeywordSearchKeywordsView(),
+                ])),
 
                 // Main content
                 Center(
@@ -53,7 +64,7 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                                 name: locationState.keywordSearchData.name,
                               )
                             : const TitleCaptionView(
-                                title: 'Input keyword',
+                                title: 'Enter a keyword',
                                 caption: 'Find a Location randomly',
                               )),
 

@@ -5,6 +5,7 @@ import '/views/molecules/columns/three_text_column_view.dart';
 import 'location_simple_city_buttons_view.dart';
 import '/views/molecules/columns/title_caption_view.dart';
 import '/views/molecules/dialogs/error_dialog_view.dart';
+import '/views/organisms/indexes/switch_toggle_view.dart';
 
 class LocationSimpleCityView extends HookConsumerWidget {
   const LocationSimpleCityView({Key? key}) : super(key: key);
@@ -32,6 +33,14 @@ class LocationSimpleCityView extends HookConsumerWidget {
             padding: const EdgeInsets.only(left: 15, right: 15),
             child: Stack(
               children: [
+                Center(
+                    child: Column(children: const [
+                  SizedBox(height: 20),
+
+                  // switch toggle
+                  SwitchToggleView(),
+                  SizedBox(height: 20),
+                ])),
                 Center(
                     child: locationState.isLoading
                         ? Center(
