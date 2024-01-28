@@ -88,6 +88,10 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
             )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
+              if (locationState.locationType == LocationType.backpacker) {
+                locationNotifier.getBackpacker(supabaseState.accessToken);
+                return;
+              }
               locationNotifier
                   .getSimpleKeywordSearch(supabaseState.accessToken);
             },

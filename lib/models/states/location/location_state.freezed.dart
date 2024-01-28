@@ -26,16 +26,19 @@ mixin _$LocationState {
   bool get isCitySucceeded => throw _privateConstructorUsedError;
   bool get isCityDialog => throw _privateConstructorUsedError;
   CityState get cityData => throw _privateConstructorUsedError;
-  CityExploreState get cityExploreState => throw _privateConstructorUsedError;
+  ExternalURLsState get cityExploreState => throw _privateConstructorUsedError;
   bool get isKeywordSearchSucceeded => throw _privateConstructorUsedError;
   bool get isKeywordSearchDialog => throw _privateConstructorUsedError;
   KeywordSearchState get keywordSearchData =>
       throw _privateConstructorUsedError;
-  KeywordSearchExploreState get keywordSearchExploreState =>
+  ExternalURLsState get keywordSearchExploreState =>
       throw _privateConstructorUsedError;
   TextEditingController get keywordTextEditingController =>
       throw _privateConstructorUsedError;
   SettingState get settingData => throw _privateConstructorUsedError;
+  BackpackerState get backpackerData => throw _privateConstructorUsedError;
+  ExternalURLsState get backpackerExploreState =>
+      throw _privateConstructorUsedError;
   int get settingMode => throw _privateConstructorUsedError;
   LocationType get locationType => throw _privateConstructorUsedError;
   bool get purchaseDialog => throw _privateConstructorUsedError;
@@ -63,13 +66,15 @@ abstract class $LocationStateCopyWith<$Res> {
       bool isCitySucceeded,
       bool isCityDialog,
       CityState cityData,
-      CityExploreState cityExploreState,
+      ExternalURLsState cityExploreState,
       bool isKeywordSearchSucceeded,
       bool isKeywordSearchDialog,
       KeywordSearchState keywordSearchData,
-      KeywordSearchExploreState keywordSearchExploreState,
+      ExternalURLsState keywordSearchExploreState,
       TextEditingController keywordTextEditingController,
       SettingState settingData,
+      BackpackerState backpackerData,
+      ExternalURLsState backpackerExploreState,
       int settingMode,
       LocationType locationType,
       bool purchaseDialog,
@@ -77,10 +82,12 @@ abstract class $LocationStateCopyWith<$Res> {
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
-  $CityExploreStateCopyWith<$Res> get cityExploreState;
+  $ExternalURLsStateCopyWith<$Res> get cityExploreState;
   $KeywordSearchStateCopyWith<$Res> get keywordSearchData;
-  $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState;
+  $ExternalURLsStateCopyWith<$Res> get keywordSearchExploreState;
   $SettingStateCopyWith<$Res> get settingData;
+  $BackpackerStateCopyWith<$Res> get backpackerData;
+  $ExternalURLsStateCopyWith<$Res> get backpackerExploreState;
 }
 
 /// @nodoc
@@ -112,6 +119,8 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
     Object? keywordSearchExploreState = null,
     Object? keywordTextEditingController = null,
     Object? settingData = null,
+    Object? backpackerData = null,
+    Object? backpackerExploreState = null,
     Object? settingMode = null,
     Object? locationType = null,
     Object? purchaseDialog = null,
@@ -158,7 +167,7 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
       cityExploreState: null == cityExploreState
           ? _value.cityExploreState
           : cityExploreState // ignore: cast_nullable_to_non_nullable
-              as CityExploreState,
+              as ExternalURLsState,
       isKeywordSearchSucceeded: null == isKeywordSearchSucceeded
           ? _value.isKeywordSearchSucceeded
           : isKeywordSearchSucceeded // ignore: cast_nullable_to_non_nullable
@@ -174,7 +183,7 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
       keywordSearchExploreState: null == keywordSearchExploreState
           ? _value.keywordSearchExploreState
           : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
-              as KeywordSearchExploreState,
+              as ExternalURLsState,
       keywordTextEditingController: null == keywordTextEditingController
           ? _value.keywordTextEditingController
           : keywordTextEditingController // ignore: cast_nullable_to_non_nullable
@@ -183,6 +192,14 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
               as SettingState,
+      backpackerData: null == backpackerData
+          ? _value.backpackerData
+          : backpackerData // ignore: cast_nullable_to_non_nullable
+              as BackpackerState,
+      backpackerExploreState: null == backpackerExploreState
+          ? _value.backpackerExploreState
+          : backpackerExploreState // ignore: cast_nullable_to_non_nullable
+              as ExternalURLsState,
       settingMode: null == settingMode
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
@@ -216,8 +233,8 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
 
   @override
   @pragma('vm:prefer-inline')
-  $CityExploreStateCopyWith<$Res> get cityExploreState {
-    return $CityExploreStateCopyWith<$Res>(_value.cityExploreState, (value) {
+  $ExternalURLsStateCopyWith<$Res> get cityExploreState {
+    return $ExternalURLsStateCopyWith<$Res>(_value.cityExploreState, (value) {
       return _then(_value.copyWith(cityExploreState: value) as $Val);
     });
   }
@@ -232,9 +249,9 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
 
   @override
   @pragma('vm:prefer-inline')
-  $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState {
-    return $KeywordSearchExploreStateCopyWith<$Res>(
-        _value.keywordSearchExploreState, (value) {
+  $ExternalURLsStateCopyWith<$Res> get keywordSearchExploreState {
+    return $ExternalURLsStateCopyWith<$Res>(_value.keywordSearchExploreState,
+        (value) {
       return _then(_value.copyWith(keywordSearchExploreState: value) as $Val);
     });
   }
@@ -244,6 +261,23 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   $SettingStateCopyWith<$Res> get settingData {
     return $SettingStateCopyWith<$Res>(_value.settingData, (value) {
       return _then(_value.copyWith(settingData: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BackpackerStateCopyWith<$Res> get backpackerData {
+    return $BackpackerStateCopyWith<$Res>(_value.backpackerData, (value) {
+      return _then(_value.copyWith(backpackerData: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalURLsStateCopyWith<$Res> get backpackerExploreState {
+    return $ExternalURLsStateCopyWith<$Res>(_value.backpackerExploreState,
+        (value) {
+      return _then(_value.copyWith(backpackerExploreState: value) as $Val);
     });
   }
 }
@@ -266,13 +300,15 @@ abstract class _$$_LocationStateCopyWith<$Res>
       bool isCitySucceeded,
       bool isCityDialog,
       CityState cityData,
-      CityExploreState cityExploreState,
+      ExternalURLsState cityExploreState,
       bool isKeywordSearchSucceeded,
       bool isKeywordSearchDialog,
       KeywordSearchState keywordSearchData,
-      KeywordSearchExploreState keywordSearchExploreState,
+      ExternalURLsState keywordSearchExploreState,
       TextEditingController keywordTextEditingController,
       SettingState settingData,
+      BackpackerState backpackerData,
+      ExternalURLsState backpackerExploreState,
       int settingMode,
       LocationType locationType,
       bool purchaseDialog,
@@ -282,13 +318,17 @@ abstract class _$$_LocationStateCopyWith<$Res>
   @override
   $CityStateCopyWith<$Res> get cityData;
   @override
-  $CityExploreStateCopyWith<$Res> get cityExploreState;
+  $ExternalURLsStateCopyWith<$Res> get cityExploreState;
   @override
   $KeywordSearchStateCopyWith<$Res> get keywordSearchData;
   @override
-  $KeywordSearchExploreStateCopyWith<$Res> get keywordSearchExploreState;
+  $ExternalURLsStateCopyWith<$Res> get keywordSearchExploreState;
   @override
   $SettingStateCopyWith<$Res> get settingData;
+  @override
+  $BackpackerStateCopyWith<$Res> get backpackerData;
+  @override
+  $ExternalURLsStateCopyWith<$Res> get backpackerExploreState;
 }
 
 /// @nodoc
@@ -318,6 +358,8 @@ class __$$_LocationStateCopyWithImpl<$Res>
     Object? keywordSearchExploreState = null,
     Object? keywordTextEditingController = null,
     Object? settingData = null,
+    Object? backpackerData = null,
+    Object? backpackerExploreState = null,
     Object? settingMode = null,
     Object? locationType = null,
     Object? purchaseDialog = null,
@@ -364,7 +406,7 @@ class __$$_LocationStateCopyWithImpl<$Res>
       cityExploreState: null == cityExploreState
           ? _value.cityExploreState
           : cityExploreState // ignore: cast_nullable_to_non_nullable
-              as CityExploreState,
+              as ExternalURLsState,
       isKeywordSearchSucceeded: null == isKeywordSearchSucceeded
           ? _value.isKeywordSearchSucceeded
           : isKeywordSearchSucceeded // ignore: cast_nullable_to_non_nullable
@@ -380,7 +422,7 @@ class __$$_LocationStateCopyWithImpl<$Res>
       keywordSearchExploreState: null == keywordSearchExploreState
           ? _value.keywordSearchExploreState
           : keywordSearchExploreState // ignore: cast_nullable_to_non_nullable
-              as KeywordSearchExploreState,
+              as ExternalURLsState,
       keywordTextEditingController: null == keywordTextEditingController
           ? _value.keywordTextEditingController
           : keywordTextEditingController // ignore: cast_nullable_to_non_nullable
@@ -389,6 +431,14 @@ class __$$_LocationStateCopyWithImpl<$Res>
           ? _value.settingData
           : settingData // ignore: cast_nullable_to_non_nullable
               as SettingState,
+      backpackerData: null == backpackerData
+          ? _value.backpackerData
+          : backpackerData // ignore: cast_nullable_to_non_nullable
+              as BackpackerState,
+      backpackerExploreState: null == backpackerExploreState
+          ? _value.backpackerExploreState
+          : backpackerExploreState // ignore: cast_nullable_to_non_nullable
+              as ExternalURLsState,
       settingMode: null == settingMode
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
@@ -433,6 +483,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       required this.keywordSearchExploreState,
       required this.keywordTextEditingController,
       required this.settingData,
+      required this.backpackerData,
+      required this.backpackerExploreState,
       this.settingMode = 0,
       this.locationType = LocationType.backpacker,
       this.purchaseDialog = false,
@@ -472,7 +524,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   @override
   final CityState cityData;
   @override
-  final CityExploreState cityExploreState;
+  final ExternalURLsState cityExploreState;
   @override
   @JsonKey()
   final bool isKeywordSearchSucceeded;
@@ -482,11 +534,15 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   @override
   final KeywordSearchState keywordSearchData;
   @override
-  final KeywordSearchExploreState keywordSearchExploreState;
+  final ExternalURLsState keywordSearchExploreState;
   @override
   final TextEditingController keywordTextEditingController;
   @override
   final SettingState settingData;
+  @override
+  final BackpackerState backpackerData;
+  @override
+  final ExternalURLsState backpackerExploreState;
   @override
   @JsonKey()
   final int settingMode;
@@ -505,7 +561,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, settingMode: $settingMode, locationType: $locationType, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, backpackerData: $backpackerData, backpackerExploreState: $backpackerExploreState, settingMode: $settingMode, locationType: $locationType, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
   }
 
   @override
@@ -532,6 +588,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty(
           'keywordTextEditingController', keywordTextEditingController))
       ..add(DiagnosticsProperty('settingData', settingData))
+      ..add(DiagnosticsProperty('backpackerData', backpackerData))
+      ..add(
+          DiagnosticsProperty('backpackerExploreState', backpackerExploreState))
       ..add(DiagnosticsProperty('settingMode', settingMode))
       ..add(DiagnosticsProperty('locationType', locationType))
       ..add(DiagnosticsProperty('purchaseDialog', purchaseDialog))
@@ -579,6 +638,10 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                     keywordTextEditingController) &&
             (identical(other.settingData, settingData) ||
                 other.settingData == settingData) &&
+            (identical(other.backpackerData, backpackerData) ||
+                other.backpackerData == backpackerData) &&
+            (identical(other.backpackerExploreState, backpackerExploreState) ||
+                other.backpackerExploreState == backpackerExploreState) &&
             (identical(other.settingMode, settingMode) ||
                 other.settingMode == settingMode) &&
             (identical(other.locationType, locationType) ||
@@ -610,6 +673,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         keywordSearchExploreState,
         keywordTextEditingController,
         settingData,
+        backpackerData,
+        backpackerExploreState,
         settingMode,
         locationType,
         purchaseDialog,
@@ -635,13 +700,15 @@ abstract class _LocationState implements LocationState {
       final bool isCitySucceeded,
       final bool isCityDialog,
       required final CityState cityData,
-      required final CityExploreState cityExploreState,
+      required final ExternalURLsState cityExploreState,
       final bool isKeywordSearchSucceeded,
       final bool isKeywordSearchDialog,
       required final KeywordSearchState keywordSearchData,
-      required final KeywordSearchExploreState keywordSearchExploreState,
+      required final ExternalURLsState keywordSearchExploreState,
       required final TextEditingController keywordTextEditingController,
       required final SettingState settingData,
+      required final BackpackerState backpackerData,
+      required final ExternalURLsState backpackerExploreState,
       final int settingMode,
       final LocationType locationType,
       final bool purchaseDialog,
@@ -667,7 +734,7 @@ abstract class _LocationState implements LocationState {
   @override
   CityState get cityData;
   @override
-  CityExploreState get cityExploreState;
+  ExternalURLsState get cityExploreState;
   @override
   bool get isKeywordSearchSucceeded;
   @override
@@ -675,11 +742,15 @@ abstract class _LocationState implements LocationState {
   @override
   KeywordSearchState get keywordSearchData;
   @override
-  KeywordSearchExploreState get keywordSearchExploreState;
+  ExternalURLsState get keywordSearchExploreState;
   @override
   TextEditingController get keywordTextEditingController;
   @override
   SettingState get settingData;
+  @override
+  BackpackerState get backpackerData;
+  @override
+  ExternalURLsState get backpackerExploreState;
   @override
   int get settingMode;
   @override
