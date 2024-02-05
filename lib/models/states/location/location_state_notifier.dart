@@ -66,11 +66,6 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
         isKeywordSearchDialog: true);
   }
 
-  Future<void> setKeyword(String data) async {
-    state.keywordTextEditingController.text = data;
-    // state = state.copyWith(keywordTextEditingController: data);
-  }
-
   Future<void> setMode(int data) async {
     const FlutterSecureStorage()
         .write(key: 'settingMode', value: data.toString());
@@ -226,8 +221,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
   Future<void> _processBackpacker(String? accessToken) async {
     FocusManager.instance.primaryFocus?.unfocus();
 
-    final res = await BackpackerService()
-        .getBackpacker(accessToken, state.keywordTextEditingController.text);
+    final res =
+        await BackpackerService().getBackpacker(accessToken, state.keywordText);
 
     if (res.data.isEmpty) {
       throw const EmptyResponseException('Keyword search data is empty');
@@ -290,5 +285,13 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> setLocationType(LocationType locationType) async {
     state = state.copyWith(locationType: locationType);
+  }
+
+  setKeyword(String keyword) {
+    state = state.copyWith(keywordText: keyword);
+  }
+
+  setControllerKeyword(String keyword) {
+    state.keywordTextEditingController.text = keyword;
   }
 }

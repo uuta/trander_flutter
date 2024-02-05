@@ -52,9 +52,12 @@ class LocationSimpleCityView extends HookConsumerWidget {
                                 name: locationState.cityData.name,
                                 countryCode: locationState.cityData.countryCode,
                               )
-                            : const TitleCaptionView(
-                                title: 'Push it',
-                                caption: 'Find a City randomly',
+                            : TitleCaptionView(
+                                title: 'Press the button',
+                                caption: locationState.locationType ==
+                                        LocationType.backpacker
+                                    ? 'Find a city in the world'
+                                    : 'Find a city from your location',
                               )),
                 Positioned(
                     top: 100.0,

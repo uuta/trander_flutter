@@ -7,16 +7,22 @@ class KeywordSearchKeywordsView extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final locationNotifier = ref.watch(locationNotifierProvider.notifier);
-    Map<String, Future<void> Function()> keywordList = {
-      'tourist attractions': () =>
-          locationNotifier.setKeyword('tourist attractions'),
-      'cafe': () => locationNotifier.setKeyword('cafe'),
-      'restaurant': () => locationNotifier.setKeyword('restaurant'),
-      'park': () => locationNotifier.setKeyword('park'),
-      'art': () => locationNotifier.setKeyword('art'),
-      'spa': () => locationNotifier.setKeyword('spa'),
-      'hotel': () => locationNotifier.setKeyword('hotel'),
-      'forest': () => locationNotifier.setKeyword('forest'),
+
+    void Function(String) setKeyword(LocationStateNotifier locationNotifier) =>
+        (String keyword) {
+          locationNotifier.setKeyword(keyword);
+          locationNotifier.setControllerKeyword(keyword);
+        };
+    final notifierSetKeyword = setKeyword(locationNotifier);
+    Map<String, Function()> keywordList = {
+      'tourist attractions': () => notifierSetKeyword('tourist attractions'),
+      'cafe': () => notifierSetKeyword('cafe'),
+      'restaurant': () => notifierSetKeyword('restaurant'),
+      'park': () => notifierSetKeyword('park'),
+      'art': () => notifierSetKeyword('art'),
+      'spa': () => notifierSetKeyword('spa'),
+      'hotel': () => notifierSetKeyword('hotel'),
+      'forest': () => notifierSetKeyword('forest'),
     };
 
     return MultipleTextButtonView(textFeatures: keywordList);

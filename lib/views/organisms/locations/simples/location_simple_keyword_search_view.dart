@@ -65,9 +65,14 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                                 countryCode:
                                     locationState.keywordSearchData.countryCode,
                               )
-                            : const TitleCaptionView(
-                                title: 'Enter a keyword',
-                                caption: 'Find a Location randomly',
+                            : TitleCaptionView(
+                                title: locationState.keywordText == ''
+                                    ? 'Enter a keyword'
+                                    : 'Press the button',
+                                caption: locationState.locationType ==
+                                        LocationType.backpacker
+                                    ? 'Find a spot in the world'
+                                    : 'Find a spot from your location',
                               )),
 
                 // Error dialog

@@ -31,6 +31,7 @@ class LocationState with _$LocationState {
     required SettingState settingData,
     required BackpackerState backpackerData,
     required ExternalURLsState backpackerExploreState,
+    @Default('') String keywordText,
     @Default(0) int settingMode,
     @Default(LocationType.backpacker) LocationType locationType,
     @Default(false) bool purchaseDialog,

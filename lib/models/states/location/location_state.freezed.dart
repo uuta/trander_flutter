@@ -39,6 +39,7 @@ mixin _$LocationState {
   BackpackerState get backpackerData => throw _privateConstructorUsedError;
   ExternalURLsState get backpackerExploreState =>
       throw _privateConstructorUsedError;
+  String get keywordText => throw _privateConstructorUsedError;
   int get settingMode => throw _privateConstructorUsedError;
   LocationType get locationType => throw _privateConstructorUsedError;
   bool get purchaseDialog => throw _privateConstructorUsedError;
@@ -75,6 +76,7 @@ abstract class $LocationStateCopyWith<$Res> {
       SettingState settingData,
       BackpackerState backpackerData,
       ExternalURLsState backpackerExploreState,
+      String keywordText,
       int settingMode,
       LocationType locationType,
       bool purchaseDialog,
@@ -121,6 +123,7 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
     Object? settingData = null,
     Object? backpackerData = null,
     Object? backpackerExploreState = null,
+    Object? keywordText = null,
     Object? settingMode = null,
     Object? locationType = null,
     Object? purchaseDialog = null,
@@ -200,6 +203,10 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
           ? _value.backpackerExploreState
           : backpackerExploreState // ignore: cast_nullable_to_non_nullable
               as ExternalURLsState,
+      keywordText: null == keywordText
+          ? _value.keywordText
+          : keywordText // ignore: cast_nullable_to_non_nullable
+              as String,
       settingMode: null == settingMode
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
@@ -309,6 +316,7 @@ abstract class _$$_LocationStateCopyWith<$Res>
       SettingState settingData,
       BackpackerState backpackerData,
       ExternalURLsState backpackerExploreState,
+      String keywordText,
       int settingMode,
       LocationType locationType,
       bool purchaseDialog,
@@ -360,6 +368,7 @@ class __$$_LocationStateCopyWithImpl<$Res>
     Object? settingData = null,
     Object? backpackerData = null,
     Object? backpackerExploreState = null,
+    Object? keywordText = null,
     Object? settingMode = null,
     Object? locationType = null,
     Object? purchaseDialog = null,
@@ -439,6 +448,10 @@ class __$$_LocationStateCopyWithImpl<$Res>
           ? _value.backpackerExploreState
           : backpackerExploreState // ignore: cast_nullable_to_non_nullable
               as ExternalURLsState,
+      keywordText: null == keywordText
+          ? _value.keywordText
+          : keywordText // ignore: cast_nullable_to_non_nullable
+              as String,
       settingMode: null == settingMode
           ? _value.settingMode
           : settingMode // ignore: cast_nullable_to_non_nullable
@@ -485,6 +498,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       required this.settingData,
       required this.backpackerData,
       required this.backpackerExploreState,
+      this.keywordText = '',
       this.settingMode = 0,
       this.locationType = LocationType.backpacker,
       this.purchaseDialog = false,
@@ -545,6 +559,9 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final ExternalURLsState backpackerExploreState;
   @override
   @JsonKey()
+  final String keywordText;
+  @override
+  @JsonKey()
   final int settingMode;
   @override
   @JsonKey()
@@ -561,7 +578,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, backpackerData: $backpackerData, backpackerExploreState: $backpackerExploreState, settingMode: $settingMode, locationType: $locationType, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, backpackerData: $backpackerData, backpackerExploreState: $backpackerExploreState, keywordText: $keywordText, settingMode: $settingMode, locationType: $locationType, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
   }
 
   @override
@@ -591,6 +608,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('backpackerData', backpackerData))
       ..add(
           DiagnosticsProperty('backpackerExploreState', backpackerExploreState))
+      ..add(DiagnosticsProperty('keywordText', keywordText))
       ..add(DiagnosticsProperty('settingMode', settingMode))
       ..add(DiagnosticsProperty('locationType', locationType))
       ..add(DiagnosticsProperty('purchaseDialog', purchaseDialog))
@@ -622,8 +640,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                 other.cityData == cityData) &&
             (identical(other.cityExploreState, cityExploreState) ||
                 other.cityExploreState == cityExploreState) &&
-            (identical(
-                    other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) ||
+            (identical(other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) ||
                 other.isKeywordSearchSucceeded == isKeywordSearchSucceeded) &&
             (identical(other.isKeywordSearchDialog, isKeywordSearchDialog) ||
                 other.isKeywordSearchDialog == isKeywordSearchDialog) &&
@@ -642,6 +659,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                 other.backpackerData == backpackerData) &&
             (identical(other.backpackerExploreState, backpackerExploreState) ||
                 other.backpackerExploreState == backpackerExploreState) &&
+            (identical(other.keywordText, keywordText) ||
+                other.keywordText == keywordText) &&
             (identical(other.settingMode, settingMode) ||
                 other.settingMode == settingMode) &&
             (identical(other.locationType, locationType) ||
@@ -675,6 +694,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         settingData,
         backpackerData,
         backpackerExploreState,
+        keywordText,
         settingMode,
         locationType,
         purchaseDialog,
@@ -709,6 +729,7 @@ abstract class _LocationState implements LocationState {
       required final SettingState settingData,
       required final BackpackerState backpackerData,
       required final ExternalURLsState backpackerExploreState,
+      final String keywordText,
       final int settingMode,
       final LocationType locationType,
       final bool purchaseDialog,
@@ -751,6 +772,8 @@ abstract class _LocationState implements LocationState {
   BackpackerState get backpackerData;
   @override
   ExternalURLsState get backpackerExploreState;
+  @override
+  String get keywordText;
   @override
   int get settingMode;
   @override
