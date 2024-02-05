@@ -2,7 +2,7 @@ import '/import.dart';
 import '/views/atoms/buttons/elevated_text_button_view.dart';
 
 class MultipleTextButtonView extends StatelessWidget {
-  final Map<String, Future<void> Function()> textFeatures;
+  final Map<String, Function()> textFeatures;
   const MultipleTextButtonView({Key? key, required this.textFeatures})
       : super(key: key);
 
