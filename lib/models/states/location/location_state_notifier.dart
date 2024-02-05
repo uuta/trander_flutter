@@ -217,9 +217,6 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
       await _processBackpacker(accessToken);
 
-      state = await LocationService().setNewLocation(
-          state, state.keywordSearchData.lat, state.keywordSearchData.lng);
-
       _succeedKeywordSearch();
     } on Exception catch (e, s) {
       _failedRequest(e, s);
@@ -235,8 +232,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     if (res.data.isEmpty) {
       throw const EmptyResponseException('Keyword search data is empty');
     }
-
-    setBackpackerData(BackpackerState.fromJson({...res.data}));
+    setKeywordSearchData(KeywordSearchState.fromJson({...res.data}));
 
     // Store location explore data
     state = await LocationExploreDataService(
@@ -245,7 +241,7 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       lng: state.keywordSearchData.lng.toString(),
       placeId: state.keywordSearchData.placeId.toString(),
       name: state.keywordSearchData.name.toString(),
-    ).storeBackpackerExploreData();
+    ).storeKeywordSearchExploreData();
   }
 
   Future<void> getSetting(String? accessToken) async {

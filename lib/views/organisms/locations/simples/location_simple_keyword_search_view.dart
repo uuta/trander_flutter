@@ -62,6 +62,8 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                         : locationState.isKeywordSearchSucceeded
                             ? ThreeTextColumnView(
                                 name: locationState.keywordSearchData.name,
+                                countryCode:
+                                    locationState.keywordSearchData.countryCode,
                               )
                             : const TitleCaptionView(
                                 title: 'Enter a keyword',
