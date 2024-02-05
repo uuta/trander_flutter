@@ -12,9 +12,11 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           mapController: Completer(),
           settingData: const SettingState(),
           cityData: const CityState(),
-          cityExploreState: const CityExploreState(),
+          cityExploreState: const ExternalURLsState(),
           keywordSearchData: const KeywordSearchState(),
-          keywordSearchExploreState: const KeywordSearchExploreState(),
+          backpackerData: const BackpackerState(),
+          backpackerExploreState: const ExternalURLsState(),
+          keywordSearchExploreState: const ExternalURLsState(),
           keywordTextEditingController: TextEditingController(),
         ));
 
@@ -47,6 +49,10 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   Future<void> setKeywordSearchData(KeywordSearchState data) async {
     state = state.copyWith(keywordSearchData: data);
+  }
+
+  Future<void> setBackpackerData(BackpackerState data) async {
+    state = state.copyWith(backpackerData: data);
   }
 
   Future<void> switchPaymantDialog(bool data) async {
@@ -194,6 +200,39 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
 
     setKeywordSearchData(KeywordSearchState.fromJson({...kwRes.data}));
+
+    // Store location explore data
+    state = await LocationExploreDataService(
+      state: state,
+      lat: state.keywordSearchData.lat.toString(),
+      lng: state.keywordSearchData.lng.toString(),
+      placeId: state.keywordSearchData.placeId.toString(),
+      name: state.keywordSearchData.name.toString(),
+    ).storeKeywordSearchExploreData();
+  }
+
+  Future<void> getBackpacker(String? accessToken) async {
+    try {
+      state = state.copyWith(isLoading: true);
+
+      await _processBackpacker(accessToken);
+
+      _succeedKeywordSearch();
+    } on Exception catch (e, s) {
+      _failedRequest(e, s);
+    }
+  }
+
+  Future<void> _processBackpacker(String? accessToken) async {
+    FocusManager.instance.primaryFocus?.unfocus();
+
+    final res = await BackpackerService()
+        .getBackpacker(accessToken, state.keywordTextEditingController.text);
+
+    if (res.data.isEmpty) {
+      throw const EmptyResponseException('Keyword search data is empty');
+    }
+    setKeywordSearchData(KeywordSearchState.fromJson({...res.data}));
 
     // Store location explore data
     state = await LocationExploreDataService(

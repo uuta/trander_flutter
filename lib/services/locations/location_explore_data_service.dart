@@ -13,13 +13,19 @@ class LocationExploreDataService {
 
   Future<LocationState> storeCityExploreData() async {
     return state.copyWith(
-        cityExploreState: CityExploreState.fromJson(await _setExploreData()));
+        cityExploreState: ExternalURLsState.fromJson(await _setExploreData()));
   }
 
   Future<LocationState> storeKeywordSearchExploreData() async {
     return state.copyWith(
         keywordSearchExploreState:
-            KeywordSearchExploreState.fromJson(await _setExploreData()));
+            ExternalURLsState.fromJson(await _setExploreData()));
+  }
+
+  Future<LocationState> storeBackpackerExploreData() async {
+    return state.copyWith(
+        backpackerExploreState:
+            ExternalURLsState.fromJson(await _setExploreData()));
   }
 
   Future<Map<String, String>> _setExploreData() async {

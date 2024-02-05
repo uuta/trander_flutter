@@ -62,6 +62,8 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
                         : locationState.isKeywordSearchSucceeded
                             ? ThreeTextColumnView(
                                 name: locationState.keywordSearchData.name,
+                                countryCode:
+                                    locationState.keywordSearchData.countryCode,
                               )
                             : const TitleCaptionView(
                                 title: 'Enter a keyword',
@@ -88,6 +90,10 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
             )), // Button
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
+              if (locationState.locationType == LocationType.backpacker) {
+                locationNotifier.getBackpacker(supabaseState.accessToken);
+                return;
+              }
               locationNotifier
                   .getSimpleKeywordSearch(supabaseState.accessToken);
             },
