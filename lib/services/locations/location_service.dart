@@ -17,18 +17,18 @@ class LocationService {
   }
 
   Future<LocationState> setMarker(LocationState state) async {
-    final Set<Marker> _markers = {};
-    _markers.add(Marker(
+    final Set<Marker> markers = {};
+    markers.add(Marker(
         markerId: MarkerId(state.newLocation.toString()),
         position: state.newLocation,
         icon: BitmapDescriptor.defaultMarker));
-    return state.copyWith(markers: _markers);
+    return state.copyWith(markers: markers);
   }
 
   Future<void> shiftCameraPosition(LocationState state, LatLng position) async {
-    final CameraPosition _newPosition =
+    final CameraPosition newPosition =
         CameraPosition(target: position, zoom: 14.4746);
     final GoogleMapController controller = await state.mapController.future;
-    controller.animateCamera(CameraUpdate.newCameraPosition(_newPosition));
+    controller.animateCamera(CameraUpdate.newCameraPosition(newPosition));
   }
 }
