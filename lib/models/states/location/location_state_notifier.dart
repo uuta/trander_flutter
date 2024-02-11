@@ -31,20 +31,20 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(settingMode: intSettingMode);
   }
 
-  Future<void> switchPageLoading(bool isTrue) async {
-    state = state.copyWith(isPageLoading: isTrue);
+  Future<void> switchPageLoading(bool v) async {
+    state = state.copyWith(isPageLoading: v);
   }
 
   Future<void> offErrorMessage() async {
     state = state.copyWith(errorMessage: '');
   }
 
-  Future<void> switchCityDialog(bool isTrue) async {
-    state = state.copyWith(isCityDialog: isTrue);
+  Future<void> switchCityDialog(bool v) async {
+    state = state.copyWith(isCityDialog: v);
   }
 
-  Future<void> switchKeywordSearchDialog(bool isTrue) async {
-    state = state.copyWith(isKeywordSearchDialog: isTrue);
+  Future<void> switchKeywordSearchDialog(bool v) async {
+    state = state.copyWith(isKeywordSearchDialog: v);
   }
 
   Future<void> setKeywordSearchData(KeywordSearchState data) async {
@@ -55,8 +55,8 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     state = state.copyWith(backpackerData: data);
   }
 
-  Future<void> switchPaymantDialog(bool data) async {
-    state = state.copyWith(purchaseDialog: data);
+  Future<void> switchPaymantDialog(bool v) async {
+    state = state.copyWith(purchaseDialog: v);
   }
 
   Future<void> _succeedKeywordSearch() async {
@@ -148,6 +148,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           .setNewLocation(state, state.cityData.lat, state.cityData.lng);
       state = state.copyWith(
           isLoading: false, isCitySucceeded: true, isCityDialog: true);
+    } on DioError catch (e, s) {
+      if (e.response != null) {
+        if (e.response!.statusCode == 404) {
+          state = state.copyWith(isLoading: false, show404Dialog: true);
+          return;
+        }
+      }
+      _failedRequest(e, s);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }
@@ -171,6 +179,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           .setNewLocation(state, state.cityData.lat, state.cityData.lng);
       state = state.copyWith(
           isLoading: false, isCitySucceeded: true, isCityDialog: true);
+    } on DioError catch (e, s) {
+      if (e.response != null) {
+        if (e.response!.statusCode == 404) {
+          state = state.copyWith(isLoading: false, show404Dialog: true);
+          return;
+        }
+      }
+      _failedRequest(e, s);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }
@@ -187,6 +203,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           state.keywordSearchData.lat, state.keywordSearchData.lng);
 
       _succeedKeywordSearch();
+    } on DioError catch (e, s) {
+      if (e.response != null) {
+        if (e.response!.statusCode == 404) {
+          state = state.copyWith(isLoading: false, show404Dialog: true);
+          return;
+        }
+      }
+      _failedRequest(e, s);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }
@@ -202,6 +226,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
           state, state.keywordSearchData.lat, state.keywordSearchData.lng);
 
       _succeedKeywordSearch();
+    } on DioError catch (e, s) {
+      if (e.response != null) {
+        if (e.response!.statusCode == 404) {
+          state = state.copyWith(isLoading: false, show404Dialog: true);
+          return;
+        }
+      }
+      _failedRequest(e, s);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }
@@ -316,5 +348,9 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
 
   setControllerKeyword(String keyword) {
     state.keywordTextEditingController.text = keyword;
+  }
+
+  switch404Dialog(bool v) {
+    state = state.copyWith(show404Dialog: v);
   }
 }

@@ -80,6 +80,7 @@ class App extends HookConsumerWidget {
                   color: Color(0xff22332E),
                   fontWeight: FontWeight.w500),
               bodyLarge: const TextStyle(
+                fontSize: 18,
                 color: Color(0xff22332E),
               ),
               bodyMedium: TextStyle(

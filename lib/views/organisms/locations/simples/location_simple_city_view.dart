@@ -28,6 +28,10 @@ class LocationSimpleCityView extends HookConsumerWidget {
           context, locationState, locationNotifier);
     }
 
+    if (locationState.show404Dialog) {
+      LocationDialogViewController.show404Dialog(context, locationNotifier);
+    }
+
     return Scaffold(
         body: Padding(
             padding: const EdgeInsets.only(left: 15, right: 15),

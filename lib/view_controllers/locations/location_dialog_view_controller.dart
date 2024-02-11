@@ -1,5 +1,6 @@
 import '/import.dart';
 import '/views/molecules/dialogs/succeed_dialog_view.dart';
+import '/views/molecules/dialogs/idea_dialog_view.dart';
 
 class LocationDialogViewController {
   // City dialog
@@ -71,6 +72,27 @@ class LocationDialogViewController {
                   locationState.keywordSearchExploreState.twitter),
               closeOnPressed: () {
                 locationNotifier.switchKeywordSearchDialog(false);
+                Navigator.pop(context);
+              },
+            );
+          });
+    });
+  }
+
+  static void show404Dialog(
+      BuildContext context, LocationStateNotifier locationNotifier) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showDialog(
+          context: context,
+          barrierDismissible: false,
+          builder: (BuildContext childContext) {
+            return IdeaDialogView(
+              title: 'Try it once more',
+              description:
+                  'We couldn’t find a location. Let\'s give it another shot!',
+              buttonText: 'Close',
+              closeOnPressed: () {
+                locationNotifier.switch404Dialog(false);
                 Navigator.pop(context);
               },
             );
