@@ -1,7 +1,7 @@
 import '/import.dart';
 
 class SettingDirectionDialogView extends HookConsumerWidget {
-  const SettingDirectionDialogView({Key? key}) : super(key: key);
+  const SettingDirectionDialogView({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -22,18 +22,18 @@ class SettingDirectionDialogView extends HookConsumerWidget {
           child: locationState.settingData.directionType == e.value
               ? Container(
                   color: Theme.of(context).primaryColorLight,
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     e.key,
                     style: const TextStyle(color: Colors.white),
                   ),
-                  padding: const EdgeInsets.all(10),
                 )
               : Container(
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     e.key,
                     style: const TextStyle(color: Colors.white),
                   ),
-                  padding: const EdgeInsets.all(10),
                 ),
         );
       }).toList(),

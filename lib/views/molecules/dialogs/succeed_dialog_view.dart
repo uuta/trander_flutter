@@ -120,9 +120,9 @@ class SucceedDialogView extends StatelessWidget {
           left: padding,
           right: padding,
           child: CircleAvatar(
-            child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
             backgroundColor: Color(0xff7ecc00),
             radius: avatarRadius,
+            child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
           ),
         ),
       ]),
