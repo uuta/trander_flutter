@@ -153,6 +153,29 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
     }
   }
 
+  Future<void> getCityBackpacker(String? accessToken) async {
+    try {
+      state = state.copyWith(isLoading: true);
+      state = await CityBackpackerService().get(state, accessToken);
+
+      // Store location explore data
+      state = await LocationExploreDataService(
+        state: state,
+        lat: state.cityData.lat.toString(),
+        lng: state.cityData.lng.toString(),
+        placeId: state.cityData.placeId.toString(),
+        name: state.cityData.name.toString(),
+      ).storeCityExploreData();
+
+      state = await LocationService()
+          .setNewLocation(state, state.cityData.lat, state.cityData.lng);
+      state = state.copyWith(
+          isLoading: false, isCitySucceeded: true, isCityDialog: true);
+    } on Exception catch (e, s) {
+      _failedRequest(e, s);
+    }
+  }
+
   Future<void> getKeywordSearch(String? accessToken) async {
     try {
       state = state.copyWith(isLoading: true);
