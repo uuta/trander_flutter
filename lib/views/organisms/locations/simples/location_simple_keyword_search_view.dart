@@ -31,6 +31,10 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
           context, locationState, locationNotifier);
     }
 
+    if (locationState.show404Dialog) {
+      LocationDialogViewController.show404Dialog(context, locationNotifier);
+    }
+
     return Scaffold(
         body: Padding(
             padding: const EdgeInsets.only(left: 15, right: 15),
@@ -96,7 +100,7 @@ class LocationSimpleKeywordSearchView extends HookConsumerWidget {
         floatingActionButton: FloatingActionButton(
             onPressed: () async {
               if (locationState.locationType == LocationType.backpacker) {
-                locationNotifier.getCityBackpacker(supabaseState.accessToken);
+                locationNotifier.getBackpacker(supabaseState.accessToken);
                 return;
               }
               locationNotifier

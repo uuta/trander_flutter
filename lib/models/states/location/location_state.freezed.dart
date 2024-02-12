@@ -44,6 +44,7 @@ mixin _$LocationState {
   LocationType get locationType => throw _privateConstructorUsedError;
   bool get purchaseDialog => throw _privateConstructorUsedError;
   String get purchaseErrorMessage => throw _privateConstructorUsedError;
+  bool get show404Dialog => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -81,6 +82,7 @@ abstract class $LocationStateCopyWith<$Res> {
       LocationType locationType,
       bool purchaseDialog,
       String purchaseErrorMessage,
+      bool show404Dialog,
       String errorMessage});
 
   $CityStateCopyWith<$Res> get cityData;
@@ -128,6 +130,7 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
     Object? locationType = null,
     Object? purchaseDialog = null,
     Object? purchaseErrorMessage = null,
+    Object? show404Dialog = null,
     Object? errorMessage = null,
   }) {
     return _then(_value.copyWith(
@@ -223,6 +226,10 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
           ? _value.purchaseErrorMessage
           : purchaseErrorMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      show404Dialog: null == show404Dialog
+          ? _value.show404Dialog
+          : show404Dialog // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -321,6 +328,7 @@ abstract class _$$_LocationStateCopyWith<$Res>
       LocationType locationType,
       bool purchaseDialog,
       String purchaseErrorMessage,
+      bool show404Dialog,
       String errorMessage});
 
   @override
@@ -373,6 +381,7 @@ class __$$_LocationStateCopyWithImpl<$Res>
     Object? locationType = null,
     Object? purchaseDialog = null,
     Object? purchaseErrorMessage = null,
+    Object? show404Dialog = null,
     Object? errorMessage = null,
   }) {
     return _then(_$_LocationState(
@@ -468,6 +477,10 @@ class __$$_LocationStateCopyWithImpl<$Res>
           ? _value.purchaseErrorMessage
           : purchaseErrorMessage // ignore: cast_nullable_to_non_nullable
               as String,
+      show404Dialog: null == show404Dialog
+          ? _value.show404Dialog
+          : show404Dialog // ignore: cast_nullable_to_non_nullable
+              as bool,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -503,6 +516,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       this.locationType = LocationType.backpacker,
       this.purchaseDialog = false,
       this.purchaseErrorMessage = '',
+      this.show404Dialog = false,
       this.errorMessage = ''})
       : _markers = markers;
 
@@ -574,11 +588,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
   final String purchaseErrorMessage;
   @override
   @JsonKey()
+  final bool show404Dialog;
+  @override
+  @JsonKey()
   final String errorMessage;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, backpackerData: $backpackerData, backpackerExploreState: $backpackerExploreState, keywordText: $keywordText, settingMode: $settingMode, locationType: $locationType, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, errorMessage: $errorMessage)';
+    return 'LocationState(isLoading: $isLoading, isPageLoading: $isPageLoading, mapController: $mapController, currentLocation: $currentLocation, newLocation: $newLocation, markers: $markers, isCitySucceeded: $isCitySucceeded, isCityDialog: $isCityDialog, cityData: $cityData, cityExploreState: $cityExploreState, isKeywordSearchSucceeded: $isKeywordSearchSucceeded, isKeywordSearchDialog: $isKeywordSearchDialog, keywordSearchData: $keywordSearchData, keywordSearchExploreState: $keywordSearchExploreState, keywordTextEditingController: $keywordTextEditingController, settingData: $settingData, backpackerData: $backpackerData, backpackerExploreState: $backpackerExploreState, keywordText: $keywordText, settingMode: $settingMode, locationType: $locationType, purchaseDialog: $purchaseDialog, purchaseErrorMessage: $purchaseErrorMessage, show404Dialog: $show404Dialog, errorMessage: $errorMessage)';
   }
 
   @override
@@ -613,6 +630,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
       ..add(DiagnosticsProperty('locationType', locationType))
       ..add(DiagnosticsProperty('purchaseDialog', purchaseDialog))
       ..add(DiagnosticsProperty('purchaseErrorMessage', purchaseErrorMessage))
+      ..add(DiagnosticsProperty('show404Dialog', show404Dialog))
       ..add(DiagnosticsProperty('errorMessage', errorMessage));
   }
 
@@ -640,14 +658,14 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                 other.cityData == cityData) &&
             (identical(other.cityExploreState, cityExploreState) ||
                 other.cityExploreState == cityExploreState) &&
-            (identical(other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) ||
+            (identical(
+                    other.isKeywordSearchSucceeded, isKeywordSearchSucceeded) ||
                 other.isKeywordSearchSucceeded == isKeywordSearchSucceeded) &&
             (identical(other.isKeywordSearchDialog, isKeywordSearchDialog) ||
                 other.isKeywordSearchDialog == isKeywordSearchDialog) &&
             (identical(other.keywordSearchData, keywordSearchData) ||
                 other.keywordSearchData == keywordSearchData) &&
-            (identical(other.keywordSearchExploreState,
-                    keywordSearchExploreState) ||
+            (identical(other.keywordSearchExploreState, keywordSearchExploreState) ||
                 other.keywordSearchExploreState == keywordSearchExploreState) &&
             (identical(other.keywordTextEditingController,
                     keywordTextEditingController) ||
@@ -669,6 +687,8 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
                 other.purchaseDialog == purchaseDialog) &&
             (identical(other.purchaseErrorMessage, purchaseErrorMessage) ||
                 other.purchaseErrorMessage == purchaseErrorMessage) &&
+            (identical(other.show404Dialog, show404Dialog) ||
+                other.show404Dialog == show404Dialog) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
@@ -699,6 +719,7 @@ class _$_LocationState with DiagnosticableTreeMixin implements _LocationState {
         locationType,
         purchaseDialog,
         purchaseErrorMessage,
+        show404Dialog,
         errorMessage
       ]);
 
@@ -734,6 +755,7 @@ abstract class _LocationState implements LocationState {
       final LocationType locationType,
       final bool purchaseDialog,
       final String purchaseErrorMessage,
+      final bool show404Dialog,
       final String errorMessage}) = _$_LocationState;
 
   @override
@@ -782,6 +804,8 @@ abstract class _LocationState implements LocationState {
   bool get purchaseDialog;
   @override
   String get purchaseErrorMessage;
+  @override
+  bool get show404Dialog;
   @override
   String get errorMessage;
   @override

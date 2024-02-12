@@ -36,6 +36,7 @@ class LocationState with _$LocationState {
     @Default(LocationType.backpacker) LocationType locationType,
     @Default(false) bool purchaseDialog,
     @Default('') String purchaseErrorMessage,
+    @Default(false) bool show404Dialog,
     @Default('') String errorMessage,
   }) = _LocationState;
 }

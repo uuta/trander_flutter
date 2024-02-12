@@ -1,30 +1,14 @@
 import '/import.dart';
-import '/views/atoms/buttons/image_circle_button_view.dart';
-import '/views/atoms/texts/shadow_icon_text_view.dart';
 
-class SucceedDialogView extends StatelessWidget {
-  final String name, title, buttonText;
-  final String? countryCode;
-  final Widget? image;
-  final Image leftIcon, centerIcon, rightIcon;
-  final Function()? leftOnPressed,
-      centerOnPressed,
-      rightOnPressed,
-      closeOnPressed;
+class IdeaDialogView extends StatelessWidget {
+  final String title, description, buttonText;
+  final Function()? closeOnPressed;
 
-  const SucceedDialogView(
+  const IdeaDialogView(
       {Key? key,
       required this.title,
       required this.buttonText,
-      required this.name,
-      this.image,
-      this.countryCode,
-      required this.leftIcon,
-      required this.centerIcon,
-      required this.rightIcon,
-      required this.leftOnPressed,
-      required this.centerOnPressed,
-      required this.rightOnPressed,
+      required this.description,
       required this.closeOnPressed})
       : super(key: key);
 
@@ -78,34 +62,19 @@ class SucceedDialogView extends StatelessWidget {
                         alignment: PlaceholderAlignment.middle,
                         child: Container(
                           padding: const EdgeInsets.only(right: 10),
-                          child: (image != null)
-                              ? ShadowIconTextView(
-                                  name: name,
-                                  icon: image,
-                                )
-                              : Text(
-                                  name,
-                                  style:
-                                      Theme.of(context).textTheme.headlineSmall,
+                          child: Text(
+                            description,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge!
+                                .copyWith(
+                                  color: Colors.grey[600],
+                                  height: 1.5,
                                 ),
+                          ),
                         )),
                   ],
                 ),
-              ),
-              const SizedBox(height: 15.0),
-              Row(
-                children: [
-                  const Spacer(),
-                  ImageCircleButtonView(
-                      image: leftIcon, onPressed: leftOnPressed),
-                  const Spacer(),
-                  ImageCircleButtonView(
-                      image: centerIcon, onPressed: centerOnPressed),
-                  const Spacer(),
-                  ImageCircleButtonView(
-                      image: rightIcon, onPressed: rightOnPressed),
-                  const Spacer(),
-                ],
               ),
               const SizedBox(height: 15.0),
               Align(
@@ -118,13 +87,14 @@ class SucceedDialogView extends StatelessWidget {
             ],
           ),
         ),
-        const Positioned(
+        Positioned(
           left: padding,
           right: padding,
           child: CircleAvatar(
-            backgroundColor: Color(0xff7ecc00),
+            backgroundColor: const Color(0xffEBD14A),
             radius: avatarRadius,
-            child: Icon(Icons.check, size: avatarRadius, color: Colors.white),
+            child: Icon(Icons.lightbulb_outline_rounded,
+                size: avatarRadius, color: Colors.grey[600]),
           ),
         ),
       ]),
