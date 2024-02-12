@@ -268,6 +268,14 @@ class LocationStateNotifier extends StateNotifier<LocationState> {
       await _processBackpacker(accessToken);
 
       _succeedKeywordSearch();
+    } on DioError catch (e, s) {
+      if (e.response != null) {
+        if (e.response!.statusCode == 404) {
+          state = state.copyWith(isLoading: false, show404Dialog: true);
+          return;
+        }
+      }
+      _failedRequest(e, s);
     } on Exception catch (e, s) {
       _failedRequest(e, s);
     }

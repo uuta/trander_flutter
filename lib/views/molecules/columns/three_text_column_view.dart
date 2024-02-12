@@ -18,7 +18,9 @@ class ThreeTextColumnView extends StatelessWidget {
         children: [
           Text(
             "Let's go here today",
-            style: Theme.of(context).textTheme.displayMedium,
+            style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                  color: Theme.of(context).primaryColor,
+                ),
           ),
           const SizedBox(height: 25),
           ShadowIconTextView(
